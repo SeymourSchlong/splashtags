@@ -210,17 +210,25 @@ const load = () => {
                 renderSplashtag(ctx);
             });
 
-            nameinput.addEventListener('keydown', () => {
+            const nameInputEvent = () => {
                 setTimeout(() => {
                     tag.name = nameinput.value;
                     renderSplashtag(ctx);
                 }, 1);
+            }
+
+            nameinput.addEventListener('keydown', () => {
+                nameInputEvent();
             });
 
-            taginput.addEventListener('keydown', () => {
+            nameinput.addEventListener('change', () => {
+                nameInputEvent();
+            });
+
+            const tagInputEvent = () => {
                 setTimeout(() => {
-                    if (taginput.value.length > 4) {
-                        taginput.value = taginput.value.slice(0, 4);
+                    if (taginput.value.length > 5) {
+                        taginput.value = taginput.value.slice(0, 5);
                     }
                     let tagstr = taginput.value;
                     while (tagstr.length < 4) {
@@ -229,20 +237,14 @@ const load = () => {
                     tag.id = tagstr;
                     renderSplashtag(ctx);
                 }, 1);
+            }
+
+            taginput.addEventListener('keydown', () => {
+                tagInputEvent();
             });
 
             taginput.addEventListener('change', () => {
-                setTimeout(() => {
-                    if (taginput.value.length > 4) {
-                        taginput.value = taginput.value.slice(0, 4);
-                    }
-                    let tagstr = taginput.value;
-                    while (tagstr.length < 4) {
-                        tagstr = '0' + tagstr;
-                    }
-                    tag.id = tagstr;
-                    renderSplashtag(ctx);
-                }, 1);
+                tagInputEvent();
             });
 
             //console.log(`Loaded: ${banners.length} banners, ${badges.length} badges, and ${titleFirst.length + titleLast.length} titles.`);
