@@ -63,28 +63,6 @@ let tag = {
     badges: [ -1, -1, -1 ]
 }
 
-const renderSplashtag = (ctx) => {
-    ctx.drawImage(images.banners[tag.banner], 0, 0);
-    for (let i = 0; i < 3; i++) {
-        if (tag.badges[i] !== -1) {
-            const x = 480 + 74*i;
-            ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
-        }
-    }
-    ctx.fillStyle = '#' + banners[tag.banner].colour;
-
-    ctx.textAlign = 'left';
-    ctx.font = '36px Splat-text';
-    ctx.fillText(titleFirst[tag.title.first] + ' ' + titleLast[tag.title.last], 15, 42);
-
-    ctx.font = '20px Splat-text';
-    ctx.fillText('#' + tag.id, 24, 186);
-
-    ctx.font = '72px Splat-title';
-    ctx.textAlign = 'center';
-    ctx.fillText(tag.name, 700/2, 118);
-}
-
 const waitUntil = (fn, length) => {
     const interval = setInterval(() => {
         if (fn()) clearInterval(interval);
@@ -93,6 +71,36 @@ const waitUntil = (fn, length) => {
 
 const loadQueue = [];
 const load = () => {
+    const canvas = document.querySelector('#splashtag');
+    const ctx = canvas.getContext('2d');
+    const downloadlink = document.querySelector('#downloadlink');
+    const downloadbutton = document.querySelector('#downloadbutton');
+    
+    const renderSplashtag = (ctx) => {
+        ctx.drawImage(images.banners[tag.banner], 0, 0);
+        for (let i = 0; i < 3; i++) {
+            if (tag.badges[i] !== -1) {
+                const x = 480 + 74*i;
+                ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
+            }
+        }
+        ctx.fillStyle = '#' + banners[tag.banner].colour;
+
+        ctx.textAlign = 'left';
+        ctx.font = '36px Splat-text';
+        ctx.fillText(titleFirst[tag.title.first] + ' ' + titleLast[tag.title.last], 15, 42);
+
+        ctx.font = '20px Splat-text';
+        ctx.fillText('#' + tag.id, 24, 186);
+
+        ctx.font = '72px Splat-title';
+        ctx.textAlign = 'center';
+        ctx.fillText(tag.name, 700/2, 118);
+
+        downloadlink.href = canvas.toDataURL();
+        downloadbutton.removeAttribute('disabled');
+    }
+
     /* Credit to @DeadLineSMB_Art on Twitter for the special band banners */
     deadlineBanners.forEach(item => {
         banners.push(item);
@@ -112,9 +120,6 @@ const load = () => {
         img.onload = loadQueue.pop();
         images.badges.push(img);
     });
-
-    const canvas = document.querySelector('#splashtag');
-    const ctx = canvas.getContext('2d');
 
     const nameinput = document.querySelector('#nameinput');
     const taginput = document.querySelector('#taginput');
@@ -226,7 +231,7 @@ const load = () => {
                 }, 1);
             });
 
-            console.log(`Loaded: ${banners.length} banners, ${badges.length} badges, and ${titleFirst.length + titleLast.length} titles.`);
+            //console.log(`Loaded: ${banners.length} banners, ${badges.length} badges, and ${titleFirst.length + titleLast.length} titles.`);
             
             return true;
         }
