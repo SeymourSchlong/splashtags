@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "Splat-title";
+    src: url("./fonts/SplatoonTitle.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Splat-text";
+    src: url("./fonts/SplatoonText.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Splat-text';
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 20px;
+
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-image: url("./camo-black.png");
+}
+
+canvas {
+    margin-top: 78px;
+}
+
+#container, #main {
+    text-align: center;
+}
+
+#container {
+    padding-top: 25px;
+}
+
+#main {
+    background-image: url("./background.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 645px;
+    width: 856px;
+    margin: auto;
+}
+
+table {
+    width: fit-content;
+    margin: auto;
+    display: block;
+    text-align: left;
+}
+
+#title {
+    font-family: 'Splat-text';
+}
+#name {
+    font-family: 'Splat-title';
+}
+#title, #name {
+    opacity: 0;
+    user-select: none;
+    position:absolute;
+}
+
+select, input {
+    font-size: 20px;
+    font-family: 'Splat-text';
+}
+
+a {
+    color: #0791d8;
+}
+
+footer {
+    font-size: 16px;
+    background-color: #111111;
+
+    border-top: solid 1px black;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
