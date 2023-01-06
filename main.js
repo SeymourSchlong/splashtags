@@ -231,6 +231,20 @@ const load = () => {
                 }, 1);
             });
 
+            taginput.addEventListener('change', () => {
+                setTimeout(() => {
+                    if (taginput.value.length > 4) {
+                        taginput.value = taginput.value.slice(0, 4);
+                    }
+                    let tagstr = taginput.value;
+                    while (tagstr.length < 4) {
+                        tagstr = '0' + tagstr;
+                    }
+                    tag.id = tagstr;
+                    renderSplashtag(ctx);
+                }, 1);
+            });
+
             //console.log(`Loaded: ${banners.length} banners, ${badges.length} badges, and ${titleFirst.length + titleLast.length} titles.`);
             
             return true;
