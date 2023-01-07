@@ -20,6 +20,10 @@ const deadlineBanners = [
         colour: '0cffc3'
     },
     {
+        file: './deadlinebanners/Diss-Pair.png',
+        colour: 'bdfa57'
+    },
+    {
         file: './deadlinebanners/Front_Roe.png',
         colour: '37fe49'
     },
@@ -97,8 +101,10 @@ const load = () => {
         ctx.textAlign = 'center';
         ctx.fillText(tag.name, 700/2, 118);
 
-        downloadlink.href = canvas.toDataURL();
-        downloadbutton.removeAttribute('disabled');
+        if (!location.href.startsWith('file')) {
+            downloadlink.href = canvas.toDataURL();
+            downloadbutton.removeAttribute('disabled');
+        }
     }
 
     /* Credit to @DeadLineSMB_Art on Twitter for the special band banners */
