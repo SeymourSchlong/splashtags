@@ -95,7 +95,7 @@ const load = () => {
 
         // Write titles
         ctx.textAlign = 'left';
-        ctx.font = '36px Splat-text';
+        
         const titles = [];
         if (tag.title.first) {
             titles.push(titleFirst[tag.title.first]);
@@ -103,16 +103,26 @@ const load = () => {
         if (tag.title.last) {
             titles.push(titleLast[tag.title.last]);
         }
-        ctx.fillText(titles.join(' '), 15, 42);
+        let size = 34;
+        ctx.font = size + 'px Splat-text';
+        while (ctx.measureText(titles.join(' ')).width > 700 - 30) {
+            ctx.font = --size + 'px Splat-text';
+        }
+
+        ctx.save();
+        ctx.transform(1, 0, -7/100, 1, 0, 0);
+        ctx.fillText(titles.join(' '), 16, 42);
+        ctx.restore();
 
         // Write tag text (if not negative)
         if (!tag.id.includes('-')) {
-            ctx.font = '20px Splat-text';
+            ctx.font = '24px Splat-text';
             ctx.fillText('#' + tag.id, 24, 186);
         }
 
         // Write player name
-        ctx.font = '72px Splat-title';
+        //ctx.font = '72px Splat-title';
+        ctx.font = '64px Splat-title';
         ctx.textAlign = 'center';
         ctx.fillText(tag.name, 700/2, 118);
 
