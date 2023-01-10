@@ -10,13 +10,127 @@
     font-style: normal;
     font-weight: normal;
 }
+/* Language Fonts */
+/* Japan */
+@font-face {
+    font-family: "Kurokane";
+    src: url("./fonts/JPja/Kurokane.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Rowdy";
+    src: url("./fonts/JPja/Rowdy.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+/* Chinese (Simplified) */
+@font-face {
+    font-family: "DFP_GBZY7";
+    src: url("./fonts/CNzh/DFP_GBZY7.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "DFP_GBZY9";
+    src: url("./fonts/CNzh/DFP_GBZY9.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+/* Korean */
+@font-face {
+    font-family: "KCUBEr";
+    src: url("./fonts/KRko/AsiaKCUBE-R.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "KERINm";
+    src: url("./fonts/KRko/AsiaKERIN-M.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+/* Chinese (Traditional) */
+@font-face {
+    font-family: "DFPT_AZ5";
+    src: url("./fonts/TWzh/DFPT_AZ5.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "DFPT_ZY9";
+    src: url("./fonts/TWzh/DFPT_ZY9.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+body, select, input {
+    font-family: 'Splat-text';
+}
+
+.tab {
+    font-family: 'Splat-title';
+}
+
+body[lang="JPja"], body[lang="JPja"] select, body[lang="JPja"] input, option[value="JPja"] {
+    font-family: 'Splat-text', 'Kurokane';
+}
+
+body[lang="JPja"] .tab {
+    font-family: 'Splat-title', 'Rowdy';
+}
+
+body[lang="KRko"], body[lang="KRko"] select, body[lang="KRko"] input, option[value="KRko"] {
+    font-family: 'Splat-text', 'KERINm';
+}
+
+body[lang="KRko"] .tab {
+    font-family: 'Splat-title', 'KCUBEr';
+}
+
+body[lang="CNzh"], body[lang="CNzh"] select, body[lang="CNzh"] input, option[value="CNzh"] {
+    font-family: 'Splat-text', "DFPT_ZY9";
+}
+
+body[lang="CNzh"] .tab {
+    font-family: 'Splat-title', "DFPT_ZY9";
+}
+
+body[lang="TWzh"], body[lang="TWzh"] select, body[lang="TWzh"] input, option[value="TWzh"] {
+    font-family: 'Splat-text', "DFPT_AZ5";
+}
+
+body[lang="TWzh"] .tab {
+    font-family: 'Splat-title', "DFPT_ZY9";
+}
+
+body[lang="USen"] #languageSelector {
+    display: none;
+}
+
+#languageSelector {
+    font-size: 20px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 3;
+}
+
+#langmessage {
+    text-align: center;
+    font-size: 20px;
+}
+
+body[lang="USen"] #langmessage {
+    display: none;
+}
 
 html {
     height: 100%;
 }
 
+
 body {
-    font-family: 'Splat-text';
     background-color: #1e1e1e;
     color: white;
     font-size: 20px;
@@ -60,21 +174,8 @@ table tr > td:first-child {
     text-align: right;
 }
 
-#title {
-    font-family: 'Splat-text';
-}
-#name {
-    font-family: 'Splat-title';
-}
-#title, #name {
-    opacity: 0;
-    user-select: none;
-    position:absolute;
-}
-
 select, input {
     font-size: 20px;
-    font-family: 'Splat-text';
 }
 
 a {
@@ -103,7 +204,6 @@ footer {
 
     color: white;
     text-shadow: 0 2px black;
-    font-family: 'Splat-title';
     font-size: 22px;
     transition: 0.05s linear;
 }
