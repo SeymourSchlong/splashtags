@@ -176,11 +176,11 @@ img.other {
 img.selected {
     outline: 3px solid yellow;
     scale: 1.05;
-    transform: rotate(2deg);
+    transform: rotate(-2deg);
 }
 
 #badgecontainer img.selected {
-    transform: rotate(5deg);
+    transform: rotate(-5deg);
 }
 
 /* bottom padding :( */
