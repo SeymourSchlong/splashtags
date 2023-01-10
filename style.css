@@ -31,15 +31,13 @@ body {
 }
 
 canvas {
-    margin-top: 78px;
+    margin-top: 60px;
+    border-radius: 4px;
 }
 
 #container, #main {
     text-align: center;
-}
-
-#container {
-    padding-top: 25px;
+    user-select: none;
 }
 
 #main {
@@ -56,6 +54,10 @@ table {
     margin: auto;
     display: block;
     text-align: left;
+}
+
+table tr > td:first-child {
+    text-align: right;
 }
 
 #title {
@@ -89,4 +91,121 @@ footer {
     bottom: 0;
     left: 0;
     text-align: center;
+}
+
+.tab {
+    background-image: url("./tabsmall.png");
+    background-color: transparent;
+    border: none;
+    width: 232px;
+    height: 53px;
+    padding-bottom: 10px;
+
+    color: white;
+    text-shadow: 0 2px black;
+    font-family: 'Splat-title';
+    font-size: 22px;
+    transition: 0.05s linear;
+}
+.tab.selected {
+    transform: translateY(-2px);
+    background-image: url("./tabsmallselected.png");
+}
+.hidden {
+    display: none;
+}
+
+.tabcontainer {
+    z-index: 1;
+    position: relative;
+    margin: -10px auto auto auto;
+    padding-top: 5px;
+    background-image: url("./tabbackground.png");
+    width: 800px;
+    border-radius: 15px;
+}
+
+.imglistcontainer {
+    overflow-y: overlay;
+    width: 750px;
+    margin: auto;
+    padding-top: 8px;
+}
+
+.imglistcontainer > div {
+    padding: 4px;
+    width: calc(170px * 4 + 6px * 3);
+    margin: auto;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 6px;
+    
+    box-sizing: border-box;
+    padding: 0;
+    height: 200px;
+}
+
+.imglistcontainer img {
+    transition: .05s linear;
+    background-color: #111;
+    border-radius: 5px;
+}
+
+#bannercontainer img {
+    width: 170px;
+}
+
+#badgecontainer img {
+    width: 64px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + span {
+    text-decoration: underline;
+}
+
+img.other {
+    outline: 3px solid gray;
+}
+
+img.selected {
+    outline: 3px solid yellow;
+    scale: 1.05;
+    transform: rotate(2deg);
+}
+
+#badgecontainer img.selected {
+    transform: rotate(5deg);
+}
+
+/* bottom padding :( */
+#bannercontainer > div {
+    width: 170px;
+    height: 1px;
+}
+
+#badgecontainer > div {
+    width: 64px;
+    height: 1px;
+}
+
+div[data-name="banners"] {
+    padding-top: 40px;
+}
+
+div[data-name="text"] {
+    padding-top: 40px;
+}
+
+div[data-name="text"] table {
+    padding-bottom: 62px;
+}
+
+#downloadbutton {
+    margin: 8px;
 }

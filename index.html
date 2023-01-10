@@ -8,71 +8,62 @@
         <meta name="og:type" content="website">
         <meta name="description" content="Custom Splatoon 3 splashtag creator.">
         <meta name="og:description" content="Custom Splatoon 3 splashtag creator.">
-        <meta property="og:image" content="https://raw.githubusercontent.com/SeymourSchlong/splashtags/main/ico.png">
+        <meta property="og:image" content="https://file.garden/W1K6HZQ1fV1iP3Sq/splashtag/ico.png">
         <link rel="icon" href="ico.png">
         <script type="text/javascript" src="main.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
     <body onload="load();">
         <div id="container">
+            <br>
             <div id="main">
-                <span id="title" class="text"><span id="title1">Splatlandian</span><span id="title2">Rookie</span></span>
-                <span id="name" class="text">Player</span>
                 <canvas id="splashtag" width="700" height="200"></canvas>
+
                 <br>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                Name: 
-                            </td>
-                            <td>
-                                <input id="nameinput" type="text" maxlength="10" value="Player"> #<input id="taginput" type="number" min="-1" max="9999" value="0001" maxlength="4">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Titles: 
-                            </td>
-                            <td>
-                                <select id="titleinput1"></select> <select id="titleinput2"></select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Banner: 
-                            </td>
-                            <td>
-                                <select id="bannerinput"></select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Badges: 
-                            </td>
-                            <td>
-                                <select id="badgesinput1"></select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                
-                            </td>
-                            <td>
-                                <select id="badgesinput2"></select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                
-                            </td>
-                            <td>
-                                <select id="badgesinput3"></select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <a id="downloadlink" download="splashtag.png"><input id="downloadbutton" type="button" value="Download!" disabled></a>
+                <input class="tab selected" type="button" value="Text" name="tabText"><input class="tab" type="button" value="Banners" name="tabBanners"><input class="tab" type="button" value="Badges" name="tabBadges">
+                <div class="tabcontainer">
+                    <!-- Text --- Name, Tag, Titles -->
+                    <div class="tabcontent" data-name="text">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><span name="textName">Name</span>: </td>
+                                    <td>
+                                        <input id="nameinput" type="text" maxlength="10" value="Player" placeholder="Player"> #<input id="taginput" type="number" min="-1" max="99999" value="1" maxlength="5" placeholder="0001">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span name="textTitles">Titles</span>: </td>
+                                    <td>
+                                        <select id="titleinput1"></select>
+                                        <select id="titleinput2"></select> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span name="textRandomize">Randomize</span>: </td>
+                                    <td>
+                                        <input id="randomtitle" value="Both Titles" type="button" name="buttonBoth"> <input id="randomtitle1" value="First" type="button" name="buttonFirst"> <input id="randomtitle2" value="Last" type="button" name="buttonLast"> <input id="randombanner" value="Banner" type="button" name="buttonBanner"> <input id="randombadge" value="Badges" type="button" name="buttonBadges"> <input id="randomall" value="All!" type="button" name="buttonAll">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Banners -->
+                    <div class="tabcontent hidden" data-name="banners">
+                        <div class="imglistcontainer"><div id="bannercontainer"></div></div>
+                        <!--<span name="banners">Banner: </span><select id="bannerinput"></select>-->
+                    </div>
+
+                    <!-- Badges -->
+                    <div class="tabcontent hidden" data-name="badges">
+                        <label><input type="radio" name="badgenum" value="1" checked><span name="textSlot1">Slot 1</span></label> - <label><input type="radio" name="badgenum" value="2"><span name="textSlot2">Slot 2</span></label> - <label><input type="radio" name="badgenum" value="3"><span name="textSlot3">Slot 3</span></label>
+                        <div class="imglistcontainer"><div id="badgecontainer"></div></div>
+                    </div>
+
+                    <a id="downloadlink" download="splashtag.png"><input id="downloadbutton" type="button" value="Download!" name="buttonDownload" disabled></a>
+                </div>
+            </div>
         </div>
         <footer>
             Website made by <a href="https://twitter.com/spaghettitron/">@spaghettitron</a>
