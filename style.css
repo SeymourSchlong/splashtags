@@ -26,14 +26,14 @@
 }
 /* Chinese (Simplified) */
 @font-face {
-    font-family: "DFP_GBZY7";
-    src: url("./fonts/CNzh/DFP_GBZY7.otf");
+    font-family: "HanyiZongyi";
+    src: url("./fonts/CNzh/hanyi_zongyi.ttf");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
-    font-family: "DFP_GBZY9";
-    src: url("./fonts/CNzh/DFP_GBZY9.otf");
+    font-family: "HuakangZongyi";
+    src: url("./fonts/CNzh/huakang_xinzongyi.ttc");
     font-style: normal;
     font-weight: normal;
 }
@@ -89,11 +89,11 @@ body[lang="KRko"] .tab {
 }
 
 body[lang="CNzh"], body[lang="CNzh"] select, body[lang="CNzh"] input, option[value="CNzh"] {
-    font-family: 'Splat-text', "DFPT_ZY9";
+    font-family: 'Splat-text', "HanyiZongyi";
 }
 
 body[lang="CNzh"] .tab {
-    font-family: 'Splat-title', "DFPT_ZY9";
+    font-family: 'Splat-title', "HuakangZongyi";
 }
 
 body[lang="TWzh"], body[lang="TWzh"] select, body[lang="TWzh"] input, option[value="TWzh"] {

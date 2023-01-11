@@ -442,7 +442,7 @@ const load = () => {
 
     const langFonts = {
         JPja: ["Kurokane", "Rowdy"],
-        CNzh: ["DFPT_ZY9", "DFPT_AZ5"],
+        CNzh: ["HanyiZongyi", "HuakangZongyi"],
         KRko: ["KERINm", "KCUBEr"],
         TWzh: ["DFPT_AZ5", "DFPT_ZY9"]
     }
@@ -471,9 +471,9 @@ const load = () => {
         } catch (err) {}
     }
 
-    params.lang = params.lang || 'USen';
+    params.lang = params.lang || 'CNzh';
     if (Object.keys(lang).indexOf(params.lang) === -1) {
-        params.lang = 'USen';
+        params.lang = 'CNzh';
     }
     const language = params.lang;
     document.body.setAttribute('lang', language);
