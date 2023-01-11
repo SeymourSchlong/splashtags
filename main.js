@@ -471,9 +471,9 @@ const load = () => {
         } catch (err) {}
     }
 
-    params.lang = params.lang || 'CNzh';
+    params.lang = params.lang || 'USen';
     if (Object.keys(lang).indexOf(params.lang) === -1) {
-        params.lang = 'CNzh';
+        params.lang = 'USen';
     }
     const language = params.lang;
     document.body.setAttribute('lang', language);
