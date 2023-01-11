@@ -104,10 +104,6 @@ body[lang="TWzh"] .tab {
     font-family: 'Splat-title', "DFPT_ZY9";
 }
 
-body[lang="USen"] #languageSelector {
-    display: none;
-}
-
 #languageSelector {
     font-size: 20px;
     position: absolute;
