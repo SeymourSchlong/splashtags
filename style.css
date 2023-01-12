@@ -117,7 +117,7 @@ body[lang="TWzh"] .tab {
     font-size: 20px;
 }
 
-body[lang="USen"] #langmessage {
+#langmessage {
     display: none;
 }
 
