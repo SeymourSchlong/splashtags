@@ -4,6 +4,7 @@ const load = () => {
         {file:"./banners/Npl_Catalog_Season01_Lv01.png",colour:"001f65"},{file:"./banners/Npl_Catalog_Season01_Lv02.png",colour:"8e102c"},{file:"./banners/Npl_Catalog_Season01_Lv03.png",colour:"bb4d00"},{file:"./banners/Npl_Catalog_Season01_Lv04.png",colour:"3f92c5"},{file:"./banners/Npl_Catalog_Season01_Lv05.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv06.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv07.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv08.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv09.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv10.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv11.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv12.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv13.png",colour:"000705"},{file:"./banners/Npl_Catalog_Season01_Lv14.png",colour:"ebffbb"},{file:"./banners/Npl_Catalog_Season01_Lv15.png",colour:"070100"},{file:"./banners/Npl_Catalog_Season01_Lv16.png",colour:"f9e0ff"},{file:"./banners/Npl_Catalog_Season01_Lv17.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv18.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv19.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv20.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv21.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv22.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv23.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv24.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv25.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv26.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv27.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv28.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv29.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv30.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv31.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv32.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv33.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv34.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv35.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv36.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv37.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv38.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv39.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv40.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv41.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv42.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv43.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv44.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv45.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv46.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv47.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv48.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv49.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv50.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv51.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv52.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv53.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv54.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv55.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv56.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv57.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv58.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv59.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv60.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv61.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv62.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv63.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv64.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv65.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv66.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv67.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv68.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv69.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv70.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv71.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv72.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv73.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv74.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv75.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv76.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv77.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv78.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv79.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv80.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv81.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv82.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season02_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season02_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv03.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv04.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv05.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv06.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv07.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv08.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv09.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv10.png",colour:"ffffff"},{file:"./banners/Npl_Lot_Season01_Lv01.png",colour:"4e3000"},{file:"./banners/Npl_Lot_Season02_Lv01.png",colour:"4e3000"},{file:"./banners/Npl_Mng_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Mng_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Mng_Lv03.png",colour:"ffffff"},{file:"./banners/Npl_Trg_Season01_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Trg_Season01_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Tutorial00.png",colour:"ffffff"}
     ];
     
+    // @DeadLineSMB_art on twitter
     const deadlineBanners = [
         {
             file: './deadlinebanners/Bottom_Feeders.png',
@@ -45,13 +46,123 @@ const load = () => {
             file: './deadlinebanners/Wet_Floor.png',
             colour: 'ffffff'
         }
+    ];
+
+    const customBanners = [
+        {
+            file: './custom/banners/camo-black.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/splatoon2.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/catalog2.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/squidjump.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/brinewater.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/eeltail.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/flounder.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/hagglefish.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/hammerhead.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/inkblot.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/mahimahi.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/makomart.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/mincemeat.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/museum.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/scorchgorge.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/sturgeon.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/undertow.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/wahooworld.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/coop-gonefission.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/coop-maroonerbay.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/coop-sockeye.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/stages/coop-spawninggrounds.png',
+            colour: 'ffffff'
+        }
+    ];
+    
+    const badges = ["./badges/Badge_CatalogueLevel_Lv00.png","./badges/Badge_CatalogueLevel_Lv01.png","./badges/Badge_CoopBigRunTrophy_Lv00.png","./badges/Badge_CoopBigRunTrophy_Lv01.png","./badges/Badge_CoopBigRunTrophy_Lv02.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv00.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv01.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv02.png","./badges/Badge_CoopClearDangerRateMax.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv03.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv02.png","./badges/Badge_FestRankMax.png","./badges/Badge_GearTotalRarity_B00_Lv00.png","./badges/Badge_GearTotalRarity_B00_Lv01.png","./badges/Badge_GearTotalRarity_B01_Lv00.png","./badges/Badge_GearTotalRarity_B01_Lv01.png","./badges/Badge_GearTotalRarity_B02_Lv00.png","./badges/Badge_GearTotalRarity_B02_Lv01.png","./badges/Badge_GearTotalRarity_B03_Lv00.png","./badges/Badge_GearTotalRarity_B03_Lv01.png","./badges/Badge_GearTotalRarity_B04_Lv00.png","./badges/Badge_GearTotalRarity_B04_Lv01.png","./badges/Badge_GearTotalRarity_B05_Lv00.png","./badges/Badge_GearTotalRarity_B05_Lv01.png","./badges/Badge_GearTotalRarity_B06_Lv00.png","./badges/Badge_GearTotalRarity_B06_Lv01.png","./badges/Badge_GearTotalRarity_B07_Lv00.png","./badges/Badge_GearTotalRarity_B07_Lv01.png","./badges/Badge_GearTotalRarity_B08_Lv00.png","./badges/Badge_GearTotalRarity_B08_Lv01.png","./badges/Badge_GearTotalRarity_B09_Lv00.png","./badges/Badge_GearTotalRarity_B09_Lv01.png","./badges/Badge_GearTotalRarity_B10_Lv00.png","./badges/Badge_GearTotalRarity_B10_Lv01.png","./badges/Badge_GearTotalRarity_B11_Lv00.png","./badges/Badge_GearTotalRarity_B11_Lv01.png","./badges/Badge_GearTotalRarity_B15_Lv00.png","./badges/Badge_GearTotalRarity_B15_Lv01.png","./badges/Badge_GearTotalRarity_B16_Lv00.png","./badges/Badge_GearTotalRarity_B16_Lv01.png","./badges/Badge_GearTotalRarity_B17_Lv00.png","./badges/Badge_GearTotalRarity_B17_Lv01.png","./badges/Badge_GearTotalRarity_B19_Lv00.png","./badges/Badge_GearTotalRarity_B19_Lv01.png","./badges/Badge_GearTotalRarity_B20_Lv00.png","./badges/Badge_GearTotalRarity_B20_Lv01.png","./badges/Badge_LimitedRewardLottery_Lv00.png","./badges/Badge_LimitedRewardLottery_Lv01.png","./badges/Badge_LimitedRewardLottery_Lv02.png","./badges/Badge_Mission_Lv00.png","./badges/Badge_Mission_Lv01.png","./badges/Badge_Mission_Lv02.png","./badges/Badge_Mission_Lv03.png","./badges/Badge_Mission_Lv04.png","./badges/Badge_NawaBattlerCardNum_Lv00.png","./badges/Badge_NawaBattlerCardNum_Lv01.png","./badges/Badge_NawaBattlerCardNum_Lv02.png","./badges/Badge_NawaBattlerRank_Lv00.png","./badges/Badge_NawaBattlerRank_Lv01.png","./badges/Badge_NawaBattlerRank_Lv02.png","./badges/Badge_NawaBattlerWinAllNpcLevel3.png","./badges/Badge_OrderFood_Lv00.png","./badges/Badge_OrderFood_Lv01.png","./badges/Badge_OrderFood_Lv02.png","./badges/Badge_OrderVendor_Lv00.png","./badges/Badge_OrderVendor_Lv01.png","./badges/Badge_SpendLottery_Lv00.png","./badges/Badge_SpendLottery_Lv01.png","./badges/Badge_SpendLottery_Lv02.png","./badges/Badge_SpendShop_Clothes_Lv00.png","./badges/Badge_SpendShop_Clothes_Lv01.png","./badges/Badge_SpendShop_Goods_Lv00.png","./badges/Badge_SpendShop_Goods_Lv01.png","./badges/Badge_SpendShop_Head_Lv00.png","./badges/Badge_SpendShop_Head_Lv01.png","./badges/Badge_SpendShop_Shoes_Lv00.png","./badges/Badge_SpendShop_Shoes_Lv01.png","./badges/Badge_TotalKumaPoint_Lv00.png","./badges/Badge_TotalKumaPoint_Lv01.png","./badges/Badge_TotalKumaPoint_Lv02.png","./badges/Badge_Udemae_Lv00.png","./badges/Badge_Udemae_Lv01.png","./badges/Badge_Udemae_Lv02.png","./badges/Badge_WinCount_Pnt_Lv00.png","./badges/Badge_WinCount_Pnt_Lv01.png","./badges/Badge_WinCount_Pnt_Lv02.png","./badges/Badge_WinCount_Tcl_Atk_Lv00.png","./badges/Badge_WinCount_Tcl_Atk_Lv01.png","./badges/Badge_WinCount_Tcl_Def_Lv00.png","./badges/Badge_WinCount_Tcl_Def_Lv01.png","./badges/Badge_WinCount_Var_Lv00.png","./badges/Badge_WinCount_Var_Lv01.png","./badges/Badge_WinCount_Vcl_Lv00.png","./badges/Badge_WinCount_Vcl_Lv01.png","./badges/Badge_WinCount_Vgl_Lv00.png","./badges/Badge_WinCount_Vgl_Lv01.png","./badges/Badge_WinCount_Vlf_Lv00.png","./badges/Badge_WinCount_Vlf_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv02.png","./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv01.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv01.png"];
+
+    const customBadges = [
+        "./custom/badges/turfwar.png",
+        "./custom/badges/private.png",
+        "./custom/badges/xrank.png",
+        "./custom/badges/league.png",
+        "./custom/badges/amiibo.png",
+        "./custom/badges/cuttlegear.png",
+        "./custom/badges/grizzco.png",
+        "./custom/badges/smallfry.png",
+        "./custom/badges/chum.png",
+        "./custom/badges/cohock.png",
+        "./custom/badges/goldie.png",
+        "./custom/badges/mudmouth.png",
+        "./custom/badges/griller.png",
+        "./custom/badges/chinook.png",
+        "./custom/badges/blaster.png",
+        "./custom/badges/brella.png",
+        "./custom/badges/charger.png",
+        "./custom/badges/slosher.png",
+        "./custom/badges/splatana.png",
+        "./custom/badges/stringer.png"
     ]
-    
-    const badges = ["./badges/Badge_CatalogueLevel_Lv00.png","./badges/Badge_CatalogueLevel_Lv01.png","./badges/Badge_CoopBigRunTrophy_Lv00.png","./badges/Badge_CoopBigRunTrophy_Lv01.png","./badges/Badge_CoopBigRunTrophy_Lv02.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv00.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv01.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv02.png","./badges/Badge_CoopClearDangerRateMax.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv03.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv02.png","./badges/Badge_FestRankMax.png","./badges/Badge_GearTotalRarity_B00_Lv00.png","./badges/Badge_GearTotalRarity_B00_Lv01.png","./badges/Badge_GearTotalRarity_B01_Lv00.png","./badges/Badge_GearTotalRarity_B01_Lv01.png","./badges/Badge_GearTotalRarity_B02_Lv00.png","./badges/Badge_GearTotalRarity_B02_Lv01.png","./badges/Badge_GearTotalRarity_B03_Lv00.png","./badges/Badge_GearTotalRarity_B03_Lv01.png","./badges/Badge_GearTotalRarity_B04_Lv00.png","./badges/Badge_GearTotalRarity_B04_Lv01.png","./badges/Badge_GearTotalRarity_B05_Lv00.png","./badges/Badge_GearTotalRarity_B05_Lv01.png","./badges/Badge_GearTotalRarity_B06_Lv00.png","./badges/Badge_GearTotalRarity_B06_Lv01.png","./badges/Badge_GearTotalRarity_B07_Lv00.png","./badges/Badge_GearTotalRarity_B07_Lv01.png","./badges/Badge_GearTotalRarity_B08_Lv00.png","./badges/Badge_GearTotalRarity_B08_Lv01.png","./badges/Badge_GearTotalRarity_B09_Lv00.png","./badges/Badge_GearTotalRarity_B09_Lv01.png","./badges/Badge_GearTotalRarity_B10_Lv00.png","./badges/Badge_GearTotalRarity_B10_Lv01.png","./badges/Badge_GearTotalRarity_B11_Lv00.png","./badges/Badge_GearTotalRarity_B11_Lv01.png","./badges/Badge_GearTotalRarity_B15_Lv00.png","./badges/Badge_GearTotalRarity_B15_Lv01.png","./badges/Badge_GearTotalRarity_B16_Lv00.png","./badges/Badge_GearTotalRarity_B16_Lv01.png","./badges/Badge_GearTotalRarity_B17_Lv00.png","./badges/Badge_GearTotalRarity_B17_Lv01.png","./badges/Badge_GearTotalRarity_B19_Lv00.png","./badges/Badge_GearTotalRarity_B19_Lv01.png","./badges/Badge_GearTotalRarity_B20_Lv00.png","./badges/Badge_GearTotalRarity_B20_Lv01.png","./badges/Badge_LimitedRewardLottery_Lv00.png","./badges/Badge_LimitedRewardLottery_Lv01.png","./badges/Badge_LimitedRewardLottery_Lv02.png","./badges/Badge_Mission_Lv00.png","./badges/Badge_Mission_Lv01.png","./badges/Badge_Mission_Lv02.png","./badges/Badge_Mission_Lv03.png","./badges/Badge_Mission_Lv04.png","./badges/Badge_NawaBattlerCardNum_Lv00.png","./badges/Badge_NawaBattlerCardNum_Lv01.png","./badges/Badge_NawaBattlerCardNum_Lv02.png","./badges/Badge_NawaBattlerRank_Lv00.png","./badges/Badge_NawaBattlerRank_Lv01.png","./badges/Badge_NawaBattlerRank_Lv02.png","./badges/Badge_NawaBattlerWinAllNpcLevel3.png","./badges/Badge_OrderFood_Lv00.png","./badges/Badge_OrderFood_Lv01.png","./badges/Badge_OrderFood_Lv02.png","./badges/Badge_OrderVendor_Lv00.png","./badges/Badge_OrderVendor_Lv01.png","./badges/Badge_SpendLottery_Lv00.png","./badges/Badge_SpendLottery_Lv01.png","./badges/Badge_SpendLottery_Lv02.png","./badges/Badge_SpendShop_Clothes_Lv00.png","./badges/Badge_SpendShop_Clothes_Lv01.png","./badges/Badge_SpendShop_Goods_Lv00.png","./badges/Badge_SpendShop_Goods_Lv01.png","./badges/Badge_SpendShop_Head_Lv00.png","./badges/Badge_SpendShop_Head_Lv01.png","./badges/Badge_SpendShop_Shoes_Lv00.png","./badges/Badge_SpendShop_Shoes_Lv01.png","./badges/Badge_TotalKumaPoint_Lv00.png","./badges/Badge_TotalKumaPoint_Lv01.png","./badges/Badge_TotalKumaPoint_Lv02.png","./badges/Badge_Udemae_Lv00.png","./badges/Badge_Udemae_Lv01.png","./badges/Badge_Udemae_Lv02.png","./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv00.png","./badges/Badge_WinCount_Pnt_Lv00.png","./badges/Badge_WinCount_Pnt_Lv01.png","./badges/Badge_WinCount_Pnt_Lv02.png","./badges/Badge_WinCount_Tcl_Atk_Lv00.png","./badges/Badge_WinCount_Tcl_Atk_Lv01.png","./badges/Badge_WinCount_Tcl_Def_Lv00.png","./badges/Badge_WinCount_Tcl_Def_Lv01.png","./badges/Badge_WinCount_Var_Lv00.png","./badges/Badge_WinCount_Var_Lv01.png","./badges/Badge_WinCount_Vcl_Lv00.png","./badges/Badge_WinCount_Vcl_Lv01.png","./badges/Badge_WinCount_Vgl_Lv00.png","./badges/Badge_WinCount_Vgl_Lv01.png","./badges/Badge_WinCount_Vlf_Lv00.png","./badges/Badge_WinCount_Vlf_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv02.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv01.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv01.png"];
-    
-    // Will add an actual UI for it soon, but not until we have the proper font for the Japanese characters
-    // Hopefully should make it real easy to add other languages!
-    // https://seymourschlong.github.io/splashtags/?lang=USen   <--- change that to desired language (defaults to english if invalid)
 
     const lang = {
         // English
@@ -67,7 +178,7 @@ const load = () => {
                 tabBadges: "Badges",
                 textLanguage: "Language",
                 textName: "Name",
-                textTitles: "Titles",
+                textTitles: "Title",
                 textRandomize: "Randomize",
                 textSlot1: "Slot 1",
                 textSlot2: "Slot 2",
@@ -79,7 +190,10 @@ const load = () => {
                 buttonBadges: "Badges",
                 buttonAll: "All",
                 buttonDownload: "Download!",
-                textMessage: "If there's any text errors, please DM me on Twitter!"
+                textMessage: "If there's any text errors, please DM me on Twitter!",
+                textCustom: "Custom",
+                textUpload: "Upload",
+                textToggle: "Toggle"
             },
             default: ["Splatlandian", "Youth"]
         },
@@ -101,14 +215,17 @@ const load = () => {
                 textSlot1: "Lugar 1",
                 textSlot2: "Lugar 2",
                 textSlot3: "Lugar 3",
-                buttonBoth: "Ambos 	Alias",
+                buttonBoth: "Ambos Alias",
                 buttonFirst: "Primero",
                 buttonLast: "Último",
                 buttonBanner: "Fondo",
                 buttonBadges: "Insignias",
                 buttonAll: "Todas",
                 buttonDownload: "Descargar!",
-                textMessage: "Si hay algún error de texto, ¡envíame un mensaje privado en Twitter!"
+                textMessage: "Si hay algún error de texto, ¡envíame un mensaje privado en Twitter!",
+                textCustom: "Personalizar",
+                textUpload: "Subir",
+                textToggle: "Activado"
             },
             default: ["Jovenzuelo", "tintelian"]
         },
@@ -137,7 +254,10 @@ const load = () => {
                 buttonBadges: "Insignias",
                 buttonAll: "Todas",
                 buttonDownload: "Descargar!",
-                textMessage: "Si hay algún error de texto, ¡envíame un mensaje privado en Twitter!"
+                textMessage: "Si hay algún error de texto, ¡envíame un mensaje privado en Twitter!",
+                textCustom: "Personalizar",
+                textUpload: "Subir",
+                textToggle: "Activado"
             },
             default: ["Jovencito", "tintelian"]
         },
@@ -145,7 +265,7 @@ const load = () => {
         EUfr: {
             name: "Français",
             titles: {
-                last: ["Pas de titre", "sans édulcorant","affichant 10 ans d'expérience","microscopique","fragmenté","d'ici cinq ans","collectionn d'amiibo","calamaresque","pro de la table de mixage","adorable","technophile","chancelant","virtuel","de match X","lève-tôt","24h/24","à vie","de match classique","à tomber","du dimanche","incroyable","à huit tentacules","à dix tentacules","de match tricolore","du Rab de Crabe","de première ligne","nostalgique","mégachanceu","terrestre","maousse","vorace","avant tout","océanique","chargeant les Sumoches","massi","audacieu","toujours dans le hall","choupi","montagnard","travailleu","éminent","perdu","méprisant la défaite","splendide","crédule","fêtant son anniv","du jour","de l'année","du firmament","innocent","antique","d'Alterna","capricieu","joyeu","au taquet","désarmé","intello","diurne","du lotissement Filament","condescendant","aqueu","d'aquarium","enflammé","grésillant","qui ouvre ses chakras","au top","central","gagneu","de fin de siècle","du siècle","bien-aimé","amoureu de l'hiver","hivernal","en vacances de neige","du nord de l'Atlantique","du nord du Pacifique","de l'océan Arctique","stagiaire","de minuit","champion de C&T","de l'an dernier","vintage","valable aujourd'hui","comme un autre","de bon augure","fiable","droiti","ambidextre","pataud","démesuré","du quotidien","fatal","immaculé","bohémien","éternel","royal","sans foi ni loi","souterrain","stable","doté d'ouïes","de jour","lég","de midi","immédiat","fin prêt","en congés","incandescent","tranquille","sur pilote automatique","qui fait sensation","au budget optimisé","de l'océan Indien","dangereu","prestigieu","à l'eau de rose","bavard","doué","fouineu","pugnace","cosmique","protect","piquant","jeune","parcheminé","croissant","mûr","toujours en action","précoce","suave","carrément flippant","ordonné","distingué","organisé","prometteu","virtuose","barbu","logique","à retardement","qui tire dans le mille","du réservoir Rigadelle","baraqué","autodidacte","à fond dans le selfie","ultra-confiant","au naturel","auto-proclamé","givré","rafraîchissant","âpre à la tâche","sans concession","en surchauffe","parfait","à la gâchette facile","en plein kif","et pas qu'un peu","réincarné","d'attaque","relax","discr","aux batteries vides","en pleine ruée","de match privé","suprême","gourmand","au pied du mur","en vogue","jusqu'au-boutiste","malfaisant","hédoniste","divertissant","venu du futur","anachronique","fondat","innovant","du début de l'été","encreu","incisi","suivi de son fan-club","de compagnie","marqué par le destin","hurlant à la lune","vindicati","fluide","miraculeu","distant","loin de la foule","solitaire","de la ville de Chromapolis","de la région de Chromapolis","du square de Chromapolis","côti","chanceu","ou presque","photographe","procrastinat","de l'an prochain","du Vestarium","à 100 %","de la Marée Armée","grunge","couvert d'encre","polyvalent","tempétueu","super classe","assez classe","moyennement classe","trop classe","frondeu","streameu","entre deux streams","suprêmissime","prêt à hiberner","hirsute","fragrant","des galeries Guppy","à manches longues","underground","d'avant-garde","instantané","du sud de l'Atlantique","du sud du Pacifique","de l'océan Austral","charnu","infantile","affable","casani","d'intérieur","d'extérieur","de l'ombre","de top qualité","plutôt pas mal","à fond sur les raccourcis","agité","amoureu du printemps","classe comme le printemps","jusqu'à hier","dou","plein d'entrain","dans l'instant présent","plein d'énergie","populaire","virevoletant","grandiloquent","bouche cousue","intuiti","face caméra","amoureu de l'automne","de la fin de l'été","de style automnal","écarlate","occasionnel","coquet","mince","digne d'éloge","du mode Histoire","sur mesure","important","supersonique","venteu","volant","grignoteu","dansant sur les vagues","bûcheu","nouve","sûr","gothique","goth","amoureu de l'été","estival","timide","du supermarché Cétacé","pour l'éternité","lanceu de tendances","dans le vent","stylé","de l'institut Calam'arts","des sept mers","tout du jour","du bord de mer","prêt à plonger","noir de jais","crevé","sincère","homologué","fidèle","certifié conforme","du pont Esturgeon","perfectionniste","sans précédent","de l'aube","festi","touché par la grâce","mystérieu","rapide comme l'éclair","sacré","secr","ésotérique","debout","en danseuse","éblouissant","d'albâtre","pur","céleste","sans une thune","des sources Sauret","du Cratère","des zones sauvages","suffisant","paumé","déserteu","en cavale","scintillant","pétillant","chatoyant","reluisant","à fond la caisse","en pleine ascension","performant","du club Ca$halot","à marée basse","chaleureu","réaliste","national","persévérant","hors pair","éculé","brutal","verni","en balade","matinal","larmoyant","des fonds marins","suspect","chaotique","sans fioriture","féroce","aimable","mystique","des beaux jours","à l'œil de lynx","de 2e génération","de la 3e génération","à fond les ballons","avide","cupide","de son surnom","du centre-ville","indomptable","sauvage","enneigé","ultime","de la casse Rascasse","de la centrale Anguilla","insensible","gentil","distrait","halieutique","blindé de thunes","inégalable","rétro","le crayon sur l'oreille","de Splatoon","novice","en vacances d'été","comme on en a jamais vu","de la première vague","final","plus fort que tout","sans pareil","dernier cri","optimiste","de la forêt","anonyme","en roue libre","à ne pas sous-estimer","tendant vers l'infini","aux goûts douteux","imperturbable","sans pitié","sans égal","paroxystique","caustique","étincelant","constant","au poil soyeux","glamour","surhumain","mastoc","hallucinant","expert","sans limites","classe de chez classe","galopant","en week-end","de la campagne","rockabilly","qui a toujours la frite","du cœur de l'hiver","du crépuscule","monochrome","sombre","traditionaliste","légendaire","économe","aspirant","avide de gloire","aux paupières lourdes","carnivore","épicurien","féru de bonbons","féru de poissons","épicé","marié à son boulot","fructivore","en édition limitée","féru de voyage","féru de cartoons","branché randos","féru de cinoche","féru de bédés","légumivore","plein aux as","gameu","enclin à la rêverie","sentimental","qui envoie du lourd","inarrêtable","néophyte","nouvelle génération","du bastion Colimaçon","junior","à la pointe de la mode","tout","fra","sujet au mal de mer","amat","ultra rare","du canyon aux colonnes","revigorant","trempé","du marché Grefin","suivant son destin","industriel","chevronné","m'as-tu-vu","en guerre avec les données","méditati","douillet","athlétique","sporti","archaïque","prodige","du voisinage","houleu","ultra rapide","de la salle d'arcade","tenace","espiègle","apprenti","à la pointe de la technologie","dégoulinant d'encre","débordant","captivant","à marée haute","gigantesque","en vadrouille","à flot","de l'épave des braves","noir d'encre","étourdi","attitré de M. Ours","au saut du lit","qui vieillit bien","","steampunk","sérieu","de Panurge","tranquillou","insubmersible","venu de loin","cool","pas-super-classe","inflexible","dingue de rap","plein de vie","peinturluré","proliférant","sans encre","emblématique de la ville","bondissant","louche","moderne","sélect","blanc mat","féru de plongée","immergé","branché","pro","essentiel","nocturne","brûlant","bleu pétant","chafouin","qui passe inaperçu","dormant debout","hésitant","du parc Carapince","du Pied agile","classe","de Calamarcade","dans la mêlée","coopérati","en planque","furti","vigilant","méthodique","lessivé","tête brûlée","qui déchire","sophistiqué","dans le brouillard","unique en son genre","semi-pro","muet","des Eaux-de-forme","futé","impérial","flegmatique","élégant","en pleine expansion","crainti","ambigu","sablonneu","explosi","global","typique","approximati","énigmatique","en loucedé","de Salmon Run","du barrage salmonoïde","rouge sombre","flashy","insaisissable","vaseu","rêvant de galons","prodigue","simple","enchaînant les esquives","de Coolypso","négligé","en voie d'extinction","artistique","punk","illuminé","du genre salé","retentissant","branché breakdance","de la banlieue Balibot","trognon","séché au soleil","fantasmagorique","du chantier Narval","de match anarchie","de la Contrée Clabousse","de Cité-Clabousse"],
+                last: ["Pas de titre", "sans édulcorant","affichant 10 ans d'expérience","microscopique","fragmenté","d'ici cinq ans","collectionn d'amiibo","calamaresque","pro de la table de mixage","adorable","technophile","chancelant","virtuel","de match X","lève-tôt","24h/24","à vie","de match classique","à tomber","du dimanche","incroyable","à huit tentacules","à dix tentacules","de match tricolore","du Rab de Crabe","de première ligne","nostalgique","mégachanceu","terrestre","maousse","vorace","avant tout","océanique","chargeant les Sumoches","massi","audacieu","toujours dans le hall","choupi","montagnard","travailleu","éminent","perdu","méprisant la défaite","splendide","crédule","fêtant son anniv","du jour","de l'année","du firmament","innocent","antique","d'Alterna","capricieu","joyeu","au taquet","désarmé","intello","diurne","du lotissement Filament","condescendant","aqueu","d'aquarium","enflammé","grésillant","qui ouvre ses chakras","au top","central","gagneu","de fin de siècle","du siècle","bien-aimé","amoureu de l'hiver","hivernal","en vacances de neige","du nord de l'Atlantique","du nord du Pacifique","de l'océan Arctique","stagiaire","de minuit","champion de C&T","de l'an dernier","vintage","valable aujourd'hui","comme un autre","de bon augure","fiable","droiti","ambidextre","pataud","démesuré","du quotidien","fatal","immaculé","bohémien","éternel","royal","sans foi ni loi","souterrain","stable","doté d'ouïes","de jour","lég","de midi","immédiat","fin prêt","en congés","incandescent","tranquille","sur pilote automatique","qui fait sensation","au budget optimisé","de l'océan Indien","dangereu","prestigieu","à l'eau de rose","bavard","doué","fouineu","pugnace","cosmique","protect","piquant","jeune","parcheminé","croissant","mûr","toujours en action","précoce","suave","carrément flippant","ordonné","distingué","organisé","prometteu","virtuose","barbu","logique","à retardement","qui tire dans le mille","du réservoir Rigadelle","baraqué","autodidacte","à fond dans le selfie","ultra-confiant","au naturel","auto-proclamé","givré","rafraîchissant","âpre à la tâche","sans concession","en surchauffe","parfait","à la gâchette facile","en plein kif","et pas qu'un peu","réincarné","d'attaque","relax","discr","aux batteries vides","en pleine ruée","de match privé","suprême","gourmand","au pied du mur","en vogue","jusqu'au-boutiste","malfaisant","hédoniste","divertissant","venu du futur","anachronique","fondat","innovant","du début de l'été","encreu","incisi","suivi de son fan-club","de compagnie","marqué par le destin","hurlant à la lune","vindicati","fluide","miraculeu","distant","loin de la foule","solitaire","de la ville de Chromapolis","de la région de Chromapolis","du square de Chromapolis","côti","chanceu","ou presque","photographe","procrastinat","de l'an prochain","du Vestarium","à 100 %","de la Marée Armée","grunge","couvert d'encre","polyvalent","tempétueu","super classe","assez classe","moyennement classe","trop classe","frondeu","streameu","entre deux streams","suprêmissime","prêt à hiberner","hirsute","fragrant","des galeries Guppy","à manches longues","underground","d'avant-garde","instantané","du sud de l'Atlantique","du sud du Pacifique","de l'océan Austral","charnu","infantile","affable","casani","d'intérieur","d'extérieur","de l'ombre","de top qualité","plutôt pas mal","à fond sur les raccourcis","agité","amoureu du printemps","classe comme le printemps","jusqu'à hier","dou","plein d'entrain","dans l'instant présent","plein d'énergie","populaire","virevoletant","grandiloquent","bouche cousue","intuiti","face caméra","amoureu de l'automne","de la fin de l'été","de style automnal","écarlate","occasionnel","coquet","mince","digne d'éloge","du mode Histoire","sur mesure","important","supersonique","venteu","volant","grignoteu","dansant sur les vagues","bûcheu","nouve","sûr","gothique","goth","amoureu de l'été","estival","timide","du supermarché Cétacé","pour l'éternité","lanceu de tendances","dans le vent","stylé","de l'institut Calam'arts","des sept mers","tout du jour","du bord de mer","prêt à plonger","noir de jais","crevé","sincère","homologué","fidèle","certifié conforme","du pont Esturgeon","perfectionniste","sans précédent","de l'aube","festi","touché par la grâce","mystérieu","rapide comme l'éclair","sacré","secr","ésotérique","debout","en danseuse","éblouissant","d'albâtre","pur","céleste","sans une thune","des sources Sauret","du Cratère","des zones sauvages","suffisant","paumé","déserteu","en cavale","scintillant","pétillant","chatoyant","reluisant","à fond la caisse","en pleine ascension","performant","du club Ca$halot","à marée basse","chaleureu","réaliste","national","persévérant","hors pair","éculé","brutal","verni","en balade","matinal","larmoyant","des fonds marins","suspect","chaotique","sans fioriture","féroce","aimable","mystique","des beaux jours","à l'œil de lynx","de 2e génération","de la 3e génération","à fond les ballons","avide","cupide","de son surnom","du centre-ville","indomptable","sauvage","enneigé","ultime","de la casse Rascasse","de la centrale Anguilla","insensible","gentil","distrait","halieutique","blindé de thunes","inégalable","rétro","le crayon sur l'oreille","de Splatoon","novice","en vacances d'été","comme on en a jamais vu","de la première vague","final","plus fort que tout","sans pareil","dernier cri","optimiste","de la forêt","anonyme","en roue libre","à ne pas sous-estimer","tendant vers l'infini","aux goûts douteux","imperturbable","sans pitié","sans égal","paroxystique","caustique","étincelant","constant","au poil soyeux","glamour","surhumain","mastoc","hallucinant","expert","sans limites","classe de chez classe","galopant","en week-end","de la campagne","rockabilly","qui a toujours la frite","du cœur de l'hiver","du crépuscule","monochrome","sombre","traditionaliste","légendaire","économe","aspirant","avide de gloire","aux paupières lourdes","carnivore","épicurien","féru de bonbons","féru de poissons","épicé","marié à son boulot","fructivore","en édition limitée","féru de voyage","féru de cartoons","branché randos","féru de cinoche","féru de bédés","légumivore","plein aux as","gameu","enclin à la rêverie","sentimental","qui envoie du lourd","inarrêtable","néophyte","nouvelle génération","du bastion Colimaçon","junior","à la pointe de la mode","tout","fra","sujet au mal de mer","amat","ultra rare","du canyon aux colonnes","revigorant","trempé","du marché Grefin","suivant son destin","industriel","chevronné","m'as-tu-vu","en guerre avec les données","méditati","douillet","athlétique","sporti","archaïque","prodige","du voisinage","houleu","ultra rapide","de la salle d'arcade","tenace","espiègle","apprenti","à la pointe de la technologie","dégoulinant d'encre","débordant","captivant","à marée haute","gigantesque","en vadrouille","à flot","de l'épave des braves","noir d'encre","étourdi","attitré de M. Ours","au saut du lit","qui vieillit bien","","steampunk","sérieuse","sérieux","de Panurge","tranquillou","insubmersible","venu de loin","cool","pas-super-classe","inflexible","dingue de rap","plein de vie","peinturluré","proliférant","sans encre","emblématique de la ville","bondissant","louche","moderne","sélect","blanc mat","féru de plongée","immergé","branché","pro","essentiel","nocturne","brûlant","bleu pétant","chafouin","qui passe inaperçu","dormant debout","hésitant","du parc Carapince","du Pied agile","classe","de Calamarcade","dans la mêlée","coopérati","en planque","furti","vigilant","méthodique","lessivé","tête brûlée","qui déchire","sophistiqué","dans le brouillard","unique en son genre","semi-pro","muet","des Eaux-de-forme","futé","impérial","flegmatique","élégant","en pleine expansion","crainti","ambigu","sablonneu","explosi","global","typique","approximati","énigmatique","en loucedé","de Salmon Run","du barrage salmonoïde","rouge sombre","flashy","insaisissable","vaseu","rêvant de galons","prodigue","simple","enchaînant les esquives","de Coolypso","négligé","en voie d'extinction","artistique","punk","illuminé","du genre salé","retentissant","branché breakdance","de la banlieue Balibot","trognon","séché au soleil","fantasmagorique","du chantier Narval","de match anarchie","de la Contrée Clabousse","de Cité-Clabousse"],
                 first: ["Pas de titre", "« Joli »","Accro à la Défense de zone","Accro à la Mission Bazookarpe","Accro à la Pluie de palourdes","Accro à l'Expédition risquée","Accro à Salmon Run","Accro au mode Histoire","Acolyte","Acteur","Actrice","Adepte de la balise de saut","Adepte de la bentorpille","Adepte de la bombe ballon","Adepte de la bombe curling","Adepte de la bombe gluante","Adepte de la bombe robot","Adepte de la bombe soda","Adepte de la bombe splash","Adepte de la brume toxique","Adepte de la fontaine","Adepte de la mine","Adepte de la pluie d'encre","Adepte de l'Aérogun","Adepte de l'Arroseur léger","Adepte de l'Arroseur lourd","Adepte de l'aspirencre","Adepte de l'Éclablaster","Adepte de l'Éclablaster XL","Adepte de l'Éclatana d'estampe","Adepte de l'Éclatana Doto","Adepte de l'Encrifugeur","Adepte de l'Épinceau","Adepte de l'Épinceau brosse","Adepte de l'Exteinteur","Adepte de l'Extraceur +","Adepte de l'Extraceur + zoom","Adepte de l'ultra-tamponneur","Adepte du Badigeonneur","Adepte du Badigeonneur stylo","Adepte du Badigeonneur XS","Adepte du Bassineur","Adepte du Bimbamboum","Adepte du Calibre 2000","Adepte du Calibre 3000","Adepte du cavalsquale","Adepte du chromo-jet","Adepte du Compresseur","Adepte du Concentraceur","Adepte du Concentraceur zoom","Adepte du Coralux 450","Adepte du crabe d'assaut","Adepte du Crayon X - 5H","Adepte du Décap'express","Adepte du Dépoteur","Adepte du détecteur","Adepte du Détoneur","Adepte du Détubeur","Adepte du districool","Adepte du Double encreur","Adepte du Double Kelvin 525","Adepte du Double moucheteur","Adepte du Double nettoyeur","Adepte du Double voltigeur","Adepte du Dynamo-rouleau","Adepte du Flexi-rouleau","Adepte du haut-perceur 5.1","Adepte du jolizator","Adepte du lance-rafales","Adepte du Lanceur spatial","Adepte du Liquidateur","Adepte du Liquidateur Jr.","Adepte du Liquidateur pro","Adepte du Marqueur léger","Adepte du Marqueur lourd","Adepte du multi-missile","Adepte du mur d'encre","Adepte du Nautilus","Adepte du Nettoyeur XL","Adepte du N-ZAP","Adepte du Para-encre","Adepte du Para-encre espion","Adepte du Para-encre XL","Adepte du Proxiblaster","Adepte du Rafablaster","Adepte du ricocheur","Adepte du Rouleau","Adepte du Rouleau carbone","Adepte du Rouleau large","Adepte du Seauceur","Adepte du sonar paf","Adepte du super bouclier","Adepte du Super Mollusque","Adepte du trimissile tornade","Adepte du Trisperceur","Adepte du Turboblaster","Adepte du Turboblaster pro","Adjoint","Adjointe","Administrateur","Administratrice","ADN","Aficionada","Aficionado","Agent","Agente","Alpiniste","Amateur de spas","Amatrice de spas","Ami","Amie","Androïde","Ange","Animal de compagnie","Animal territorial","Animateur","Animatrice","Archidémon","Archidémone","Arme","Arme ultime","Arroseur d'interrupteur","Arroseuse d'interrupteur","Artificier","Artificière","Artisan","Artisane","Artiste","As de la natte","Assistant","Assistante","Astronaute","Athlète","Attaquant","Attaquante","Auteur","Autrice","Avare","Aventurier","Aventurière","Baron du crime","Baronne du crime","Batteur","Batteuse","Bébête","Bédéiste","Béguin","Beignet de calamar","Big Boss","Biker","Bikeuse","Binoclard","Binoclarde","Bivalve","Bleusaille","Bois flotté","Bol de riz","Bol de soupe","Bombeur splash","Bombeuse splash","Boss","Bouclier","Boule à zéro","Boule de poils","Bourreau de travail","Breakdanceur","Breakdanceuse","Brin d'herbe","Cabot","Cadeau bonus","Cadre","Caïd","Calamar","Calamar déferlant","Calamar en vrille","Calamar malabar","Calamar séché","Camarade","Camarade d'équipe","Cambouis","Campeur","Campeuse","Carpaccio","Casse-cou","Célébrité","Céphalopode","Chair de poulpe","Champion","Champion du monde","Championne","Championne du monde","Chanteur","Chanteuse","Charmeur","Charmeuse","Chasseur","Chasseuse","Chef de bande","Chef de village","Chef d'équipe","Cheffe de bande","Cheffe de village","Cheffe d'équipe","Chercheur","Chercheuse","Chevalier","Chevalier chignon","Cible","Citoyen lambda","Citoyenne lambda","Clubbeur","Clubbeuse","Coach","Col blanc","Collection","Collectionneur de cartes","Collectionneur d'objets","Collectionneuse de cartes","Collectionneuse d'objets","Combattant","Combattante","Comique de service","Commando","Compétiteur","Compétitrice","Conducteur","Conductrice","Conseiller","Conseillère","Contremaître","Contremaîtresse","Convoqueur","Convoqueuse","Coolypsien","Coolypsienne","Coordinateur","Coordinatrice","Cornrow","Coupe afro","Coupe au bol","Coupe choucroute","Coupe classique","Coupe courte","Coupe ondulée","Crabe","Créateur","Créateur de contenu","Créatrice","Créatrice de contenu","Créature marine","Cuisinier","Cuisinière","Cycliste","Cyclone","Danseur","Danseuse","Dauphin","Déesse du chaos","Délégué","Déléguée","Démon","Démone","Designeur","Designeuse","Détenteur de titre","Détentrice de titre","Diablotin","Diablotine","Dieu du chaos","Dinosaure","Directeur","Directrice","Dirigeant","Dirigeante","Disciple","DJ","Dompteur d'anguilles","Dompteur de requins","Dompteuse d'anguilles","Dompteuse de requins","Double chignon","Doyen","Doyenne","Dragon","Duc","Duchesse","Écrivain","Écrivaine","Écumeur de fêtes","Écumeuse de fêtes","Égérie d'Abysma","Égérie d'Alpaj","Égérie d'Apex","Égérie d'Aroz","Égérie de Cubic","Égérie de DUX","Égérie de Focus","Égérie de Friture","Égérie de Gédéon","Égérie de Jack","Égérie de Kalamarus Rex","Égérie de Krakers","Égérie de Leviathus","Égérie de Macalamar","Égérie de Thony K","Égérie d'Ezko","Égérie d'Iormungand","Égérie d'OculR","Élégance incarnée","Éminence","Employé","Employé à distance","Employée","Employée à distance","Empreinte de poisson","Encre","Encre de calamar","Encre de poulpe","Enseignant","Enseignante","Enthousiaste","Entité","Équation","Espèce protégée","Espion","Espionne","Esprit libre","Essence de l'existence","Esthéticien","Esthéticienne","Étudiant","Étudiante","Existence","Expert","Experte","Fan d'Angie","Fan d'Ayo","Fan de Bottom Feeders","Fan de Chirpy Chips","Fan de Coralie","Fan de C-Side","Fan de Damp Socks","Fan de Dedf1sh","Fan de Diss-Pair","Fan de Front Roe","Fan de Hightide Era","Fan de jeux de société","Fan de Pasquale","Fan de Perle","Fan de Raimi","Fan de SashiMori","Fan de Squid Squad","Fan de Turquoise October","Fan de Wet Floor","Fan des Calamazones","Fan des Tenta-Cool","Fan des Tridenfer","Fan d'Ink Theory","Fan d'Oly","Fan d'ω-3","Fanatique","Fantôme","Fashion victim","Félin","Femme de neige","Femme des cavernes","Fêtard","Fêtarde","Filet de poisson","Fille","Fille de la ville","Fils","Flemmard","Flemmarde","Fleur","Fofolle","Folle furieuse","Fou furieux","Foufou","Frangin","Frangine","Frère","Fripouille","Fruit de mer","Gameur","Gameuse","Gamin","Gamine","Garçon","Garde du corps","Gardien","Gardienne","Gars de la ville","Gâteau apéro","Géant","Géante","Geek","Gélatine","Goûteur","Goûteuse","Gouvernante","Grand frère","Grand maître","Grand méchant","Grand timide","Grande gueule","Grande maîtresse","Grande méchante","Grande sœur","Grande timide","Grand-mère","Grand-père","Groove","Groupie","Guerrier","Guerrier de Cartes & Territoire","Guerrier légendaire","Guerrière","Guerrière de Cartes & Territoire","Guerrière légendaire","Guitariste","Habitué de Coolypso","Habitué de la Marée Armée","Habitué des Eaux-de-forme","Habitué du Pied agile","Habitué du Vestarium","Habituée de Coolypso","Habituée de la Marée Armée","Habituée des Eaux-de-forme","Habituée du Pied agile","Habituée du Vestarium","Hérisson","Héroïne","Héros","Hippie","Hipster","Homme de neige","Homme des cavernes","Hors-la-loi","Humain","Humaine","Humanité","Humeur","Humoriste","I.A.","Icône","Iconoclaste","Îlien","Îlienne","Illusion","Incantation","Inconditionnel d'une marque","Inconditionnelle d'une marque","Indépendant","Indépendante","Influenceur","Influenceuse","Inkling","Inspecteur","Inspectrice","Instructeur","Instructrice","Intérimaire","Introverti","Introvertie","Jeune","Jeune fille","Jeune marié","Jeune mariée","Jeunette","Jeunot","Joueur de cartes","Joueur de jeu de plateau","Joueur de synthé","Joueuse de cartes","Joueuse de jeu de plateau","Joueuse de synthé","Joyeuse drille","Joyeux drille","Larme","Leader","Look","Loup solitaire","Louve solitaire","Lune","Maestro","Magicien","Magicienne","Majordome","Maladroit","Maladroite","Maman","Mammifère","Manager","Manager adjoint","Manageuse","Manageuse adjointe","Mannequin","Mannequin pour baskets","Mannequin pour bottes","Mannequin pour chemises","Mannequin pour couvre-chefs","Mannequin pour lunettes","Mannequin pour tricots","Mannequin pour t-shirts","Mannequin pour vestes","Marinade","Masque","Mèche folle","Méduse","Méga-bouclette","Meilleur pote","Meilleure pote","Membre","Membre du comité","Mentor","Mère","Ministre","Minois","Mirage","Miss Gomina","Mister Gomina","Modèle","Monstre marin","Morceau de choix","Multi-talents","Mur","Murène","Muscle","Mystère","Mythe","Mythe de la Défense de zone","Mythe de la guerre de territoire","Mythe de la Mission Bazookarpe","Mythe de la Pluie de palourdes","Mythe de l'Expédition risquée","Mythe de Salmon Run","Mythe du mode Histoire","Nageur","Nageuse","Navire de guerre","Néophyte","Ninja","Noctambule","Nouveau venu","Nouvelle recrue","Nouvelle venue","Numéro 1","Numéro 2","Numéro 3","Numéro 4","Numéro 8","Octaling","Octarien","Octarienne","Œuf","Œuf de poisson","Oiseau","Oncle","Otaku","Ours","Ourse","Ouvrier","Ouvrière","P.D.G.","Palette","Papa","Parangon","Pâtée","Patron","Patronne","Peau d'écailles","Pêcheur","Pêcheuse","Peintre","Père","Personnalité royale","Petiot","Petiote","Petit frère","Petite sœur","Petite-fille","Petit-fils","Photographe","Pile électrique","Pilote","Plancton","Planificateur","Planificatrice","Plat de poissons","Plombier","Plombière","Poêlée","Poing","Point faible","Pointeur","Pointeuse","Poisson","Poisson de mer","Poisson d'eau douce","Poisson séché","Poisson-chat","Polyglotte","Popstar","Porteur de vérité","Porteuse de vérité","Poulet frit","Poulpe","Prédateur","Prédatrice","Première année","Président","Présidente","Prince","Princesse","Pro de l'esquive","Prodige","Producteur","Productrice","Prof","Programmeur","Programmeuse","Psy","Punk","Queue de cheval","Quidam","Raie au milieu","Raie majeure","Raie manta","Rappeur","Rappeuse","Rat de bibliothèque","Rebelle","Reflet","Reine","Reine du dance floor","Reine du pas chassé","Releveur de défi","Releveuse de défi","Réminiscence","Requin","Rigolo","Rigolote","Risque-tout","Robot","Roi","Roi du dance floor","Roi du pas chassé","Ronin","Sage de la montagne","Samouraï","Sans-le-sou","Santé","Sashimi","Saumon","Sauteur","Sauteuse","Scientifique","Secrétaire","Sirène","Skateur","Skateuse","Sœur","Soldat octaling","Soldate octaling","Soleil","Sous-fifre","Souvenir","Spectateur","Spectatrice","Stagiaire","Stand-upper","Stand-uppeuse","Streameur","Streameuse","Style","Style de vie","Styliste","Subalterne","Subordonné","Subordonnée","Super bleusaille","Super-héroïne","Super-héros","Supérieur","Supérieure","Superstar","Superstar du vestiaire","Superviseur","Superviseuse","Supporter","Supportrice","Surdoué","Surdouée","Surfeur","Surfeuse","Survivaliste","Sushi","Tante","Taquineur de goujon","Taquineuse de goujon","Tataki de thon","Tempête de neige","Tenue","Terreur des tournois","Tête à frange","Tête d'affiche","Thermophobe","Tignasse trempée","Tofu","Tornade","Tortue","Touriste","Traînard","Traînarde","Trendsetter","Trendsetteuse","Tresse","Trouveur de poissons","Trouveuse de poissons","Vedette","Veinard","Veinarde","Vendeur","Vendeuse","Ventre à pattes","Vétéran","Vétérane","Vice-président","Vice-présidente","Vie de calamar","Vie de poulpe","Vie de Salmonoïde","Vigile","Viking","Vitamine","Vocaliste","Voyageur","Voyageuse"]
             },
             ui: {
@@ -166,7 +286,10 @@ const load = () => {
                 buttonBadges: "Insignes",
                 buttonAll: "Tout",
                 buttonDownload: "Télécharger!",
-                textMessage: "S'il y a des erreurs de texte, veuillez m'envoyer un DM sur Twitter!"
+                textMessage: "S'il y a des erreurs de texte, veuillez m'envoyer un DM sur Twitter!",
+                textCustom: "Personnaliser",
+                textUpload: "Insérez le vôtre",
+                textToggle: "Activée"
             },
             default: ["Jeune", "de la Contrée Clabousse"]
         },
@@ -174,7 +297,7 @@ const load = () => {
         USfr: {
             name: "Français (CA)",
             titles: {
-                last: ["Pas de titre", "sans édulcorant","affichant 10 ans d'expérience","microscopique","fragmenté","d'ici cinq ans","collectionn d'amiibo","calmaresque","pro de la table de mixage","adorable","technophile","chancelant","virtuel","de match X","lève-tôt","24h/24","à vie","de match classique","à tomber","du dimanche","incroyable","à huit tentacules","à dix tentacules","de match tricolore","de Crabe Express","de première ligne","nostalgique","mégachanceu","terrestre","énorme","vorace","avant tout","océanique","chargeant les sumoches","massi","audacieu","toujours dans le hall","cute","montagnard","travailleu","éminent","perdu","méprisant la défaite","splendide","crédule","fêtant sa fête","du jour","de l'année","du firmament","innocent","antique","d'Alterna","capricieu","joyeu","au plancher","désarmé","intello","diurne","des appartements Filament","condescendant","aqueu","d'aquarium","enflammé","grésillant","qui ouvre ses chakras","au top","central","gagneu","de fin de siècle","du siècle","bien-aimé","amoureu de l'hiver","hivernal","en vacances d'hiver","du nord de l'Atlantique","du nord du Pacifique","de l'océan Arctique","stagiaire","de minuit","champion de C et T","de l'an dernier","vintage","valable aujourd'hui","comme un autre","de bon augure","fiable","droiti","ambidextre","pataud","démesuré","du quotidien","fatal","immaculé","bohémien","éternel","royal","sans foi ni loi","souterrain","stable","doté d'ouïes","de jour","lég","de midi","immédiat","fin prêt","en congés","incandescent","tranquille","sur pilote automatique","qui fait sensation","au budget optimisé","de l'océan Indien","dangereu","prestigieu","à l'eau de rose","bavard","doué","fouineu","pugnace","cosmique","protect","piquant","jeune","parcheminé","croissant","mûr","toujours en action","précoce","suave","carrément épeurant","ordonné","distingué","organisé","prometteu","virtuose","barbu","logique","à retardement","qui tire dans le mille","du réservoir Rigadelle","baraqué","autodidacte","à fond dans l'égoportrait","ultra-confiant","au naturel","auto-proclamé","glacial","rafraîchissant","âpre à la tâche","sans concession","en surchauffe","parfait","à la gâchette facile","en plein amour","et pas qu'un peu","réincarné","d'attaque","relax","discr","aux batteries vides","en pleine ruée","de match privé","suprême","gourmand","au pied du mur","en vogue","jusqu'au-boutiste","malfaisant","hédoniste","divertissant","venu du futur","anachronique","fondat","innovant","du début de l'été","encreu","incisi","suivi de son fan-club","de compagnie","marqué par le destin","hurlant à la lune","vindicati","fluide","miraculeu","distant","loin de la foule","solitaire","de la ville de Chromapolis","de la région de Chromapolis","du carré Chromapolis","côti","chanceu","ou presque","photographe","procrastinat","de l'an prochain","du Vestarium","à 100 %","d'Alassaut","grunge","couvert d'encre","polyvalent","tempétueu","super cool","assez cool","moyennement cool","trop cool","frondeu","instavidéaste","entre deux diffusions","suprêmissime","prêt à hiberner","hirsute","fragrant","des galeries Guppy","à manches longues","marginal","d'avant-garde","instantané","du sud de l'Atlantique","du sud du Pacifique","de l'océan Austral","charnu","infantile","affable","casani","d'intérieur","d'extérieur","de l'ombre","de première qualité","plutôt pas mal","à fond sur les raccourcis","agité","amoureu du printemps","classe comme le printemps","jusqu'à hier","dou","plein d'entrain","dans l'instant présent","plein d'énergie","populaire","virevoletant","grandiloquent","bouche cousue","intuiti","face caméra","amoureu de l'automne","de la fin de l'été","de style automnal","écarlate","occasionnel","coquet","mince","digne d'éloges","du mode Histoire","sur mesure","important","supersonique","venteu","volant","grignoteu","dansant sur les vagues","bûcheu","nouve","sûr","gothique","goth","amoureu de l'été","estival","timide","du supermarché Cétacé","pour l'éternité","lanceu de tendances","dans le vent","stylé","de l'institut Calm'arts","des sept mers","tout du jour","du bord de mer","prêt à plonger","noir de jais","crevé","sincère","homologué","fidèle","certifié conforme","du pont Esturgeon","perfectionniste","sans précédent","de l'aube","festi","touché par la grâce","mystérieu","rapide comme l'éclair","sacré","secr","ésotérique","debout","en danseuse","éblouissant","d'albâtre","pur","céleste","sans un sou","des sources Sauret","du Cratère","des zones sauvages","suffisant","déserteu","en cavale","scintillant","pétillant","chatoyant","reluisant","à fond la caisse","en pleine ascension","performant","du spa C-ta-C","à marée basse","chaleureu","réaliste","national","persévérant","hors pair","banal","brutal","fortuné","en balade","matinal","larmoyant","des fonds marins","louche","chaotique","sans fioriture","féroce","aimable","mystique","des beaux jours","à l'œil de mante de mer","de 2e génération","de la 3e génération","à fond les ballons","avide","cupide","de son surnom","du centre-ville","indomptable","sauvage","enneigé","ultime","de la casse Rascasse","de la centrale Anguilla","insensible","gentil","distrait","halieutique","riche","inégalable","rétro","le crayon sur l'oreille","de Splatoon","novice","en vacances d'été","comme on en a jamais vu","de la première vague","final","plus fort que tout","sans pareil","dernier cri","optimiste","de la forêt","anonyme","en roue libre","à ne pas sous-estimer","tendant vers l'infini","aux goûts douteux","imperturbable","sans pitié","sans égal","paroxystique","caustique","étincelant","constant","au poil soyeux","glamour","surhumain","mastoc","hallucinant","expert","sans limites","pas plus fra que ça","galopant","de la fin de semaine","de la campagne","rockabilly","qui a toujours la frite","du cœur de l'hiver","du crépuscule","monochrome","sombre","traditionaliste","légendaire","économe","aspirant","avide de gloire","aux paupières lourdes","carnivore","épicurien","mordu de bonbons","mordu de poissons","épicé","marié à son boulot","fructivore","en édition limitée","mordu de voyage","mordu de dessins animés","branché randos","mordu de cinéma","mordu de bédés","légumivore","plein aux as","joueu","enclin à la rêverie","sentimental","qui fait du bruit","inarrêtable","néophyte","nouvelle génération","du bastion colimaçon","junior","à la pointe de la mode","tout","fra","sujet au mal de mer","amat","ultra rare","du canyon aux colonnes","revigorant","trempé","du marché Grefin","suivant son destin","industriel","chevronné","m'as-tu-vu","en guerre avec les données","méditati","douillet","athlétique","sporti","archaïque","prodige","du voisinage","houleu","ultra rapide","de la salle d'arcade","tenace","espiègle","apprenti","à la pointe de la technologie","dégoulinant d'encre","débordant","captivant","à marée haute","gigantesque","en flânage","à flot","de l'épave des braves","noir d'encre","étourdi","attitré de M. Ours","au saut du lit","qui vieillit bien","","steampunk","sérieu","poseu","tranquillou","insubmersible","venu de loin","cool","pas-super-fra","inflexible","dingue de rap","plein de vie","peinturluré","proliférant","sans encre","emblématique de la ville","bondissant","suspect","moderne","sélect","blanc mat","mordu de plongée","immergé","branché","pro","essentiel","nocturne","brûlant","bleu pétant","chafouin","qui passe inaperçu","dormant debout","hésitant","du parc Carapince","du Pied agile","de Calmarcade","dans la mêlée","coopérati","en planque","furti","vigilant","méthodique","lessivé","tête brûlée","qui déchire","sophistiqué","dans le brouillard","unique en son genre","semi-pro","muet","des Eaux-de-forme","futé","impérial","flegmatique","élégant","en pleine expansion","crainti","ambigu","sablonneu","explosi","global","typique","approximati","énigmatique","en douce","de Salmon Run","du barrage salmonoïde","rouge sombre","voyant","insaisissable","vaseu","rêvant de galons","prodigue","simple","enchaînant les esquives","de Coolypso","négligé","en voie d'extinction","artistique","punk","illuminé","du genre salé","retentissant","branché breakdance","de la banlieue Balibot","trognon","séché au soleil","fantasmagorique","du chantier Narval","de match anarchie","de la Contrée Clabousse","de Cité-Clabousse"],
+                last: ["Pas de titre", "sans édulcorant","affichant 10 ans d'expérience","microscopique","fragmenté","d'ici cinq ans","collectionn d'amiibo","calmaresque","pro de la table de mixage","adorable","technophile","chancelant","virtuel","de match X","lève-tôt","24h/24","à vie","de match classique","à tomber","du dimanche","incroyable","à huit tentacules","à dix tentacules","de match tricolore","de Crabe Express","de première ligne","nostalgique","mégachanceu","terrestre","énorme","vorace","avant tout","océanique","chargeant les sumoches","massi","audacieu","toujours dans le hall","cute","montagnard","travailleu","éminent","perdu","méprisant la défaite","splendide","crédule","fêtant sa fête","du jour","de l'année","du firmament","innocent","antique","d'Alterna","capricieu","joyeu","au plancher","désarmé","intello","diurne","des appartements Filament","condescendant","aqueu","d'aquarium","enflammé","grésillant","qui ouvre ses chakras","au top","central","gagneu","de fin de siècle","du siècle","bien-aimé","amoureu de l'hiver","hivernal","en vacances d'hiver","du nord de l'Atlantique","du nord du Pacifique","de l'océan Arctique","stagiaire","de minuit","champion de C et T","de l'an dernier","vintage","valable aujourd'hui","comme un autre","de bon augure","fiable","droiti","ambidextre","pataud","démesuré","du quotidien","fatal","immaculé","bohémien","éternel","royal","sans foi ni loi","souterrain","stable","doté d'ouïes","de jour","lég","de midi","immédiat","fin prêt","en congés","incandescent","tranquille","sur pilote automatique","qui fait sensation","au budget optimisé","de l'océan Indien","dangereu","prestigieu","à l'eau de rose","bavard","doué","fouineu","pugnace","cosmique","protect","piquant","jeune","parcheminé","croissant","mûr","toujours en action","précoce","suave","carrément épeurant","ordonné","distingué","organisé","prometteu","virtuose","barbu","logique","à retardement","qui tire dans le mille","du réservoir Rigadelle","baraqué","autodidacte","à fond dans l'égoportrait","ultra-confiant","au naturel","auto-proclamé","glacial","rafraîchissant","âpre à la tâche","sans concession","en surchauffe","parfait","à la gâchette facile","en plein amour","et pas qu'un peu","réincarné","d'attaque","relax","discr","aux batteries vides","en pleine ruée","de match privé","suprême","gourmand","au pied du mur","en vogue","jusqu'au-boutiste","malfaisant","hédoniste","divertissant","venu du futur","anachronique","fondat","innovant","du début de l'été","encreu","incisi","suivi de son fan-club","de compagnie","marqué par le destin","hurlant à la lune","vindicati","fluide","miraculeu","distant","loin de la foule","solitaire","de la ville de Chromapolis","de la région de Chromapolis","du carré Chromapolis","côti","chanceu","ou presque","photographe","procrastinat","de l'an prochain","du Vestarium","à 100 %","d'Alassaut","grunge","couvert d'encre","polyvalent","tempétueu","super cool","assez cool","moyennement cool","trop cool","frondeu","instavidéaste","entre deux diffusions","suprêmissime","prêt à hiberner","hirsute","fragrant","des galeries Guppy","à manches longues","marginal","d'avant-garde","instantané","du sud de l'Atlantique","du sud du Pacifique","de l'océan Austral","charnu","infantile","affable","casani","d'intérieur","d'extérieur","de l'ombre","de première qualité","plutôt pas mal","à fond sur les raccourcis","agité","amoureu du printemps","classe comme le printemps","jusqu'à hier","dou","plein d'entrain","dans l'instant présent","plein d'énergie","populaire","virevoletant","grandiloquent","bouche cousue","intuiti","face caméra","amoureu de l'automne","de la fin de l'été","de style automnal","écarlate","occasionnel","coquet","mince","digne d'éloges","du mode Histoire","sur mesure","important","supersonique","venteu","volant","grignoteu","dansant sur les vagues","bûcheu","nouve","sûr","gothique","goth","amoureu de l'été","estival","timide","du supermarché Cétacé","pour l'éternité","lanceu de tendances","dans le vent","stylé","de l'institut Calm'arts","des sept mers","tout du jour","du bord de mer","prêt à plonger","noir de jais","crevé","sincère","homologué","fidèle","certifié conforme","du pont Esturgeon","perfectionniste","sans précédent","de l'aube","festi","touché par la grâce","mystérieu","rapide comme l'éclair","sacré","secr","ésotérique","debout","en danseuse","éblouissant","d'albâtre","pur","céleste","sans un sou","des sources Sauret","du Cratère","des zones sauvages","suffisant","déserteu","en cavale","scintillant","pétillant","chatoyant","reluisant","à fond la caisse","en pleine ascension","performant","du spa C-ta-C","à marée basse","chaleureu","réaliste","national","persévérant","hors pair","banal","brutal","fortuné","en balade","matinal","larmoyant","des fonds marins","louche","chaotique","sans fioriture","féroce","aimable","mystique","des beaux jours","à l'œil de mante de mer","de 2e génération","de la 3e génération","à fond les ballons","avide","cupide","de son surnom","du centre-ville","indomptable","sauvage","enneigé","ultime","de la casse Rascasse","de la centrale Anguilla","insensible","gentil","distrait","halieutique","riche","inégalable","rétro","le crayon sur l'oreille","de Splatoon","novice","en vacances d'été","comme on en a jamais vu","de la première vague","final","plus fort que tout","sans pareil","dernier cri","optimiste","de la forêt","anonyme","en roue libre","à ne pas sous-estimer","tendant vers l'infini","aux goûts douteux","imperturbable","sans pitié","sans égal","paroxystique","caustique","étincelant","constant","au poil soyeux","glamour","surhumain","mastoc","hallucinant","expert","sans limites","pas plus fra que ça","galopant","de la fin de semaine","de la campagne","rockabilly","qui a toujours la frite","du cœur de l'hiver","du crépuscule","monochrome","sombre","traditionaliste","légendaire","économe","aspirant","avide de gloire","aux paupières lourdes","carnivore","épicurien","mordu de bonbons","mordu de poissons","épicé","marié à son boulot","fructivore","en édition limitée","mordu de voyage","mordu de dessins animés","branché randos","mordu de cinéma","mordu de bédés","légumivore","plein aux as","joueu","enclin à la rêverie","sentimental","qui fait du bruit","inarrêtable","néophyte","nouvelle génération","du bastion colimaçon","junior","à la pointe de la mode","tout","fra","sujet au mal de mer","amat","ultra rare","du canyon aux colonnes","revigorant","trempé","du marché Grefin","suivant son destin","industriel","chevronné","m'as-tu-vu","en guerre avec les données","méditati","douillet","athlétique","sporti","archaïque","prodige","du voisinage","houleu","ultra rapide","de la salle d'arcade","tenace","espiègle","apprenti","à la pointe de la technologie","dégoulinant d'encre","débordant","captivant","à marée haute","gigantesque","en flânage","à flot","de l'épave des braves","noir d'encre","étourdi","attitré de M. Ours","au saut du lit","qui vieillit bien","","steampunk","sérieuse","sérieux","poseu","tranquillou","insubmersible","venu de loin","cool","pas-super-fra","inflexible","dingue de rap","plein de vie","peinturluré","proliférant","sans encre","emblématique de la ville","bondissant","suspect","moderne","sélect","blanc mat","mordu de plongée","immergé","branché","pro","essentiel","nocturne","brûlant","bleu pétant","chafouin","qui passe inaperçu","dormant debout","hésitant","du parc Carapince","du Pied agile","de Calmarcade","dans la mêlée","coopérati","en planque","furti","vigilant","méthodique","lessivé","tête brûlée","qui déchire","sophistiqué","dans le brouillard","unique en son genre","semi-pro","muet","des Eaux-de-forme","futé","impérial","flegmatique","élégant","en pleine expansion","crainti","ambigu","sablonneu","explosi","global","typique","approximati","énigmatique","en douce","de Salmon Run","du barrage salmonoïde","rouge sombre","voyant","insaisissable","vaseu","rêvant de galons","prodigue","simple","enchaînant les esquives","de Coolypso","négligé","en voie d'extinction","artistique","punk","illuminé","du genre salé","retentissant","branché breakdance","de la banlieue Balibot","trognon","séché au soleil","fantasmagorique","du chantier Narval","de match anarchie","de la Contrée Clabousse","de Cité-Clabousse"],
                 first: ["Pas de titre", "« Excellent »","Accro à la Défense de zone","Accro à la Mission Bazookarpe","Accro à la Pluie de palourdes","Accro à l'Expédition risquée","Accro à Salmon Run","Accro au mode Histoire","Acolyte","Acteur","Actrice","Adepte de la Balise de saut","Adepte de la Bentorpille","Adepte de la Bombe ballon","Adepte de la Bombe curling","Adepte de la Bombe gluante","Adepte de la Bombe robot","Adepte de la Bombe soda","Adepte de la Bombe splash","Adepte de la Brume toxique","Adepte de la Mine d'encre","Adepte de la Pluie d'encre","Adepte de l'Arroseur léger","Adepte de l'Arroseur lourd","Adepte de l'Aspirencre","Adepte de l'Éclablasteur","Adepte de l'Éclablasteur LP","Adepte de l'Éclatana d'estampe","Adepte de l'Éclatana Doto","Adepte de l'Encrifugeur","Adepte de l'Épinceau","Adepte de l'Épinceau brosse","Adepte de l'Excellinator","Adepte de l'Exteinteur","Adepte de l'Ultra-étampeur","Adepte du Badigeonneur","Adepte du Badigeonneur stylo","Adepte du Badigeonneur XP","Adepte du Bassineur","Adepte du Bimbamboum","Adepte du Calibre 2000","Adepte du Calibre 3000","Adepte du Cavalsquale","Adepte du Chromo-jet","Adepte du Compresseur","Adepte du Concentraceur","Adepte du Concentraceur zoom","Adepte du Coralux 450","Adepte du Crabe d'assaut","Adepte du Crayon X - 5H","Adepte du Détecteur","Adepte du Détoneur","Adepte du Détubeur","Adepte du Districool","Adepte du Double encreur","Adepte du Double Kelvin 525","Adepte du Double moucheteur","Adepte du Double nettoyeur","Adepte du Double voltigeur","Adepte du Dynamo-rouleau","Adepte du Flexi-rouleau","Adepte du Gicleur","Adepte du Lance-tornades","Adepte du Lanceur spatial","Adepte du Laser perçant 5.1","Adepte du Lignizateur alpha","Adepte du Liquéficateur","Adepte du Liquéficateur pro","Adepte du Liquéficateur ultra","Adepte du Marqueur léger","Adepte du Marqueur lourd","Adepte du Méga para-encre","Adepte du Méganettoyeur","Adepte du Multi-missile","Adepte du Mur d'encre","Adepte du Nautilus","Adepte du N-ZAP","Adepte du Para-encre","Adepte du Para-encre espion","Adepte du Pouche-pouche","Adepte du Proxiblasteur","Adepte du Rafalblasteur","Adepte du Ricocheur","Adepte du Rouleau","Adepte du Rouleau carbone","Adepte du Rouleau large","Adepte du Seauceur","Adepte du Seauceur trio","Adepte du Sonar paf","Adepte du Super bouclier","Adepte du Super Mollusque","Adepte du Trimissile tornade","Adepte du Trisperceur","Adepte du Turboblasteur","Adepte du Turboblasteur pro","Adepte du X-traceur +","Adepte du X-traceur + zoom","Adjoint","Adjointe","Administrateur","Administratrice","ADN","Aficionada","Aficionado","Agent","Agente","Alpiniste","Amateur de spas","Amatrice de spas","Ami","Amie","Androïde","Ange","Animal de compagnie","Animal territorial","Animateur","Animatrice","Apprenti","Apprentie","Archidémon","Archidémone","Arme","Arme ultime","Arroseur d'interrupteur","Arroseuse d'interrupteur","Artificier","Artificière","Artisan","Artisane","Artiste","As de la tresse","Assistant","Assistante","Astronaute","Athlète","Attaquant","Attaquante","Auteur","Autrice","Avare","Aventurier","Aventurière","Baron du crime","Baronne du crime","Batteur","Batteuse","Bébête","Bédéiste","Béguin","Big Boss","Binoclard","Binoclarde","Bivalve","Bois flotté","Bol de riz","Bol de soupe","Bombeur splash","Bombeuse splash","Boss","Bouclier","Boule à zéro","Boule de poils","Bourreau de travail","Breakdanceur","Breakdanceuse","Brin d'herbe","Cadeau bonus","Cadre","Caïd","Calmar","Calmar déferlant","Calmar en vrille","Calmar malabar","Calmar séché","Camarade","Camarade d'équipe","Campeur","Campeuse","Carpaccio","Casse-cou","Célébrité","Céphalopode","Chair de poulpe","Champion","Champion du monde","Championne","Championne du monde","Chanceuse","Chanceux","Chanteur","Chanteuse","Charmeur","Charmeuse","Chasseur","Chasseuse","Chef de bande","Chef de village","Chef d'équipe","Cheffe de bande","Cheffe de village","Cheffe d'équipe","Chercheur","Chercheuse","Chevalier","Chevalier chignon","Cible","Clubbeur","Clubbeuse","Coach","Col blanc","Collection","Collectionneur de cartes","Collectionneur d'objets","Collectionneuse de cartes","Collectionneuse d'objets","Combattant","Combattante","Comique de service","Comique solo","Commando","Compétiteur","Compétitrice","Conducteur","Conductrice","Conseiller","Conseillère","Contremaître","Contremaîtresse","Convoqueur","Convoqueuse","Coolypsien","Coolypsienne","Coordinateur","Coordinatrice","Coupe afro","Coupe au bol","Coupe choucroute","Coupe classique","Coupe courte","Coupe ondulée","Crabe","Créateur","Créateur de contenu","Créatrice","Créatrice de contenu","Créature marine","Cuisinier","Cuisinière","Cycliste","Cyclone","Danseur","Danseuse","Dauphin","Déesse du chaos","Délégué","Déléguée","Démon","Démone","Designeur","Designeuse","Détenteur de titre","Détentrice de titre","Diablotin","Diablotine","Dieu du chaos","Dinosaure","Directeur","Directrice","Dirigeant","Dirigeante","Disciple","DJ","Dompteur d'anguilles","Dompteur de requins","Dompteuse d'anguilles","Dompteuse de requins","Double chignon","Doyen","Doyenne","Dragon","Duc","Duchesse","Écrivain","Écrivaine","Écumeur de fêtes","Écumeuse de fêtes","Égérie d'Abysma","Égérie d'Alpaj","Égérie d'Aroz","Égérie de Arki","Égérie de DUX","Égérie de Fosia","Égérie de Fréma","Égérie de Kalmarus","Égérie de Krakeurs","Égérie de Leviathus","Égérie de P. Tonk","Égérie de Pionic","Égérie de Radmaré","Égérie de Tentatek","Égérie de Thony K","Égérie de Tizonius","Égérie d'Ezko","Égérie d'Iormungand","Élégance incarnée","Éminence","Employé","Employé à distance","Employée","Employée à distance","Empreinte de poisson","Encre","Encre de calmar","Encre de pieuvre","Enfant","Enseignant","Enseignante","Enthousiaste","Entité","Équation","Espèce protégée","Espion","Espionne","Esprit libre","Essence de l'existence","Esthéticien","Esthéticienne","Étudiant","Étudiante","Existence","Expert","Experte","Fan d'Angie","Fan d'Ayo","Fan de Bottom Feeders","Fan de Chirpy Chips","Fan de Coralie","Fan de C-Side","Fan de Damp Socks","Fan de Dedf1sh","Fan de Diss-Pair","Fan de Front Roe","Fan de Hightide Era","Fan de jeux de société","Fan de Pasquale","Fan de Perle","Fan de Raimi","Fan de SashiMori","Fan de Squid Squad","Fan de Turquoise October","Fan de Wet Floor","Fan des Sœurs Ventouse","Fan des Tentacool","Fan des Tridenfer","Fan d'Ink Theory","Fan d'Oly","Fan d'ω-3","Fanatique","Fantôme","Félin","Femme de neige","Femme des cavernes","Fêtard","Fêtarde","Filet de poisson","Fille","Fille de la ville","Fils","Flâneur","Flâneuse","Fleur","Fofolle","Folle furieuse","Fou furieux","Foufou","Frère","Frérot","Fripouille","Fruit de mer","Garçon","Garde du corps","Gardien","Gardienne","Gars de la ville","Gâteau apéro","Géant","Géante","Geek","Gélatine","Goûteur","Goûteuse","Gouvernante","Graisse","Grand frère","Grand maître","Grand méchant","Grand timide","Grande gueule","Grande maîtresse","Grande méchante","Grande sœur","Grande timide","Grand-mère","Grand-père","Groove","Groupie","Guerrier","Guerrier de Cartes et Territoire","Guerrier légendaire","Guerrière","Guerrière de Cartes et Territoire","Guerrière légendaire","Guitariste","Habitué d'Alassaut","Habitué de Coolypso","Habitué des Eaux-de-forme","Habitué du Pied agile","Habitué du Vestarium","Habituée d'Alassaut","Habituée de Coolypso","Habituée des Eaux-de-forme","Habituée du Pied agile","Habituée du Vestarium","Hérisson","Héroïne","Héros","Hippie","Hipster","Homme de neige","Homme des cavernes","Hors-la-loi","Humain","Humaine","Humanité","Humeur","Humoriste","I.A.","Icône","Iconoclaste","Îlien","Îlienne","Illusion","Incantation","Inconditionnel d'une marque","Inconditionnelle d'une marque","Indépendant","Indépendante","Influenceur","Influenceuse","Inkling","Inspecteur","Inspectrice","Instructeur","Instructrice","Intérimaire","Introverti","Introvertie","Jeune","Jeune fille","Jeune marié","Jeune mariée","Jeunette","Jeunot","Joueur de cartes","Joueur de jeu de plateau","Joueur de jeux vidéo","Joueur de synthé","Joueuse de cartes","Joueuse de jeu de plateau","Joueuse de jeux vidéo","Joueuse de synthé","Joyeuse drille","Joyeux drille","Larme","Leader","Look","Loup solitaire","Louve solitaire","Lune","Madame Tout-le-monde","Maestro","Magicien","Magicienne","Majordome","Maladroit","Maladroite","Maman","Mammifère","Mamzelle Pommade","Manageur","Manageur adjoint","Manageuse","Manageuse adjointe","Mannequin","Mannequin pour bottes","Mannequin pour chapeaux","Mannequin pour chemises","Mannequin pour espadrilles","Mannequin pour lunettes","Mannequin pour tricots","Mannequin pour t-shirts","Mannequin pour vestes","Marinade","Masque","Mèche folle","Méduse","Méga-bouclette","Meilleur ami","Meilleure amie","Membre","Membre du comité","Mentor","Mère","Ministre","Minois","Mirage","Modèle","Monsieur Tout-le-monde","Monstre marin","Morceau de choix","Motard","Motarde","Mousse","M'sieur Pommade","Multi-talents","Mur","Murène","Muscle","Mystère","Mythe","Mythe de la Défense de zone","Mythe de la Guerre de territoire","Mythe de la Mission Bazookarpe","Mythe de la Pluie de palourdes","Mythe de l'Expédition risquée","Mythe de Salmon Run","Mythe du mode Histoire","Nageur","Nageuse","Navire de guerre","Néophyte","Ninja","Noctambule","Nouveau venu","Nouvelle recrue","Nouvelle venue","Numéro 1","Numéro 2","Numéro 3","Numéro 4","Numéro 8","Octaling","Octarien","Octarienne","Œuf","Œuf de poisson","Oiseau","Oncle","Otaku","Ours","Ourse","Ouvrier","Ouvrière","P.D.G.","Palette","Papa","Parangon","Pâtée","Patron","Patronne","Peau d'écailles","Pêcheur","Pêcheuse","Peintre","Père","Personnalité royale","Petit frère","Petite sœur","Petite-fille","Petit-fils","Photographe","Pieuvre","Pile électrique","Pilote","Pitou","Plancton","Planificateur","Planificatrice","Plat de poissons","Plombier","Plombière","Poêlée","Poing","Point faible","Pointeur","Pointeuse","Poisson","Poisson de mer","Poisson d'eau douce","Poisson séché","Poisson-chat","Polyglotte","Popstar","Porteur de vérité","Porteuse de vérité","Poulet frit","Précurseur","Précurseure","Prédateur","Prédatrice","Première année","Président","Présidente","Prince","Princesse","Pro de l'esquive","Prodige","Producteur","Productrice","Prof","Programmeur","Programmeuse","Psy","Punk","Queue de cheval","Quidam","Raie au milieu","Raie majeure","Raie manta","Rappeur","Rappeuse","Rat de bibliothèque","Rebelle","Reflet","Reine","Reine de la danse","Reine du pas chassé","Releveur de défi","Releveuse de défi","Réminiscence","Requin","Rigolo","Rigolote","Risque-tout","Robot","Roi","Roi de la danse","Roi du pas chassé","Rondelle de calmar","Ronin","Sage de la montagne","Samouraï","Sans-le-sou","Santé","Sashimi","Saumon","Sauteur","Sauteuse","Scientifique","Secrétaire","Sirène","Skateur","Skateuse","Sœur","Sœurette","Soldat octaling","Soldate octaling","Soleil","Sous-fifre","Souvenir","Spectateur","Spectatrice","Stagiaire","Streameur","Streameuse","Style","Style de vie","Styliste","Subalterne","Subordonné","Subordonnée","Super recrue","Superhéroïne","Superhéros","Supérieur","Supérieure","Superstar","Superstar du vestiaire","Superviseur","Superviseuse","Supporteur","Supportrice","Surdoué","Surdouée","Surfeur","Surfeuse","Survivaliste","Sushi","Tante","Taquineur de poisson","Taquineuse de poisson","Tataki de thon","Tempête de neige","Tenue","Terreur des tournois","Tête à frange","Tête d'affiche","Thermophobe","Tignasse trempée","Tofu","Tornade","Tortue","Touriste","Traînard","Traînarde","Tresse","Tresse collée","Trouveur de poissons","Trouveuse de poissons","Vedette","Vendeur","Vendeuse","Ventre à pattes","Vétéran","Vétérane","Vice-président","Vice-présidente","Victime de la mode","Vie de calmar","Vie de pieuvre","Vie de salmonoïde","Vigile","Viking","Vitamine","Vocaliste","Voyageur","Voyageuse"]
             },
             ui: {
@@ -195,7 +318,10 @@ const load = () => {
                 buttonBadges: "Insignes",
                 buttonAll: "Tout",
                 buttonDownload: "Télécharger!",
-                textMessage: "S'il y a des erreurs de texte, veuillez m'envoyer un DM sur Twitter!"
+                textMessage: "S'il y a des erreurs de texte, veuillez m'envoyer un DM sur Twitter!",
+                textCustom: "Personnaliser",
+                textUpload: "Insérez le vôtre",
+                textToggle: "Activée"
             },
             default: ["Jeune", "de la Contrée Clabousse"]
         },
@@ -224,7 +350,10 @@ const load = () => {
                 buttonBadges: "Insignes",
                 buttonAll: "Allemaal",
                 buttonDownload: "Downloaden!",
-                textMessage: "Als er tekstfouten zijn, stuur me dan een DM op Twitter!"
+                textMessage: "Als er tekstfouten zijn, stuur me dan een DM op Twitter!",
+                textCustom: "Aanpassen",
+                textUpload: "Uploaden",
+                textToggle: "Ingeschakeld"
             },
             default: ["Splatlandisch", "jongere"]
         },
@@ -253,7 +382,10 @@ const load = () => {
                 buttonBadges: "Abzeichen",
                 buttonAll: "Alle",
                 buttonDownload: "Herunterladen!",
-                textMessage: "Wenn es irgendwelche Textfehler gibt, schicke mir bitte eine DM auf Twitter!"
+                textMessage: "Wenn es irgendwelche Textfehler gibt, schicke mir bitte eine DM auf Twitter!",
+                textCustom: "Anpassen",
+                textUpload: "Ermöglicht",
+                textToggle: "Aktiviert"
             },
             default: ["Splatsville-", "Jungspund"]
         },
@@ -283,7 +415,10 @@ const load = () => {
                 buttonBadges: "Distintivi",
                 buttonAll: "Tutti",
                 buttonDownload: "Scarica!",
-                textMessage: "Se ci sono errori di testo, per favore DM me su Twitter!"
+                textMessage: "Se ci sono errori di testo, per favore DM me su Twitter!",
+                textCustom: "Personalizzare",
+                textUpload: "Caricare",
+                textToggle: "Attivato"
             },
             default: ["Fanciullo", "splattonian"]
         },
@@ -313,7 +448,10 @@ const load = () => {
                 buttonBadges: "Значки",
                 buttonAll: "Все",
                 buttonDownload: "Скачать!",
-                textMessage: "Если есть какие-либо текстовые ошибки, пожалуйста, напишите мне в Твиттере!"
+                textMessage: "Если есть какие-либо текстовые ошибки, пожалуйста, напишите мне в Твиттере!",
+                textCustom: "Настроить",
+                textUpload: "Закачать",
+                textToggle: "Активировано"
             },
             default: ["плюхтонск", "парень"]
         },
@@ -342,7 +480,10 @@ const load = () => {
                 buttonBadges: "バッジ",
                 buttonAll: "全て",
                 buttonDownload: "ダウンロード!",
-                textMessage: "誤字脱字等ありましたらツイッターのDMまで！"
+                textMessage: "誤字脱字等ありましたらツイッターのDMまで！",
+                textCustom: "カスタマイズ",
+                textUpload: "アップロード",
+                textToggle: "有効化"
             },
             default: ["バンカラな", "若者"]
         },
@@ -371,7 +512,10 @@ const load = () => {
                 buttonBadges: "徽章",
                 buttonAll: "全部",
                 buttonDownload: "下载!",
-                textMessage: "如果有任何文本错误，请在 Twitter 上私信我！"
+                textMessage: "如果有任何文本错误，请在 Twitter 上私信我！",
+                textCustom: "自定义",
+                textUpload: "上传",
+                textToggle: "启用"
             },
             default: ["蛮颓的", "年轻人"]
         },
@@ -400,7 +544,10 @@ const load = () => {
                 buttonBadges: "배지",
                 buttonAll: "모두",
                 buttonDownload: "다운로드!",
-                textMessage: "오타가 있을 시 트위터 DM 부탁드립니다!"
+                textMessage: "오타가 있을 시 트위터 DM 부탁드립니다!",
+                textCustom: "사용자 지정",
+                textUpload: "업로드",
+                textToggle: "활성화됨"
             },
             default: ["카오폴리스의", "젊은이"]
         },
@@ -429,14 +576,16 @@ const load = () => {
                 buttonBadges: "徽章",
                 buttonAll: "全部",
                 buttonDownload: "下載!",
-                textMessage: "如果有任何文本錯誤，請在 Twitter 上私信我！"
+                textMessage: "如果有任何文本錯誤，請在 Twitter 上私信我！",
+                textCustom: "自定義",
+                textUpload: "上傳",
+                textToggle: "啟用"
             },
             default: ["蠻頹的", "年輕人"]
         }
     }
 
     const isSpaceLang = () => {
-        // English, Dutch, French (Canadian), French (France), German, Italian, Russian, Spanish (Latin America), Spanish (Spain), Korean
         return ['USen','EUnl','USfr','EUfr','EUde','EUit','EUru','USes','EUes', 'KRko'].indexOf(language) !== -1;
     }
 
@@ -449,7 +598,9 @@ const load = () => {
     
     const images = {
         banners: [],
-        badges: []
+        badges: [],
+        watermark: null,
+        watermark2: null
     }
 
     let rawParams;
@@ -479,12 +630,13 @@ const load = () => {
     document.body.setAttribute('lang', language);
 
     Object.keys(lang[language].ui).forEach(element => {
-        const e = document.querySelector(`[name="${element}"]`);
-        if (element.startsWith('tab') || element.startsWith('button')) {
-            e.value = lang[language].ui[element];
-        } else if (element.startsWith('text')) {
-            e.textContent = lang[language].ui[element]
-        }
+        document.querySelectorAll(`[name="${element}"]`).forEach(e => {
+            if (element.startsWith('tab') || element.startsWith('button')) {
+                e.value = lang[language].ui[element];
+            } else if (element.startsWith('text')) {
+                e.textContent = lang[language].ui[element]
+            }
+        });
     });
 
     const languageSelector = document.querySelector('#lang');
@@ -502,6 +654,10 @@ const load = () => {
     languageSelector.addEventListener('change', () => {
         location = location.origin + location.pathname + `?lang=${languageSelector.value}`;
     });
+
+    if (navigator.userAgent.toLowerCase().includes('chrome')) {
+        document.body.classList.add('chrome');
+    }
     
     const tag = {
         name: 'Player',
@@ -511,7 +667,12 @@ const load = () => {
         },
         banner: 0,
         id: '0001',
-        badges: [ -1, -1, -1 ]
+        badges: [ -1, -1, -1 ],
+        custom: {
+            isCustom: false,
+            title: 'Splatlandian Youth',
+            colour: '#ffffff'
+        }
     }
     
     const waitUntil = (fn, length) => {
@@ -525,6 +686,13 @@ const load = () => {
     const ctx = canvas.getContext('2d');
     const downloadlink = document.querySelector('#downloadlink');
     const downloadbutton = document.querySelector('#downloadbutton');
+
+    const textScale = 2;
+    const textCanvas = document.createElement('canvas');
+    textCanvas.width = 700*textScale;
+    textCanvas.height = 200*textScale;
+    const textCtx = textCanvas.getContext('2d');
+    textCtx.scale(textScale, textScale);
 
     const getFont = (textType) => {
         const fonts = [];
@@ -544,52 +712,126 @@ const load = () => {
     }
     
     const renderSplashtag = () => {
+        textCtx.clearRect(0, 0, 700, 200);
+        ctx.clearRect(0, 0, 700, 200);
+
+        ctx.drawImage(images.banners[tag.banner], 0, 0, 700, 200);
+        
         // Draw each badge on the banner
-        ctx.drawImage(images.banners[tag.banner], 0, 0);
         for (let i = 0; i < 3; i++) {
             if (tag.badges[i] !== -1) {
                 const x = 480 + 74*i;
-                ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
+                if (badges[tag.badges[i]].includes('custom') || badges[tag.badges[i]].includes('data')) {
+                    const cw = images.badges[tag.badges[i]].naturalWidth;
+                    const ch = images.badges[tag.badges[i]].naturalHeight;
+                    const landscape = cw > ch;
+                    const ratio = !landscape ? (cw / ch) : (ch / cw);
+                    const width = landscape ? 70 : 70*ratio;
+                    const height = !landscape ? 70 : 70*ratio;
+                    // calculate the size ratio
+                    ctx.drawImage(images.badges[tag.badges[i]], x + (70 / 2 - width / 2), 128 + (70 / 2 - height / 2), width, height);
+                } else {
+                    ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
+                }
             }
         }
 
         // Set canvas colour
-        ctx.fillStyle = '#' + banners[tag.banner].colour;
+        textCtx.fillStyle = (tag.custom.isCustom ? tag.custom.colour : '#' + banners[tag.banner].colour);
 
         // Write titles
-        ctx.textAlign = 'left';
+        textCtx.textAlign = 'left';
         
         const chosentitles = [];
-        if (tag.title.first) {
-            chosentitles.push(lang[language].titles.first[tag.title.first]);
-        }
-        if (tag.title.last) {
-            chosentitles.push(lang[language].titles.last[tag.title.last]);
+        if (tag.custom.isCustom) {
+            chosentitles.push(tag.custom.title);
+        } else {
+            if (tag.title.first) {
+                chosentitles.push(lang[language].titles.first[tag.title.first]);
+            }
+            if (tag.title.last) {
+                chosentitles.push(lang[language].titles.last[tag.title.last]);
+            }
         }
         if (chosentitles.length) {
-            let size = 34;
-            ctx.font = size + 'px ' + getFont(0);
+            const size = 36;
+            textCtx.font = size + 'px ' + getFont(0);
             const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
-            while (ctx.measureText(chosentitles.join(spaceOrBlank)).width > 700 - 30) {
-                ctx.font = --size + 'px ' + getFont(0);
+            let reduction = 0;
+            while (textCtx.measureText(chosentitles.join(spaceOrBlank)).width > 700 - 32) {
+                reduction += 0.2;
+                textCtx.font = (size - reduction) + 'px ' + getFont(0);
             }
 
-            ctx.save();
-            ctx.transform(1, 0, -7/100, 1, 0, 0);
-            ctx.fillText(chosentitles.join(spaceOrBlank), 16, 42);
-            ctx.restore();
+            // in game italic value is 0.12
+            textCtx.save();
+            textCtx.transform(1, 0, -7.5/100, 1, 0, 0);
+            textCtx.fillText(chosentitles.join(spaceOrBlank), 16, 42 - Math.floor(reduction/2));
+            textCtx.restore();
         }
 
         // Write tag text (if not negative)
         if (!tag.id.includes('-')) {
-            ctx.font = '24px ' + getFont(0);
-            ctx.fillText('#' + tag.id, 24, 186);
+            textCtx.font = '24px ' + getFont(0);
+            textCtx.fillText('#' + tag.id, 24, 186);
         }
 
         // Write player name
-        ctx.font = '64px ' + getFont(1);
-        ctx.textAlign = 'center';
-        ctx.fillText(tag.name, 700/2, 118);
+        if (tag.name.length) {
+            const size = 66;
+            textCtx.font = `${size}px ${getFont(1)}`;
+            let reduction = 0;
+            while (textCtx.measureText(tag.name).width > 700 - (40 - Math.floor(reduction / 2))) {
+                ++reduction;
+                textCtx.font = (size - reduction) + 'px ' + getFont(1);
+            }
+
+            textCtx.textAlign = 'center';
+            textCtx.fillText(tag.name, 700/2, 120 - Math.floor(reduction / 3));
+        }
+
+        let customBadge = false;
+        let customBanner = false;
+        tag.badges.forEach(b => {
+            if (b !== -1) customBadge = customBadge || badges[b].includes('data') || badges[b].includes('custom');
+        });
+
+        ['deadline', 'custom', 'data'].forEach(word => {
+            customBanner = customBanner || banners[tag.banner].file.includes(word)
+        })
+
+        // draw small watermark if using custom assets
+        if (customBanner || tag.custom.isCustom || customBadge) {
+            textCtx.globalAlpha = 0.15;
+
+            const wm = {
+                offset: {
+                    x: 10,
+                    y: 5
+                },
+                textoffset: 10,
+                width: 40,
+                height: 40,
+            }
+
+            textCtx.font = '14px Splat-text';
+            textCtx.textAlign = 'center';
+            textCtx.fillStyle = '#ffffff';
+            if (banners[tag.banner].file.includes('deadline')) {
+                textCtx.drawImage(images.watermark, 700 - wm.width - wm.offset.x, wm.offset.y, wm.width, wm.height);
+                textCtx.fillText('DeadLine', 700 - wm.offset.x - wm.width/2, wm.offset.y + wm.height + wm.textoffset);
+                if (tag.custom.isCustom || customBadge) {
+                    textCtx.fillText('custom', 700 - wm.offset.x - wm.width/2, wm.offset.y + wm.height + wm.textoffset + 14);
+                }
+            } else {
+                textCtx.drawImage(images.watermark, 700 - wm.width - wm.offset.x, wm.offset.y, wm.width, wm.height);
+                textCtx.fillText('custom', 700 - wm.offset.x - wm.width/2, wm.offset.y + wm.height + wm.textoffset);
+            }
+
+            textCtx.globalAlpha = 1;
+        }
+
+        ctx.drawImage(textCanvas, 0, 0, 700, 200);
 
         // Disables download button if testing locally
         if (!location.href.startsWith('file')) {
@@ -602,8 +844,28 @@ const load = () => {
     deadlineBanners.forEach(item => {
         banners.push(item);
     });
+    customBanners.forEach(item => {
+        banners.push(item);
+    });
+    customBadges.forEach(item => {
+        badges.push(item);
+    });
 
     // Loading queue for each item (so they do not need to load when selecting banners or badges)
+    {
+        loadQueue.push(1);
+        let img = new Image();
+        img.src = './watermark.png';
+        img.onload = loadQueue.pop();
+        images.watermark = img;
+    }
+    {
+        loadQueue.push(1);
+        let img = new Image();
+        img.src = './watermark2.png';
+        img.onload = loadQueue.pop();
+        images.watermark2 = img;
+    }
     banners.forEach(item => {
         loadQueue.push(1);
         let img = new Image();
@@ -633,6 +895,14 @@ const load = () => {
     const randombadge = document.querySelector('#randombadge');
     const randomall = document.querySelector('#randomall');
 
+    // customs
+    const customcheck = document.querySelector('#customcheck');
+    const customtitle = document.querySelector('#customtitle');
+    const custombanner = document.querySelector('#custombanner');
+    const custombadges = document.querySelector('#custombadge');
+    const customcolour = document.querySelector('#customcolour');
+
+    const tabContainer = document.querySelector('.tabcontainer');
     const tabs = document.querySelectorAll('.tab');
     const tabContents = document.querySelectorAll('.tabcontent');
     for (let i = 0; i < tabs.length; i++) {
@@ -656,25 +926,35 @@ const load = () => {
 
     const bannerContainer = document.querySelector('#bannercontainer');
 
+    // future taylor -- add click event function
+
+    const bannerClickEvent = (item, img) => {
+        const newBanner = banners.findIndex(b => b.file === item.file);
+        // clear and move selected
+        document.querySelectorAll('#bannercontainer img.selected').forEach(s => {
+            s.classList.remove('selected');
+        });
+        if (tag.banner !== newBanner) {
+            tag.banner = newBanner;
+            img.classList.add('selected');
+        } else {
+            tag.banner = defaultBannerIndex;
+            bannerContainer.childNodes[defaultBannerIndex].classList.add('selected');
+        }
+        customcolour.value = '#' + banners[tag.banner].colour;
+        tag.custom.colour = customcolour.value;
+        tag.custom.banner = null;
+        renderSplashtag();
+    }
+
+
     // Add options for select menus
     banners.forEach(item => {
         const img = document.createElement('img');
         img.src = item.file;
         img.setAttribute('draggable', 'false');
         img.addEventListener('click', () => {
-            const newBanner = banners.findIndex(b => b.file === item.file);
-            // clear and move selected
-            document.querySelectorAll('#bannercontainer img.selected').forEach(s => {
-                s.classList.remove('selected');
-            });
-            if (tag.banner !== newBanner) {
-                tag.banner = newBanner;
-                img.classList.add('selected');
-            } else {
-                tag.banner = defaultBannerIndex;
-                bannerContainer.childNodes[defaultBannerIndex].classList.add('selected');
-            }
-            renderSplashtag();
+            bannerClickEvent(item, img);
         });
 
         if (item.file.includes('Tutorial')) {
@@ -702,37 +982,41 @@ const load = () => {
                 badgeContainer.childNodes[tag.badges[i]].className = i === slot ? 'selected' : 'other';
             }
         });
-    })
+    });
+
+    const badgeClickEvent = (item, img) => {
+        let slot = [...badgeRadios].findIndex(r => r.checked);
+        let currentBadge = tag.badges[slot];
+        let newBadge = badges.findIndex(b => b === item);
+        
+        // if badge is in other slot, remove the old one
+        if (tag.badges.indexOf(newBadge) !== -1) {
+            tag.badges[tag.badges.indexOf(newBadge)] = -1;
+            badgeContainer.childNodes[newBadge].className = '';
+        }
+
+        if (newBadge == currentBadge) {
+            tag.badges[slot] = -1;
+        } else {
+            tag.badges[slot] = newBadge;
+        }
+
+        document.querySelectorAll('#badgecontainer img.selected, #badgecontainer img.other').forEach(s => {
+            s.classList.remove('selected');
+        });
+        if (tag.badges[slot] !== -1) {
+            img.className = 'selected';
+        }
+
+        renderSplashtag();
+    }
 
     badges.forEach(item => {
         const img = document.createElement('img');
         img.src = item;
         img.setAttribute('draggable', 'false');
         img.addEventListener('click', () => {
-            let slot = [...badgeRadios].findIndex(r => r.checked);
-            let currentBadge = tag.badges[slot];
-            let newBadge = badges.findIndex(b => b === item);
-            
-            // if badge is in other slot, remove the old one
-            if (tag.badges.indexOf(newBadge) !== -1) {
-                tag.badges[tag.badges.indexOf(newBadge)] = -1;
-                badgeContainer.childNodes[newBadge].className = '';
-            }
-
-            if (newBadge == currentBadge) {
-                tag.badges[slot] = -1;
-            } else {
-                tag.badges[slot] = newBadge;
-            }
-
-            document.querySelectorAll('#badgecontainer img.selected, #badgecontainer img.other').forEach(s => {
-                s.classList.remove('selected');
-            });
-            if (tag.badges[slot] !== -1) {
-                img.className = 'selected';
-            }
-
-            renderSplashtag();
+            badgeClickEvent(item, img);
         });
 
         badgeContainer.appendChild(img);
@@ -759,6 +1043,14 @@ const load = () => {
         }
         titleinput2.appendChild(option);
     });
+    
+    const inputheight = nameinput.getBoundingClientRect().height;
+    titleinput1.style.height = `${inputheight}px`;
+    titleinput2.style.height = `${inputheight}px`;
+
+    const textTableWidth = tabContents[0].querySelector('table').getBoundingClientRect().width;
+    tabContents[0].querySelector('table').style.width = `${textTableWidth}px`;
+
     
     // Once all of the images are loaded...
     waitUntil(() => {
@@ -870,6 +1162,92 @@ const load = () => {
                         }
                         tag.id = tagstr;
                     }
+                },
+                {
+                    elm: customcheck,
+                    run: () => {
+                        tag.custom.isCustom = customcheck.checked;
+                        
+                        tabContainer.classList.remove(`${tag.custom.isCustom ? 'hide' : 'show'}custom`);
+                        tabContainer.classList.add(`${tag.custom.isCustom ? 'show' : 'hide'}custom`);
+
+                        nameinput.setAttribute('maxlength', tag.custom.isCustom ? 100 : 10);
+                        if (!tag.custom.isCustom) {
+                            nameinput.value = nameinput.value.slice(0, 10);
+                            tag.name = nameinput.value;
+                        }
+                    }
+                },
+                {
+                    elm: customtitle,
+                    run: () => {
+                        tag.custom.title = customtitle.value;
+                    }
+                },
+                {
+                    elm: customcolour,
+                    run: () => {
+                        tag.custom.colour = customcolour.value;
+                    }
+                },
+                {
+                    elm: custombanner,
+                    run: () => {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            const image = document.createElement("img");
+                            image.src = e.target.result;
+                            const index = banners.findIndex(b => b.file === image.src);
+                            if (index === -1) {
+                                image.draggable = false;
+                                const item = { file: image.src, colour: 'ffffff' };
+                                banners.push(item);
+                                images.banners.push(image);
+                                bannerContainer.insertBefore(image, bannerContainer.querySelector('div'));
+                                image.addEventListener('click', () => {
+                                    bannerClickEvent(item, image);
+                                });
+                                //custombanner.value = '';
+                                setTimeout(() => {
+                                    image.click();
+                                    image.scrollIntoView();
+                                    renderSplashtag();
+                                }, 1);
+                            } else {
+                                bannerContainer.childNodes[index].click();
+                            }
+                        }
+                        reader.readAsDataURL(custombanner.files[0]);
+                    }
+                },
+                {
+                    elm: custombadges,
+                    run: () => {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            const image = document.createElement("img");
+                            image.src = e.target.result;
+                            const index = badges.findIndex(b => b === image.src);
+                            if (index === -1) {
+                                image.draggable = false;
+                                const item = image.src;
+                                badges.push(item);
+                                images.badges.push(image);
+                                badgeContainer.insertBefore(image, badgeContainer.querySelector('div'));
+                                image.addEventListener('click', () => {
+                                    badgeClickEvent(item, image);
+                                });
+                                setTimeout(() => {
+                                    image.click();
+                                    image.scrollIntoView();
+                                    renderSplashtag();
+                                }, 1);
+                            } else {
+                                badgeContainer.childNodes[index].click();
+                            }
+                        }
+                        reader.readAsDataURL(custombadges.files[0]);
+                    }
                 }
             ];
 
@@ -880,18 +1258,30 @@ const load = () => {
                 });
             });
 
-            nameinput.addEventListener('keydown', () => {
-                setTimeout(() => {
-                    changeEvents[2].run();
-                    renderSplashtag();
-                },1);
-            });
+            const keyEvents = [
+                {
+                    elm: nameinput,
+                    run: changeEvents[2].run
+                },
+                {
+                    elm: taginput,
+                    run: changeEvents[3].run
+                },
+                {
+                    elm: customtitle,
+                    run: changeEvents[5].run
+                }
+            ]
 
-            taginput.addEventListener('keydown', () => {
-                setTimeout(() => {
-                    changeEvents[3].run();
+            keyEvents.forEach(event => {
+                event.elm.addEventListener('keydown', () => {
+                    setTimeout(() => {
+                        event.run();
+                        renderSplashtag();
+                    }, 1);
+                    event.run();
                     renderSplashtag();
-                },1);
+                });
             });
 
             //console.log(`Loaded: ${banners.length} banners, ${badges.length} badges, and ${lang[language].titles.first.length + lang[language].titles.last.length} titles.`);

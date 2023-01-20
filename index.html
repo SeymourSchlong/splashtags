@@ -14,71 +14,78 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body onload="load();">
-        <div id="container">
-            <br>
-            <div id="main">
-                <canvas id="splashtag" width="700" height="200"></canvas>
+        <div class="sitecontent">
+            <div id="container">
                 <br>
-                <input class="tab selected" type="button" value="Text" name="tabText"><input class="tab" type="button" value="Banners" name="tabBanners"><input class="tab" type="button" value="Badges" name="tabBadges">
-                <div class="tabcontainer">
-                    <!-- Text --- Name, Tag, Titles -->
-                    <div class="tabcontent" data-name="text">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td><span name="textName">Name</span>: </td>
-                                    <td>
-                                        <input id="nameinput" type="text" maxlength="10" value="Player" placeholder="Player"> #<input id="taginput" type="number" min="-1" max="99999" value="1" maxlength="5" placeholder="0001">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span name="textTitles">Titles</span>: </td>
-                                    <td>
-                                        <select id="titleinput1"></select>
-                                        <select id="titleinput2"></select> 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span name="textRandomize">Randomize</span>: </td>
-                                    <td>
-                                        <input id="randomtitle" value="Both Titles" type="button" name="buttonBoth"> <input id="randomtitle1" value="First" type="button" name="buttonFirst"> <input id="randomtitle2" value="Last" type="button" name="buttonLast"> <input id="randombanner" value="Banner" type="button" name="buttonBanner"> <input id="randombadge" value="Badges" type="button" name="buttonBadges"> <input id="randomall" value="All!" type="button" name="buttonAll">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div id="main">
+                    <canvas id="splashtag" width="700" height="200"></canvas>
+                    <br>
+                    <input class="tab selected" type="button" value="Text" name="tabText"><input class="tab" type="button" value="Banners" name="tabBanners"><input class="tab" type="button" value="Badges" name="tabBadges">
+                    <div class="tabcontainer hidecustom">
+                        <!-- Text --- Name, Tag, Titles -->
+                        <div class="tabcontent" data-name="text">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span name="textName">Name</span>: </td>
+                                        <td>
+                                            <input id="nameinput" type="text" maxlength="10" value="Player" placeholder="Player"> #<input id="taginput" type="number" min="-1" max="99999" value="1" maxlength="5" placeholder="0001">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span name="textTitles">Title</span>: </td>
+                                        <td>
+                                            <select id="titleinput1" class="notcustom"></select>
+                                            <select id="titleinput2" class="notcustom"></select> 
+                                            <input id="customtitle" placeholder="Splatlandian Youth" value="Splatlandian Youth" class="custom"> <label class="custom"><span name="textColour">Colour</span> <input id="customcolour" type="color" value="#ffffff"></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span name="textRandomize">Randomize</span>: </td>
+                                        <td>
+                                            <input id="randomtitle" value="Both Titles" type="button" name="buttonBoth" class="notcustom"> <input id="randomtitle1" value="First" type="button" name="buttonFirst" class="notcustom"> <input id="randomtitle2" value="Last" type="button" name="buttonLast" class="notcustom"> <input id="randombanner" value="Banner" type="button" name="buttonBanner"> <input id="randombadge" value="Badges" type="button" name="buttonBadges"> <input id="randomall" value="All!" type="button" name="buttonAll">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span name="textCustom">Custom</span>: </td>
+                                        <td>
+                                            <label>(<span name="textToggle">toggle</span> <input id="customcheck" type="checkbox" name="customcheck">)</label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                    <!-- Banners -->
-                    <div class="tabcontent hidden" data-name="banners">
-                        <div class="imglistcontainer"><div id="bannercontainer"></div></div>
-                        <!--<span name="banners">Banner: </span><select id="bannerinput"></select>-->
-                    </div>
+                        <!-- Banners -->
+                        <div class="tabcontent hidden" data-name="banners">
+                            <label class="file">(<span name="textUpload">Upload</span>)<input type="file" id="custombanner" style="display: none;" accept="image/*"></label> 
+                            <div class="imglistcontainer"><div id="bannercontainer"></div></div>
+                        </div>
 
-                    <!-- Badges -->
-                    <div class="tabcontent hidden" data-name="badges">
-                        <label><input type="radio" name="badgenum" value="1" checked><span name="textSlot1">Slot 1</span></label> - <label><input type="radio" name="badgenum" value="2"><span name="textSlot2">Slot 2</span></label> - <label><input type="radio" name="badgenum" value="3"><span name="textSlot3">Slot 3</span></label>
-                        <div class="imglistcontainer"><div id="badgecontainer"></div></div>
-                    </div>
+                        <!-- Badges -->
+                        <div class="tabcontent hidden" data-name="badges">
+                            <label><input type="radio" name="badgenum" value="1" checked><span name="textSlot1">Slot 1</span></label> - <label><input type="radio" name="badgenum" value="2"><span name="textSlot2">Slot 2</span></label> - <label><input type="radio" name="badgenum" value="3"><span name="textSlot3">Slot 3</span></label> -- <label class=>(<span name="textUpload">Upload</span>) <input type="file" id="custombadge" style="display: none;" accept="image/*"></label>
+                            <div class="imglistcontainer"><div id="badgecontainer"></div></div>
+                        </div>
 
-                    <a id="downloadlink" download="splashtag.png"><input id="downloadbutton" type="button" value="Download!" name="buttonDownload" disabled></a>
+                        <a id="downloadlink" download="splashtag.png"><input id="downloadbutton" type="button" value="Download!" name="buttonDownload" disabled></a>
+                    </div>
                 </div>
             </div>
+            <br>
+            <!--<div id="langmessage">If there's any text errors, please DM me on Twitter!<br><span name="textMessage"></span></div>-->
+            <footer>
+                <div id="languageSelector">
+                    <span name="textLanguage">Language</span>: <select id="lang"></select>
+                </div>
+                <div>
+                    Website made by <a href="https://twitter.com/spaghettitron/">@spaghettitron</a>, minor contribution by <a href="https://twitter.com/Raven_The_Cute">@Raven_The_Cute</a>
+                    <br>
+                    Images and titles acquired by <a href="https://twitter.com/LeanYoshi">@LeanYoshi</a>
+                    <br>
+                    Band banners are made by <a href="https://twitter.com/DeadLineSMB_Art/">@DeadLineSMB_Art</a>
+                </div>
+            </footer>
         </div>
-
-        <br>
-        <div id="langmessage">If there's any text errors, please DM me on Twitter!<br><span name="textMessage"></span></div>
-        
-        <footer>
-            <div id="languageSelector">
-                <span name="textLanguage">Language</span>: <select id="lang"></select>
-            </div>
-            <div>
-                Website made by <a href="https://twitter.com/spaghettitron/">@spaghettitron</a>, minor contribution by <a href="https://twitter.com/Raven_The_Cute">@Raven_The_Cute</a>
-                <br>
-                Images and titles acquired by <a href="https://twitter.com/LeanYoshi">@LeanYoshi</a>
-                <br>
-                Band banners are made by <a href="https://twitter.com/DeadLineSMB_Art/">@DeadLineSMB_Art</a>
-            </div>
-        </footer>
     </body>
 </html>

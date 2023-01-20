@@ -184,10 +184,17 @@ footer {
 
     border-top: solid 1px black;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     text-align: center;
+}
+
+.sitecontent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#container {
+    flex: 1;
 }
 
 .tab {
@@ -222,10 +229,14 @@ footer {
 }
 
 .imglistcontainer {
-    overflow-y: overlay;
+    overflow-y: scroll;
     width: 750px;
     margin: auto;
     padding-top: 8px;
+}
+
+.chrome .imglistcontainer {
+    overflow-y: overlay;
 }
 
 .imglistcontainer > div {
@@ -251,14 +262,19 @@ footer {
 
 #bannercontainer img {
     width: 170px;
+    height: calc(200 / 700 * 170px);
 }
 
 #badgecontainer img {
     width: 64px;
+    height: 64px;
 }
 
 input[type="radio"] {
     display: none;
+}
+input[type="file"] {
+    width: 240px;
 }
 
 input[type="radio"]:checked + span {
@@ -290,18 +306,25 @@ img.selected {
     height: 1px;
 }
 
-div[data-name="banners"] {
-    padding-top: 40px;
-}
-
 div[data-name="text"] {
     padding-top: 40px;
 }
 
 div[data-name="text"] table {
-    padding-bottom: 62px;
+    height: 208px;
 }
 
 #downloadbutton {
     margin: 8px;
+}
+
+.hidecustom .custom {
+    display: none;
+}
+.showcustom .notcustom {
+    display: none;
+}
+
+label {
+    cursor: pointer;
 }
