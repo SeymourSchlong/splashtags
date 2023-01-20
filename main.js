@@ -193,7 +193,8 @@ const load = () => {
                 textMessage: "If there's any text errors, please DM me on Twitter!",
                 textCustom: "Custom",
                 textUpload: "Upload",
-                textToggle: "Toggle"
+                textToggle: "Toggle",
+                textColour: "Colour"
             },
             default: ["Splatlandian", "Youth"]
         },
@@ -225,7 +226,8 @@ const load = () => {
                 textMessage: "Si hay algún error de texto, ¡envíame un mensaje privado en Twitter!",
                 textCustom: "Personalizar",
                 textUpload: "Subir",
-                textToggle: "Activado"
+                textToggle: "Activado",
+                textColour: "Color"
             },
             default: ["Jovenzuelo", "tintelian"]
         },
@@ -257,7 +259,8 @@ const load = () => {
                 textMessage: "Si hay algún error de texto, ¡envíame un mensaje privado en Twitter!",
                 textCustom: "Personalizar",
                 textUpload: "Subir",
-                textToggle: "Activado"
+                textToggle: "Activado",
+                textColour: "Color"
             },
             default: ["Jovencito", "tintelian"]
         },
@@ -289,7 +292,8 @@ const load = () => {
                 textMessage: "S'il y a des erreurs de texte, veuillez m'envoyer un DM sur Twitter!",
                 textCustom: "Personnaliser",
                 textUpload: "Insérez le vôtre",
-                textToggle: "Activée"
+                textToggle: "Activée",
+                textColour: "Couleur"
             },
             default: ["Jeune", "de la Contrée Clabousse"]
         },
@@ -321,7 +325,8 @@ const load = () => {
                 textMessage: "S'il y a des erreurs de texte, veuillez m'envoyer un DM sur Twitter!",
                 textCustom: "Personnaliser",
                 textUpload: "Insérez le vôtre",
-                textToggle: "Activée"
+                textToggle: "Activée",
+                textColour: "Couleur"
             },
             default: ["Jeune", "de la Contrée Clabousse"]
         },
@@ -353,7 +358,8 @@ const load = () => {
                 textMessage: "Als er tekstfouten zijn, stuur me dan een DM op Twitter!",
                 textCustom: "Aanpassen",
                 textUpload: "Uploaden",
-                textToggle: "Ingeschakeld"
+                textToggle: "Ingeschakeld",
+                textColour: "Kleur"
             },
             default: ["Splatlandisch", "jongere"]
         },
@@ -385,7 +391,8 @@ const load = () => {
                 textMessage: "Wenn es irgendwelche Textfehler gibt, schicke mir bitte eine DM auf Twitter!",
                 textCustom: "Anpassen",
                 textUpload: "Ermöglicht",
-                textToggle: "Aktiviert"
+                textToggle: "Aktiviert",
+                textColour: "Farbe"
             },
             default: ["Splatsville-", "Jungspund"]
         },
@@ -418,7 +425,8 @@ const load = () => {
                 textMessage: "Se ci sono errori di testo, per favore DM me su Twitter!",
                 textCustom: "Personalizzare",
                 textUpload: "Caricare",
-                textToggle: "Attivato"
+                textToggle: "Attivato",
+                textColour: "Colore"
             },
             default: ["Fanciullo", "splattonian"]
         },
@@ -451,7 +459,8 @@ const load = () => {
                 textMessage: "Если есть какие-либо текстовые ошибки, пожалуйста, напишите мне в Твиттере!",
                 textCustom: "Настроить",
                 textUpload: "Закачать",
-                textToggle: "Активировано"
+                textToggle: "Активировано",
+                textColour: "Цвет"
             },
             default: ["плюхтонск", "парень"]
         },
@@ -483,7 +492,8 @@ const load = () => {
                 textMessage: "誤字脱字等ありましたらツイッターのDMまで！",
                 textCustom: "カスタマイズ",
                 textUpload: "アップロード",
-                textToggle: "有効化"
+                textToggle: "有効化",
+                textColour: "色"
             },
             default: ["バンカラな", "若者"]
         },
@@ -515,7 +525,8 @@ const load = () => {
                 textMessage: "如果有任何文本错误，请在 Twitter 上私信我！",
                 textCustom: "自定义",
                 textUpload: "上传",
-                textToggle: "启用"
+                textToggle: "启用",
+                textColour: "颜色"
             },
             default: ["蛮颓的", "年轻人"]
         },
@@ -547,7 +558,8 @@ const load = () => {
                 textMessage: "오타가 있을 시 트위터 DM 부탁드립니다!",
                 textCustom: "사용자 지정",
                 textUpload: "업로드",
-                textToggle: "활성화됨"
+                textToggle: "활성화됨",
+                textColour: "색깔"
             },
             default: ["카오폴리스의", "젊은이"]
         },
@@ -579,7 +591,8 @@ const load = () => {
                 textMessage: "如果有任何文本錯誤，請在 Twitter 上私信我！",
                 textCustom: "自定義",
                 textUpload: "上傳",
-                textToggle: "啟用"
+                textToggle: "啟用",
+                textColour: "顏色"
             },
             default: ["蠻頹的", "年輕人"]
         }
@@ -924,9 +937,7 @@ const load = () => {
     tag.title.first = lang[language].titles.first.indexOf(lang[language].default[0]);
     tag.title.last = lang[language].titles.last.indexOf(lang[language].default[1]);
 
-    const bannerContainer = document.querySelector('#bannercontainer');
-
-    // future taylor -- add click event function
+    const bannerContainer = document.querySelector('#bannercontainer')
 
     const bannerClickEvent = (item, img) => {
         const newBanner = banners.findIndex(b => b.file === item.file);
