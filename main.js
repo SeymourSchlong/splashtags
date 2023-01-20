@@ -1114,9 +1114,11 @@ const load = () => {
                             // allow for no badge
                             const badge = randIndex(randBadges);
                             if (badge) {
-                                randBadges.splice(badge, 1);
+                                const selected = randBadges.splice(badge, 1);
+                                tag.badges[i] = badges.indexOf(selected[0]);
+                            } else {
+                                tag.badges[i] = -1;
                             }
-                            tag.badges[i] = badge - 1;
                         }
                         badgeRadios[0].click();
                         document.querySelectorAll('#badgecontainer img.selected, #badgecontainer img.other').forEach(s => {
@@ -1298,7 +1300,7 @@ const load = () => {
                 });
             });
 
-            //console.log(`Loaded: ${banners.length} banners, ${badges.length} badges, and ${lang[language].titles.first.length + lang[language].titles.last.length} titles.`);
+            console.log(`Loaded: ${banners.length} banners, ${badges.length} badges, and ${lang[language].titles.first.length + lang[language].titles.last.length} titles.`);
             
             return true;
         }
