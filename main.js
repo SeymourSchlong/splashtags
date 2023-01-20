@@ -915,6 +915,9 @@ const load = () => {
     const custombadges = document.querySelector('#custombadge');
     const customcolour = document.querySelector('#customcolour');
 
+    customtitle.value = lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : '');
+    customtitle.placeholder = customtitle.value;
+
     const tabContainer = document.querySelector('.tabcontainer');
     const tabs = document.querySelectorAll('.tab');
     const tabContents = document.querySelectorAll('.tabcontent');
