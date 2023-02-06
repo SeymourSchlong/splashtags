@@ -4,55 +4,117 @@ const load = () => {
         {file:"./banners/Npl_Catalog_Season01_Lv01.png",colour:"001f65"},{file:"./banners/Npl_Catalog_Season01_Lv02.png",colour:"8e102c"},{file:"./banners/Npl_Catalog_Season01_Lv03.png",colour:"bb4d00"},{file:"./banners/Npl_Catalog_Season01_Lv04.png",colour:"3f92c5"},{file:"./banners/Npl_Catalog_Season01_Lv05.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv06.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv07.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv08.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv09.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv10.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv11.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv12.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv13.png",colour:"000705"},{file:"./banners/Npl_Catalog_Season01_Lv14.png",colour:"ebffbb"},{file:"./banners/Npl_Catalog_Season01_Lv15.png",colour:"070100"},{file:"./banners/Npl_Catalog_Season01_Lv16.png",colour:"f9e0ff"},{file:"./banners/Npl_Catalog_Season01_Lv17.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv18.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv19.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv20.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv21.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv22.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv23.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv24.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv25.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv26.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv27.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv28.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv29.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv30.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv31.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv32.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv33.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv34.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv35.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv36.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv37.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv38.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv39.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv40.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv41.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv42.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv43.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv44.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv45.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv46.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv47.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv48.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv49.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv50.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv51.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv52.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv53.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv54.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv55.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv56.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv57.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv58.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv59.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv60.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv61.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv62.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv63.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv64.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv65.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv66.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv67.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv68.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv69.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv70.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv71.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv72.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv73.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv74.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv75.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv76.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv77.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv78.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv79.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv80.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv81.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv82.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season02_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season02_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv03.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv04.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv05.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv06.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv07.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv08.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv09.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv10.png",colour:"ffffff"},{file:"./banners/Npl_Lot_Season01_Lv01.png",colour:"4e3000"},{file:"./banners/Npl_Lot_Season02_Lv01.png",colour:"4e3000"},{file:"./banners/Npl_Mng_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Mng_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Mng_Lv03.png",colour:"ffffff"},{file:"./banners/Npl_Trg_Season01_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Trg_Season01_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Tutorial00.png",colour:"ffffff"}
     ];
     
-    // @DeadLineSMB_art on twitter
-    const deadlineBanners = [
+    const customBanners = [
+        // @DeadLineSMB_art
         {
-            file: './deadlinebanners/Bottom_Feeders.png',
+            file: './custom/banners/deadline/Bottom_Feeders.png',
             colour: '54e170'
         },
         {
-            file: './deadlinebanners/Chirpy_Chips.png',
+            file: './custom/banners/deadline/Chirpy_Chips.png',
             colour: '4afed7'
         },
         {
-            file: './deadlinebanners/C-Side.png',
+            file: './custom/banners/deadline/C-Side.png',
             colour: 'ffe421'
         },
         {
-            file: './deadlinebanners/Ded-F1sh.png',
+            file: './custom/banners/deadline/Ded-F1sh.png',
             colour: '0cffc3'
         },
         {
-            file: './deadlinebanners/Diss-Pair.png',
+            file: './custom/banners/deadline/Diss-Pair.png',
             colour: 'bdfa57'
         },
         {
-            file: './deadlinebanners/Front_Roe.png',
+            file: './custom/banners/deadline/Front_Roe.png',
             colour: '37fe49'
         },
         {
-            file: './deadlinebanners/High-Tide_Era.png',
+            file: './custom/banners/deadline/High-Tide_Era.png',
             colour: 'ffffff'
         },
         {
-            file: './deadlinebanners/Ink_Theory.png',
+            file: './custom/banners/deadline/Ink_Theory.png',
             colour: 'ffffff'
         },
         {
-            file: './deadlinebanners/Omega-3.png',
+            file: './custom/banners/deadline/Omega-3.png',
             colour: 'ffffff'
         },
         {
-            file: './deadlinebanners/SashiMori.png',
+            file: './custom/banners/deadline/SashiMori.png',
             colour: 'ffffff'
         },
         {
-            file: './deadlinebanners/Wet_Floor.png',
+            file: './custom/banners/deadline/Wet_Floor.png',
             colour: 'ffffff'
-        }
-    ];
+        },
 
-    const customBanners = [
+        // @ElectroDev
+        {
+            file: './custom/banners/electrodev/booyah.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/bubbler.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/crab.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/jet.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/missile.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/reef.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/stamp.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/storm.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/strike.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/tac.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/vac.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/wail.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/wave.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/zip.png',
+            colour: 'ffffff'
+        },
+        {
+            file: './custom/banners/electrodev/zooka.png',
+            colour: 'ffffff'
+        },
+        
+
+        // @spaghettitron
         {
             file: './custom/banners/camo-black.png',
             colour: 'ffffff'
@@ -616,8 +678,7 @@ const load = () => {
     const images = {
         banners: [],
         badges: [],
-        watermark: null,
-        watermark2: null
+        watermarks: [],
     }
 
     let rawParams;
@@ -813,8 +874,8 @@ const load = () => {
             if (b !== -1) customBadge = customBadge || badges[b].includes('data') || badges[b].includes('custom');
         });
 
-        ['deadline', 'custom', 'data'].forEach(word => {
-            customBanner = customBanner || banners[tag.banner].file.includes(word)
+        ['custom', 'data'].forEach(word => {
+            customBanner = customBanner || banners[tag.banner].file.includes(word);
         })
 
         // draw small watermark if using custom assets
@@ -834,15 +895,42 @@ const load = () => {
             textCtx.font = '14px Splat-text';
             textCtx.textAlign = 'center';
             textCtx.fillStyle = '#ffffff';
-            if (banners[tag.banner].file.includes('deadline')) {
-                textCtx.drawImage(images.watermark, 700 - wm.width - wm.offset.x, wm.offset.y, wm.width, wm.height);
-                textCtx.fillText('DeadLine', 700 - wm.offset.x - wm.width/2, wm.offset.y + wm.height + wm.textoffset);
+            const wmX = 700 - wm.width - wm.offset.x;
+            const textPos = {
+                x: 700 - wm.offset.x - wm.width/2,
+                y: wm.offset.y + wm.height + wm.textoffset
+            }
+
+            const artists = [
+                {
+                    dir: '/deadline/',
+                    name: 'DeadLine',
+                    offset: 0
+                },
+                {
+                    dir: '/electrodev/',
+                    name: 'ElectroDev',
+                    offset: 4
+                }
+            ];
+
+            let customArtist = -1;
+            artists.forEach(a => {
+                if (banners[tag.banner].file.includes(a.dir)) {
+                    customArtist = artists.indexOf(a);
+                }
+            });
+
+            if (customArtist+1) {
+                const a = artists[customArtist];
+                textCtx.drawImage(images.watermarks[customArtist+1], wmX - a.offset, wm.offset.y, wm.width, wm.height);
+                textCtx.fillText(a.name, textPos.x - a.offset, textPos.y);
                 if (tag.custom.isCustom || customBadge) {
-                    textCtx.fillText('custom', 700 - wm.offset.x - wm.width/2, wm.offset.y + wm.height + wm.textoffset + 14);
+                    textCtx.fillText('custom', textPos.x - a.offset, textPos.y + 14);
                 }
             } else {
-                textCtx.drawImage(images.watermark, 700 - wm.width - wm.offset.x, wm.offset.y, wm.width, wm.height);
-                textCtx.fillText('custom', 700 - wm.offset.x - wm.width/2, wm.offset.y + wm.height + wm.textoffset);
+                textCtx.drawImage(images.watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
+                textCtx.fillText('custom', textPos.x, textPos.y);
             }
 
             textCtx.globalAlpha = 1;
@@ -858,9 +946,7 @@ const load = () => {
     }
 
     /* Credit to @DeadLineSMB_Art on Twitter for the special band banners */
-    deadlineBanners.forEach(item => {
-        banners.push(item);
-    });
+    /* Credit to @ElectroDev on Twitter for the special weapon banners */
     customBanners.forEach(item => {
         banners.push(item);
     });
@@ -874,14 +960,21 @@ const load = () => {
         let img = new Image();
         img.src = './watermark.png';
         img.onload = loadQueue.pop();
-        images.watermark = img;
+        images.watermarks.push(img);
     }
     {
         loadQueue.push(1);
         let img = new Image();
-        img.src = './watermark2.png';
+        img.src = './deadline.png';
         img.onload = loadQueue.pop();
-        images.watermark2 = img;
+        images.watermarks.push(img);
+    }
+    {
+        loadQueue.push(1);
+        let img = new Image();
+        img.src = './electrodev.png';
+        img.onload = loadQueue.pop();
+        images.watermarks.push(img);
     }
     banners.forEach(item => {
         loadQueue.push(1);
