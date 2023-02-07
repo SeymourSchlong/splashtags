@@ -7,4 +7,5 @@ Custom Splatoon 3 Splashtag maker
 Website created by [@spaghettitron](https://twitter.com/spaghettitron/)  
 Images and titles acquired by [@LeanYoshi](https://twitter.com/LeanYoshi/)  
 Special band banners are made by [@DeadLineSMB_Art](https://twitter.com/DeadLineSMB_Art)  
+Special weapon banners are made by [@ElectroDev](https://twitter.com/EIectroDev)  
 Splatoon, fonts, and its images are property of Nintendo  
