@@ -39,6 +39,10 @@ const load = () => {
             colour: 'ffffff'
         },
         {
+            file: './custom/banners/deadline/Off_the_Hook.png',
+            colour: 'ffffff'
+        },
+        {
             file: './custom/banners/deadline/Omega-3.png',
             colour: 'ffffff'
         },
