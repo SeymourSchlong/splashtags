@@ -1,14 +1,14 @@
 const load = () => {
     const loadQueue = [];
     const banners = [
-        {text: "Default",id: 'banner-vanilla'},
+        {name: "vanilla",id: 'banner-vanilla'},
         {file:"./banners/Npl_Catalog_Season01_Lv01.png",colour:"001f65"},{file:"./banners/Npl_Catalog_Season01_Lv02.png",colour:"8e102c"},{file:"./banners/Npl_Catalog_Season01_Lv03.png",colour:"bb4d00"},{file:"./banners/Npl_Catalog_Season01_Lv04.png",colour:"3f92c5"},{file:"./banners/Npl_Catalog_Season01_Lv05.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv06.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv07.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv08.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv09.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv10.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv11.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv12.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv13.png",colour:"000705"},{file:"./banners/Npl_Catalog_Season01_Lv14.png",colour:"ebffbb"},{file:"./banners/Npl_Catalog_Season01_Lv15.png",colour:"070100"},{file:"./banners/Npl_Catalog_Season01_Lv16.png",colour:"f9e0ff"},{file:"./banners/Npl_Catalog_Season01_Lv17.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv18.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv19.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv20.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv21.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv22.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv23.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv24.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv25.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv26.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv27.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv28.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv29.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv30.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv31.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv32.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv33.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv34.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv35.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv36.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv37.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv38.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv39.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv40.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv41.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv42.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv43.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv44.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv45.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv46.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv47.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv48.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv49.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv50.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv51.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv52.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv53.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv54.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv55.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv56.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv57.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv58.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv59.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv60.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv61.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv62.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv63.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv64.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv65.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv66.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv67.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv68.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv69.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv70.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv71.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv72.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv73.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv74.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv75.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv76.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv77.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv78.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv79.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv80.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv81.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv82.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season02_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season02_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv03.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv04.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv05.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv06.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv07.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv08.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv09.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv10.png",colour:"ffffff"},{file:"./banners/Npl_Lot_Season01_Lv01.png",colour:"4e3000"},{file:"./banners/Npl_Lot_Season02_Lv01.png",colour:"4e3000"},{file:"./banners/Npl_Mng_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Mng_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Mng_Lv03.png",colour:"ffffff"},{file:"./banners/Npl_Trg_Season01_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Trg_Season01_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Tutorial00.png",colour:"ffffff"}
     ];
     
     const customBanners = [
         // @DeadLineSMB_art
         {
-            text: 'Bands (Custom)',id: 'banner-bands-custom'
+            name: 'bandCustom',id: 'banner-bands-custom'
         },
         {file: './custom/banners/deadline/Bottom_Feeders.png',colour: '54e170'},
         {file: './custom/banners/deadline/Chirpy_Chips.png',colour: '4afed7'},
@@ -25,7 +25,7 @@ const load = () => {
 
         // @ElectroDev
         {
-            text: 'Special Weapons (Custom)',id: 'banner-specials-custom'
+            name: 'specCustom',id: 'banner-specials-custom'
         },
         {file: './custom/banners/electrodev/booyah.png',colour: 'ffffff'},
         {file: './custom/banners/electrodev/bubbler.png',colour: 'ffffff'},
@@ -46,7 +46,7 @@ const load = () => {
 
         // @spaghettitron
         {
-            text: 'Stages (Custom)',id: 'banner-stages-custom'
+            name: 'mapsCustom',id: 'banner-stages-custom'
         },
         {file: './custom/banners/stages/brinewater.png',colour: 'ffffff'},
         {file: './custom/banners/stages/eeltail.png',colour: 'ffffff'},
@@ -68,7 +68,7 @@ const load = () => {
         {file: './custom/banners/stages/coop-spawninggrounds.png',colour: 'ffffff'},
 
         {
-            text: 'Other (Custom)',id: 'banner-other-custom'
+            name: 'miscCustom',id: 'banner-other-custom'
         },
         {file: './custom/banners/deepsea.png',colour: 'ffffff'},
         {file: './custom/banners/swapdoodle.png',colour: '222222'},
@@ -79,31 +79,31 @@ const load = () => {
         {file: './custom/banners/catalog2.png',colour: 'ffffff'},
 
         {
-            text: 'Uploaded (Custom)',id: 'banner-uploaded-custom'
+            name: 'userCustom',id: 'banner-uploaded-custom'
         },
     ];
     
     const badges = [
-        "TEXT:Salmon Run#badge-salmon",
+        "NAME:coop#badge-salmon",
         "./badges/Badge_CoopBigRunTrophy_Lv00.png","./badges/Badge_CoopBigRunTrophy_Lv01.png","./badges/Badge_CoopBigRunTrophy_Lv02.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv00.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv01.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv02.png","./badges/Badge_TotalKumaPoint_Lv00.png","./badges/Badge_TotalKumaPoint_Lv01.png","./badges/Badge_TotalKumaPoint_Lv02.png","./badges/Badge_CoopClearDangerRateMax.png",
         "./badges/Badge_CoopGrade_Normal_Shakedent_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv03.png",
         "./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv02.png",
-        "TEXT:Gamemodes#badge-gamemodes",
+        "NAME:mode#badge-gamemodes",
         "./badges/Badge_NawaBattlerCardNum_Lv00.png","./badges/Badge_NawaBattlerCardNum_Lv01.png","./badges/Badge_NawaBattlerCardNum_Lv02.png","./badges/Badge_NawaBattlerRank_Lv00.png","./badges/Badge_NawaBattlerRank_Lv01.png","./badges/Badge_NawaBattlerRank_Lv02.png","./badges/Badge_NawaBattlerWinAllNpcLevel3.png","./badges/Badge_WinCount_Pnt_Lv00.png","./badges/Badge_WinCount_Pnt_Lv01.png","./badges/Badge_WinCount_Pnt_Lv02.png","./badges/Badge_WinCount_Tcl_Atk_Lv00.png","./badges/Badge_WinCount_Tcl_Atk_Lv01.png","./badges/Badge_WinCount_Tcl_Def_Lv00.png","./badges/Badge_WinCount_Tcl_Def_Lv01.png","./badges/Badge_Udemae_Lv00.png","./badges/Badge_Udemae_Lv01.png","./badges/Badge_Udemae_Lv02.png","./badges/Badge_WinCount_Var_Lv00.png","./badges/Badge_WinCount_Var_Lv01.png","./badges/Badge_WinCount_Vcl_Lv00.png","./badges/Badge_WinCount_Vcl_Lv01.png","./badges/Badge_WinCount_Vgl_Lv00.png","./badges/Badge_WinCount_Vgl_Lv01.png","./badges/Badge_WinCount_Vlf_Lv00.png","./badges/Badge_WinCount_Vlf_Lv01.png",
-        "TEXT:Shops#badge-shops",
+        "NAME:shop#badge-shops",
         "./badges/Badge_LimitedRewardLottery_Lv00.png","./badges/Badge_LimitedRewardLottery_Lv01.png","./badges/Badge_LimitedRewardLottery_Lv02.png","./badges/Badge_OrderFood_Lv00.png","./badges/Badge_OrderFood_Lv01.png","./badges/Badge_OrderFood_Lv02.png","./badges/Badge_OrderVendor_Lv00.png","./badges/Badge_OrderVendor_Lv01.png","./badges/Badge_SpendLottery_Lv00.png","./badges/Badge_SpendLottery_Lv01.png","./badges/Badge_SpendLottery_Lv02.png","./badges/Badge_SpendShop_Clothes_Lv00.png","./badges/Badge_SpendShop_Clothes_Lv01.png","./badges/Badge_SpendShop_Goods_Lv00.png","./badges/Badge_SpendShop_Goods_Lv01.png","./badges/Badge_SpendShop_Head_Lv00.png","./badges/Badge_SpendShop_Head_Lv01.png","./badges/Badge_SpendShop_Shoes_Lv00.png","./badges/Badge_SpendShop_Shoes_Lv01.png",
-        "TEXT:Other#badge-other",
+        "NAME:misc#badge-other",
         "./badges/Badge_Mission_Lv00.png","./badges/Badge_Mission_Lv01.png","./badges/Badge_Mission_Lv02.png","./badges/Badge_Mission_Lv03.png","./badges/Badge_Mission_Lv04.png","./badges/Badge_FestRankMax.png","./badges/Badge_CatalogueLevel_Lv00.png","./badges/Badge_CatalogueLevel_Lv01.png",
-        "TEXT:Gear#badge-gear",
+        "NAME:gear#badge-gear",
         "./badges/Badge_GearTotalRarity_B00_Lv00.png","./badges/Badge_GearTotalRarity_B00_Lv01.png","./badges/Badge_GearTotalRarity_B01_Lv00.png","./badges/Badge_GearTotalRarity_B01_Lv01.png","./badges/Badge_GearTotalRarity_B02_Lv00.png","./badges/Badge_GearTotalRarity_B02_Lv01.png","./badges/Badge_GearTotalRarity_B03_Lv00.png","./badges/Badge_GearTotalRarity_B03_Lv01.png","./badges/Badge_GearTotalRarity_B04_Lv00.png","./badges/Badge_GearTotalRarity_B04_Lv01.png","./badges/Badge_GearTotalRarity_B05_Lv00.png","./badges/Badge_GearTotalRarity_B05_Lv01.png","./badges/Badge_GearTotalRarity_B06_Lv00.png","./badges/Badge_GearTotalRarity_B06_Lv01.png","./badges/Badge_GearTotalRarity_B07_Lv00.png","./badges/Badge_GearTotalRarity_B07_Lv01.png","./badges/Badge_GearTotalRarity_B08_Lv00.png","./badges/Badge_GearTotalRarity_B08_Lv01.png","./badges/Badge_GearTotalRarity_B09_Lv00.png","./badges/Badge_GearTotalRarity_B09_Lv01.png","./badges/Badge_GearTotalRarity_B10_Lv00.png","./badges/Badge_GearTotalRarity_B10_Lv01.png","./badges/Badge_GearTotalRarity_B11_Lv00.png","./badges/Badge_GearTotalRarity_B11_Lv01.png","./badges/Badge_GearTotalRarity_B15_Lv00.png","./badges/Badge_GearTotalRarity_B15_Lv01.png","./badges/Badge_GearTotalRarity_B16_Lv00.png","./badges/Badge_GearTotalRarity_B16_Lv01.png","./badges/Badge_GearTotalRarity_B17_Lv00.png","./badges/Badge_GearTotalRarity_B17_Lv01.png","./badges/Badge_GearTotalRarity_B19_Lv00.png","./badges/Badge_GearTotalRarity_B19_Lv01.png","./badges/Badge_GearTotalRarity_B20_Lv00.png","./badges/Badge_GearTotalRarity_B20_Lv01.png",
-        "TEXT:Special Weapons#badge-specials",
+        "NAME:spec#badge-specials",
         "./badges/Badge_WinCount_WeaponSp_SpBlower_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv02.png",
-        "TEXT:Weapons#badge-weapons",
+        "NAME:weps#badge-weapons",
         "./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv01.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv01.png"
     ];
     
     const customBadges = [
-        "TEXT:Weapons (Custom)#badge-weapons-custom",
+        "NAME:wepsCustom#badge-weapons-custom",
         "./custom/badges/weapons/herogun1.png",
         "./custom/badges/weapons/gold_herogun1.png",
         "./custom/badges/weapons/herogun2.png",
@@ -121,7 +121,7 @@ const load = () => {
         "./custom/badges/weapons/stringer.png",
         "./custom/badges/weapons/gold_stringer.png",
 
-        "TEXT:Subs/Specials (Custom)#badge-subs-custom",
+        "NAME:subsCustom#badge-subs-custom",
         "./custom/badges/misc/splashdown.png",
 
         "./custom/badges/subs/buddy.png",
@@ -140,7 +140,7 @@ const load = () => {
         "./custom/badges/subs/linemarker.png",
         "./custom/badges/subs/torpedo.png",
 
-        "TEXT:Gamemodes (Custom)#badge-modes-custom",
+        "NAME:modeCustom#badge-modes-custom",
         "./custom/badges/gamemodes/turfwar.png",
         "./custom/badges/gamemodes/private.png",
         "./custom/badges/gamemodes/xrank.png",
@@ -148,12 +148,12 @@ const load = () => {
         "./custom/badges/gamemodes/tricolor.png",
         "./custom/badges/gamemodes/tableturf.png",
 
-        "TEXT:Brands (Custom)#badge-weapons-custom",
+        "NAME:gearCustom#badge-weapons-custom",
         "./custom/badges/brands/amiibo.png",
         "./custom/badges/brands/cuttlegear.png",
         "./custom/badges/brands/grizzco.png",
 
-        "TEXT:Salmon Run (Custom)#badge-salmon-custom",
+        "NAME:gearCustom#badge-salmon-custom",
         "./custom/badges/salmonrun/smallfry.png",
         "./custom/badges/salmonrun/chum.png",
         "./custom/badges/salmonrun/cohock.png",
@@ -162,15 +162,19 @@ const load = () => {
         "./custom/badges/salmonrun/griller.png",
         "./custom/badges/salmonrun/chinook.png",
 
-        "TEXT:Characters (Custom)#badge-chars-custom",
+        "NAME:charCustom#badge-chars-custom",
         "./custom/badges/npcs/sheldon.png",
         "./custom/badges/npcs/liljudd.png",
         "./custom/badges/npcs/grizz.png",
         "./custom/badges/npcs/shiver.png",
         "./custom/badges/npcs/frye.png",
         "./custom/badges/npcs/bigman.png",
+        "./custom/badges/npcs/jelly_1.png",
+        "./custom/badges/npcs/jelly_2.png",
+        "./custom/badges/npcs/jelly_3.png",
+        "./custom/badges/npcs/jelly_4.png",
 
-        "TEXT:Icons (Custom)#badge-icons-custom",
+        "NAME:iconCustom#badge-icons-custom",
         "./custom/badges/misc/deepcut.png",
         "./custom/badges/misc/shivericon.png",
         "./custom/badges/misc/fryeicon.png",
@@ -180,7 +184,7 @@ const load = () => {
         "./custom/badges/misc/shell.png",
         "./custom/badges/misc/record.png",
 
-        "TEXT:Splatoon 2 Splatfests (Custom)#badge-fest2-custom",
+        "NAME:spf2Custom#badge-fest2-custom",
         "./custom/badges/splatfests2/fest0_1.png",
         "./custom/badges/splatfests2/fest0_2.png",
         "./custom/badges/splatfests2/fest1_1.png",
@@ -228,7 +232,7 @@ const load = () => {
         "./custom/badges/splatfests2/fest22_1.png",
         "./custom/badges/splatfests2/fest22_2.png",
 
-        "TEXT:Splatoon 3 Splatfests (Custom)#badge-fest3-custom",
+        "NAME:spf3Custom#badge-fest3-custom",
         "./custom/badges/splatfests3/fest0_1.png",
         "./custom/badges/splatfests3/fest0_2.png",
         "./custom/badges/splatfests3/fest0_3.png",
@@ -245,7 +249,7 @@ const load = () => {
         "./custom/badges/splatfests3/fest4_2.png",
         "./custom/badges/splatfests3/fest4_3.png",
 
-        "TEXT:Memcakes (Custom)#badge-memcake-custom",
+        "NAME:cakeCustom#badge-memcake-custom",
         "./custom/badges/memcakes/memcake_1.png",
         "./custom/badges/memcakes/memcake_2.png",
         "./custom/badges/memcakes/memcake_3.png",
@@ -327,7 +331,7 @@ const load = () => {
         "./custom/badges/memcakes/memcake_79.png",
         "./custom/badges/memcakes/memcake_80.png",
 
-        "TEXT:Uploaded (Custom)#badge-upload-custom",
+        "NAME:userCustom#badge-upload-custom",
     ];
 
     const lang = {
@@ -362,6 +366,36 @@ const load = () => {
                 textToggle: "Toggle",
                 textColour: "Colour"
             },
+            sections: {
+                banners: {
+                    vanilla: "Default",
+                    bandCustom: 'Bands',
+                    specCustom: 'Special Weapons',
+                    mapsCustom: 'Stages',
+                    miscCustom: 'Other',
+                    userCustom: 'Uploaded',
+                },
+                badges: {
+                    coop: "Salmon Run",
+                    mode: "Gamemodes",
+                    shop: "Shops",
+                    misc: "Other",
+                    gear: "Gear",
+                    spec: "Special Weapons",
+                    weps: "Weapons",
+                    wepsCustom: "Weapons",
+                    subsCustom: "Subs/Specials",
+                    modeCustom: "Gamemodes",
+                    gearCustom: "Brands",
+                    coopCustom: "Salmon Run",
+                    charCustom: "Characters",
+                    iconCustom: "Icons",
+                    spf2Custom: "Splatoon 2 Splatfests",
+                    spf3Custom: "Splatoon 3 Splatfests",
+                    cakeCustom: "Mem Cakes",
+                    userCustom: "Uploaded",
+                }
+            },
             default: ["Splatlandian", "Youth"]
         },
         // Spanish (Latin America)
@@ -394,6 +428,36 @@ const load = () => {
                 textUpload: "Subir",
                 textToggle: "Activado",
                 textColour: "Color"
+            },
+            sections: {
+                banners: {
+                    vanilla: "En el Juego",
+                    bandCustom: 'Bandas',
+                    specCustom: 'Especiales',
+                    mapsCustom: 'Mapas',
+                    miscCustom: 'Otro',
+                    userCustom: 'Subido',
+                },
+                badges: {
+                    coop: "Salmon Run",
+                    mode: "Modos",
+                    shop: "Tiendas",
+                    misc: "Otro",
+                    gear: "Marcas",
+                    spec: "Especiales",
+                    weps: "Armas",
+                    wepsCustom: "Armas",
+                    subsCustom: "Armas Secundarias",
+                    modeCustom: "Modos",
+                    gearCustom: "Marcas",
+                    coopCustom: "Salmon Run",
+                    charCustom: "Caracteres",
+                    iconCustom: "Iconos",
+                    spf2Custom: "Festivales 2",
+                    spf3Custom: "Festivales 3",
+                    cakeCustom: "Pastirrecuerdo",
+                    userCustom: "Subido",
+                }
             },
             default: ["Jovenzuelo", "tintelian"]
         },
@@ -428,6 +492,36 @@ const load = () => {
                 textToggle: "Activado",
                 textColour: "Color"
             },
+            sections: {
+                banners: {
+                    vanilla: "En el Juego",
+                    bandCustom: 'Bandas',
+                    specCustom: 'Especiales',
+                    mapsCustom: 'Mapas',
+                    miscCustom: 'Otro',
+                    userCustom: 'Subido',
+                },
+                badges: {
+                    coop: "Salmon Run",
+                    mode: "Modos",
+                    shop: "Tiendas",
+                    misc: "Otro",
+                    gear: "Marcas",
+                    spec: "Especiales",
+                    weps: "Armas",
+                    wepsCustom: "Armas",
+                    subsCustom: "Armas Secundarias",
+                    modeCustom: "Modos",
+                    gearCustom: "Marcas",
+                    coopCustom: "Salmon Run",
+                    charCustom: "Caracteres",
+                    iconCustom: "Iconos",
+                    spf2Custom: "Festivales 2",
+                    spf3Custom: "Festivales 3",
+                    cakeCustom: "Pastirrecuerdo",
+                    userCustom: "Subido",
+                }
+            },
             default: ["Jovencito", "tintelian"]
         },
         // French (France)
@@ -460,6 +554,36 @@ const load = () => {
                 textUpload: "Insérez le vôtre",
                 textToggle: "Activée",
                 textColour: "Couleur"
+            },
+            sections: {
+                banners: {
+                    vanilla: "En Jeu",
+                    bandCustom: 'Bandes',
+                    specCustom: 'Spéciaux',
+                    mapsCustom: 'Zones',
+                    miscCustom: 'Autre',
+                    userCustom: 'Téléchargé',
+                },
+                badges: {
+                    coop: "Salmon Run",
+                    mode: "Modes",
+                    shop: "Magasins",
+                    misc: "Autre",
+                    gear: "Marques",
+                    spec: "Spéciaux",
+                    weps: "Armes",
+                    wepsCustom: "Armes",
+                    subsCustom: "Armes Secondaires",
+                    modeCustom: "Modes",
+                    gearCustom: "Marques",
+                    coopCustom: "Salmon Run",
+                    charCustom: "Personnages",
+                    iconCustom: "Icônes",
+                    spf2Custom: "Festivals 2",
+                    spf3Custom: "Festivals 3",
+                    cakeCustom: "Souvenir Patapoulpe",
+                    userCustom: "Téléchargé",
+                }
             },
             default: ["Jeune", "de la Contrée Clabousse"]
         },
@@ -494,6 +618,36 @@ const load = () => {
                 textToggle: "Activée",
                 textColour: "Couleur"
             },
+            sections: {
+                banners: {
+                    vanilla: "En Jeu",
+                    bandCustom: 'Bandes',
+                    specCustom: 'Spéciaux',
+                    mapsCustom: 'Zones',
+                    miscCustom: 'Autre',
+                    userCustom: 'Téléchargé',
+                },
+                badges: {
+                    coop: "Salmon Run",
+                    mode: "Modes",
+                    shop: "Magasins",
+                    misc: "Autre",
+                    gear: "Marques",
+                    spec: "Spéciaux",
+                    weps: "Armes",
+                    wepsCustom: "Armes",
+                    subsCustom: "Armes Secondaires",
+                    modeCustom: "Modes",
+                    gearCustom: "Marques",
+                    coopCustom: "Salmon Run",
+                    charCustom: "Personnages",
+                    iconCustom: "Icônes",
+                    spf2Custom: "Festivals 2",
+                    spf3Custom: "Festivals 3",
+                    cakeCustom: "Souvenir Patapoulpe",
+                    userCustom: "Téléchargé",
+                }
+            },
             default: ["Jeune", "de la Contrée Clabousse"]
         },
         // Dutch
@@ -526,6 +680,36 @@ const load = () => {
                 textUpload: "Uploaden",
                 textToggle: "Ingeschakeld",
                 textColour: "Kleur"
+            },
+            sections: {
+                banners: {
+                    vanilla: "In het spel",
+                    bandCustom: 'Banden',
+                    specCustom: 'Speciale Wapens',
+                    mapsCustom: 'Gebieden',
+                    miscCustom: 'Gemengd',
+                    userCustom: 'Geüpload',
+                },
+                badges: {
+                    coop: "Salmon Run",
+                    mode: "Spelmodi",
+                    shop: "Winkels",
+                    misc: "Gemengd",
+                    gear: "Merken",
+                    spec: "Speciale Wapens",
+                    weps: "Wapens",
+                    wepsCustom: "Wapens",
+                    subsCustom: "Sub-wapens",
+                    modeCustom: "Spelmodi",
+                    gearCustom: "Merken",
+                    coopCustom: "Salmon Run",
+                    charCustom: "Karakters",
+                    iconCustom: "Pictogrammen",
+                    spf2Custom: "Splatfeest 2",
+                    spf3Custom: "Splatfeest 3",
+                    cakeCustom: "Komco-souvenir",
+                    userCustom: "Geüpload",
+                }
             },
             default: ["Splatlandisch", "jongere"]
         },
@@ -560,10 +744,39 @@ const load = () => {
                 textToggle: "Aktiviert",
                 textColour: "Farbe"
             },
+            sections: {
+                banners: {
+                    vanilla: "Im Spiel",
+                    bandCustom: 'Musikgruppe',
+                    specCustom: 'Spezielle Waffen',
+                    mapsCustom: 'Bereiche',
+                    miscCustom: 'Sonstig',
+                    userCustom: 'Hochgeladen',
+                },
+                badges: {
+                    coop: "Salmon Run",
+                    mode: "Spielmodi",
+                    shop: "Geschäfte",
+                    misc: "Sonstig",
+                    gear: "Marken",
+                    spec: "Spezielle Waffen",
+                    weps: "Waffen",
+                    wepsCustom: "Waffen",
+                    subsCustom: "Sekundärwaffen",
+                    modeCustom: "Spielmodi",
+                    gearCustom: "Marken",
+                    coopCustom: "Salmon Run",
+                    charCustom: "Figuren",
+                    iconCustom: "Symbole",
+                    spf2Custom: "Splatfest 2",
+                    spf3Custom: "Splatfest ",
+                    cakeCustom: "Kamabo-Souvenir",
+                    userCustom: "Hochgeladen",
+                }
+            },
             default: ["Splatsville-", "Jungspund"]
         },
         // Italian
-        // no ui
         EUit: {
             name: "Italiano",
             titles: {
@@ -594,15 +807,44 @@ const load = () => {
                 textToggle: "Attivato",
                 textColour: "Colore"
             },
+            sections: {
+                banners: {
+                    vanilla: "In gioco",
+                    bandCustom: 'Gruppo musicale',
+                    specCustom: 'Armi speciali',
+                    mapsCustom: 'Le zone',
+                    miscCustom: 'Varie',
+                    userCustom: 'Caricato',
+                },
+                badges: {
+                    coop: "Salmon Run",
+                    mode: "Modalità di gioco",
+                    shop: "Negozi",
+                    misc: "Varie",
+                    gear: "Marche",
+                    spec: "Armi speciali",
+                    weps: "Armi",
+                    wepsCustom: "Armi",
+                    subsCustom: "Armi secondarie",
+                    modeCustom: "Modalità di gioco",
+                    gearCustom: "Marche",
+                    coopCustom: "Salmon Run",
+                    charCustom: "Caratteri",
+                    iconCustom: "Icone",
+                    spf2Custom: "Splatfest 2",
+                    spf3Custom: "Splatfest 3",
+                    cakeCustom: "Souvenir Impastec",
+                    userCustom: "Caricato",
+                }
+            },
             default: ["Fanciullo", "splattonian"]
         },
         // Russian
-        // no ui
         EUru: {
             name: "Pусский",
             titles: {
-                first: ["No Title", "совершенн","наученн опытом","микроскопическ","половинчат","планирующ наперед","коллекционирующ amiibo","кальмарн","диджейн","симпатичн","техничн","шатающ","виртуальн","активн в бою X","ранн","круглосуточн","пожизненн","активн в бою салаг","сногсшибательн","случайн","невероятн","восьмищуп","десятищуп","активн в трехцветной стычке","активн в «Кусь да Красе»","передов","ностальгичн","сверхудачлив","сухопутн","больш","голодн","преимущественн","океанск","охотящ на сковорейдеров","крупн","дерзк","активн в Холле","маленьк","горн","работающ","грациозн","отысканн","непобедим","отменн","наивн","празднующ день рождения","сегодняшн","нынешн","поднебесн","невиновн","древн","альтернск","причудлив","радостн","усиленн","безоружн","смышлен","обеденн","активн в «Камбалово»","конкурентн","водн","аквариумн","огненн","палящ","озаренн","топов","центральн","лучш в мире","многолетн","веков","обожаем","зимн","утепленн","отдыхающ зимой","североатлантическ","северо-тихоокеанск","ледовитоокеанск","бригадирствующ","полуночн","активн в «Картах и районе»","прошлогодн","устаревш","лимитированн","очередн","успешн","надежн","праворук","обоерук","леворук","укрупненн","ежедневн","смертоносн","незапятнанн","богемн","постоянн","королевск","нарушающ закон","подземн","тверд","жабродышащ","дневн","легк","полуденн","незамедлительн","готов","находящ в отпуске","раскаленн","гладк","автоматизированн","сенсационн","экономн","индоокеанск","опасн","почетн","полн сил","разговорчив","годн","шумн","соперничающ","космическ","заботлив","колк","молод","морщинист","растущ","взросл","готов к бою","скороспел","изысканн","ужасающ","методичн","опрятн","организованн","многообещающ","чемпионск","бородат","логичн","точн","метк","активн в Приливосливе","накачанн","состоявш","снимающ селфи","уверенн","натуральн","самопровозглашенн","морозн","охлажденн","трудолюбив","строг","передержанн","безупречн","непрерывно закрашивающ","умиротворенн","самоопределивш","перевоплотивш","нападающ","расслабленн","молчалив","выжат","спешащ","активн в частном бою","неоспорим","оголодавш","безвыходн","фешенебельн","несгибаем","злобн","ловящ момент","смешн","путешествующ во времени","стародавн","первичн","первейш","раннелетн","разбрызгивающ краску","колюч","любим","приставуч","роков","воющ","мстительн","жидк","чудотворн","отчужденн","уединенн","одинок","инкопольск","пригородно-инкопольск","активн на площади","пляжн","удачлив","так называем","фотографирующ","прокрастинирующ","новогодн","активн в «Каравелле»","стопроцентн","активн в «Мече и Хвосте»","гранжев","залит краской","универсальн","штормов","нормальков","ни рыбн","тухлячков","СВЕЖАЧКОВ","упрям","прямоэфирн","закончивш стрим","величайш","мясист","пушист","ароматн","активн в «Де Берикс»","длиннорукавн","андеграундн","авангардн","мгновенн","южноатлантическ","южно-тихоокеанск","южноокеанск","крепк","ребячлив","кротк","диванн","домашн","уличн","хитр","крут","славн","срезающ путь","опрометчив","весенн","свеженьк","вчерашн","мягк","оживленн","вездесущ","бодр","популярн","порхающ","помпезн","проглотивш язык","естественн","смотрящ в камеру","осенн","позднелетн","коричнев","ал","повседневн","отличн","тонк","похвальн","активн в сюжете","заказн","важн","сверхзвуков","ветрен","летящ","перекусывающ","танцующ на волнах","учащ","нов","напорист","готическ","готически-увлеченн","летн","знойн","стеснительн","активн в «Горбуша-Маркет»","вечн","задающ тренды","модняв","стильн","активн в «Лепоте»","морск","речн","приморск","готов к плаванию","смоляно-черн","истощенн","искренн","качественн","верн","истинн","активн на Акульем мосту","уязвим","беспрецедентн","рассветн","празднующ","благоговейн","мистическ","молниеносн","свят","секретн","эзотерическ","стояч","ездящ без рук","ослепительн","белоснежн","чистейш","божественн","неимущ","активн в Тухловодске","кратерн","пустошн","надут","потерянн","бесхребетн","пролетающ","светящ","искрящ","пестрящ","лучезарн","полностью выкладывающ","восходящ","плодотворн","активн в «Золотой рыбке»","пойманн в отливе","закаленн","реалистичн","национальн","настойчив","профессиональн","тухл","подавляющ","благоприятн","плутающ","рано встающ","заплаканн","глубоководн","сомнительн","хаотичн","незатейлив","неистов","сладк","внеземн","серединнолетн","зорк","вторичн","ретро","радикальн","жадн","скуп","известн как","городск","дик","бурн","заснеженн","бесподобн","активн в цеху «Тартар»","активн в «Ломе»","онемел","нежн","забывчив","рыбачащ","имущ","од","винтажн","рисующ","активн в Splatoon","прост","отдыхающ","сам","дебютн","финальн","сильнейш","лучш","новейш","оптимистичн","лесн","безымянн","вольн","видн","бесконечн","безвкусн","невозмутим","безжалостн","непревзойденн","кульминационн","остр","мерцающ","стойк","пухов","шикарн","сверхчеловеческ","оглушительн","крышесносн","оборонн","прорывн","сверхсвеж","бегущ","отработавш","провинциальн","любящ рокабилли","зажигающ","январск","сумеречн","монохромн","темн","традиционн","легендарн","набит деньгами","псевдогероическ","жаждущ славы","сонн","плотоядн","первосортн","падк на сладкое","любящ рыбу","прян","вкалывающ","фруктов","дизайнерск","путешествующ","любящ мультфильмы","прогуливающ","кинематографичн","любящ комиксы","любящ овощи","богатеньк","играющ","витающ в облаках","сентиментальн","рок-н-ролльн","неукротим","сотрудничающ","ультрасовременн","активн в Наутиплексе","юн","модн","новехоньк","свежепойманн","укачавш","начинающ","раритетн","активн в Опаленном ущелье","приятн","промокш","активн на «Свисторыбе»","избранн судьбой","обработанн","приправленн","эффектн","научн","медитирующ","удобно устроивш","атлетическ","спортивн","старомодн","начальствующ","дружелюбн","громов","шустр","аркадн","упорн","проказлив","исследующ","настоящ","измазанн краской","переполненн","очаровательн","пойманн в приливе","гигантск","бродяч","парящ","активн на «Дон Браке»","чернеющ","рассеянн","трудящ в Потапыч Inc.","проснувш","состаривш","местн","стимпанковск","серьезн","выпендрежн","плев","неунывающ","далек","клев","залежал","непреклонн","активн в хип-хопе","разрывающ","красочн","размножающ","бескрасочн","мягоньк","площадн","прыгающ","тенист","современн","любящ модов","бледн","ныряющ","погружающ","понтов","замещающ начальника","ключев","ночн","обжигающ","ярко-син","озорн","незамеченн","вымотанн","безответственн","активн в луна-парке «Язь»","активн в «Водокаче»","свеж","активн в «Стайке»","сражающ","сговорчив","незаметн","спрятанн","наблюдательн","чист","стерт","безрассудн","шокирующ","затейлив","туманн","единственн","старш по бригаде","беззвучн","активн в «Шмот-кутюре»","сообразительн","велик","бездеятельн","нарядн","непреодолим","боязлив","неясн","песчан","взрывн","общ","привычн","небрежн","покрыт тайной","скрыт","активн в Salmon Run","активн на самонидской ГЭС","кроваво-красн","гламурн","скользк","запачканн","честолюбив","возвращающ домой","обычн","уклоняющ","активн в «Хитлантиде»","беззаботн","вымирающ","артистичн","панковск","просветленн","солен","оглушающ","любящ брейк-данс","активн в Угрево-Скатово","привлекательн","вялен","фантасмагорическ","активн на Осетровых верфях","активн в стихийном бою","плюхтонск","плюхтоногородск"],
-                last: ["No Title", "абонент","абонентка","абсолютное оружие","авантюрист","авантюристка","автор","авторитет","агент","агент 001","агент 002","агент 003","агент 004","агент 008","актер","актриса","акула","альпинист","альпинистка","ангел","андроид","артист","артистка","архидемон","ас кальмарных роллов","ас кальмарных рывков","ас уклонения","ассистент","ассистентка","астронавт","атлет","бабушка","барабанщик","барабанщица","басист","басистка","бедняк","беднячка","берсерк","би-бой","би-герл","боец","боец в «Картах и районе»","боец с «Горынычем»","боец с «Трезубцем»","боец с N-ZAP","боец с арт-кистью","боец с аэроспреем","боец с бамбухом 14","боец с бластерматом","боец с бластерматом ПРО","боец с бластером","боец с бомбой на присоске","боец с брызгающей бомбой","боец с брызгометом-XL","боец с брызгометом-М","боец с бутылятором","боец с валиком ЛАЙТ","боец с ваннаганом","боец с ведроганом","боец с ведроганом 3 в 1","боец с волноплюхером","боец с дальнобластером","боец с едким туманом","боец с зонтентом","боец с импрессиометами","боец с йо-хо-плюхером","боец с каплестрелом","боец с каплестрелом НОВА","боец с каплестрелом ПРО","боец с каплестрелом-У","боец с каплетроном-компактом","боец с каракатницей","боец с керлинг-бомбой","боец с кистью","боец с контрабластером","боец с КО-РАЛЛ 450","боец с кработанком","боец с красколетом","боец с краскососом","боец с краскотросом","боец с кугельшрайбером","боец с лунобластером","боец с макси-валиком","боец с маркером движения","боец с мегалофоном 5.1","боец с миной","боец с мотоваликом","боец с мотокулой","боец с наутилусом","боец с омниваликом","боец с патрондашом 5Т","боец с плескарем","боец с плюхометом","боец с плюхотроном","боец с припечатью","боец с прыжковым маячком","боец с разрывной бомбой","боец с распылятором","боец с робобомбой","боец с содовой бомбой","боец с термоплюхами 525","боец с тоникулером","боец с торпедной бомбой","боец с тритиватором","боец с тройным торнадо","боец с трубастером","боец с тучей краски","боец с тяжелым каплетроном","боец с углострелом","боец с центрифугером","боец с чернильным занавесом","боец с шарощитом","боец с э-литром 95","боец со снайпокрасом","боец со снайп-э-литром 95","боец со сплат-валиком","боец со сплатганом","боец со сплат-дворником","боец со сплат-зонтом","боец со сплат-печателем","боец со спуртокроссами","боец со спуртометами","боец со спурт-плескарями","боец со стирателем","боец со струевиком .52","боец со струевиком .96","боец со шпарганом","боец со шпионским зонтом","болтун","болтунья","бомбардировщик","бомбардировщица","босс","братишка","братуха","бригадир","бриолин","бунтарка","бунтарь","великан","великанша","велосипедист","велосипедистка","викинг","витамин","витаминка","вице-президент","внук","внучка","водитель","водительница","водяной","возлюбленная","возлюбленный","воитель","воительница","вокалист","вокалистка","волк-одиночка","волшебник","волшебница","воспоминание","выжившая","выживший","выпускник","выпускница","вяленая рыба","гвоздь программы","геймер","геймерша","гений","героиня","герой","герцог","герцогиня","гик","гитарист","гитаристка","глава","главная руководительница","главный руководитель","горничная","городская девчуля","городской парень","гроссмейстер","двигатель","дворецкий","девочка","девушка","дегустатор","дедушка","декоратор шкафчика","дельфин","демиург разрушения","детеныш","диджей","дизайнер","дикарка","дикарь","динозавр","директор","директриса","дочь","дракон","душа компании","дядя","еж","ежиха","жадина","желатин","жених","жизнь","жизнь кальмара","жизнь лосося","жизнь осьминога","житель Атлантиды","жительница Атлантиды","жук","забастовщик","забастовщица","забияка","заводила","завсегдатай в «Водокаче»","завсегдатай в «Каравелле»","завсегдатай в «Мече и Хвосте»","завсегдатай в «Хитлантиде»","завсегдатай в «Шмот-кутюре»","заклинание","законодатель моды","законодательница моды","заместитель","заместительница","заправила","защитник","защитница","звезда","зеркало","злодей","злодейка","знаменитость","зритель","зрительница","И.И.","игрок","игрок в настолки","изгой","икона стиля","икринка","иллюзия","инклинг","инструктор","интроверт","инфлюэнсер","исследователь","исследовательница","йо-хо","кальмар","кальмарное кольцо","карааге","карпаччо","картежник","картежница","клавишник","клавишница","книжный червь","коллекционер карт","коллекционерка карт","комик","комплект","контент-мейкер","координатор","копуша","королева","королева горы","король","король горы","косметолог","кот","коуч","кошка","краб","краска","кулак","купидон","кутила","лакомый кусочек","легенда","легенда Salmon Run","легенда боев за башню","легенда боев за зоны","легенда боев за район","легенда мегакарпа","легенда сюжета","легенда устробола","легендарная воительница","легендарный воин","леди босс","лентяй","лентяйка","лидер","лохматик","луна","любитель боев за башню","любитель боев за зоны","любитель клубов","любитель мегакарпа","любитель настолок","любитель прохлады","любитель устробола","любительница боев за башню","любительница боев за зоны","любительница клубов","любительница мегакарпа","любительница настолок","любительница прохлады","любительница устробола","мальчик","мама","манта","маринад","маска","мастер сюжета","материя","мать","маэстро","мегафанат","мегафанатка","медведица","медведь","медуза","менеджер","ментор","мерзляк","мерзлячка","метель","мираж","мишень","младшая сестра","младший брат","млекопитающее","модель","модель «Блиц»","модель «Волногор»","модель «Гребершко»","модель «Грильяни»","модель «Йожко»","модель «Кальмар Кляр»","модель «Кальмари»","модель «Каракат»","модель «Кра-Кен»","модель «Морлюкс»","модель «Рыбок»","модель «Суси-Весла»","модель «Угрок»","модель «Фритюр»","модель «Шпротус»","модель «Щуччи»","модель головных уборов","модель кроссовок","модель курток","модель очков","модель Панкасиуса","модель рубашек","модель сапог","модель свитеров","модель Сушаки Кусаки","модель футболок","модник","модница","моллюск","монарх","монархиня","морепродукт","морская рыба","морское существо","мурена","мускул","мышца","мятежник","мятежница","налетчик","налетчица","наряд","наставник","наставница","настрой","начальство","невеста","некто","непоседа","неумеха","ниндзя","новенькая","новенький","новичок","новичок года","новобранец","носитель «бобрика»","носитель «под горшок»","носитель «помпадур»","носитель «фэйд»","носитель афро","носитель больших локонов","носитель ирокеза","носитель конского хвоста","носитель корнроу","носитель косички","носитель косы","носитель кудрей","носитель мокрой укладки","носитель пробора","носитель пучка","носитель пучков","носитель челки","носитель челки набок","носительница «бобрика»","носительница «под горшок»","носительница «помпадур»","носительница «фэйд»","носительница афро","носительница больших локонов","носительница ирокеза","носительница конского хвоста","носительница корнроу","носительница косички","носительница косы","носительница кудрей","носительница мокрой укладки","носительница пробора","носительница пучка","носительница пучков","носительница челки","носительница челки набок","ностальгия","обжора","обитатель острова","обитательница острова","обладатель ранга","обладательница ранга","образ жизни","обычный человек","одэн","они","оружие","осьминог","осьмолинг","осьмолинг-солдат","осьморянин","осьморянка","отаку","отец","отпечаток рыбы","офисный планктон","охотник","охотница","охранник","охранница","охраняемый вид","очкарик","палитра","папа","парень","парикмахер","парикмахерша","певец","певица","первокурсник","первокурсница","первопроходец","пес","пилот","пилотесса","писатель","писательница","питомец","планктон","пловец","пловчиха","повествователь","повествовательница","подросток","подчиненная","подчиненный","поклонник","поклонница","полиглот","помощник","помощник менеджера","помощница","помощница менеджера","поп-звезда","поплавок","последователь","последовательница","предводитель","предводительница","представитель","представительница","президент","преподаватель","преподавательница","пресноводная","пресноводный","претендент","претендентка","приверженец","привидение","пример","принц","принцесса","прислужник","прислужница","приятель","приятельница","программист","программистка","продавец","продавщица","продюсер","проектировщик","проектировщица","профи","прыгун","прыгунья","птенец","птица","путешественник","путешественница","пушар","работник","работник на удаленке","работница","работница на удаленке","работяга","районная вояка","районный вояка","ребенок","ремесленник","ремесленница","рис","ритм","робот","родственник","родственница","ролл с авокадо","ронин","руководитель","руководительница","русалка","рыба","рыбак","рыбачка","рыбная фрикаделька","рыболов","рыцарь","рэпер","рэперша","сама жизнь","самонид","самурай","сашими","свободная душа","секретарша","секретарь","серфингист","серфингистка","сестренка","сеструха","система","скейтбордист","скейтбордистка","слезинка","смотритель","смотрительница","снеговик","снек","собака","собиратель предметов","собирательница предметов","советник","советница","создатель","создатель комиксов","создательница","создательница комиксов","солнце","сом","сотрудник","сотрудник корпорации","сотрудница","сотрудница корпорации","спутник","спутница","стажер","стажерка","староста","старшая сестра","старший брат","старшина","стена","стендап-комик","стесняшка","стилист","стилистка","стильная девушка","стильный парень","стиляга","стир-фрай","стример","стримерша","студент","студентка","супергероиня","супергерой","суперзвезда","сурими","сушеный кальмар","суши","сущность","счастливица","счастливчик","сын","сыщик","тайна","тамада","танцовщица","танцор","татаки из тунца","телохранитель","телохранительница","терапевт","тетя","товарищ","товарка","тофу","трава","трудоголик","трудяга","турист","туристка","тусовщик","тусовщица","тушь","тушь осьминога","удильщик","удильщица","укротитель акул","укротитель мурен","укротительница акул","укротительница мурен","умибодзу","универсал","управляющая","управляющий","ураган","участник","участник в Salmon Run","участник турнира","участница","участница в Salmon Run","участница турнира","ученая","ученик","ученица","ученый","учитель","учительница","фанат Bottom Feeders","фанат Chirpy Chips","фанат C-Side","фанат Damp Socks","фанат Dedf1sh","фанат Deep Cut","фанат Diss-Pair","фанат Front Roe","фанат Hightide Era","фанат Ink Theory","фанат Off the Hook","фанат SashiMori","фанат Squid Sisters","фанат Squid Squad","фанат Turquoise October","фанат Wet Floor","фанат ω-3","фанат Биг Мана","фанат горячих источников","фанат Жемчик","фанат Куллы","фанат Кэлли","фанат Мари","фанат Мариши","фанат Мурии","фанатка Bottom Feeders","фанатка Chirpy Chips","фанатка C-Side","фанатка Damp Socks","фанатка Dedf1sh","фанатка Deep Cut","фанатка Diss-Pair","фанатка Front Roe","фанатка Hightide Era","фанатка Ink Theory","фанатка Off the Hook","фанатка SashiMori","фанатка Squid Sisters","фанатка Squid Squad","фанатка Turquoise October","фанатка Wet Floor","фанатка ω-3","фанатка Биг Мана","фанатка горячих источников","фанатка Жемчик","фанатка Куллы","фанатка Кэлли","фанатка Мари","фанатка Мариши","фанатка Мурии","фейерверк","фестивальщик","фестивальщица","филе","форма","формула","фотограф","фрилансер","халява","хиппи","хипстер","хищник","хищница","хореограф","храбрец","художник","художница","хулиган","хулиганка","цветочек","ценитель брендов","ценительница брендов","центр урагана","цефалопод","чело","человек","человечество","чемпион","чемпион мира","чемпионка","чемпионка мира","черепаха","чертенок","член группы","член правительства","член правления","шеф","шефиня","шеф-повар","шишка","шпилька","шпион","шпионка","шут","шутиха","щит","экскурсант","экскурсантка","эксперт","эксперт по переключателям","экстраверт","элегантность","энтузиаст","энтузиастка","юморист","юмористка","юное дарование","яйцо"]
+                first: ["Без заголовка", "совершенн","наученн опытом","микроскопическ","половинчат","планирующ наперед","коллекционирующ amiibo","кальмарн","диджейн","симпатичн","техничн","шатающ","виртуальн","активн в бою X","ранн","круглосуточн","пожизненн","активн в бою салаг","сногсшибательн","случайн","невероятн","восьмищуп","десятищуп","активн в трехцветной стычке","активн в «Кусь да Красе»","передов","ностальгичн","сверхудачлив","сухопутн","больш","голодн","преимущественн","океанск","охотящ на сковорейдеров","крупн","дерзк","активн в Холле","маленьк","горн","работающ","грациозн","отысканн","непобедим","отменн","наивн","празднующ день рождения","сегодняшн","нынешн","поднебесн","невиновн","древн","альтернск","причудлив","радостн","усиленн","безоружн","смышлен","обеденн","активн в «Камбалово»","конкурентн","водн","аквариумн","огненн","палящ","озаренн","топов","центральн","лучш в мире","многолетн","веков","обожаем","зимн","утепленн","отдыхающ зимой","североатлантическ","северо-тихоокеанск","ледовитоокеанск","бригадирствующ","полуночн","активн в «Картах и районе»","прошлогодн","устаревш","лимитированн","очередн","успешн","надежн","праворук","обоерук","леворук","укрупненн","ежедневн","смертоносн","незапятнанн","богемн","постоянн","королевск","нарушающ закон","подземн","тверд","жабродышащ","дневн","легк","полуденн","незамедлительн","готов","находящ в отпуске","раскаленн","гладк","автоматизированн","сенсационн","экономн","индоокеанск","опасн","почетн","полн сил","разговорчив","годн","шумн","соперничающ","космическ","заботлив","колк","молод","морщинист","растущ","взросл","готов к бою","скороспел","изысканн","ужасающ","методичн","опрятн","организованн","многообещающ","чемпионск","бородат","логичн","точн","метк","активн в Приливосливе","накачанн","состоявш","снимающ селфи","уверенн","натуральн","самопровозглашенн","морозн","охлажденн","трудолюбив","строг","передержанн","безупречн","непрерывно закрашивающ","умиротворенн","самоопределивш","перевоплотивш","нападающ","расслабленн","молчалив","выжат","спешащ","активн в частном бою","неоспорим","оголодавш","безвыходн","фешенебельн","несгибаем","злобн","ловящ момент","смешн","путешествующ во времени","стародавн","первичн","первейш","раннелетн","разбрызгивающ краску","колюч","любим","приставуч","роков","воющ","мстительн","жидк","чудотворн","отчужденн","уединенн","одинок","инкопольск","пригородно-инкопольск","активн на площади","пляжн","удачлив","так называем","фотографирующ","прокрастинирующ","новогодн","активн в «Каравелле»","стопроцентн","активн в «Мече и Хвосте»","гранжев","залит краской","универсальн","штормов","нормальков","ни рыбн","тухлячков","СВЕЖАЧКОВ","упрям","прямоэфирн","закончивш стрим","величайш","мясист","пушист","ароматн","активн в «Де Берикс»","длиннорукавн","андеграундн","авангардн","мгновенн","южноатлантическ","южно-тихоокеанск","южноокеанск","крепк","ребячлив","кротк","диванн","домашн","уличн","хитр","крут","славн","срезающ путь","опрометчив","весенн","свеженьк","вчерашн","мягк","оживленн","вездесущ","бодр","популярн","порхающ","помпезн","проглотивш язык","естественн","смотрящ в камеру","осенн","позднелетн","коричнев","ал","повседневн","отличн","тонк","похвальн","активн в сюжете","заказн","важн","сверхзвуков","ветрен","летящ","перекусывающ","танцующ на волнах","учащ","нов","напорист","готическ","готически-увлеченн","летн","знойн","стеснительн","активн в «Горбуша-Маркет»","вечн","задающ тренды","модняв","стильн","активн в «Лепоте»","морск","речн","приморск","готов к плаванию","смоляно-черн","истощенн","искренн","качественн","верн","истинн","активн на Акульем мосту","уязвим","беспрецедентн","рассветн","празднующ","благоговейн","мистическ","молниеносн","свят","секретн","эзотерическ","стояч","ездящ без рук","ослепительн","белоснежн","чистейш","божественн","неимущ","активн в Тухловодске","кратерн","пустошн","надут","потерянн","бесхребетн","пролетающ","светящ","искрящ","пестрящ","лучезарн","полностью выкладывающ","восходящ","плодотворн","активн в «Золотой рыбке»","пойманн в отливе","закаленн","реалистичн","национальн","настойчив","профессиональн","тухл","подавляющ","благоприятн","плутающ","рано встающ","заплаканн","глубоководн","сомнительн","хаотичн","незатейлив","неистов","сладк","внеземн","серединнолетн","зорк","вторичн","ретро","радикальн","жадн","скуп","известн как","городск","дик","бурн","заснеженн","бесподобн","активн в цеху «Тартар»","активн в «Ломе»","онемел","нежн","забывчив","рыбачащ","имущ","од","винтажн","рисующ","активн в Splatoon","прост","отдыхающ","сам","дебютн","финальн","сильнейш","лучш","новейш","оптимистичн","лесн","безымянн","вольн","видн","бесконечн","безвкусн","невозмутим","безжалостн","непревзойденн","кульминационн","остр","мерцающ","стойк","пухов","шикарн","сверхчеловеческ","оглушительн","крышесносн","оборонн","прорывн","сверхсвеж","бегущ","отработавш","провинциальн","любящ рокабилли","зажигающ","январск","сумеречн","монохромн","темн","традиционн","легендарн","набит деньгами","псевдогероическ","жаждущ славы","сонн","плотоядн","первосортн","падк на сладкое","любящ рыбу","прян","вкалывающ","фруктов","дизайнерск","путешествующ","любящ мультфильмы","прогуливающ","кинематографичн","любящ комиксы","любящ овощи","богатеньк","играющ","витающ в облаках","сентиментальн","рок-н-ролльн","неукротим","сотрудничающ","ультрасовременн","активн в Наутиплексе","юн","модн","новехоньк","свежепойманн","укачавш","начинающ","раритетн","активн в Опаленном ущелье","приятн","промокш","активн на «Свисторыбе»","избранн судьбой","обработанн","приправленн","эффектн","научн","медитирующ","удобно устроивш","атлетическ","спортивн","старомодн","начальствующ","дружелюбн","громов","шустр","аркадн","упорн","проказлив","исследующ","настоящ","измазанн краской","переполненн","очаровательн","пойманн в приливе","гигантск","бродяч","парящ","активн на «Дон Браке»","чернеющ","рассеянн","трудящ в Потапыч Inc.","проснувш","состаривш","местн","стимпанковск","серьезн","выпендрежн","плев","неунывающ","далек","клев","залежал","непреклонн","активн в хип-хопе","разрывающ","красочн","размножающ","бескрасочн","мягоньк","площадн","прыгающ","тенист","современн","любящ модов","бледн","ныряющ","погружающ","понтов","замещающ начальника","ключев","ночн","обжигающ","ярко-син","озорн","незамеченн","вымотанн","безответственн","активн в луна-парке «Язь»","активн в «Водокаче»","свеж","активн в «Стайке»","сражающ","сговорчив","незаметн","спрятанн","наблюдательн","чист","стерт","безрассудн","шокирующ","затейлив","туманн","единственн","старш по бригаде","беззвучн","активн в «Шмот-кутюре»","сообразительн","велик","бездеятельн","нарядн","непреодолим","боязлив","неясн","песчан","взрывн","общ","привычн","небрежн","покрыт тайной","скрыт","активн в Salmon Run","активн на самонидской ГЭС","кроваво-красн","гламурн","скользк","запачканн","честолюбив","возвращающ домой","обычн","уклоняющ","активн в «Хитлантиде»","беззаботн","вымирающ","артистичн","панковск","просветленн","солен","оглушающ","любящ брейк-данс","активн в Угрево-Скатово","привлекательн","вялен","фантасмагорическ","активн на Осетровых верфях","активн в стихийном бою","плюхтонск","плюхтоногородск"],
+                last: ["Без заголовка", "абонент","абонентка","абсолютное оружие","авантюрист","авантюристка","автор","авторитет","агент","агент 001","агент 002","агент 003","агент 004","агент 008","актер","актриса","акула","альпинист","альпинистка","ангел","андроид","артист","артистка","архидемон","ас кальмарных роллов","ас кальмарных рывков","ас уклонения","ассистент","ассистентка","астронавт","атлет","бабушка","барабанщик","барабанщица","басист","басистка","бедняк","беднячка","берсерк","би-бой","би-герл","боец","боец в «Картах и районе»","боец с «Горынычем»","боец с «Трезубцем»","боец с N-ZAP","боец с арт-кистью","боец с аэроспреем","боец с бамбухом 14","боец с бластерматом","боец с бластерматом ПРО","боец с бластером","боец с бомбой на присоске","боец с брызгающей бомбой","боец с брызгометом-XL","боец с брызгометом-М","боец с бутылятором","боец с валиком ЛАЙТ","боец с ваннаганом","боец с ведроганом","боец с ведроганом 3 в 1","боец с волноплюхером","боец с дальнобластером","боец с едким туманом","боец с зонтентом","боец с импрессиометами","боец с йо-хо-плюхером","боец с каплестрелом","боец с каплестрелом НОВА","боец с каплестрелом ПРО","боец с каплестрелом-У","боец с каплетроном-компактом","боец с каракатницей","боец с керлинг-бомбой","боец с кистью","боец с контрабластером","боец с КО-РАЛЛ 450","боец с кработанком","боец с красколетом","боец с краскососом","боец с краскотросом","боец с кугельшрайбером","боец с лунобластером","боец с макси-валиком","боец с маркером движения","боец с мегалофоном 5.1","боец с миной","боец с мотоваликом","боец с мотокулой","боец с наутилусом","боец с омниваликом","боец с патрондашом 5Т","боец с плескарем","боец с плюхометом","боец с плюхотроном","боец с припечатью","боец с прыжковым маячком","боец с разрывной бомбой","боец с распылятором","боец с робобомбой","боец с содовой бомбой","боец с термоплюхами 525","боец с тоникулером","боец с торпедной бомбой","боец с тритиватором","боец с тройным торнадо","боец с трубастером","боец с тучей краски","боец с тяжелым каплетроном","боец с углострелом","боец с центрифугером","боец с чернильным занавесом","боец с шарощитом","боец с э-литром 95","боец со снайпокрасом","боец со снайп-э-литром 95","боец со сплат-валиком","боец со сплатганом","боец со сплат-дворником","боец со сплат-зонтом","боец со сплат-печателем","боец со спуртокроссами","боец со спуртометами","боец со спурт-плескарями","боец со стирателем","боец со струевиком .52","боец со струевиком .96","боец со шпарганом","боец со шпионским зонтом","болтун","болтунья","бомбардировщик","бомбардировщица","босс","братишка","братуха","бригадир","бриолин","бунтарка","бунтарь","великан","великанша","велосипедист","велосипедистка","викинг","витамин","витаминка","вице-президент","внук","внучка","водитель","водительница","водяной","возлюбленная","возлюбленный","воитель","воительница","вокалист","вокалистка","волк-одиночка","волшебник","волшебница","воспоминание","выжившая","выживший","выпускник","выпускница","вяленая рыба","гвоздь программы","геймер","геймерша","гений","героиня","герой","герцог","герцогиня","гик","гитарист","гитаристка","глава","главная руководительница","главный руководитель","горничная","городская девчуля","городской парень","гроссмейстер","двигатель","дворецкий","девочка","девушка","дегустатор","дедушка","декоратор шкафчика","дельфин","демиург разрушения","детеныш","диджей","дизайнер","дикарка","дикарь","динозавр","директор","директриса","дочь","дракон","душа компании","дядя","еж","ежиха","жадина","желатин","жених","жизнь","жизнь кальмара","жизнь лосося","жизнь осьминога","житель Атлантиды","жительница Атлантиды","жук","забастовщик","забастовщица","забияка","заводила","завсегдатай в «Водокаче»","завсегдатай в «Каравелле»","завсегдатай в «Мече и Хвосте»","завсегдатай в «Хитлантиде»","завсегдатай в «Шмот-кутюре»","заклинание","законодатель моды","законодательница моды","заместитель","заместительница","заправила","защитник","защитница","звезда","зеркало","злодей","злодейка","знаменитость","зритель","зрительница","И.И.","игрок","игрок в настолки","изгой","икона стиля","икринка","иллюзия","инклинг","инструктор","интроверт","инфлюэнсер","исследователь","исследовательница","йо-хо","кальмар","кальмарное кольцо","карааге","карпаччо","картежник","картежница","клавишник","клавишница","книжный червь","коллекционер карт","коллекционерка карт","комик","комплект","контент-мейкер","координатор","копуша","королева","королева горы","король","король горы","косметолог","кот","коуч","кошка","краб","краска","кулак","купидон","кутила","лакомый кусочек","легенда","легенда Salmon Run","легенда боев за башню","легенда боев за зоны","легенда боев за район","легенда мегакарпа","легенда сюжета","легенда устробола","легендарная воительница","легендарный воин","леди босс","лентяй","лентяйка","лидер","лохматик","луна","любитель боев за башню","любитель боев за зоны","любитель клубов","любитель мегакарпа","любитель настолок","любитель прохлады","любитель устробола","любительница боев за башню","любительница боев за зоны","любительница клубов","любительница мегакарпа","любительница настолок","любительница прохлады","любительница устробола","мальчик","мама","манта","маринад","маска","мастер сюжета","материя","мать","маэстро","мегафанат","мегафанатка","медведица","медведь","медуза","менеджер","ментор","мерзляк","мерзлячка","метель","мираж","мишень","младшая сестра","младший брат","млекопитающее","модель","модель «Блиц»","модель «Волногор»","модель «Гребершко»","модель «Грильяни»","модель «Йожко»","модель «Кальмар Кляр»","модель «Кальмари»","модель «Каракат»","модель «Кра-Кен»","модель «Морлюкс»","модель «Рыбок»","модель «Суси-Весла»","модель «Угрок»","модель «Фритюр»","модель «Шпротус»","модель «Щуччи»","модель головных уборов","модель кроссовок","модель курток","модель очков","модель Панкасиуса","модель рубашек","модель сапог","модель свитеров","модель Сушаки Кусаки","модель футболок","модник","модница","моллюск","монарх","монархиня","морепродукт","морская рыба","морское существо","мурена","мускул","мышца","мятежник","мятежница","налетчик","налетчица","наряд","наставник","наставница","настрой","начальство","невеста","некто","непоседа","неумеха","ниндзя","новенькая","новенький","новичок","новичок года","новобранец","носитель «бобрика»","носитель «под горшок»","носитель «помпадур»","носитель «фэйд»","носитель афро","носитель больших локонов","носитель ирокеза","носитель конского хвоста","носитель корнроу","носитель косички","носитель косы","носитель кудрей","носитель мокрой укладки","носитель пробора","носитель пучка","носитель пучков","носитель челки","носитель челки набок","носительница «бобрика»","носительница «под горшок»","носительница «помпадур»","носительница «фэйд»","носительница афро","носительница больших локонов","носительница ирокеза","носительница конского хвоста","носительница корнроу","носительница косички","носительница косы","носительница кудрей","носительница мокрой укладки","носительница пробора","носительница пучка","носительница пучков","носительница челки","носительница челки набок","ностальгия","обжора","обитатель острова","обитательница острова","обладатель ранга","обладательница ранга","образ жизни","обычный человек","одэн","они","оружие","осьминог","осьмолинг","осьмолинг-солдат","осьморянин","осьморянка","отаку","отец","отпечаток рыбы","офисный планктон","охотник","охотница","охранник","охранница","охраняемый вид","очкарик","палитра","папа","парень","парикмахер","парикмахерша","певец","певица","первокурсник","первокурсница","первопроходец","пес","пилот","пилотесса","писатель","писательница","питомец","планктон","пловец","пловчиха","повествователь","повествовательница","подросток","подчиненная","подчиненный","поклонник","поклонница","полиглот","помощник","помощник менеджера","помощница","помощница менеджера","поп-звезда","поплавок","последователь","последовательница","предводитель","предводительница","представитель","представительница","президент","преподаватель","преподавательница","пресноводная","пресноводный","претендент","претендентка","приверженец","привидение","пример","принц","принцесса","прислужник","прислужница","приятель","приятельница","программист","программистка","продавец","продавщица","продюсер","проектировщик","проектировщица","профи","прыгун","прыгунья","птенец","птица","путешественник","путешественница","пушар","работник","работник на удаленке","работница","работница на удаленке","работяга","районная вояка","районный вояка","ребенок","ремесленник","ремесленница","рис","ритм","робот","родственник","родственница","ролл с авокадо","ронин","руководитель","руководительница","русалка","рыба","рыбак","рыбачка","рыбная фрикаделька","рыболов","рыцарь","рэпер","рэперша","сама жизнь","самонид","самурай","сашими","свободная душа","секретарша","секретарь","серфингист","серфингистка","сестренка","сеструха","система","скейтбордист","скейтбордистка","слезинка","смотритель","смотрительница","снеговик","снек","собака","собиратель предметов","собирательница предметов","советник","советница","создатель","создатель комиксов","создательница","создательница комиксов","солнце","сом","сотрудник","сотрудник корпорации","сотрудница","сотрудница корпорации","спутник","спутница","стажер","стажерка","староста","старшая сестра","старший брат","старшина","стена","стендап-комик","стесняшка","стилист","стилистка","стильная девушка","стильный парень","стиляга","стир-фрай","стример","стримерша","студент","студентка","супергероиня","супергерой","суперзвезда","сурими","сушеный кальмар","суши","сущность","счастливица","счастливчик","сын","сыщик","тайна","тамада","танцовщица","танцор","татаки из тунца","телохранитель","телохранительница","терапевт","тетя","товарищ","товарка","тофу","трава","трудоголик","трудяга","турист","туристка","тусовщик","тусовщица","тушь","тушь осьминога","удильщик","удильщица","укротитель акул","укротитель мурен","укротительница акул","укротительница мурен","умибодзу","универсал","управляющая","управляющий","ураган","участник","участник в Salmon Run","участник турнира","участница","участница в Salmon Run","участница турнира","ученая","ученик","ученица","ученый","учитель","учительница","фанат Bottom Feeders","фанат Chirpy Chips","фанат C-Side","фанат Damp Socks","фанат Dedf1sh","фанат Deep Cut","фанат Diss-Pair","фанат Front Roe","фанат Hightide Era","фанат Ink Theory","фанат Off the Hook","фанат SashiMori","фанат Squid Sisters","фанат Squid Squad","фанат Turquoise October","фанат Wet Floor","фанат ω-3","фанат Биг Мана","фанат горячих источников","фанат Жемчик","фанат Куллы","фанат Кэлли","фанат Мари","фанат Мариши","фанат Мурии","фанатка Bottom Feeders","фанатка Chirpy Chips","фанатка C-Side","фанатка Damp Socks","фанатка Dedf1sh","фанатка Deep Cut","фанатка Diss-Pair","фанатка Front Roe","фанатка Hightide Era","фанатка Ink Theory","фанатка Off the Hook","фанатка SashiMori","фанатка Squid Sisters","фанатка Squid Squad","фанатка Turquoise October","фанатка Wet Floor","фанатка ω-3","фанатка Биг Мана","фанатка горячих источников","фанатка Жемчик","фанатка Куллы","фанатка Кэлли","фанатка Мари","фанатка Мариши","фанатка Мурии","фейерверк","фестивальщик","фестивальщица","филе","форма","формула","фотограф","фрилансер","халява","хиппи","хипстер","хищник","хищница","хореограф","храбрец","художник","художница","хулиган","хулиганка","цветочек","ценитель брендов","ценительница брендов","центр урагана","цефалопод","чело","человек","человечество","чемпион","чемпион мира","чемпионка","чемпионка мира","черепаха","чертенок","член группы","член правительства","член правления","шеф","шефиня","шеф-повар","шишка","шпилька","шпион","шпионка","шут","шутиха","щит","экскурсант","экскурсантка","эксперт","эксперт по переключателям","экстраверт","элегантность","энтузиаст","энтузиастка","юморист","юмористка","юное дарование","яйцо"]
             },
             ui: {
                 tabText: "Текст",
@@ -627,6 +869,36 @@ const load = () => {
                 textUpload: "Закачать",
                 textToggle: "Активировано",
                 textColour: "Цвет"
+            },
+            sections: {
+                banners: {
+                    vanilla: "В игре",
+                    bandCustom: 'Группа',
+                    specCustom: 'Специальное оружие',
+                    mapsCustom: 'Области',
+                    miscCustom: 'Pазнообразный',
+                    userCustom: 'Загружено',
+                },
+                badges: {
+                    coop: "Salmon Run",
+                    mode: "Режимы игры",
+                    shop: "магазины",
+                    misc: "Pазнообразный",
+                    gear: "бренды",
+                    spec: "Специальное Оружие",
+                    weps: "Оружие",
+                    wepsCustom: "Оружие",
+                    subsCustom: "Дополнительное Оружие",
+                    modeCustom: "Режимы игры",
+                    gearCustom: "бренды",
+                    coopCustom: "Salmon Run",
+                    charCustom: "Персонажи",
+                    iconCustom: "Иконки",
+                    spf2Custom: "Сплатфест 2",
+                    spf3Custom: "Сплатфест 3",
+                    cakeCustom: "Памятка от Паштетико",
+                    userCustom: "Загружено",
+                }
             },
             default: ["плюхтонск", "парень"]
         },
@@ -661,6 +933,36 @@ const load = () => {
                 textToggle: "有効化",
                 textColour: "色"
             },
+            sections: {
+                banners: {
+                    vanilla: "ゲームで",
+                    bandCustom: 'バンド',
+                    specCustom: '特別',
+                    mapsCustom: 'マップ',
+                    miscCustom: 'その他',
+                    userCustom: 'アップロード済み',
+                },
+                badges: {
+                    coop: "サーモンラン",
+                    mode: "ゲームモード",
+                    shop: "お店",
+                    misc: "その他",
+                    gear: "ブランド",
+                    spec: "特別",
+                    weps: "兵器",
+                    wepsCustom: "兵器",
+                    subsCustom: "サブウェポン",
+                    modeCustom: "ゲームモード",
+                    gearCustom: "ブランド",
+                    coopCustom: "サーモンラン",
+                    charCustom: "キャラクター",
+                    iconCustom: "アイコン",
+                    spf2Custom: "フェス 2",
+                    spf3Custom: "フェス 3",
+                    cakeCustom: "ネリメモリー",
+                    userCustom: "アップロード済み",
+                }
+            },
             default: ["バンカラな", "若者"]
         },
         // Chinese (Simplified)
@@ -693,6 +995,36 @@ const load = () => {
                 textUpload: "上传",
                 textToggle: "启用",
                 textColour: "颜色"
+            },
+            sections: {
+                banners: {
+                    vanilla: "在游戏中",
+                    bandCustom: '音乐团体',
+                    specCustom: '特殊武器',
+                    mapsCustom: '领域',
+                    miscCustom: '各种各样的',
+                    userCustom: '已上传',
+                },
+                badges: {
+                    coop: "鲑鱼跑",
+                    mode: "游戏模式",
+                    shop: "商店",
+                    misc: "各种各样的",
+                    gear: "品牌",
+                    spec: "特殊武器",
+                    weps: "武器",
+                    wepsCustom: "武器",
+                    subsCustom: "副武器",
+                    modeCustom: "游戏模式",
+                    gearCustom: "品牌",
+                    coopCustom: "鲑鱼跑",
+                    charCustom: "人物",
+                    iconCustom: "图标",
+                    spf2Custom: "节日 2",
+                    spf3Custom: "节日 3",
+                    cakeCustom: "记忆蛋糕",
+                    userCustom: "已上传",
+                }
             },
             default: ["蛮颓的", "年轻人"]
         },
@@ -727,6 +1059,36 @@ const load = () => {
                 textToggle: "활성화됨",
                 textColour: "색깔"
             },
+            sections: {
+                banners: {
+                    vanilla: "인게임",
+                    bandCustom: '밴드',
+                    specCustom: '특수 무기',
+                    mapsCustom: '지역',
+                    miscCustom: '여러 가지 잡다한',
+                    userCustom: '업로드',
+                },
+                badges: {
+                    coop: "새먼 런",
+                    mode: "게임 모드",
+                    shop: "상점",
+                    misc: "여러 가지 잡다한",
+                    gear: "브랜드",
+                    spec: "특수 무기",
+                    weps: "무기",
+                    wepsCustom: "무기",
+                    subsCustom: "보조무기",
+                    modeCustom: "게임 모드",
+                    gearCustom: "브랜드",
+                    coopCustom: "새먼 런",
+                    charCustom: "문자",
+                    iconCustom: "아이콘",
+                    spf2Custom: "페스티벌 2",
+                    spf3Custom: "페스티벌 3",
+                    cakeCustom: "메모리 케이크",
+                    userCustom: "업로드",
+                }
+            },
             default: ["카오폴리스의", "젊은이"]
         },
         // Chinese (Traditional)
@@ -759,6 +1121,36 @@ const load = () => {
                 textUpload: "上傳",
                 textToggle: "啟用",
                 textColour: "顏色"
+            },
+            sections: {
+                banners: {
+                    vanilla: "在遊戲中",
+                    bandCustom: '音樂組',
+                    specCustom: '特殊武器',
+                    mapsCustom: '地區',
+                    miscCustom: '各種各樣的',
+                    userCustom: '已上傳',
+                },
+                badges: {
+                    coop: "鮭魚跑",
+                    mode: "遊戲模式",
+                    shop: "商店",
+                    misc: "各種各樣的",
+                    gear: "品牌",
+                    spec: "特殊武器",
+                    weps: "武器",
+                    wepsCustom: "武器",
+                    subsCustom: "副武器",
+                    modeCustom: "遊戲模式",
+                    gearCustom: "品牌",
+                    coopCustom: "鮭魚跑",
+                    charCustom: "人物",
+                    iconCustom: "圖標",
+                    spf2Custom: "祭典 2",
+                    spf3Custom: "祭典 3",
+                    cakeCustom: "記憶蛋糕",
+                    userCustom: "已上傳",
+                }
             },
             default: ["蠻頹的", "年輕人"]
         }
@@ -812,7 +1204,7 @@ const load = () => {
             if (element.startsWith('tab') || element.startsWith('button')) {
                 e.value = lang[language].ui[element];
             } else if (element.startsWith('text')) {
-                e.textContent = lang[language].ui[element]
+                e.textContent = lang[language].ui[element];
             }
         });
     });
@@ -848,7 +1240,7 @@ const load = () => {
         badges: [ -1, -1, -1 ],
         custom: {
             isCustom: false,
-            title: 'Splatlandian Youth',
+            title: lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : ''),
             colour: '#ffffff'
         }
     }
@@ -1122,7 +1514,7 @@ const load = () => {
     }
 
     // Set defaults for inputs
-    const defaultBannerIndex = banners.findIndex(a => !a.text && a.file.includes('Tutorial'));
+    const defaultBannerIndex = banners.findIndex(a => !a.name && a.file.includes('Tutorial'));
     tag.banner = defaultBannerIndex;
     tag.title.first = lang[language].titles.first.indexOf(lang[language].default[0]);
     tag.title.last = lang[language].titles.last.indexOf(lang[language].default[1]);
@@ -1154,12 +1546,13 @@ const load = () => {
 
     // Add options for select menus
     banners.forEach(item => {
-        if (item.text) {
+        if (item.name) {
             for (let i = 0; i < bannerContainer.childNodes.length % 4; i++) {
                 bannerContainer.appendChild(document.createElement('div'));
             }
+            const isCustom = item.name.endsWith('Custom');
             const sectionTitle = document.createElement('div');
-            sectionTitle.textContent = item.text;
+            sectionTitle.textContent = lang[language].sections.banners[item.name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
             sectionTitle.id = item.id;
             sectionTitle.className = 'imagelistsection';
             bannerContainer.appendChild(sectionTitle);
@@ -1167,7 +1560,7 @@ const load = () => {
 
             // add to banner select dropdown
             const option = document.createElement('option');
-            option.textContent = item.text.replace('(Custom)', '(c)');
+            option.textContent = lang[language].sections.banners[item.name] + (isCustom ? '*' : '');
             option.value = item.id;
             bannersection.appendChild(option);
             return;
@@ -1241,14 +1634,15 @@ const load = () => {
     }
 
     badges.forEach(item => {
-        if (item.startsWith('TEXT')) {
+        if (item.startsWith('NAME')) {
             for (let i = 0; i < badgeContainer.childNodes.length % 10; i++) {
                 badgeContainer.appendChild(document.createElement('div'));
             }
             const sectionTitle = document.createElement('div');
-            let text = item.split('#')[0].replace('TEXT:', '');
-            let id = item.split('#')[1];
-            sectionTitle.textContent = text;
+            const name = item.split('#')[0].replace('NAME:', '');
+            const id = item.split('#')[1];
+            const isCustom = name.endsWith('Custom')
+            sectionTitle.textContent = lang[language].sections.badges[name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
             sectionTitle.id = id;
             sectionTitle.className = 'imagelistsection';
             badgeContainer.appendChild(sectionTitle);
@@ -1256,7 +1650,7 @@ const load = () => {
 
             // add to badge select dropdown
             const option = document.createElement('option');
-            option.textContent = text.replace('(Custom)', '(c)');
+            option.textContent = lang[language].sections.badges[name] + (isCustom ? '*' : '');
             option.value = id;
             badgesection.appendChild(option);
             return;
@@ -1338,7 +1732,7 @@ const load = () => {
                         if (tag.title.last) {
                             chosentitles.push(lang[language].titles.last[tag.title.last]);
                         }
-                        const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : ''
+                        const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
 
                         tag.custom.title = chosentitles.join(spaceOrBlank);
                         customtitle.value = tag.custom.title;
@@ -1361,7 +1755,7 @@ const load = () => {
                         if (tag.title.last) {
                             chosentitles.push(lang[language].titles.last[tag.title.last]);
                         }
-                        const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : ''
+                        const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
 
                         tag.custom.title = chosentitles.join(spaceOrBlank);
                         customtitle.value = tag.custom.title;
