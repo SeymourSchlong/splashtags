@@ -137,7 +137,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-image: url("./camo-black.png");
+    background-image: url("./images/camo-black.png");
 }
 
 canvas {
@@ -151,7 +151,7 @@ canvas {
 }
 
 #main {
-    background-image: url("./background.png");
+    background-image: url("./images/background.png");
     background-position: top center;
     background-repeat: no-repeat;
     height: 645px;
@@ -198,7 +198,7 @@ footer {
 }
 
 .tab {
-    background-image: url("./tabsmall.png");
+    background-image: url("./images/tabsmall.png");
     background-color: transparent;
     border: none;
     width: 232px;
@@ -212,7 +212,7 @@ footer {
 }
 .tab.selected {
     transform: translateY(-2px);
-    background-image: url("./tabsmallselected.png");
+    background-image: url("./images/tabsmallselected.png");
 }
 .hidden {
     display: none;
@@ -223,9 +223,20 @@ footer {
     position: relative;
     margin: -10px auto auto auto;
     padding-top: 5px;
-    background-image: url("./tabbackground.png");
+    /*background-image: url("./images/tabbackground.png");*/
+    background-image: url("./images/tab-bg-top.png"), url("./images/tab-bg-middle.png"), url("./images/tab-bg-bottom.png");
+    background-repeat: no-repeat;
+    background-position: top, center, bottom;
+    background-size: auto, auto calc(100% - 90px), auto;
     width: 800px;
     border-radius: 15px;
+    height: calc(400px - 5px);
+    /*height: calc(316px - 5px);*/
+}
+
+.tab.selected + * + * + .tabcontainer {
+    height: calc(316px - 5px);
+    padding-bottom: 5px;
 }
 
 .imglistcontainer {
@@ -251,7 +262,8 @@ footer {
     
     box-sizing: border-box;
     padding: 0;
-    height: 200px;
+    height: 330px;
+    /*height: 200px;*/
 }
 
 .imglistcontainer img {
@@ -278,11 +290,17 @@ input[type="file"] {
 }
 
 input[type="radio"]:checked + span {
-    text-decoration: underline;
+    background: yellow;
+    color: black;
+    padding: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    /*text-decoration: underline;*/
 }
 
 img.other {
-    outline: 3px solid gray;
+    outline: 3px solid #808080;
+    background-color: #222222;
 }
 
 img.selected {
@@ -314,6 +332,7 @@ div[data-name="text"] table {
     height: 208px;
 }
 
+
 #downloadbutton {
     margin: 8px;
 }
@@ -327,4 +346,19 @@ div[data-name="text"] table {
 
 label {
     cursor: pointer;
+}
+
+.imagelistsection {
+    font-family: 'Splat-title';
+    font-size: 24px;
+    text-align: left;
+    width: calc(170px * 4 + 6px * 3) !important;
+    height: 34px !important;
+    line-height: 34px;
+    border-bottom: 2px solid gray;
+}
+
+.spacer {
+    display: inline-block;
+    width: 20px;
 }

@@ -1,238 +1,334 @@
 const load = () => {
     const loadQueue = [];
     const banners = [
+        {text: "Default",id: 'banner-vanilla'},
         {file:"./banners/Npl_Catalog_Season01_Lv01.png",colour:"001f65"},{file:"./banners/Npl_Catalog_Season01_Lv02.png",colour:"8e102c"},{file:"./banners/Npl_Catalog_Season01_Lv03.png",colour:"bb4d00"},{file:"./banners/Npl_Catalog_Season01_Lv04.png",colour:"3f92c5"},{file:"./banners/Npl_Catalog_Season01_Lv05.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv06.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv07.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv08.png",colour:"000000"},{file:"./banners/Npl_Catalog_Season01_Lv09.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv10.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv11.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv12.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv13.png",colour:"000705"},{file:"./banners/Npl_Catalog_Season01_Lv14.png",colour:"ebffbb"},{file:"./banners/Npl_Catalog_Season01_Lv15.png",colour:"070100"},{file:"./banners/Npl_Catalog_Season01_Lv16.png",colour:"f9e0ff"},{file:"./banners/Npl_Catalog_Season01_Lv17.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv18.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv19.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv20.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv21.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv22.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv23.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv24.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv25.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv26.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv27.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv28.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv29.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv30.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv31.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv32.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv33.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv34.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv35.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv36.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv37.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv38.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv39.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv40.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv41.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv42.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv43.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv44.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv45.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv46.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv47.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv48.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv49.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv50.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv51.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv52.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv53.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv54.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv55.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv56.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv57.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv58.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv59.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv60.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv61.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv62.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv63.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv64.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv65.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv66.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv67.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv68.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv69.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv70.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv71.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv72.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv73.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv74.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv75.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv76.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv77.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv78.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv79.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv80.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv81.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season01_Lv82.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season02_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Catalog_Season02_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv03.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv04.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv05.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv06.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv07.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv08.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv09.png",colour:"ffffff"},{file:"./banners/Npl_Coop_Season01_Lv10.png",colour:"ffffff"},{file:"./banners/Npl_Lot_Season01_Lv01.png",colour:"4e3000"},{file:"./banners/Npl_Lot_Season02_Lv01.png",colour:"4e3000"},{file:"./banners/Npl_Mng_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Mng_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Mng_Lv03.png",colour:"ffffff"},{file:"./banners/Npl_Trg_Season01_Lv01.png",colour:"ffffff"},{file:"./banners/Npl_Trg_Season01_Lv02.png",colour:"ffffff"},{file:"./banners/Npl_Tutorial00.png",colour:"ffffff"}
     ];
     
     const customBanners = [
         // @DeadLineSMB_art
         {
-            file: './custom/banners/deadline/Bottom_Feeders.png',
-            colour: '54e170'
+            text: 'Bands (Custom)',id: 'banner-bands-custom'
         },
-        {
-            file: './custom/banners/deadline/Chirpy_Chips.png',
-            colour: '4afed7'
-        },
-        {
-            file: './custom/banners/deadline/C-Side.png',
-            colour: 'ffe421'
-        },
-        {
-            file: './custom/banners/deadline/Ded-F1sh.png',
-            colour: '0cffc3'
-        },
-        {
-            file: './custom/banners/deadline/Diss-Pair.png',
-            colour: 'bdfa57'
-        },
-        {
-            file: './custom/banners/deadline/Front_Roe.png',
-            colour: '37fe49'
-        },
-        {
-            file: './custom/banners/deadline/High-Tide_Era.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/deadline/Ink_Theory.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/deadline/Off_the_Hook.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/deadline/Omega-3.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/deadline/SashiMori.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/deadline/Wet_Floor.png',
-            colour: 'ffffff'
-        },
+        {file: './custom/banners/deadline/Bottom_Feeders.png',colour: '54e170'},
+        {file: './custom/banners/deadline/Chirpy_Chips.png',colour: '4afed7'},
+        {file: './custom/banners/deadline/C-Side.png',colour: 'ffe421'},
+        {file: './custom/banners/deadline/Ded-F1sh.png',colour: '0cffc3'},
+        {file: './custom/banners/deadline/Diss-Pair.png',colour: 'bdfa57'},
+        {file: './custom/banners/deadline/Front_Roe.png',colour: '37fe49'},
+        {file: './custom/banners/deadline/High-Tide_Era.png',colour: 'ffffff'},
+        {file: './custom/banners/deadline/Ink_Theory.png',colour: 'ffffff'},
+        {file: './custom/banners/deadline/Off_the_Hook.png',colour: 'ffffff'},
+        {file: './custom/banners/deadline/Omega-3.png',colour: 'ffffff'},
+        {file: './custom/banners/deadline/SashiMori.png',colour: 'ffffff'},
+        {file: './custom/banners/deadline/Wet_Floor.png',colour: 'ffffff'},
 
         // @ElectroDev
         {
-            file: './custom/banners/electrodev/booyah.png',
-            colour: 'ffffff'
+            text: 'Special Weapons (Custom)',id: 'banner-specials-custom'
         },
-        {
-            file: './custom/banners/electrodev/bubbler.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/crab.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/jet.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/missile.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/reef.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/stamp.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/storm.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/strike.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/tac.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/vac.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/wail.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/wave.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/zip.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/electrodev/zooka.png',
-            colour: 'ffffff'
-        },
+        {file: './custom/banners/electrodev/booyah.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/bubbler.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/crab.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/jet.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/missile.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/reef.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/stamp.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/storm.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/strike.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/tac.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/vac.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/wail.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/wave.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/zip.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/zooka.png',colour: 'ffffff'},
         
 
         // @spaghettitron
         {
-            file: './custom/banners/camo-black.png',
-            colour: 'ffffff'
+            text: 'Stages (Custom)',id: 'banner-stages-custom'
         },
+        {file: './custom/banners/stages/brinewater.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/eeltail.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/flounder.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/hagglefish.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/hammerhead.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/inkblot.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/mahimahi.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/makomart.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/mincemeat.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/museum.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/scorchgorge.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/sturgeon.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/undertow.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/wahooworld.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/coop-gonefission.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/coop-maroonerbay.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/coop-sockeye.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/coop-spawninggrounds.png',colour: 'ffffff'},
+
         {
-            file: './custom/banners/splatoon2.png',
-            colour: 'ffffff'
+            text: 'Other (Custom)',id: 'banner-other-custom'
         },
+        {file: './custom/banners/deepsea.png',colour: 'ffffff'},
+        {file: './custom/banners/swapdoodle.png',colour: '222222'},
+        {file: './custom/banners/octo_tutorial.png',colour: 'ffffff'},
+        {file: './custom/banners/splatoon2.png',colour: 'ffffff'},
+        {file: './custom/banners/squidjump.png',colour: 'ffffff'},
+        {file: './custom/banners/camo-black.png',colour: 'ffffff'},
+        {file: './custom/banners/catalog2.png',colour: 'ffffff'},
+
         {
-            file: './custom/banners/catalog2.png',
-            colour: 'ffffff'
+            text: 'Uploaded (Custom)',id: 'banner-uploaded-custom'
         },
-        {
-            file: './custom/banners/squidjump.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/brinewater.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/eeltail.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/flounder.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/hagglefish.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/hammerhead.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/inkblot.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/mahimahi.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/makomart.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/mincemeat.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/museum.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/scorchgorge.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/sturgeon.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/undertow.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/wahooworld.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/coop-gonefission.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/coop-maroonerbay.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/coop-sockeye.png',
-            colour: 'ffffff'
-        },
-        {
-            file: './custom/banners/stages/coop-spawninggrounds.png',
-            colour: 'ffffff'
-        }
     ];
     
-    const badges = ["./badges/Badge_CoopBigRunTrophy_Lv00.png","./badges/Badge_CoopBigRunTrophy_Lv01.png","./badges/Badge_CoopBigRunTrophy_Lv02.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv00.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv01.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv02.png","./badges/Badge_TotalKumaPoint_Lv00.png","./badges/Badge_TotalKumaPoint_Lv01.png","./badges/Badge_TotalKumaPoint_Lv02.png","./badges/Badge_CoopClearDangerRateMax.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv03.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv02.png","./badges/Badge_FestRankMax.png","./badges/Badge_GearTotalRarity_B00_Lv00.png","./badges/Badge_GearTotalRarity_B00_Lv01.png","./badges/Badge_GearTotalRarity_B01_Lv00.png","./badges/Badge_GearTotalRarity_B01_Lv01.png","./badges/Badge_GearTotalRarity_B02_Lv00.png","./badges/Badge_GearTotalRarity_B02_Lv01.png","./badges/Badge_GearTotalRarity_B03_Lv00.png","./badges/Badge_GearTotalRarity_B03_Lv01.png","./badges/Badge_GearTotalRarity_B04_Lv00.png","./badges/Badge_GearTotalRarity_B04_Lv01.png","./badges/Badge_GearTotalRarity_B05_Lv00.png","./badges/Badge_GearTotalRarity_B05_Lv01.png","./badges/Badge_GearTotalRarity_B06_Lv00.png","./badges/Badge_GearTotalRarity_B06_Lv01.png","./badges/Badge_GearTotalRarity_B07_Lv00.png","./badges/Badge_GearTotalRarity_B07_Lv01.png","./badges/Badge_GearTotalRarity_B08_Lv00.png","./badges/Badge_GearTotalRarity_B08_Lv01.png","./badges/Badge_GearTotalRarity_B09_Lv00.png","./badges/Badge_GearTotalRarity_B09_Lv01.png","./badges/Badge_GearTotalRarity_B10_Lv00.png","./badges/Badge_GearTotalRarity_B10_Lv01.png","./badges/Badge_GearTotalRarity_B11_Lv00.png","./badges/Badge_GearTotalRarity_B11_Lv01.png","./badges/Badge_GearTotalRarity_B15_Lv00.png","./badges/Badge_GearTotalRarity_B15_Lv01.png","./badges/Badge_GearTotalRarity_B16_Lv00.png","./badges/Badge_GearTotalRarity_B16_Lv01.png","./badges/Badge_GearTotalRarity_B17_Lv00.png","./badges/Badge_GearTotalRarity_B17_Lv01.png","./badges/Badge_GearTotalRarity_B19_Lv00.png","./badges/Badge_GearTotalRarity_B19_Lv01.png","./badges/Badge_GearTotalRarity_B20_Lv00.png","./badges/Badge_GearTotalRarity_B20_Lv01.png","./badges/Badge_LimitedRewardLottery_Lv00.png","./badges/Badge_LimitedRewardLottery_Lv01.png","./badges/Badge_LimitedRewardLottery_Lv02.png","./badges/Badge_Mission_Lv00.png","./badges/Badge_Mission_Lv01.png","./badges/Badge_Mission_Lv02.png","./badges/Badge_Mission_Lv03.png","./badges/Badge_Mission_Lv04.png","./badges/Badge_NawaBattlerCardNum_Lv00.png","./badges/Badge_NawaBattlerCardNum_Lv01.png","./badges/Badge_NawaBattlerCardNum_Lv02.png","./badges/Badge_NawaBattlerRank_Lv00.png","./badges/Badge_NawaBattlerRank_Lv01.png","./badges/Badge_NawaBattlerRank_Lv02.png","./badges/Badge_NawaBattlerWinAllNpcLevel3.png","./badges/Badge_OrderFood_Lv00.png","./badges/Badge_OrderFood_Lv01.png","./badges/Badge_OrderFood_Lv02.png","./badges/Badge_OrderVendor_Lv00.png","./badges/Badge_OrderVendor_Lv01.png","./badges/Badge_CatalogueLevel_Lv00.png","./badges/Badge_CatalogueLevel_Lv01.png","./badges/Badge_SpendLottery_Lv00.png","./badges/Badge_SpendLottery_Lv01.png","./badges/Badge_SpendLottery_Lv02.png","./badges/Badge_SpendShop_Clothes_Lv00.png","./badges/Badge_SpendShop_Clothes_Lv01.png","./badges/Badge_SpendShop_Goods_Lv00.png","./badges/Badge_SpendShop_Goods_Lv01.png","./badges/Badge_SpendShop_Head_Lv00.png","./badges/Badge_SpendShop_Head_Lv01.png","./badges/Badge_SpendShop_Shoes_Lv00.png","./badges/Badge_SpendShop_Shoes_Lv01.png","./badges/Badge_Udemae_Lv00.png","./badges/Badge_Udemae_Lv01.png","./badges/Badge_Udemae_Lv02.png","./badges/Badge_WinCount_Pnt_Lv00.png","./badges/Badge_WinCount_Pnt_Lv01.png","./badges/Badge_WinCount_Pnt_Lv02.png","./badges/Badge_WinCount_Tcl_Atk_Lv00.png","./badges/Badge_WinCount_Tcl_Atk_Lv01.png","./badges/Badge_WinCount_Tcl_Def_Lv00.png","./badges/Badge_WinCount_Tcl_Def_Lv01.png","./badges/Badge_WinCount_Var_Lv00.png","./badges/Badge_WinCount_Var_Lv01.png","./badges/Badge_WinCount_Vcl_Lv00.png","./badges/Badge_WinCount_Vcl_Lv01.png","./badges/Badge_WinCount_Vgl_Lv00.png","./badges/Badge_WinCount_Vgl_Lv01.png","./badges/Badge_WinCount_Vlf_Lv00.png","./badges/Badge_WinCount_Vlf_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv02.png","./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv01.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv01.png"];
+    const badges = [
+        "TEXT:Salmon Run#badge-salmon",
+        "./badges/Badge_CoopBigRunTrophy_Lv00.png","./badges/Badge_CoopBigRunTrophy_Lv01.png","./badges/Badge_CoopBigRunTrophy_Lv02.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv00.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv01.png","./badges/Badge_CoopBossKillNum_SakelienGiant_Lv02.png","./badges/Badge_TotalKumaPoint_Lv00.png","./badges/Badge_TotalKumaPoint_Lv01.png","./badges/Badge_TotalKumaPoint_Lv02.png","./badges/Badge_CoopClearDangerRateMax.png",
+        "./badges/Badge_CoopGrade_Normal_Shakedent_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakedent_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeship_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakespiral_Lv03.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv00.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv01.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv02.png","./badges/Badge_CoopGrade_Normal_Shakeup_Lv03.png",
+        "./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeArtillery_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeDolphin_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakePillar_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakeSaucer_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakediver_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienBomber_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienCupTwins_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienShield_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienSnake_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_SakelienTower_Lv02.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv00.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv01.png","./badges/Badge_CoopRareEnemyKillNum_Sakerocket_Lv02.png",
+        "TEXT:Gamemodes#badge-gamemodes",
+        "./badges/Badge_NawaBattlerCardNum_Lv00.png","./badges/Badge_NawaBattlerCardNum_Lv01.png","./badges/Badge_NawaBattlerCardNum_Lv02.png","./badges/Badge_NawaBattlerRank_Lv00.png","./badges/Badge_NawaBattlerRank_Lv01.png","./badges/Badge_NawaBattlerRank_Lv02.png","./badges/Badge_NawaBattlerWinAllNpcLevel3.png","./badges/Badge_WinCount_Pnt_Lv00.png","./badges/Badge_WinCount_Pnt_Lv01.png","./badges/Badge_WinCount_Pnt_Lv02.png","./badges/Badge_WinCount_Tcl_Atk_Lv00.png","./badges/Badge_WinCount_Tcl_Atk_Lv01.png","./badges/Badge_WinCount_Tcl_Def_Lv00.png","./badges/Badge_WinCount_Tcl_Def_Lv01.png","./badges/Badge_Udemae_Lv00.png","./badges/Badge_Udemae_Lv01.png","./badges/Badge_Udemae_Lv02.png","./badges/Badge_WinCount_Var_Lv00.png","./badges/Badge_WinCount_Var_Lv01.png","./badges/Badge_WinCount_Vcl_Lv00.png","./badges/Badge_WinCount_Vcl_Lv01.png","./badges/Badge_WinCount_Vgl_Lv00.png","./badges/Badge_WinCount_Vgl_Lv01.png","./badges/Badge_WinCount_Vlf_Lv00.png","./badges/Badge_WinCount_Vlf_Lv01.png",
+        "TEXT:Shops#badge-shops",
+        "./badges/Badge_LimitedRewardLottery_Lv00.png","./badges/Badge_LimitedRewardLottery_Lv01.png","./badges/Badge_LimitedRewardLottery_Lv02.png","./badges/Badge_OrderFood_Lv00.png","./badges/Badge_OrderFood_Lv01.png","./badges/Badge_OrderFood_Lv02.png","./badges/Badge_OrderVendor_Lv00.png","./badges/Badge_OrderVendor_Lv01.png","./badges/Badge_SpendLottery_Lv00.png","./badges/Badge_SpendLottery_Lv01.png","./badges/Badge_SpendLottery_Lv02.png","./badges/Badge_SpendShop_Clothes_Lv00.png","./badges/Badge_SpendShop_Clothes_Lv01.png","./badges/Badge_SpendShop_Goods_Lv00.png","./badges/Badge_SpendShop_Goods_Lv01.png","./badges/Badge_SpendShop_Head_Lv00.png","./badges/Badge_SpendShop_Head_Lv01.png","./badges/Badge_SpendShop_Shoes_Lv00.png","./badges/Badge_SpendShop_Shoes_Lv01.png",
+        "TEXT:Other#badge-other",
+        "./badges/Badge_Mission_Lv00.png","./badges/Badge_Mission_Lv01.png","./badges/Badge_Mission_Lv02.png","./badges/Badge_Mission_Lv03.png","./badges/Badge_Mission_Lv04.png","./badges/Badge_FestRankMax.png","./badges/Badge_CatalogueLevel_Lv00.png","./badges/Badge_CatalogueLevel_Lv01.png",
+        "TEXT:Gear#badge-gear",
+        "./badges/Badge_GearTotalRarity_B00_Lv00.png","./badges/Badge_GearTotalRarity_B00_Lv01.png","./badges/Badge_GearTotalRarity_B01_Lv00.png","./badges/Badge_GearTotalRarity_B01_Lv01.png","./badges/Badge_GearTotalRarity_B02_Lv00.png","./badges/Badge_GearTotalRarity_B02_Lv01.png","./badges/Badge_GearTotalRarity_B03_Lv00.png","./badges/Badge_GearTotalRarity_B03_Lv01.png","./badges/Badge_GearTotalRarity_B04_Lv00.png","./badges/Badge_GearTotalRarity_B04_Lv01.png","./badges/Badge_GearTotalRarity_B05_Lv00.png","./badges/Badge_GearTotalRarity_B05_Lv01.png","./badges/Badge_GearTotalRarity_B06_Lv00.png","./badges/Badge_GearTotalRarity_B06_Lv01.png","./badges/Badge_GearTotalRarity_B07_Lv00.png","./badges/Badge_GearTotalRarity_B07_Lv01.png","./badges/Badge_GearTotalRarity_B08_Lv00.png","./badges/Badge_GearTotalRarity_B08_Lv01.png","./badges/Badge_GearTotalRarity_B09_Lv00.png","./badges/Badge_GearTotalRarity_B09_Lv01.png","./badges/Badge_GearTotalRarity_B10_Lv00.png","./badges/Badge_GearTotalRarity_B10_Lv01.png","./badges/Badge_GearTotalRarity_B11_Lv00.png","./badges/Badge_GearTotalRarity_B11_Lv01.png","./badges/Badge_GearTotalRarity_B15_Lv00.png","./badges/Badge_GearTotalRarity_B15_Lv01.png","./badges/Badge_GearTotalRarity_B16_Lv00.png","./badges/Badge_GearTotalRarity_B16_Lv01.png","./badges/Badge_GearTotalRarity_B17_Lv00.png","./badges/Badge_GearTotalRarity_B17_Lv01.png","./badges/Badge_GearTotalRarity_B19_Lv00.png","./badges/Badge_GearTotalRarity_B19_Lv01.png","./badges/Badge_GearTotalRarity_B20_Lv00.png","./badges/Badge_GearTotalRarity_B20_Lv01.png",
+        "TEXT:Special Weapons#badge-specials",
+        "./badges/Badge_WinCount_WeaponSp_SpBlower_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpBlower_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpChariot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpEnergyStand_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpGreatBarrier_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpInkStorm_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpJetpack_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMicroLaser_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpMultiMissile_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpNiceBall_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpShockSonar_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSkewer_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpSuperHook_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpTripleTornado_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraShot_Lv02.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv00.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv01.png","./badges/Badge_WinCount_WeaponSp_SpUltraStamp_Lv02.png",
+        "TEXT:Weapons#badge-weapons",
+        "./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_LightLong_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_LightShort_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Middle_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Blaster_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_00_Lv01.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv00.png","./badges/Badge_WeaponLevel_Brush_Mini_01_Lv01.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Brush_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Keeper_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Light_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_LongScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_NormalScope_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Pencil_00_Lv01.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Charger_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Dual_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Gallon_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Short_01_Lv01.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv00.png","./badges/Badge_WeaponLevel_Maneuver_Stepper_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv00.png","./badges/Badge_WeaponLevel_Roller_Compact_01_Lv01.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Hunter_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Roller_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Lite_00_Lv01.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Saber_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Compact_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv00.png","./badges/Badge_WeaponLevel_Shelter_Wide_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Blaze_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Expert_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_First_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Flash_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Gravity_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Heavy_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Long_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_01_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Normal_H_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Precision_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickLong_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_QuickMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_Short_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleMiddle_00_Lv01.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv00.png","./badges/Badge_WeaponLevel_Shooter_TripleQuick_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Bathtub_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Diffusion_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Launcher_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_00_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Strong_01_Lv01.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv00.png","./badges/Badge_WeaponLevel_Slosher_Washtub_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Downpour_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Hyper_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Quick_01_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Serein_00_Lv01.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv00.png","./badges/Badge_WeaponLevel_Spinner_Standard_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Normal_00_Lv01.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv00.png","./badges/Badge_WeaponLevel_Stringer_Short_00_Lv01.png"
+    ];
     
     const customBadges = [
-        "./custom/badges/turfwar.png",
-        "./custom/badges/private.png",
-        "./custom/badges/xrank.png",
-        "./custom/badges/league.png",
-        "./custom/badges/amiibo.png",
-        "./custom/badges/cuttlegear.png",
-        "./custom/badges/grizzco.png",
-        "./custom/badges/smallfry.png",
-        "./custom/badges/chum.png",
-        "./custom/badges/cohock.png",
-        "./custom/badges/goldie.png",
-        "./custom/badges/mudmouth.png",
-        "./custom/badges/griller.png",
-        "./custom/badges/chinook.png",
-        "./custom/badges/blaster.png",
-        "./custom/badges/brella.png",
-        "./custom/badges/charger.png",
-        "./custom/badges/slosher.png",
-        "./custom/badges/splatana.png",
-        "./custom/badges/stringer.png"
-    ]
+        "TEXT:Weapons (Custom)#badge-weapons-custom",
+        "./custom/badges/weapons/herogun1.png",
+        "./custom/badges/weapons/gold_herogun1.png",
+        "./custom/badges/weapons/herogun2.png",
+        "./custom/badges/weapons/gold_herogun2.png",
+        "./custom/badges/weapons/blaster.png",
+        "./custom/badges/weapons/gold_blaster.png",
+        "./custom/badges/weapons/brella.png",
+        "./custom/badges/weapons/gold_brella.png",
+        "./custom/badges/weapons/charger.png",
+        "./custom/badges/weapons/gold_charger.png",
+        "./custom/badges/weapons/slosher.png",
+        "./custom/badges/weapons/gold_slosher.png",
+        "./custom/badges/weapons/splatana.png",
+        "./custom/badges/weapons/gold_splatana.png",
+        "./custom/badges/weapons/stringer.png",
+        "./custom/badges/weapons/gold_stringer.png",
+
+        "TEXT:Subs/Specials (Custom)#badge-subs-custom",
+        "./custom/badges/misc/splashdown.png",
+
+        "./custom/badges/subs/buddy.png",
+        "./custom/badges/subs/bomb.png",
+        "./custom/badges/subs/suction.png",
+        "./custom/badges/subs/burst.png",
+        "./custom/badges/subs/sprinkler.png",
+        "./custom/badges/subs/wall.png",
+        "./custom/badges/subs/fizzy.png",
+        "./custom/badges/subs/curling.png",
+        "./custom/badges/subs/auto.png",
+        "./custom/badges/subs/beacon.png",
+        "./custom/badges/subs/point.png",
+        "./custom/badges/subs/mine.png",
+        "./custom/badges/subs/toxic.png",
+        "./custom/badges/subs/linemarker.png",
+        "./custom/badges/subs/torpedo.png",
+
+        "TEXT:Gamemodes (Custom)#badge-modes-custom",
+        "./custom/badges/gamemodes/turfwar.png",
+        "./custom/badges/gamemodes/private.png",
+        "./custom/badges/gamemodes/xrank.png",
+        "./custom/badges/gamemodes/league.png",
+        "./custom/badges/gamemodes/tricolor.png",
+        "./custom/badges/gamemodes/tableturf.png",
+
+        "TEXT:Brands (Custom)#badge-weapons-custom",
+        "./custom/badges/brands/amiibo.png",
+        "./custom/badges/brands/cuttlegear.png",
+        "./custom/badges/brands/grizzco.png",
+
+        "TEXT:Salmon Run (Custom)#badge-salmon-custom",
+        "./custom/badges/salmonrun/smallfry.png",
+        "./custom/badges/salmonrun/chum.png",
+        "./custom/badges/salmonrun/cohock.png",
+        "./custom/badges/salmonrun/goldie.png",
+        "./custom/badges/salmonrun/mudmouth.png",
+        "./custom/badges/salmonrun/griller.png",
+        "./custom/badges/salmonrun/chinook.png",
+
+        "TEXT:Characters (Custom)#badge-chars-custom",
+        "./custom/badges/npcs/sheldon.png",
+        "./custom/badges/npcs/liljudd.png",
+        "./custom/badges/npcs/grizz.png",
+        "./custom/badges/npcs/shiver.png",
+        "./custom/badges/npcs/frye.png",
+        "./custom/badges/npcs/bigman.png",
+
+        "TEXT:Icons (Custom)#badge-icons-custom",
+        "./custom/badges/misc/deepcut.png",
+        "./custom/badges/misc/shivericon.png",
+        "./custom/badges/misc/fryeicon.png",
+        "./custom/badges/misc/bigmanicon.png",
+        "./custom/badges/misc/gacha.png",
+        "./custom/badges/misc/seasnail.png",
+        "./custom/badges/misc/shell.png",
+        "./custom/badges/misc/record.png",
+
+        "TEXT:Splatoon 2 Splatfests (Custom)#badge-fest2-custom",
+        "./custom/badges/splatfests2/fest0_1.png",
+        "./custom/badges/splatfests2/fest0_2.png",
+        "./custom/badges/splatfests2/fest1_1.png",
+        "./custom/badges/splatfests2/fest1_2.png",
+        "./custom/badges/splatfests2/fest2_1.png",
+        "./custom/badges/splatfests2/fest2_2.png",
+        "./custom/badges/splatfests2/fest3_1.png",
+        "./custom/badges/splatfests2/fest3_2.png",
+        "./custom/badges/splatfests2/fest4_1.png",
+        "./custom/badges/splatfests2/fest4_2.png",
+        "./custom/badges/splatfests2/fest5_1.png",
+        "./custom/badges/splatfests2/fest5_2.png",
+        "./custom/badges/splatfests2/fest6_1.png",
+        "./custom/badges/splatfests2/fest6_2.png",
+        "./custom/badges/splatfests2/fest7_1.png",
+        "./custom/badges/splatfests2/fest7_2.png",
+        "./custom/badges/splatfests2/fest8_1.png",
+        "./custom/badges/splatfests2/fest8_2.png",
+        "./custom/badges/splatfests2/fest9_1.png",
+        "./custom/badges/splatfests2/fest9_2.png",
+        "./custom/badges/splatfests2/fest10_1.png",
+        "./custom/badges/splatfests2/fest10_2.png",
+        "./custom/badges/splatfests2/fest11_1.png",
+        "./custom/badges/splatfests2/fest11_2.png",
+        "./custom/badges/splatfests2/fest12_1.png",
+        "./custom/badges/splatfests2/fest12_2.png",
+        "./custom/badges/splatfests2/fest13_1.png",
+        "./custom/badges/splatfests2/fest13_2.png",
+        "./custom/badges/splatfests2/fest14_1.png",
+        "./custom/badges/splatfests2/fest14_2.png",
+        "./custom/badges/splatfests2/fest15_1.png",
+        "./custom/badges/splatfests2/fest15_2.png",
+        "./custom/badges/splatfests2/fest16_1.png",
+        "./custom/badges/splatfests2/fest16_2.png",
+        "./custom/badges/splatfests2/fest17_1.png",
+        "./custom/badges/splatfests2/fest17_2.png",
+        "./custom/badges/splatfests2/fest18_1.png",
+        "./custom/badges/splatfests2/fest18_2.png",
+        "./custom/badges/splatfests2/fest19_1.png",
+        "./custom/badges/splatfests2/fest19_2.png",
+        "./custom/badges/splatfests2/fest20_1.png",
+        "./custom/badges/splatfests2/fest20_2.png",
+        "./custom/badges/splatfests2/fest21_1.png",
+        "./custom/badges/splatfests2/fest21_2.png",
+        "./custom/badges/splatfests2/fest22_1.png",
+        "./custom/badges/splatfests2/fest22_2.png",
+
+        "TEXT:Splatoon 3 Splatfests (Custom)#badge-fest3-custom",
+        "./custom/badges/splatfests3/fest0_1.png",
+        "./custom/badges/splatfests3/fest0_2.png",
+        "./custom/badges/splatfests3/fest0_3.png",
+        "./custom/badges/splatfests3/fest1_1.png",
+        "./custom/badges/splatfests3/fest1_2.png",
+        "./custom/badges/splatfests3/fest1_3.png",
+        "./custom/badges/splatfests3/fest2_1.png",
+        "./custom/badges/splatfests3/fest2_2.png",
+        "./custom/badges/splatfests3/fest2_3.png",
+        "./custom/badges/splatfests3/fest3_1.png",
+        "./custom/badges/splatfests3/fest3_2.png",
+        "./custom/badges/splatfests3/fest3_3.png",
+        "./custom/badges/splatfests3/fest4_1.png",
+        "./custom/badges/splatfests3/fest4_2.png",
+        "./custom/badges/splatfests3/fest4_3.png",
+
+        "TEXT:Memcakes (Custom)#badge-memcake-custom",
+        "./custom/badges/memcakes/memcake_1.png",
+        "./custom/badges/memcakes/memcake_2.png",
+        "./custom/badges/memcakes/memcake_3.png",
+        "./custom/badges/memcakes/memcake_4.png",
+        "./custom/badges/memcakes/memcake_5.png",
+        "./custom/badges/memcakes/memcake_6.png",
+        "./custom/badges/memcakes/memcake_7.png",
+        "./custom/badges/memcakes/memcake_8.png",
+        "./custom/badges/memcakes/memcake_9.png",
+        "./custom/badges/memcakes/memcake_10.png",
+        "./custom/badges/memcakes/memcake_11.png",
+        "./custom/badges/memcakes/memcake_12.png",
+        "./custom/badges/memcakes/memcake_13.png",
+        "./custom/badges/memcakes/memcake_14.png",
+        "./custom/badges/memcakes/memcake_15.png",
+        "./custom/badges/memcakes/memcake_16.png",
+        "./custom/badges/memcakes/memcake_17.png",
+        "./custom/badges/memcakes/memcake_18.png",
+        "./custom/badges/memcakes/memcake_19.png",
+        "./custom/badges/memcakes/memcake_20.png",
+        "./custom/badges/memcakes/memcake_21.png",
+        "./custom/badges/memcakes/memcake_22.png",
+        "./custom/badges/memcakes/memcake_23.png",
+        "./custom/badges/memcakes/memcake_24.png",
+        "./custom/badges/memcakes/memcake_25.png",
+        "./custom/badges/memcakes/memcake_26.png",
+        "./custom/badges/memcakes/memcake_27.png",
+        "./custom/badges/memcakes/memcake_28.png",
+        "./custom/badges/memcakes/memcake_29.png",
+        "./custom/badges/memcakes/memcake_30.png",
+        "./custom/badges/memcakes/memcake_31.png",
+        "./custom/badges/memcakes/memcake_32.png",
+        "./custom/badges/memcakes/memcake_33.png",
+        "./custom/badges/memcakes/memcake_34.png",
+        "./custom/badges/memcakes/memcake_35.png",
+        "./custom/badges/memcakes/memcake_36.png",
+        "./custom/badges/memcakes/memcake_37.png",
+        "./custom/badges/memcakes/memcake_38.png",
+        "./custom/badges/memcakes/memcake_39.png",
+        "./custom/badges/memcakes/memcake_40.png",
+        "./custom/badges/memcakes/memcake_41.png",
+        "./custom/badges/memcakes/memcake_42.png",
+        "./custom/badges/memcakes/memcake_43.png",
+        "./custom/badges/memcakes/memcake_44.png",
+        "./custom/badges/memcakes/memcake_45.png",
+        "./custom/badges/memcakes/memcake_46.png",
+        "./custom/badges/memcakes/memcake_47.png",
+        "./custom/badges/memcakes/memcake_48.png",
+        "./custom/badges/memcakes/memcake_49.png",
+        "./custom/badges/memcakes/memcake_50.png",
+        "./custom/badges/memcakes/memcake_51.png",
+        "./custom/badges/memcakes/memcake_52.png",
+        "./custom/badges/memcakes/memcake_53.png",
+        "./custom/badges/memcakes/memcake_54.png",
+        "./custom/badges/memcakes/memcake_55.png",
+        "./custom/badges/memcakes/memcake_56.png",
+        "./custom/badges/memcakes/memcake_57.png",
+        "./custom/badges/memcakes/memcake_58.png",
+        "./custom/badges/memcakes/memcake_59.png",
+        "./custom/badges/memcakes/memcake_60.png",
+        "./custom/badges/memcakes/memcake_61.png",
+        "./custom/badges/memcakes/memcake_62.png",
+        "./custom/badges/memcakes/memcake_63.png",
+        "./custom/badges/memcakes/memcake_64.png",
+        "./custom/badges/memcakes/memcake_65.png",
+        "./custom/badges/memcakes/memcake_66.png",
+        "./custom/badges/memcakes/memcake_67.png",
+        "./custom/badges/memcakes/memcake_68.png",
+        "./custom/badges/memcakes/memcake_69.png",
+        "./custom/badges/memcakes/memcake_70.png",
+        "./custom/badges/memcakes/memcake_71.png",
+        "./custom/badges/memcakes/memcake_72.png",
+        "./custom/badges/memcakes/memcake_73.png",
+        "./custom/badges/memcakes/memcake_74.png",
+        "./custom/badges/memcakes/memcake_75.png",
+        "./custom/badges/memcakes/memcake_76.png",
+        "./custom/badges/memcakes/memcake_77.png",
+        "./custom/badges/memcakes/memcake_78.png",
+        "./custom/badges/memcakes/memcake_79.png",
+        "./custom/badges/memcakes/memcake_80.png",
+
+        "TEXT:Uploaded (Custom)#badge-upload-custom",
+    ];
 
     const lang = {
         // English
@@ -962,38 +1058,24 @@ const load = () => {
     {
         loadQueue.push(1);
         let img = new Image();
-        img.src = './watermark.png';
+        img.src = './images/watermark.png';
         img.onload = loadQueue.pop();
         images.watermarks.push(img);
     }
     {
         loadQueue.push(1);
         let img = new Image();
-        img.src = './deadline.png';
+        img.src = './images/deadline.png';
         img.onload = loadQueue.pop();
         images.watermarks.push(img);
     }
     {
         loadQueue.push(1);
         let img = new Image();
-        img.src = './electrodev.png';
+        img.src = './images/electrodev.png';
         img.onload = loadQueue.pop();
         images.watermarks.push(img);
     }
-    banners.forEach(item => {
-        loadQueue.push(1);
-        let img = new Image();
-        img.src = item.file;
-        images.banners.push(img);
-        img.onload = loadQueue.pop();
-    });
-    badges.forEach(item => {
-        loadQueue.push(1);
-        let img = new Image();
-        img.src = item;
-        img.onload = loadQueue.pop();
-        images.badges.push(img);
-    });
 
     // Inputs =)
     const nameinput = document.querySelector('#nameinput');
@@ -1016,6 +1098,10 @@ const load = () => {
     const custombadges = document.querySelector('#custombadge');
     const customcolour = document.querySelector('#customcolour');
 
+    // section select menus
+    const bannersection = document.querySelector('#bannersection');
+    const badgesection = document.querySelector('#badgesection');
+
     customtitle.value = lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : '');
     customtitle.placeholder = customtitle.value;
 
@@ -1036,12 +1122,16 @@ const load = () => {
     }
 
     // Set defaults for inputs
-    const defaultBannerIndex = banners.findIndex(a => a.file.includes('Tutorial'));
+    const defaultBannerIndex = banners.findIndex(a => !a.text && a.file.includes('Tutorial'));
     tag.banner = defaultBannerIndex;
     tag.title.first = lang[language].titles.first.indexOf(lang[language].default[0]);
     tag.title.last = lang[language].titles.last.indexOf(lang[language].default[1]);
 
-    const bannerContainer = document.querySelector('#bannercontainer')
+    const bannerContainer = document.querySelector('#bannercontainer');
+    
+    bannersection.addEventListener('change', () => {
+        bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
+    });
 
     const bannerClickEvent = (item, img) => {
         const newBanner = banners.findIndex(b => b.file === item.file);
@@ -1062,11 +1152,32 @@ const load = () => {
         renderSplashtag();
     }
 
-
     // Add options for select menus
     banners.forEach(item => {
+        if (item.text) {
+            for (let i = 0; i < bannerContainer.childNodes.length % 4; i++) {
+                bannerContainer.appendChild(document.createElement('div'));
+            }
+            const sectionTitle = document.createElement('div');
+            sectionTitle.textContent = item.text;
+            sectionTitle.id = item.id;
+            sectionTitle.className = 'imagelistsection';
+            bannerContainer.appendChild(sectionTitle);
+            images.banners.push(null);
+
+            // add to banner select dropdown
+            const option = document.createElement('option');
+            option.textContent = item.text.replace('(Custom)', '(c)');
+            option.value = item.id;
+            bannersection.appendChild(option);
+            return;
+        }
+        loadQueue.push(1);
         const img = document.createElement('img');
         img.src = item.file;
+        images.banners.push(img);
+        img.onload = loadQueue.pop();
+
         img.setAttribute('draggable', 'false');
         img.addEventListener('click', () => {
             bannerClickEvent(item, img);
@@ -1080,7 +1191,9 @@ const load = () => {
     });
 
     for (let i = 0; i < 4; i++) {
-        bannerContainer.appendChild(document.createElement('div'));
+        let filler = document.createElement('div');
+        filler.className = 'bannerFiller';
+        bannerContainer.appendChild(filler);
     }
 
     const badgeContainer = document.querySelector('#badgecontainer');
@@ -1094,7 +1207,8 @@ const load = () => {
             });
             for (let i = 0; i < 3; i++) {
                 if (tag.badges[i] < 0) continue;
-                badgeContainer.childNodes[tag.badges[i]].className = i === slot ? 'selected' : 'other';
+                badgeContainer.querySelectorAll('img, .imagelistsection')[tag.badges[i]].className = i === slot ? 'selected' : 'other';
+                // badgeContainer.childNodes[tag.badges[i]].className = i === slot ? 'selected' : 'other';
             }
         });
     });
@@ -1107,7 +1221,7 @@ const load = () => {
         // if badge is in other slot, remove the old one
         if (tag.badges.indexOf(newBadge) !== -1) {
             tag.badges[tag.badges.indexOf(newBadge)] = -1;
-            badgeContainer.childNodes[newBadge].className = '';
+            badgeContainer.querySelectorAll('img, .imagelistsection')[newBadge].className = '';
         }
 
         if (newBadge == currentBadge) {
@@ -1127,8 +1241,32 @@ const load = () => {
     }
 
     badges.forEach(item => {
+        if (item.startsWith('TEXT')) {
+            for (let i = 0; i < badgeContainer.childNodes.length % 10; i++) {
+                badgeContainer.appendChild(document.createElement('div'));
+            }
+            const sectionTitle = document.createElement('div');
+            let text = item.split('#')[0].replace('TEXT:', '');
+            let id = item.split('#')[1];
+            sectionTitle.textContent = text;
+            sectionTitle.id = id;
+            sectionTitle.className = 'imagelistsection';
+            badgeContainer.appendChild(sectionTitle);
+            images.badges.push(null);
+
+            // add to badge select dropdown
+            const option = document.createElement('option');
+            option.textContent = text.replace('(Custom)', '(c)');
+            option.value = id;
+            badgesection.appendChild(option);
+            return;
+        }
+        loadQueue.push(1);
         const img = document.createElement('img');
         img.src = item;
+        img.onload = loadQueue.pop();
+        images.badges.push(img);
+
         img.setAttribute('draggable', 'false');
         img.addEventListener('click', () => {
             badgeClickEvent(item, img);
@@ -1138,7 +1276,9 @@ const load = () => {
     });
     
     for (let i = 0; i < 10; i++) {
-        badgeContainer.appendChild(document.createElement('div'));
+        let filler = document.createElement('div');
+        filler.className = 'badgeFiller';
+        badgeContainer.appendChild(filler);
     }
 
     lang[language].titles.first.forEach(item => {
@@ -1190,6 +1330,21 @@ const load = () => {
                         const title1 = randIndex(lang[language].titles.first);
                         titleinput1.selectedIndex = title1;
                         tag.title.first = title1;
+
+                        const chosentitles = [];
+                        if (tag.title.first) {
+                            chosentitles.push(lang[language].titles.first[tag.title.first]);
+                        }
+                        if (tag.title.last) {
+                            chosentitles.push(lang[language].titles.last[tag.title.last]);
+                        }
+                        const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : ''
+
+                        tag.custom.title = chosentitles.join(spaceOrBlank);
+                        customtitle.value = tag.custom.title;
+                        setTimeout(() => {
+                            renderSplashtag();
+                        },1)
                     }
                 },
                 {
@@ -1198,18 +1353,46 @@ const load = () => {
                         const title2 = randIndex(lang[language].titles.last);
                         titleinput2.selectedIndex = title2;
                         tag.title.last = title2;
+
+                        const chosentitles = [];
+                        if (tag.title.first) {
+                            chosentitles.push(lang[language].titles.first[tag.title.first]);
+                        }
+                        if (tag.title.last) {
+                            chosentitles.push(lang[language].titles.last[tag.title.last]);
+                        }
+                        const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : ''
+
+                        tag.custom.title = chosentitles.join(spaceOrBlank);
+                        customtitle.value = tag.custom.title;
+                        renderSplashtag();
                     }
                 },
                 {
                     elm: randombanner,
                     run: () => {
-                        const banner = randIndex(banners);
-                        bannerContainer.childNodes[banner].click();
+                        const banner = randIndex(banners.filter(b => b.file));
+                        bannerContainer.querySelectorAll('img')[banner].click();
                     }
                 },
                 {
                     elm: randombadge,
                     run: () => {
+                        const badgeImgs = badgeContainer.querySelectorAll('img');
+
+                        for (let i = 0; i < 3; i++) {
+                            badgeRadios[i].click();
+
+                            const badge = randIndex([0, ...badgeImgs]);
+
+                            if (badge && badgeImgs[badge]) {
+                                badgeImgs[badge].click();
+                            } else {
+                                tag.badges[i] = -1;
+                            }
+                        }
+                        badgeRadios[0].click();
+                        /*
                         const randBadges = ["", ...badges];
                         for (let i = 0; i < 3; i++) {
                             // allow for no badge
@@ -1228,7 +1411,7 @@ const load = () => {
                         for (let i = 0; i < 3; i++) {
                             if (tag.badges[i] < 0) continue;
                             badgeContainer.childNodes[tag.badges[i]].className = i === 0 ? 'selected' : 'other';
-                        }
+                        }*/
                     }
                 },
                 {
@@ -1320,7 +1503,7 @@ const load = () => {
                                 const item = { file: image.src, colour: 'ffffff' };
                                 banners.push(item);
                                 images.banners.push(image);
-                                bannerContainer.insertBefore(image, bannerContainer.querySelector('div'));
+                                bannerContainer.insertBefore(image, bannerContainer.querySelector('.bannerFiller'));
                                 image.addEventListener('click', () => {
                                     bannerClickEvent(item, image);
                                 });
@@ -1350,7 +1533,7 @@ const load = () => {
                                 const item = image.src;
                                 badges.push(item);
                                 images.badges.push(image);
-                                badgeContainer.insertBefore(image, badgeContainer.querySelector('div'));
+                                badgeContainer.insertBefore(image, badgeContainer.querySelector('.badgeFiller'));
                                 image.addEventListener('click', () => {
                                     badgeClickEvent(item, image);
                                 });
@@ -1364,6 +1547,18 @@ const load = () => {
                             }
                         }
                         reader.readAsDataURL(custombadges.files[0]);
+                    }
+                },
+                {
+                    elm: bannersection,
+                    run: () => {
+                        bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
+                    }
+                },
+                {
+                    elm: badgesection,
+                    run: () => {
+                        badgeContainer.querySelector('#' + badgesection.value).scrollIntoView();
                     }
                 }
             ];
