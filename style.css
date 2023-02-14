@@ -230,14 +230,15 @@ footer {
     background-size: auto, auto calc(100% - 90px), auto;
     width: 800px;
     border-radius: 15px;
-    height: calc(400px - 5px);
+    /*height: calc(400px - 5px);*/
     /*height: calc(316px - 5px);*/
+    padding-bottom: 20px;
 }
-
+/*
 .tab.selected + * + * + .tabcontainer {
     height: calc(316px - 5px);
     padding-bottom: 5px;
-}
+}/**/
 
 .imglistcontainer {
     overflow-y: scroll;
