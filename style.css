@@ -253,7 +253,8 @@ footer {
 
 .imglistcontainer > div {
     padding: 4px;
-    width: calc(170px * 4 + 6px * 3);
+    /*width: calc(170px * 4 + 6px * 3);*/
+    width: 700px;
     margin: auto;
     
     display: flex;
@@ -263,7 +264,7 @@ footer {
     
     box-sizing: border-box;
     padding: 0;
-    height: 330px;
+    height: 300px;
     /*height: 200px;*/
 }
 
@@ -274,13 +275,19 @@ footer {
 }
 
 #bannercontainer img {
-    width: 170px;
-    height: calc(200 / 700 * 170px);
+    /*width: 170px;
+    max-width: 700px;
+    min-width: 82px;*/
+    width: calc(700px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
+    height: auto;
 }
 
 #badgecontainer img {
-    width: 64px;
-    height: 64px;
+    /*width: 64px;
+    max-width: 128px;
+    min-width: 32px;*/
+    width: calc(700px / var(--items) - 6px);
+    height: auto;
 }
 
 input[type="radio"] {
@@ -361,4 +368,31 @@ label {
 .spacer {
     display: inline-block;
     width: 20px;
+}
+
+.scalecontainer {
+    display: block;
+    margin: auto;
+    width: 700px;
+    height: 15px;
+    text-align: right;
+}
+
+.scale {
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+    background-size: 100%, 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+}
+
+.scale.up {
+    background-image: url("./images/plus.png");
+}
+
+.scale.down {
+    background-image: url("./images/minus.png");
 }

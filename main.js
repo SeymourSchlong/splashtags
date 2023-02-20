@@ -153,7 +153,7 @@ const load = () => {
         "./custom/badges/brands/cuttlegear.png",
         "./custom/badges/brands/grizzco.png",
 
-        "NAME:gearCustom#badge-salmon-custom",
+        "NAME:coopCustom#badge-salmon-custom",
         "./custom/badges/salmonrun/smallfry.png",
         "./custom/badges/salmonrun/chum.png",
         "./custom/badges/salmonrun/cohock.png",
@@ -380,13 +380,13 @@ const load = () => {
                     mode: "Gamemodes",
                     shop: "Shops",
                     misc: "Other",
-                    gear: "Gear",
+                    gear: "Gear Brands",
                     spec: "Special Weapons",
                     weps: "Weapons",
                     wepsCustom: "Weapons",
                     subsCustom: "Subs/Specials",
                     modeCustom: "Gamemodes",
-                    gearCustom: "Brands",
+                    gearCustom: "Gear Brands",
                     coopCustom: "Salmon Run",
                     charCustom: "Characters",
                     iconCustom: "Icons",
@@ -1816,7 +1816,22 @@ const load = () => {
                         clickEvents[4].run();
                     }
                 }
-            ]
+            ];
+
+            document.querySelectorAll('.scale').forEach(e => {
+                clickEvents.push({
+                    elm: e,
+                    run: () => {
+                        let container = e.parentNode.parentNode;
+                        let scale = Number(container.dataset.scale);
+                        scale += Number(e.dataset.do);
+                        if (scale < Number(container.dataset.min)) scale = container.dataset.min;
+                        if (scale > Number(container.dataset.max)) scale = container.dataset.max;
+                        container.dataset.scale = scale;
+                        container.style = `--items: ${scale}`;
+                    }
+                })
+            });
 
             clickEvents.forEach(event => {
                 event.elm.addEventListener('click', () => {
