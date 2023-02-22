@@ -279,7 +279,7 @@ footer {
     max-width: 700px;
     min-width: 82px;*/
     width: calc(700px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
-    height: auto;
+    height: calc(200px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
 }
 
 #badgecontainer img {
@@ -287,7 +287,7 @@ footer {
     max-width: 128px;
     min-width: 32px;*/
     width: calc(700px / var(--items) - 6px);
-    height: auto;
+    height: calc(700px / var(--items) - 6px);
 }
 
 input[type="radio"] {
