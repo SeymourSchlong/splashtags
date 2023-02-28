@@ -42,6 +42,8 @@ const load = () => {
         {file: './custom/banners/electrodev/wave.png',colour: 'ffffff'},
         {file: './custom/banners/electrodev/zip.png',colour: 'ffffff'},
         {file: './custom/banners/electrodev/zooka.png',colour: 'ffffff'},
+        //{file: './custom/banners/electrodev/chump.png',colour: 'ffffff'},
+        //{file: './custom/banners/electrodev/kraken.png',colour: 'ffffff'},
         
 
         // @spaghettitron
@@ -62,6 +64,8 @@ const load = () => {
         {file: './custom/banners/stages/sturgeon.png',colour: 'ffffff'},
         {file: './custom/banners/stages/undertow.png',colour: 'ffffff'},
         {file: './custom/banners/stages/wahooworld.png',colour: 'ffffff'},
+        // {file: './custom/banners/stages/manta.png',colour: 'ffffff'},
+        // {file: './custom/banners/stages/umami.png',colour: 'ffffff'},
         {file: './custom/banners/stages/coop-gonefission.png',colour: 'ffffff'},
         {file: './custom/banners/stages/coop-maroonerbay.png',colour: 'ffffff'},
         {file: './custom/banners/stages/coop-sockeye.png',colour: 'ffffff'},
@@ -174,7 +178,6 @@ const load = () => {
         "NAME:modeCustom#badge-modes-custom",
         "./custom/badges/gamemodes/turfwar.png",
         "./custom/badges/gamemodes/private.png",
-        //"./custom/badges/gamemodes/xrank.png",
         "./custom/badges/gamemodes/league.png",
         "./custom/badges/gamemodes/tricolor.png",
         "./custom/badges/gamemodes/tableturf.png",
@@ -209,8 +212,10 @@ const load = () => {
 
         "NAME:charCustom#badge-chars-custom",
         "./custom/badges/npcs/sheldon.png",
+        "./custom/badges/npcs/shelly_donny.png",
         "./custom/badges/npcs/liljudd.png",
         "./custom/badges/npcs/grizz.png",
+        "./custom/badges/npcs/fuzz_octarian.png",
         "./custom/badges/npcs/shiver.png",
         "./custom/badges/npcs/frye.png",
         "./custom/badges/npcs/bigman.png",
@@ -1418,7 +1423,7 @@ const load = () => {
 
         // draw small watermark if using custom assets
         if (customBanner || tag.custom.isCustom || customBadge) {
-            textCtx.globalAlpha = 0.15;
+            textCtx.globalAlpha = 0.2;
 
             const wm = {
                 offset: {
