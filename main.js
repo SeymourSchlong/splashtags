@@ -175,6 +175,9 @@ const load = () => {
         "./custom/badges/misc/splashdown.png",
 
         "NAME:modeCustom#badge-modes-custom",
+        "./custom/badges/gamemodes/alterna.png",
+        "./custom/badges/gamemodes/alterna_silver.png",
+        "./custom/badges/gamemodes/alterna_gold.png",
         "./custom/badges/gamemodes/turfwar.png",
         "./custom/badges/gamemodes/private.png",
         "./custom/badges/gamemodes/league.png",
