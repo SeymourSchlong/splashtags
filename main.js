@@ -1287,7 +1287,7 @@ const load = () => {
             last: 0
         },
         banner: 0,
-        id: '0001',
+        id: '#0001',
         badges: [ -1, -1, -1 ],
         custom: {
             isCustom: false,
@@ -1392,9 +1392,9 @@ const load = () => {
         }
 
         // Write tag text (if not negative)
-        if (!tag.id.includes('-')) {
+        if (!tag.id !== "") {
             textCtx.font = '24px ' + getFont(0);
-            textCtx.fillText('#' + tag.id, 24, 186);
+            textCtx.fillText('' + tag.id, 24, 186);
         }
 
         // Write player name
@@ -1913,6 +1913,7 @@ const load = () => {
                 {
                     elm: taginput,
                     run: () => {
+                        /*
                         if (taginput.value.length > 5) {
                             taginput.value = taginput.value.slice(0, 5);
                         }
@@ -1920,7 +1921,8 @@ const load = () => {
                         while (tagstr.length < 4) {
                             tagstr = '0' + tagstr;
                         }
-                        tag.id = tagstr;
+                        tag.id = tagstr;*/
+                        tag.id = taginput.value;
                     }
                 },
                 {
