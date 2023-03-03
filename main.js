@@ -58,14 +58,14 @@ const load = () => {
         {file: './custom/banners/stages/inkblot.png',colour: 'ffffff'},
         {file: './custom/banners/stages/mahimahi.png',colour: 'ffffff'},
         {file: './custom/banners/stages/makomart.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/manta.png',colour: 'ffffff'},
         {file: './custom/banners/stages/mincemeat.png',colour: 'ffffff'},
         {file: './custom/banners/stages/museum.png',colour: 'ffffff'},
         {file: './custom/banners/stages/scorchgorge.png',colour: 'ffffff'},
         {file: './custom/banners/stages/sturgeon.png',colour: 'ffffff'},
+        {file: './custom/banners/stages/umami.png',colour: 'ffffff'},
         {file: './custom/banners/stages/undertow.png',colour: 'ffffff'},
         {file: './custom/banners/stages/wahooworld.png',colour: 'ffffff'},
-        // {file: './custom/banners/stages/manta.png',colour: 'ffffff'},
-        // {file: './custom/banners/stages/umami.png',colour: 'ffffff'},
         {file: './custom/banners/stages/coop-gonefission.png',colour: 'ffffff'},
         {file: './custom/banners/stages/coop-maroonerbay.png',colour: 'ffffff'},
         {file: './custom/banners/stages/coop-sockeye.png',colour: 'ffffff'},
@@ -80,7 +80,9 @@ const load = () => {
         {file: './custom/banners/splatoon2.png',colour: 'ffffff'},
         {file: './custom/banners/squidjump.png',colour: 'ffffff'},
         {file: './custom/banners/camo-black.png',colour: 'ffffff'},
+        {file: './custom/banners/ooze.png',colour: 'ffffff'},
         {file: './custom/banners/catalog2.png',colour: 'ffffff'},
+        //{file: './custom/banners/catalog3.png',colour: 'ffffff'},
 
         {
             name: 'userCustom',id: 'banner-uploaded-custom'
