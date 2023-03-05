@@ -42,8 +42,8 @@ const load = () => {
         {file: './custom/banners/electrodev/wave.png',colour: 'ffffff'},
         {file: './custom/banners/electrodev/zip.png',colour: 'ffffff'},
         {file: './custom/banners/electrodev/zooka.png',colour: 'ffffff'},
-        //{file: './custom/banners/electrodev/chump.png',colour: 'ffffff'},
-        //{file: './custom/banners/electrodev/kraken.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/chump.png',colour: 'ffffff'},
+        {file: './custom/banners/electrodev/kraken.png',colour: 'ffffff'},
         
 
         // @spaghettitron
