@@ -151,9 +151,13 @@ canvas {
 }
 
 #main {
-    background-image: url("./assets/images/background.png");
-    background-position: top center;
+    background-image: url("./assets/images/main-bg-top.png"), url("./assets/images/main-bg-middle.png"), url("./assets/images/main-bg-bottom.png");
     background-repeat: no-repeat;
+    background-position: top, center 45px, bottom;
+    background-size: 100% 45px, 100% calc(100% - 145px), 100% 100px;
+    /*background-image: url("./assets/images/background.png");
+    background-position: top center;
+    background-repeat: no-repeat;*/
     height: 645px;
     width: 856px;
     margin: auto;
@@ -227,7 +231,7 @@ footer {
     background-image: url("./assets/images/tab-bg-top.png"), url("./assets/images/tab-bg-middle.png"), url("./assets/images/tab-bg-bottom.png");
     background-repeat: no-repeat;
     background-position: top, center, bottom;
-    background-size: auto, auto calc(100% - 90px), auto;
+    background-size: 100% 45px, 100% calc(100% - 90px), 100% 45px;
     width: 800px;
     border-radius: 15px;
     /*height: calc(400px - 5px);*/
