@@ -80,9 +80,12 @@ const load = () => {
         {file: './custom/banners/splatoon2.png',colour: 'ffffff'},
         {file: './custom/banners/squidjump.png',colour: 'ffffff'},
         {file: './custom/banners/camo-black.png',colour: 'ffffff'},
+        {file: './custom/banners/site1.png',colour: '222222'},
+        {file: './custom/banners/site6.png',colour: 'ffffff'},
         {file: './custom/banners/ooze.png',colour: 'ffffff'},
-        {file: './custom/banners/catalog2.png',colour: 'ffffff'},
-        //{file: './custom/banners/catalog3.png',colour: 'ffffff'},
+        {file: './custom/banners/endsky.png',colour: 'ffffff'},
+        {file: './custom/banners/catalogue2.png',colour: 'ffffff'},
+        {file: './custom/banners/catalogue3.png',colour: 'ffffff'},
 
         {
             name: 'userCustom',id: 'banner-uploaded-custom'
