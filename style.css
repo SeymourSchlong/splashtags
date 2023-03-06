@@ -1,12 +1,12 @@
 @font-face {
     font-family: "Splat-title";
-    src: url("./fonts/SplatoonTitle.otf");
+    src: url("./assets/fonts/SplatoonTitle.otf");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "Splat-text";
-    src: url("./fonts/SplatoonText.otf");
+    src: url("./assets/fonts/SplatoonText.otf");
     font-style: normal;
     font-weight: normal;
 }
@@ -14,52 +14,52 @@
 /* Japan */
 @font-face {
     font-family: "Kurokane";
-    src: url("./fonts/JPja/Kurokane.otf");
+    src: url("./assets/fonts/JPja/Kurokane.otf");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "Rowdy";
-    src: url("./fonts/JPja/Rowdy.otf");
+    src: url("./assets/fonts/JPja/Rowdy.otf");
     font-style: normal;
     font-weight: normal;
 }
 /* Chinese (Simplified) */
 @font-face {
     font-family: "HanyiZongyi";
-    src: url("./fonts/CNzh/hanyi_zongyi.ttf");
+    src: url("./assets/fonts/CNzh/hanyi_zongyi.ttf");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "HuakangZongyi";
-    src: url("./fonts/CNzh/huakang_xinzongyi.ttc");
+    src: url("./assets/fonts/CNzh/huakang_xinzongyi.ttc");
     font-style: normal;
     font-weight: normal;
 }
 /* Korean */
 @font-face {
     font-family: "KCUBEr";
-    src: url("./fonts/KRko/AsiaKCUBE-R.otf");
+    src: url("./assets/fonts/KRko/AsiaKCUBE-R.otf");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "KERINm";
-    src: url("./fonts/KRko/AsiaKERIN-M.otf");
+    src: url("./assets/fonts/KRko/AsiaKERIN-M.otf");
     font-style: normal;
     font-weight: normal;
 }
 /* Chinese (Traditional) */
 @font-face {
     font-family: "DFPT_AZ5";
-    src: url("./fonts/TWzh/DFPT_AZ5.otf");
+    src: url("./assets/fonts/TWzh/DFPT_AZ5.otf");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "DFPT_ZY9";
-    src: url("./fonts/TWzh/DFPT_ZY9.otf");
+    src: url("./assets/fonts/TWzh/DFPT_ZY9.otf");
     font-style: normal;
     font-weight: normal;
 }
@@ -137,7 +137,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-image: url("./images/camo-black.png");
+    background-image: url("./assets/images/camo-black.png");
 }
 
 canvas {
@@ -151,7 +151,7 @@ canvas {
 }
 
 #main {
-    background-image: url("./images/background.png");
+    background-image: url("./assets/images/background.png");
     background-position: top center;
     background-repeat: no-repeat;
     height: 645px;
@@ -198,7 +198,7 @@ footer {
 }
 
 .tab {
-    background-image: url("./images/tabsmall.png");
+    background-image: url("./assets/images/tabsmall.png");
     background-color: transparent;
     border: none;
     width: 232px;
@@ -212,7 +212,7 @@ footer {
 }
 .tab.selected {
     transform: translateY(-2px);
-    background-image: url("./images/tabsmallselected.png");
+    background-image: url("./assets/images/tabsmallselected.png");
 }
 .hidden {
     display: none;
@@ -223,8 +223,8 @@ footer {
     position: relative;
     margin: -10px auto auto auto;
     padding-top: 5px;
-    /*background-image: url("./images/tabbackground.png");*/
-    background-image: url("./images/tab-bg-top.png"), url("./images/tab-bg-middle.png"), url("./images/tab-bg-bottom.png");
+    /*background-image: url("./assets/images/tabbackground.png");*/
+    background-image: url("./assets/images/tab-bg-top.png"), url("./assets/images/tab-bg-middle.png"), url("./assets/images/tab-bg-bottom.png");
     background-repeat: no-repeat;
     background-position: top, center, bottom;
     background-size: auto, auto calc(100% - 90px), auto;
@@ -390,9 +390,9 @@ label {
 }
 
 .scale.up {
-    background-image: url("./images/plus.png");
+    background-image: url("./assets/images/plus.png");
 }
 
 .scale.down {
-    background-image: url("./images/minus.png");
+    background-image: url("./assets/images/minus.png");
 }
