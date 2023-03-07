@@ -143,6 +143,17 @@ body {
 canvas {
     margin-top: 60px;
     border-radius: 4px;
+    background-image: url("./assets/images/squidbg.png");
+    animation: bganim 120s linear infinite;
+}
+
+@keyframes bganim {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 512px 256px;
+    }
 }
 
 #container, #main {
