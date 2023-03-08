@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Splashtag Banner Creator</title>
+        <meta name="theme-color" content="#ffff00">
+        <meta property="og:title" content="Splashtag Banner Creator">
+        <meta name="og:type" content="website">
+        <meta name="description" content="Simple banner editor for splashtags">
+        <meta name="og:description" content="Simple banner editor for splashtags">
+        <meta property="og:image" content="https://file.garden/W1K6HZQ1fV1iP3Sq/splashtag/ico.png">
+        <link rel="icon" href="../assets/images/ico.png">
+        <script type="text/javascript" src="main.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="load();">
+        <div class="sitecontent">
+            <div id="container">
+                <span>This page is a work in progress! If you're reading this, check back later!</span>
+                <br>
+                <div id="main">
+                    <canvas id="splashtag" width="700" height="200"></canvas>
+                    <img src="../assets/images/blankname.png" style="display: none;">
+                    <img src="../assets/images/filter_dot.png" style="display: none;">
+                    <img src="../assets/images/filter_dark.png" style="display: none;">
+                    <br>
+                    <br>
+                    <div class="tabcontainer">
+                        <div class="tabcontent" data-name="text">
+                            
+                            <div class="divider">Image</div>
+                            <label class="file">File: (Upload)<input type="file" id="upload" style="display: none;" accept="image/*"></label>
+                            <div class="spacer"></div>
+                            <label>Tile: <input type="checkbox" id="tile"></label>
+                            <div class="spacer"></div>
+                            <label>BG Colour: <input type="color" value="#222222" id="bgc"></label>
+                            <div class="spacer"></div>
+                            <label>Show default tag: <input type="checkbox" id="show-default"></label>
+                            <br>
+                            Filter: <select id="filter"></select>
+                            <!--label>Dot filter: <input type="checkbox" id="filter-dot"></label>
+                            <div class="spacer"></div>
+                            <label>Darkness gradient: <input type="checkbox" id="filter-gray"></label>-->
+                            <!--<div class="spacer"></div>
+                            <label>Nearest neighbour: <input type="checkbox" id="nearest-neighbour"></label>-->
+
+                            <div class="divider">Position and Scale</div>
+                            <label>Stretch to fit: <input type="checkbox" id="stretch"></label>
+                            <div class="spacer"></div>
+                            Scale: <input type="number" step="0.01" value="1" min="0.1" max="2" id="input-scale"> <input type="range" step="0.1" min="0.1" max="2" id="slide-scale"> 
+                            <br>
+                            X: <input type="number" step="1" value="0" id="input-x"> <input type="range" value="0" min="0" max="100" step="1" id="slide-x">
+                            <div class="spacer"></div>
+                            Y: <input type="number" step="1" value="0" id="input-y"> <input type="range" value="0" min="0" max="100" step="1" id="slide-y"> 
+                            
+                            <br>
+                            <a id="downloadlink" download="banner.png"><input id="downloadbutton" type="button" value="Download!" disabled></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

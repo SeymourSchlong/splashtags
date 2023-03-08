@@ -1,0 +1,323 @@
+@font-face {
+    font-family: "Splat-title";
+    src: url("../assets/fonts/SplatoonTitle.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Splat-text";
+    src: url("../assets/fonts/SplatoonText.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+body, select, input {
+    font-family: 'Splat-text';
+}
+
+.tab, .imagelistsection {
+    font-family: 'Splat-title';
+}
+
+html {
+    height: 100%;
+}
+
+
+body {
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 20px;
+
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-image: url("../assets/images/camo-black.png");
+}
+
+canvas {
+    margin-top: 60px;
+    border-radius: 4px;
+    background-image: url("../assets/images/squidbg.png");
+    animation: bganim 120s linear infinite;
+}
+
+@keyframes bganim {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 512px 256px;
+    }
+}
+
+#container, #main {
+    text-align: center;
+    user-select: none;
+}
+
+#main {
+    background-image: url("../assets/images/main-bg-top.png"), url("../assets/images/main-bg-middle.png"), url("../assets/images/main-bg-bottom.png");
+    background-repeat: no-repeat;
+    background-position: top, center 45px, bottom;
+    background-size: 100% 45px, 100% calc(100% - 145px), 100% 100px;
+    /*background-image: url("../assets/images/background.png");
+    background-position: top center;
+    background-repeat: no-repeat;*/
+    height: 645px;
+    width: 856px;
+    margin: auto;
+}
+
+table {
+    width: fit-content;
+    margin: auto;
+    display: block;
+    text-align: left;
+}
+
+table tr > td:first-child {
+    text-align: right;
+}
+
+select, input {
+    font-size: 20px;
+}
+
+a {
+    color: #0791d8;
+}
+
+footer {
+    font-size: 16px;
+    background-color: #111111;
+
+    border-top: solid 1px black;
+    width: 100%;
+    text-align: center;
+}
+
+.sitecontent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#container {
+    flex: 1;
+}
+
+.tab {
+    background-image: url("../assets/images/tabsmall.png");
+    background-color: transparent;
+    border: none;
+    width: 232px;
+    height: 53px;
+    padding-bottom: 10px;
+
+    color: white;
+    text-shadow: 0 2px black;
+    font-size: 22px;
+    transition: 0.05s linear;
+}
+.tab.selected {
+    transform: translateY(-2px);
+    background-image: url("../assets/images/tabsmallselected.png");
+}
+.hidden {
+    display: none;
+}
+
+.tabcontainer {
+    z-index: 1;
+    position: relative;
+    margin: -10px auto auto auto;
+    padding-top: 5px;
+    /*background-image: url("../assets/images/tabbackground.png");*/
+    background-image: url("../assets/images/tab-bg-top.png"), url("../assets/images/tab-bg-middle.png"), url("../assets/images/tab-bg-bottom.png");
+    background-repeat: no-repeat;
+    background-position: top, center, bottom;
+    background-size: 100% 45px, 100% calc(100% - 90px), 100% 45px;
+    width: 800px;
+    border-radius: 15px;
+    /*height: calc(400px - 5px);*/
+    /*height: calc(316px - 5px);*/
+    padding-bottom: 20px;
+}
+/*
+.tab.selected + * + * + .tabcontainer {
+    height: calc(316px - 5px);
+    padding-bottom: 5px;
+}/**/
+
+.imglistcontainer {
+    overflow-y: scroll;
+    width: 750px;
+    margin: auto;
+    padding-top: 8px;
+}
+
+.chrome .imglistcontainer {
+    overflow-y: overlay;
+}
+
+.imglistcontainer > div {
+    padding: 4px;
+    /*width: calc(170px * 4 + 6px * 3);*/
+    width: 700px;
+    margin: auto;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 6px;
+    
+    box-sizing: border-box;
+    padding: 0;
+    height: 300px;
+    /*height: 200px;*/
+}
+
+.imglistcontainer img {
+    transition: .05s linear;
+    background-color: #111;
+    border-radius: 5px;
+}
+
+#bannercontainer img {
+    /*width: 170px;
+    max-width: 700px;
+    min-width: 82px;*/
+    width: calc(700px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
+    height: calc(200px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
+}
+
+#badgecontainer img {
+    /*width: 64px;
+    max-width: 128px;
+    min-width: 32px;*/
+    width: calc(700px / var(--items) - 6px);
+    height: calc(700px / var(--items) - 6px);
+}
+
+input[type="radio"] {
+    display: none;
+}
+input[type="file"] {
+    width: 240px;
+}
+
+input[type="radio"]:checked + span {
+    background: yellow;
+    color: black;
+    padding: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    /*text-decoration: underline;*/
+}
+
+img.other {
+    outline: 3px solid #808080;
+    background-color: #222222;
+}
+
+img.selected {
+    outline: 3px solid yellow;
+    scale: 1.05;
+    transform: rotate(-2deg);
+}
+
+#badgecontainer img.selected {
+    transform: rotate(-5deg);
+}
+
+/* bottom padding :( */
+#bannercontainer > div {
+    width: 170px;
+    height: 1px;
+}
+
+#badgecontainer > div {
+    width: 64px;
+    height: 1px;
+}
+
+
+#downloadbutton {
+    margin: 8px;
+}
+
+.hidecustom .custom {
+    display: none;
+}
+.showcustom .notcustom {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+.imagelistsection {
+    font-size: 24px;
+    text-align: left;
+    width: calc(170px * 4 + 6px * 3) !important;
+    height: 34px !important;
+    line-height: 34px;
+    border-bottom: 2px solid gray;
+}
+
+.spacer {
+    display: inline-block;
+    width: 20px;
+}
+
+.scalecontainer {
+    display: block;
+    margin: auto;
+    width: 700px;
+    height: 15px;
+    text-align: right;
+}
+
+.scale {
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+    background-size: 100%, 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+}
+
+.scale.up {
+    background-image: url("../assets/images/plus.png");
+}
+
+.scale.down {
+    background-image: url("../assets/images/minus.png");
+}
+
+.tabcontent {
+    margin: auto;
+    width: 700px;
+}
+
+.divider {
+    height: 34px !important;
+    line-height: 34px;
+    text-align: left;
+    font-family: 'Splat-title';
+    font-size: 24px;
+    border-bottom: 2px solid gray;
+    margin:5px 0;
+}
+
+input[type="number"] {
+    height: 2ch;
+    width: 6ch;
+}
