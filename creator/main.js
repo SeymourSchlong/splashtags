@@ -1,35 +1,46 @@
-
-
-var settings = {
-    banner: null,
-    colour: '#222222',
-    tile: false,
-    default: false,
-    dotFilter: false,
-    grayFilter: false,
-    filter: 0,
-    stretch: false,
-    scale: 1,
-    x: 0,
-    y: 0
-}
-
 const load = () => {
     const canvas = document.querySelector('canvas');
     const ctx = canvas.getContext('2d');
-
+    
+    const settings = {
+        banner: null,
+        colour: '#222222',
+        tile: false,
+        default: false,
+        filter: 0,
+        stretch: false,
+        scale: 1,
+        x: 0,
+        y: 0
+    };
+    
     const filterImages = [
         {
-            file: '../assets/images/filter_dot.png',
+            file: 'blankname',
+            operation: 'source-over',
+            img: null
+        },
+        {
+            file: 'filter_dot',
             operation: 'soft-light',
             img: null
         },
         {
-            file: '../assets/images/filter_dark.png',
+            file: 'filter_dark',
             operation: 'source-over',
             img: null
         },
-    ]
+        {
+            file: 'dotblur',
+            operation: 'soft-light',
+            img: null
+        },
+        {
+            file: 'vblur',
+            operation: 'soft-light',
+            img: null
+        }
+    ];
     
     const filters = [
         {
@@ -38,15 +49,23 @@ const load = () => {
         },
         {
             name: 'Dots (↘)',
-            filters: [0]
-        },
-        {
-            name: 'Dark (↘)',
             filters: [1]
         },
         {
+            name: 'Dark (↘)',
+            filters: [2]
+        },
+        {
             name: 'Dots + Dark (↘)',
-            filters: [1, 0]
+            filters: [2, 1]
+        },
+        {
+            name: 'Dots (full)',
+            filters: [3]
+        },
+        {
+            name: 'Vertical dots (full)',
+            filters: [4]
         },
     ]
 
@@ -54,20 +73,15 @@ const load = () => {
     filterImages.forEach(f => {
         if (f.file) {
             f.img = new Image();
-            f.img.src = f.file;
+            f.img.src = '../assets/filters/' + f.file + '.png';
         }
     });
-    
-    const defaultImage = new Image();
-    defaultImage.src = '../assets/images/blankname.png';
 
     // elements
     const uploadedBanner = document.querySelector('#upload');
     const inputTile = document.querySelector('#tile');
     const inputColour = document.querySelector('#bgc');
     const inputDefault = document.querySelector('#show-default');
-    const inputDotFilter = document.querySelector('#filter-dot');
-    const inputGrayFilter = document.querySelector('#filter-gray');
     const inputStretch = document.querySelector('#stretch');
     const inputScaleNum = document.querySelector('#input-scale');
     const inputScaleSlider = document.querySelector('#slide-scale');
@@ -77,6 +91,9 @@ const load = () => {
     const inputYSlider = document.querySelector('#slide-y');
 
     const filterSelect = document.querySelector('#filter');
+
+    const downloadlink = document.querySelector('#downloadlink');
+    const downloadbutton = document.querySelector('#downloadbutton');
 
     filters.forEach(f => {
         const option = document.createElement('option');
@@ -131,25 +148,20 @@ const load = () => {
                 });
             }
 
-            /*
-            if (settings.grayFilter) {
-                ctx.drawImage(filters[1].img, 0, 0);
-            }
-            if (settings.dotFilter) {
-                ctx.globalCompositeOperation = 'soft-light';
-
-                ctx.drawImage(filters[0].img, 0, 0);
-
-                ctx.globalCompositeOperation = 'source-over';
-            }/**/
             if (settings.default) {
-                ctx.drawImage(defaultImage, 0, 0);
+                ctx.drawImage(filterImages[0].img, 0, 0);
             }
         } else {
             ctx.font = '32px Splat-title';
             ctx.fillStyle = 'white';
             let text = 'Upload an image to get started!';
             ctx.fillText(text, canvas.width/2 - ctx.measureText(text).width/2, canvas.height/2);
+        }
+
+        // Disables download button if testing locally
+        if (!location.href.startsWith('file')) {
+            downloadlink.href = canvas.toDataURL();
+            downloadbutton.removeAttribute('disabled');
         }
     }
 
@@ -185,18 +197,6 @@ const load = () => {
             elm: inputDefault,
             run: () => {
                 settings.default = inputDefault.checked;
-            }
-        },
-        {
-            elm: inputDotFilter,
-            run: () => {
-                settings.dotFilter = inputDotFilter.checked;
-            }
-        },
-        {
-            elm: inputGrayFilter,
-            run: () => {
-                settings.grayFilter = inputGrayFilter.checked;
             }
         },
         {
@@ -311,15 +311,15 @@ const load = () => {
     const keyEvents = [
         {
             elm: inputScaleNum,
-            run: changeEvents[6].run
+            run: changeEvents[4].run
         },
         {
             elm: inputXNum,
-            run: changeEvents[8].run
+            run: changeEvents[6].run
         },
         {
             elm: inputYNum,
-            run: changeEvents[10].run
+            run: changeEvents[8].run
         }
     ]
 
@@ -342,15 +342,15 @@ const load = () => {
         },
         {
             elm: inputScaleSlider,
-            run: changeEvents[7].run
+            run: changeEvents[5].run
         },
         {
             elm: inputXSlider,
-            run: changeEvents[9].run
+            run: changeEvents[7].run
         },
         {
             elm: inputYSlider,
-            run: changeEvents[11].run
+            run: changeEvents[9].run
         },
         {
             elm: filterSelect,
