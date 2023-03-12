@@ -1446,6 +1446,8 @@ const load = () => {
 
         return fonts.join(', ');
     }
+
+    let forceDisableWatermark = false;
     
     const renderSplashtag = () => {
         textCtx.clearRect(0, 0, 700, 200);
@@ -1537,7 +1539,7 @@ const load = () => {
         })
 
         // draw small watermark if using custom assets
-        if (customBanner || tag.custom.isCustom || customBadge) {
+        if (!forceDisableWatermark && (customBanner || tag.custom.isCustom || customBadge)) {
             textCtx.globalAlpha = 0.2;
 
             const wm = {
@@ -1601,6 +1603,11 @@ const load = () => {
             downloadlink.href = canvas.toDataURL();
             downloadbutton.removeAttribute('disabled');
         }
+    }
+
+    window.toggleWatermark = () => {
+        forceDisableWatermark = !forceDisableWatermark;
+        renderSplashtag();
     }
 
     /* Credit to @DeadLineSMB_Art on Twitter for the special band banners */
