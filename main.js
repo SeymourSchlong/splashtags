@@ -2172,6 +2172,25 @@ const load = () => {
                 });
             });
 
+            const inputEvents = [
+                {
+                    elm: customcolour,
+                    run: changeEvents[6].run
+                }
+            ]
+        
+            inputEvents.forEach(event => {
+                event.elm.addEventListener('input', () => {
+                    if (!event.elm) return;
+                    setTimeout(() => {
+                        event.run();
+                        renderSplashtag();
+                    }, 1);
+                    event.run();
+                    renderSplashtag();
+                });
+            });
+
             const customBannerLength = customBanners.filter(b => b.file).length;
             const customBadgesLength = customBadges.filter(b => b.startsWith('./')).length;
             const bannerLength = banners.filter(b => b.file).length - customBannerLength;
