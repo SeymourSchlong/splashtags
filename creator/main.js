@@ -111,8 +111,10 @@ const load = () => {
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             if (settings.banner) {
-                if (settings.stretch) {
-                    ctx.drawImage(settings.banner, 0, 0, 700, 200);
+                if (settings.stretch === 1) {
+                    if (settings.stretch === 1) {
+                        ctx.drawImage(settings.banner, 0, 0, 700, 200);
+                    }
                 } else {
                     let w = settings.banner.width * settings.scale;
                     let h = settings.banner.height * settings.scale;
@@ -170,6 +172,24 @@ const load = () => {
 
     /* Events */
 
+    const setXPos = (X) => {
+        settings.x = X;
+        inputXSlider.value = settings.x;
+        inputXNum.value = settings.x;
+    }
+
+    const setYPos = (Y) => {
+        settings.y = Y;
+        inputYSlider.value = settings.y;
+        inputYNum.value = settings.y;
+    }
+
+    const setScale = (S) => {
+        settings.scale = S;
+        inputScaleNum.value = settings.scale;
+        inputScaleSlider.value = settings.scale;
+    }
+
     const clickEvents = [];
 
     clickEvents.forEach(event => {
@@ -202,7 +222,19 @@ const load = () => {
         {
             elm: inputStretch,
             run: () => {
-                settings.stretch = inputStretch.checked;
+                settings.stretch = inputStretch.selectedIndex;
+
+                if (!settings.banner) return;
+
+                if (settings.stretch === 2) {
+                    setXPos(0);
+                    setYPos(-700/settings.banner.width*settings.banner.height/2 + 200/2);
+                    setScale(700/settings.banner.width);
+                } else if (settings.stretch === 3) {
+                    setXPos(-200/settings.banner.height*settings.banner.width/2 + 700/2);
+                    setYPos(0);
+                    setScale(200/settings.banner.height);
+                }
             }
         },
         {
@@ -258,6 +290,9 @@ const load = () => {
                     settings.banner = image;
                     uploadedBanner.value = '';
                     setTimeout(() => {
+                        inputStretch.selectedIndex = 0;
+                        settings.stretch = 0;
+
                         inputXNum.value = 0;
                         inputYNum.value = 0;
                         settings.x = 0;
@@ -357,7 +392,7 @@ const load = () => {
             run: () => {
                 settings.filter = filterSelect.selectedIndex;
             }
-        }
+        },
     ]
 
     inputEvents.forEach(event => {
