@@ -5,6 +5,7 @@ const load = () => {
     const settings = {
         banner: null,
         colour: '#222222',
+        textcolour: '#ffffff',
         tile: false,
         default: false,
         filter: 0,
@@ -81,6 +82,7 @@ const load = () => {
     const uploadedBanner = document.querySelector('#upload');
     const inputTile = document.querySelector('#tile');
     const inputColour = document.querySelector('#bgc');
+    const inputTextColour = document.querySelector('#fgc');
     const inputDefault = document.querySelector('#show-default');
     const inputStretch = document.querySelector('#stretch');
     const inputScaleNum = document.querySelector('#input-scale');
@@ -103,17 +105,28 @@ const load = () => {
 
     let drawTag = false;
 
+    const imgCanvas = document.createElement('canvas');
+    const imgCtx = imgCanvas.getContext('2d');
+    imgCanvas.width = 700;
+    imgCanvas.height = 200;
+
+    const textCanvas = document.createElement('canvas');
+    const textCtx = textCanvas.getContext('2d');
+    textCanvas.width = 700;
+    textCanvas.height = 200;
+
     const renderSplashtag = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        imgCtx.clearRect(0, 0, canvas.width, canvas.height);
+        textCtx.clearRect(0, 0, canvas.width, canvas.height);
 
         if (drawTag || settings.banner) {
-            ctx.fillStyle = settings.colour;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            imgCtx.fillStyle = settings.colour;
+            imgCtx.fillRect(0, 0, canvas.width, canvas.height);
 
             if (settings.banner) {
                 if (settings.stretch === 1) {
                     if (settings.stretch === 1) {
-                        ctx.drawImage(settings.banner, 0, 0, 700, 200);
+                        imgCtx.drawImage(settings.banner, 0, 0, 700, 200);
                     }
                 } else {
                     let w = settings.banner.width * settings.scale;
@@ -131,28 +144,36 @@ const load = () => {
                                 if (x >= 700 || x+w <= 0) continue;
                                 if (y >= 200 || y+h <= 0) continue;
 
-                                ctx.drawImage(settings.banner, x, y, w, h);
+                                imgCtx.drawImage(settings.banner, x, y, w, h);
                             }
                         }
                     } else {
-                        ctx.drawImage(settings.banner, settings.x, settings.y, w, h);
+                        imgCtx.drawImage(settings.banner, settings.x, settings.y, w, h);
                     }
                 }
             }
 
             if (settings.filter) {
                 filters[settings.filter].filters.forEach(f => {
-                    ctx.globalCompositeOperation = filterImages[f].operation;
+                    imgCtx.globalCompositeOperation = filterImages[f].operation;
     
-                    ctx.drawImage(filterImages[f].img, 0, 0);
+                    imgCtx.drawImage(filterImages[f].img, 0, 0);
     
-                    ctx.globalCompositeOperation = 'source-over';
+                    imgCtx.globalCompositeOperation = 'source-over';
                 });
             }
 
             if (settings.default) {
-                ctx.drawImage(filterImages[0].img, 0, 0);
+                // destination-in
+                textCtx.drawImage(filterImages[0].img, 0, 0);
+                textCtx.globalCompositeOperation = 'source-in';
+                textCtx.fillStyle = settings.textcolour;
+                textCtx.fillRect(0, 0, 700, 200);
+                textCtx.globalCompositeOperation = 'source-over';
             }
+
+            ctx.drawImage(imgCanvas, 0, 0);
+            ctx.drawImage(textCanvas, 0, 0);
         } else {
             ctx.font = '32px Splat-title';
             ctx.fillStyle = 'white';
@@ -162,7 +183,7 @@ const load = () => {
 
         // Disables download button if testing locally
         if (!location.href.startsWith('file')) {
-            downloadlink.href = canvas.toDataURL();
+            downloadlink.href = imgCanvas.toDataURL();
             downloadbutton.removeAttribute('disabled');
         }
     }
@@ -307,15 +328,15 @@ const load = () => {
                         inputScaleNum.max = Math.max(2, maxScale);
                         inputScaleSlider.max = Math.max(2, maxScale);
 
-                        if (image.width < 700 || image.height < 200) {
+                        // if (image.width < 700 || image.height < 200) {
                             inputScaleSlider.value = 1;
                             inputScaleNum.value = 1;
                             settings.scale = 1;
-                        } else {
-                            inputScaleSlider.value = minScale;
-                            inputScaleNum.value = minScale;
-                            settings.scale = minScale;
-                        }
+                        // } else {
+                        //     inputScaleSlider.value = minScale;
+                        //     inputScaleNum.value = minScale;
+                        //     settings.scale = minScale;
+                        // }
 
                         inputYNum.min = -image.height;
                         inputYNum.max = 200;
@@ -331,6 +352,12 @@ const load = () => {
                     }, 1)
                 }
                 reader.readAsDataURL(uploadedBanner.files[0]);
+            }
+        },
+        {
+            elm: inputTextColour,
+            run: () => {
+                settings.textcolour = inputTextColour.value;
             }
         },
     ];
@@ -393,6 +420,10 @@ const load = () => {
                 settings.filter = filterSelect.selectedIndex;
             }
         },
+        {
+            elm: inputTextColour,
+            run: changeEvents[11].run
+        }
     ]
 
     inputEvents.forEach(event => {
@@ -402,8 +433,6 @@ const load = () => {
                 event.run();
                 renderSplashtag();
             }, 1);
-            event.run();
-            renderSplashtag();
         });
     });
 }
