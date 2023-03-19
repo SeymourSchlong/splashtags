@@ -232,6 +232,7 @@
         "./assets/custom/badges/misc/splashdown.png",
 
         "NAME:modeCustom#badge-modes-custom",
+        "./assets/custom/badges/shark/egg.png","./assets/custom/badges/shark/egg_bronze.png","./assets/custom/badges/shark/egg_silver.png","./assets/custom/badges/shark/egg_gold.png",
         "./assets/custom/badges/gamemodes/alterna.png","./assets/custom/badges/gamemodes/alterna_silver.png","./assets/custom/badges/gamemodes/alterna_gold.png",
         "./assets/custom/badges/gamemodes/turfwar.png",
         "./assets/custom/badges/gamemodes/private.png",
