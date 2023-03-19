@@ -420,7 +420,7 @@ const load = () => {
                 }
                 const isCustom = item.name.endsWith('Custom');
                 const sectionTitle = document.createElement('div');
-                sectionTitle.textContent = lang[language].sections.banners[item.name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
+                sectionTitle.textContent = lang[language].sections[item.name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
                 sectionTitle.id = item.id;
                 sectionTitle.className = 'imagelistsection';
                 bannerContainer.appendChild(sectionTitle);
@@ -428,7 +428,7 @@ const load = () => {
 
                 // add to banner select dropdown
                 const option = document.createElement('option');
-                option.textContent = lang[language].sections.banners[item.name] + (isCustom ? '*' : '');
+                option.textContent = lang[language].sections[item.name] + (isCustom ? '*' : '');
                 option.value = item.id;
                 bannersection.appendChild(option);
                 return;
@@ -510,7 +510,7 @@ const load = () => {
                 const name = item.split('#')[0].replace('NAME:', '');
                 const id = item.split('#')[1];
                 const isCustom = name.endsWith('Custom')
-                sectionTitle.textContent = lang[language].sections.badges[name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
+                sectionTitle.textContent = lang[language].sections[name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
                 sectionTitle.id = id;
                 sectionTitle.className = 'imagelistsection';
                 badgeContainer.appendChild(sectionTitle);
@@ -518,7 +518,7 @@ const load = () => {
 
                 // add to badge select dropdown
                 const option = document.createElement('option');
-                option.textContent = lang[language].sections.badges[name] + (isCustom ? '*' : '');
+                option.textContent = lang[language].sections[name] + (isCustom ? '*' : '');
                 option.value = id;
                 badgesection.appendChild(option);
                 return;
