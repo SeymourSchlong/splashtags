@@ -68,7 +68,7 @@ body, select, input {
     font-family: 'Splat-text';
 }
 
-.tab, .imagelistsection {
+.tab, .imagelistsection, .title-font {
     font-family: 'Splat-title';
 }
 
@@ -166,9 +166,6 @@ canvas {
     background-repeat: no-repeat;
     background-position: top, center 45px, bottom;
     background-size: 100% 45px, 100% calc(100% - 145px), 100% 100px;
-    /*background-image: url("./assets/images/background.png");
-    background-position: top center;
-    background-repeat: no-repeat;*/
     height: 645px;
     width: 856px;
     margin: auto;
@@ -410,4 +407,60 @@ label {
 
 .scale.down {
     background-image: url("./assets/images/minus.png");
+}
+
+#showcredits {
+    padding: 10px;
+}
+
+#showcredits > a, #creditsX {
+    color: white;
+}
+
+#main {
+    transition: .5s linear;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+#main.flipped {
+    transform: rotateY(180deg);
+}
+
+#main2.flipped {
+    transform: rotateY(180deg);
+}
+
+#main2 {
+    transform: rotateY(360deg);
+    text-align: center;
+    user-select: none;
+    background-image: url("./assets/images/main-bg-top.png"), url("./assets/images/main-bg-middle.png"), url("./assets/images/main-bg-bottom.png");
+    background-repeat: no-repeat;
+    background-position: top, center 45px, bottom;
+    background-size: 100% 45px, 100% calc(100% - 145px), 100% 100px;
+    height: 645px;
+    width: 856px;
+    margin: auto;
+    position: relative;
+    transition: .5s linear;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    margin-top: -645px;
+}
+
+#main2 > div {
+    padding-top: 60px;
+}
+
+.twticon {
+    --size: 30px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    vertical-align: text-bottom;
 }

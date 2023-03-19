@@ -568,6 +568,11 @@ const load = () => {
         const textTableWidth = tabContents[0].querySelector('table').getBoundingClientRect().width;
         tabContents[0].querySelector('table').style.width = `${textTableWidth}px`;
 
+        // credits toggle
+        const main = document.querySelector('#main');
+        const main2 = document.querySelector('#main2');
+        const credits = document.querySelector('#showcredits > a');
+        const creditsX = document.querySelector('#creditsX');
         
         // Once all of the images are loaded...
         waitUntil(() => {
@@ -674,6 +679,24 @@ const load = () => {
                             clickEvents[0].run();
                             clickEvents[3].run();
                             clickEvents[4].run();
+                        }
+                    },
+                    {
+                        elm: credits,
+                        run: () => {
+                            const temp = credits.textContent;
+                            credits.textContent = credits.dataset.alt;
+                            credits.dataset.alt = temp;
+
+                            //toggle visibility
+                            main.className = !temp.includes('Show') ? '' : 'flipped';
+                            main2.className = temp.includes('Show') ? '' : 'flipped';
+                        }
+                    },
+                    {
+                        elm: creditsX,
+                        run: () => {
+                            clickEvents[6].run();
                         }
                     }
                 ];
@@ -917,6 +940,4 @@ const load = () => {
             console.log(err);
         });
     });
-
-    
 }
