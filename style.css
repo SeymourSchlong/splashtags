@@ -156,12 +156,12 @@ canvas {
     }
 }
 
-#container, #main {
+#container, #main, #main2 {
     text-align: center;
     user-select: none;
 }
 
-#main {
+#main, #main2 {
     background-image: url("./assets/images/main-bg-top.png"), url("./assets/images/main-bg-middle.png"), url("./assets/images/main-bg-bottom.png");
     background-repeat: no-repeat;
     background-position: top, center 45px, bottom;
@@ -417,44 +417,27 @@ label {
     color: white;
 }
 
-#main {
-    transition: .5s linear;
-    perspective: 1000px;
-    transform-style: preserve-3d;
+#main, #main2 {
+    transition: .3s linear;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
 
-#main.flipped {
-    transform: rotateY(180deg);
-}
-
-#main2.flipped {
+#main.flipped, #main2.flipped {
     transform: rotateY(180deg);
 }
 
 #main2 {
-    transform: rotateY(360deg);
-    text-align: center;
-    user-select: none;
-    background-image: url("./assets/images/main-bg-top.png"), url("./assets/images/main-bg-middle.png"), url("./assets/images/main-bg-bottom.png");
-    background-repeat: no-repeat;
-    background-position: top, center 45px, bottom;
-    background-size: 100% 45px, 100% calc(100% - 145px), 100% 100px;
-    height: 645px;
-    width: 856px;
-    margin: auto;
     position: relative;
-    transition: .5s linear;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
     margin-top: -645px;
 }
 
 #main2 > div {
     padding-top: 60px;
+}
+
+#main2 td:first-child::after {
+    content: " -- ";
 }
 
 .twticon {
