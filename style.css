@@ -394,8 +394,8 @@ label {
     margin-top: -645px;
 }
 
-#main2 > div {
-    padding-top: 60px;
+#main2 div:first-child {
+    padding-top: 40px;
 }
 
 #main2 td:first-child::after {
