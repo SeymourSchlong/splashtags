@@ -6,5 +6,6 @@ Custom Splatoon 3 Splashtag maker
 
 Website created by [@spaghettitron](https://twitter.com/spaghettitron/)  
 With help from [@Raven_The_Cute](https://twitter.com/Raven_The_Cute/)  
-For full credits, please visit the credits portion of the site  
 Splatoon, fonts, and its images are property of Nintendo  
+  
+For full credits, please visit the credits portion of the site.  
