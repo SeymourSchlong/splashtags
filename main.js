@@ -135,6 +135,14 @@ const load = () => {
         }
 
         let forceDisableWatermark = false;
+
+        let cooldown = 0;
+        // prevent the canvas from redrawing too quickly
+        setInterval(() => {
+            if (cooldown) {
+                cooldown--;
+            }
+        });
         
         const renderSplashtag = () => {
             textCtx.clearRect(0, 0, 700, 200);
@@ -223,11 +231,13 @@ const load = () => {
 
             ['custom', 'data'].forEach(word => {
                 customBanner = customBanner || banners[tag.banner].file.includes(word);
-            })
+            });
+            
+            ctx.drawImage(textCanvas, 0, 0, 700, 200);
+            textCtx.clearRect(0, 0, 700, 200);
 
             // draw small watermark if using custom assets
             if (!forceDisableWatermark && (customBanner || customBadge || tag.custom.isCustom)) {
-                textCtx.globalAlpha = 0.2;
 
                 const wm = {
                     offset: {
@@ -312,14 +322,20 @@ const load = () => {
                         textCtx.fillText(a.name, textPos.x - a.offset, textPos.y + 14*(i++));
                     });
                 } else {
-                    textCtx.drawImage(images.watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
-                    textCtx.fillText('custom', textPos.x, textPos.y);
+                    //textCtx.drawImage(images.watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
+                    //textCtx.fillText('custom', textPos.x, textPos.y);
                 }
 
-                textCtx.globalAlpha = 1;
+                // Unused, decided against coloured watermarks (may draw TOO much attention on some colours!)
+                textCtx.fillStyle = (tag.custom.isCustom ? tag.custom.colour : '#' + banners[tag.banner].colour);
+                textCtx.globalCompositeOperation = 'source-in';
+                textCtx.fillRect(625, 0, 100, 100);
+                textCtx.globalCompositeOperation = 'source-over';
             }
 
+            ctx.globalAlpha = 0.2;
             ctx.drawImage(textCanvas, 0, 0, 700, 200);
+            ctx.globalAlpha = 1;
 
             // Disables download button if testing locally
             if (!location.href.startsWith('file')) {
@@ -795,15 +811,6 @@ const load = () => {
                     {
                         elm: taginput,
                         run: () => {
-                            /*
-                            if (taginput.value.length > 5) {
-                                taginput.value = taginput.value.slice(0, 5);
-                            }
-                            let tagstr = taginput.value;
-                            while (tagstr.length < 4) {
-                                tagstr = '0' + tagstr;
-                            }
-                            tag.id = tagstr;*/
                             tag.id = taginput.value;
                         }
                     },
@@ -943,19 +950,22 @@ const load = () => {
                 const inputEvents = [
                     {
                         elm: customcolour,
-                        run: changeEvents[6].run
+                        run: () => {
+                            changeEvents[6].run();
+                        }
                     }
                 ]
             
                 inputEvents.forEach(event => {
                     event.elm.addEventListener('input', () => {
                         if (!event.elm) return;
-                        setTimeout(() => {
-                            event.run();
-                            renderSplashtag();
-                        }, 1);
                         event.run();
-                        renderSplashtag();
+
+                        // this was lagging wayyyy too much without this.
+                        if (!cooldown) {
+                            renderSplashtag();
+                            cooldown = 1;
+                        }
                     });
                 });
 
