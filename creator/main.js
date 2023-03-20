@@ -115,6 +115,14 @@ const load = () => {
     textCanvas.width = 700;
     textCanvas.height = 200;
 
+    let cooldown = 0;
+    // prevent the canvas from redrawing too quickly
+    setInterval(() => {
+        if (cooldown) {
+            cooldown--;
+        }
+    });
+
     const renderSplashtag = () => {
         imgCtx.clearRect(0, 0, canvas.width, canvas.height);
         textCtx.clearRect(0, 0, canvas.width, canvas.height);
@@ -429,10 +437,11 @@ const load = () => {
     inputEvents.forEach(event => {
         event.elm.addEventListener('input', () => {
             if (!event.elm) return;
-            setTimeout(() => {
-                event.run();
+            event.run();
+            if (!cooldown) {
                 renderSplashtag();
-            }, 1);
+                cooldown = 1;
+            }
         });
     });
 }
