@@ -226,7 +226,7 @@ const load = () => {
             })
 
             // draw small watermark if using custom assets
-            if (!forceDisableWatermark && (customBanner || tag.custom.isCustom || customBadge)) {
+            if (!forceDisableWatermark && (customBanner || customBadge || tag.custom.isCustom)) {
                 textCtx.globalAlpha = 0.2;
 
                 const wm = {
@@ -248,6 +248,12 @@ const load = () => {
                     y: wm.offset.y + wm.height + wm.textoffset
                 }
 
+                /** Artist watermark system is as follows:
+                 * If a tag features regular custom assets (made by me), the mark will be default with the text "custom"
+                 * If a tag features art from only ONE artist, that artist's mark will be shown with their name
+                 * If a tag features art from MULTIPLE artists, then the default mark will be shown, with all of the names below
+                */ 
+
                 const artists = [
                     {
                         dir: '/deadline/',
@@ -256,25 +262,55 @@ const load = () => {
                     },
                     {
                         dir: '/electrodev/',
-                        name: 'ElectroDev',
-                        offset: 4
-                    }
+                        name: 'Electro',
+                        offset: 0
+                    },
+                    {
+                        dir: '/bands/',
+                        name: 'Zeeto',
+                        offset: 0
+                    },
+                    {
+                        dir: '/sharkino/',
+                        name: 'Sharkino',
+                        offset: 0
+                    },
                 ];
 
-                let customArtist = -1;
+                const featured = [];
                 artists.forEach(a => {
+                    let i = artists.indexOf(a);
                     if (banners[tag.banner].file.includes(a.dir)) {
-                        customArtist = artists.indexOf(a);
+                        if (featured.indexOf(i) === -1) {
+                            featured.push(i);
+                        }
                     }
+                
+                    tag.badges.forEach(b => {
+                        if (b !== -1) {
+                            if (badges[b].includes(a.dir)) {
+                                if (featured.indexOf(i) === -1) {
+                                    featured.push(i);
+                                }
+                            }
+                        }
+                    });
                 });
 
-                if (customArtist+1) {
-                    const a = artists[customArtist];
+                featured.sort();
+                customArtist = featured[0];
+
+                if (featured.length === 1) {
+                    const a = artists[featured[0]];
                     textCtx.drawImage(images.watermarks[customArtist+1], wmX - a.offset, wm.offset.y, wm.width, wm.height);
                     textCtx.fillText(a.name, textPos.x - a.offset, textPos.y);
-                    if (tag.custom.isCustom || customBadge) {
-                        textCtx.fillText('custom', textPos.x - a.offset, textPos.y + 14);
-                    }
+                } else if (featured.length > 1) {
+                    textCtx.drawImage(images.watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
+                    let i = 0;
+                    featured.forEach(f => {
+                        const a = artists[f];
+                        textCtx.fillText(a.name, textPos.x - a.offset, textPos.y + 14*(i++));
+                    });
                 } else {
                     textCtx.drawImage(images.watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
                     textCtx.fillText('custom', textPos.x, textPos.y);
@@ -325,6 +361,20 @@ const load = () => {
             loadQueue.push(1);
             let img = new Image();
             img.src = './assets/images/electrodev.png';
+            img.onload = loadQueue.pop();
+            images.watermarks.push(img);
+        }
+        {
+            loadQueue.push(1);
+            let img = new Image();
+            img.src = './assets/images/zeeto.png';
+            img.onload = loadQueue.pop();
+            images.watermarks.push(img);
+        }
+        {
+            loadQueue.push(1);
+            let img = new Image();
+            img.src = './assets/images/sharkinodraws.png';
             img.onload = loadQueue.pop();
             images.watermarks.push(img);
         }
