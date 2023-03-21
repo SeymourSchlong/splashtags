@@ -631,9 +631,6 @@ const load = () => {
         titleinput1.style.height = `${inputheight}px`;
         titleinput2.style.height = `${inputheight}px`;
 
-        const textTableWidth = tabContents[0].querySelector('table').getBoundingClientRect().width;
-        tabContents[0].querySelector('table').style.width = `${textTableWidth}px`;
-
         // credits toggle
         const main = document.querySelector('#main');
         const main2 = document.querySelector('#main2');
@@ -818,15 +815,20 @@ const load = () => {
                         elm: customcheck,
                         run: () => {
                             tag.custom.isCustom = customcheck.checked;
-                            
-                            tabContainer.classList.remove(`${tag.custom.isCustom ? 'hide' : 'show'}custom`);
-                            tabContainer.classList.add(`${tag.custom.isCustom ? 'show' : 'hide'}custom`);
 
                             nameinput.setAttribute('maxlength', tag.custom.isCustom ? 100 : 10);
                             if (!tag.custom.isCustom) {
                                 nameinput.value = nameinput.value.slice(0, 10);
                                 tag.name = nameinput.value;
+                                tabContents[0].querySelector('table').style = ``;
+                            } else {
+                                const textTableWidth = tabContents[0].querySelector('table').getBoundingClientRect().width;
+                                tabContents[0].querySelector('table').style.width = `${textTableWidth}px`;
                             }
+                            
+                            tabContainer.classList.remove(`${tag.custom.isCustom ? 'hide' : 'show'}custom`);
+                            tabContainer.classList.add(`${tag.custom.isCustom ? 'show' : 'hide'}custom`);
+
                         }
                     },
                     {
