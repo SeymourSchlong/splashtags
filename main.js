@@ -874,60 +874,64 @@ const load = () => {
                     {
                         elm: custombanner,
                         run: () => {
-                            const reader = new FileReader();
-                            reader.onload = (e) => {
-                                const image = document.createElement("img");
-                                image.src = e.target.result;
-                                const index = banners.findIndex(b => b.file === image.src);
-                                if (index === -1) {
-                                    image.draggable = false;
-                                    const item = { file: image.src, colour: 'ffffff' };
-                                    banners.push(item);
-                                    images.banners.push(image);
-                                    bannerContainer.insertBefore(image, bannerContainer.querySelector('.bannerFiller'));
-                                    image.addEventListener('click', () => {
-                                        bannerClickEvent(item, image);
-                                    });
-                                    //custombanner.value = '';
-                                    setTimeout(() => {
-                                        image.click();
-                                        image.scrollIntoView();
-                                        renderSplashtag();
-                                    }, 1);
-                                } else {
-                                    bannerContainer.childNodes[index].click();
+                            Array.from(custombanner.files).forEach(file => {
+                                const reader = new FileReader();
+                                reader.onload = (e) => {
+                                    const image = document.createElement("img");
+                                    image.src = e.target.result;
+                                    const index = banners.findIndex(b => b.file === image.src);
+                                    if (index === -1) {
+                                        image.draggable = false;
+                                        const item = { file: image.src, colour: 'ffffff' };
+                                        banners.push(item);
+                                        images.banners.push(image);
+                                        bannerContainer.insertBefore(image, bannerContainer.querySelector('.bannerFiller'));
+                                        image.addEventListener('click', () => {
+                                            bannerClickEvent(item, image);
+                                        });
+                                        //custombanner.value = '';
+                                        setTimeout(() => {
+                                            image.click();
+                                            image.scrollIntoView();
+                                            renderSplashtag();
+                                        }, 1);
+                                    } else {
+                                        bannerContainer.childNodes[index].click();
+                                    }
                                 }
-                            }
-                            reader.readAsDataURL(custombanner.files[0]);
+                                reader.readAsDataURL(file);
+                            });
                         }
                     },
                     {
                         elm: custombadges,
                         run: () => {
-                            const reader = new FileReader();
-                            reader.onload = (e) => {
-                                const image = document.createElement("img");
-                                image.src = e.target.result;
-                                const index = badges.findIndex(b => b === image.src);
-                                if (index === -1) {
-                                    image.draggable = false;
-                                    const item = image.src;
-                                    badges.push(item);
-                                    images.badges.push(image);
-                                    badgeContainer.insertBefore(image, badgeContainer.querySelector('.badgeFiller'));
-                                    image.addEventListener('click', () => {
-                                        badgeClickEvent(item, image);
-                                    });
-                                    setTimeout(() => {
-                                        image.click();
-                                        image.scrollIntoView();
-                                        renderSplashtag();
-                                    }, 1);
-                                } else {
-                                    badgeContainer.childNodes[index].click();
+                            Array.from(custombadges.files).forEach(file => {
+                                const reader = new FileReader();
+                                reader.onload = (e) => {
+                                    const image = document.createElement("img");
+                                    image.src = e.target.result;
+                                    const index = badges.findIndex(b => b === image.src);
+                                    if (index === -1) {
+                                        image.draggable = false;
+                                        const item = image.src;
+                                        badges.push(item);
+                                        images.badges.push(image);
+                                        badgeContainer.insertBefore(image, badgeContainer.querySelector('.badgeFiller'));
+                                        image.addEventListener('click', () => {
+                                            badgeClickEvent(item, image);
+                                        });
+                                        setTimeout(() => {
+                                            image.click();
+                                            image.scrollIntoView();
+                                            renderSplashtag();
+                                        }, 1);
+                                    } else {
+                                        badgeContainer.childNodes[index].click();
+                                    }
                                 }
-                            }
-                            reader.readAsDataURL(custombadges.files[0]);
+                                reader.readAsDataURL(file);
+                            });
                         }
                     },
                     {
