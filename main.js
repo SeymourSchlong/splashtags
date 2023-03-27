@@ -190,37 +190,65 @@ const load = () => {
                 const size = 36;
                 textCtx.font = size + 'px ' + getFont(0);
                 const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
-                let reduction = 0;
-                while (textCtx.measureText(chosentitles.join(spaceOrBlank)).width > 700 - 32) {
-                    reduction += 0.2;
-                    textCtx.font = (size - reduction) + 'px ' + getFont(0);
-                }
+
+                // Squash the text instead of scaling down like below. imo much better :D
+                textCtx.letterSpacing = "-0.3px";
+                const textWidth = textCtx.measureText(chosentitles.join(spaceOrBlank)).width;
+                const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
+
+                // let reduction = 0;
+                // while (textCtx.measureText(chosentitles.join(spaceOrBlank)).width > 700 - 32) {
+                //     reduction += 0.2;
+                //     textCtx.font = (size - reduction) + 'px ' + getFont(0);
+                // }
 
                 // in game italic value is 0.12
                 textCtx.save();
                 textCtx.transform(1, 0, -7.5/100, 1, 0, 0);
-                textCtx.fillText(chosentitles.join(spaceOrBlank), 16, 42 - Math.floor(reduction/2));
+                textCtx.scale(xScale, 1);
+                textCtx.fillText(chosentitles.join(spaceOrBlank), 18 / xScale, 42);
+                //textCtx.fillText(chosentitles.join(spaceOrBlank), 18, 42 - Math.floor(reduction/2));
                 textCtx.restore();
+                textCtx.letterSpacing = "0px";
             }
 
-            // Write tag text (if not negative)
-            if (!tag.id !== "") {
+            // Write tag text (if not empty)
+            if (tag.id.length) {
                 textCtx.font = '24px ' + getFont(0);
-                textCtx.fillText('' + tag.id, 24, 186);
+
+                textCtx.letterSpacing = "0.2px";
+                const textWidth = textCtx.measureText(tag.id).width;
+                const xScale = textWidth > 700-48 ? (700 - 48) / textWidth : 1;
+
+                textCtx.save();
+                textCtx.scale(xScale, 1);
+                textCtx.fillText('' + tag.id, 24 / xScale, 185);
+                textCtx.restore();
+                textCtx.letterSpacing = "0px";
             }
 
             // Write player name
             if (tag.name.length) {
                 const size = 66;
                 textCtx.font = `${size}px ${getFont(1)}`;
-                let reduction = 0;
-                while (textCtx.measureText(tag.name).width > 700 - (40 - Math.floor(reduction / 2))) {
-                    ++reduction;
-                    textCtx.font = (size - reduction) + 'px ' + getFont(1);
-                }
 
+                textCtx.letterSpacing = "-0.4px";
+                const textWidth = textCtx.measureText(tag.name).width;
+                const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
+
+                // let reduction = 0;
+                // while (textCtx.measureText(tag.name).width > 700 - (40 - Math.floor(reduction / 2))) {
+                //     ++reduction;
+                //     textCtx.font = (size - reduction) + 'px ' + getFont(1);
+                // }
+                
                 textCtx.textAlign = 'center';
-                textCtx.fillText(tag.name, 700/2, 120 - Math.floor(reduction / 3));
+                textCtx.save();
+                textCtx.scale(xScale, 1);
+                textCtx.fillText(tag.name, (700/2-1.5) / xScale, 119);
+                // textCtx.fillText(tag.name, 700/2-1.5, 119 - Math.floor(reduction / 3));
+                textCtx.restore();
+                textCtx.letterSpacing = "0px";
             }
 
             let customBadge = false;
