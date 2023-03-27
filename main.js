@@ -149,25 +149,6 @@ const load = () => {
             ctx.clearRect(0, 0, 700, 200);
 
             ctx.drawImage(images.banners[tag.banner], 0, 0, 700, 200);
-            
-            // Draw each badge on the banner
-            for (let i = 0; i < 3; i++) {
-                if (tag.badges[i] !== -1) {
-                    const x = 480 + 74*i;
-                    if (badges[tag.badges[i]].includes('custom') || badges[tag.badges[i]].includes('data')) {
-                        const cw = images.badges[tag.badges[i]].naturalWidth;
-                        const ch = images.badges[tag.badges[i]].naturalHeight;
-                        const landscape = cw > ch;
-                        const ratio = !landscape ? (cw / ch) : (ch / cw);
-                        const width = landscape ? 70 : 70*ratio;
-                        const height = !landscape ? 70 : 70*ratio;
-                        // calculate the size ratio
-                        ctx.drawImage(images.badges[tag.badges[i]], x + (70 / 2 - width / 2), 128 + (70 / 2 - height / 2), width, height);
-                    } else {
-                        ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
-                    }
-                }
-            }
 
             // Set canvas colour
             textCtx.fillStyle = (tag.custom.isCustom ? tag.custom.colour : '#' + banners[tag.banner].colour);
@@ -196,18 +177,11 @@ const load = () => {
                 const textWidth = textCtx.measureText(chosentitles.join(spaceOrBlank)).width;
                 const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
 
-                // let reduction = 0;
-                // while (textCtx.measureText(chosentitles.join(spaceOrBlank)).width > 700 - 32) {
-                //     reduction += 0.2;
-                //     textCtx.font = (size - reduction) + 'px ' + getFont(0);
-                // }
-
                 // in game italic value is 0.12
                 textCtx.save();
                 textCtx.transform(1, 0, -7.5/100, 1, 0, 0);
                 textCtx.scale(xScale, 1);
                 textCtx.fillText(chosentitles.join(spaceOrBlank), 18 / xScale, 42);
-                //textCtx.fillText(chosentitles.join(spaceOrBlank), 18, 42 - Math.floor(reduction/2));
                 textCtx.restore();
                 textCtx.letterSpacing = "0px";
             }
@@ -218,7 +192,11 @@ const load = () => {
 
                 textCtx.letterSpacing = "0.2px";
                 const textWidth = textCtx.measureText(tag.id).width;
-                const xScale = textWidth > 700-48 ? (700 - 48) / textWidth : 1;
+
+                // tag text should adjust to the leftmost badge position.
+                const leftBadge = tag.badges.indexOf(tag.badges.find(b => b !== -1));
+                const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge)-48;
+                const xScale = textWidth > maxX ? (maxX) / textWidth : 1;
 
                 textCtx.save();
                 textCtx.scale(xScale, 1);
@@ -235,18 +213,11 @@ const load = () => {
                 textCtx.letterSpacing = "-0.4px";
                 const textWidth = textCtx.measureText(tag.name).width;
                 const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
-
-                // let reduction = 0;
-                // while (textCtx.measureText(tag.name).width > 700 - (40 - Math.floor(reduction / 2))) {
-                //     ++reduction;
-                //     textCtx.font = (size - reduction) + 'px ' + getFont(1);
-                // }
                 
                 textCtx.textAlign = 'center';
                 textCtx.save();
                 textCtx.scale(xScale, 1);
                 textCtx.fillText(tag.name, (700/2-1.5) / xScale, 119);
-                // textCtx.fillText(tag.name, 700/2-1.5, 119 - Math.floor(reduction / 3));
                 textCtx.restore();
                 textCtx.letterSpacing = "0px";
             }
@@ -263,6 +234,26 @@ const load = () => {
             
             ctx.drawImage(textCanvas, 0, 0, 700, 200);
             textCtx.clearRect(0, 0, 700, 200);
+
+            // Badges should be drawn OVER the text, in case of the tag text extending far
+            // Draw each badge on the banner
+            for (let i = 0; i < 3; i++) {
+                if (tag.badges[i] !== -1) {
+                    const x = 480 + 74*i;
+                    if (badges[tag.badges[i]].includes('custom') || badges[tag.badges[i]].includes('data')) {
+                        const cw = images.badges[tag.badges[i]].naturalWidth;
+                        const ch = images.badges[tag.badges[i]].naturalHeight;
+                        const landscape = cw > ch;
+                        const ratio = !landscape ? (cw / ch) : (ch / cw);
+                        const width = landscape ? 70 : 70*ratio;
+                        const height = !landscape ? 70 : 70*ratio;
+                        // calculate the size ratio
+                        ctx.drawImage(images.badges[tag.badges[i]], x + (70 / 2 - width / 2), 128 + (70 / 2 - height / 2), width, height);
+                    } else {
+                        ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
+                    }
+                }
+            }
 
             // draw small watermark if using custom assets
             if (!forceDisableWatermark && (customBanner || customBadge || tag.custom.isCustom)) {
@@ -349,12 +340,8 @@ const load = () => {
                         const a = artists[f];
                         textCtx.fillText(a.name, textPos.x - a.offset, textPos.y + 14*(i++));
                     });
-                } else {
-                    //textCtx.drawImage(images.watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
-                    //textCtx.fillText('custom', textPos.x, textPos.y);
                 }
 
-                // Unused, decided against coloured watermarks (may draw TOO much attention on some colours!)
                 textCtx.fillStyle = (tag.custom.isCustom ? tag.custom.colour : '#' + banners[tag.banner].colour);
                 textCtx.globalCompositeOperation = 'source-in';
                 textCtx.fillRect(625, 0, 100, 100);
@@ -377,8 +364,6 @@ const load = () => {
             renderSplashtag();
         }
 
-        /* Credit to @DeadLineSMB_Art on Twitter for the special band banners */
-        /* Credit to @ElectroDev on Twitter for the special weapon banners */
         customBanners.forEach(item => {
             banners.push(item);
         });
