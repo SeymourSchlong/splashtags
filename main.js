@@ -195,7 +195,9 @@ const load = () => {
 
                 // tag text should adjust to the leftmost badge position.
                 const leftBadge = tag.badges.indexOf(tag.badges.find(b => b !== -1));
-                const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge)-48;
+                const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge) - 48;
+                // shorter spacing version
+                //const maxX = (leftBadge === -1 ? 700 - 48 : 480 + 74*leftBadge - 24 - 2);
                 const xScale = textWidth > maxX ? (maxX) / textWidth : 1;
 
                 textCtx.save();
@@ -372,41 +374,14 @@ const load = () => {
         });
 
         // Loading queue for each item (so they do not need to load when selecting banners or badges)
-        {
+        const watermarkSrcs = ['watermark', 'deadline', 'electrodev', 'zeeto', 'sharkinodraws'];
+        watermarkSrcs.forEach(wm => {
             loadQueue.push(1);
-            let img = new Image();
-            img.src = './assets/images/watermark.png';
+            const img = new Image();
+            img.src = `./assets/images/${wm}.png`;
             img.onload = loadQueue.pop();
             images.watermarks.push(img);
-        }
-        {
-            loadQueue.push(1);
-            let img = new Image();
-            img.src = './assets/images/deadline.png';
-            img.onload = loadQueue.pop();
-            images.watermarks.push(img);
-        }
-        {
-            loadQueue.push(1);
-            let img = new Image();
-            img.src = './assets/images/electrodev.png';
-            img.onload = loadQueue.pop();
-            images.watermarks.push(img);
-        }
-        {
-            loadQueue.push(1);
-            let img = new Image();
-            img.src = './assets/images/zeeto.png';
-            img.onload = loadQueue.pop();
-            images.watermarks.push(img);
-        }
-        {
-            loadQueue.push(1);
-            let img = new Image();
-            img.src = './assets/images/sharkinodraws.png';
-            img.onload = loadQueue.pop();
-            images.watermarks.push(img);
-        }
+        });
 
         // Inputs =)
         const nameinput = document.querySelector('#nameinput');
@@ -829,10 +804,7 @@ const load = () => {
                         run: () => {
                             tag.custom.isCustom = customcheck.checked;
 
-                            nameinput.setAttribute('maxlength', tag.custom.isCustom ? 100 : 10);
                             if (!tag.custom.isCustom) {
-                                nameinput.value = nameinput.value.slice(0, 10);
-                                tag.name = nameinput.value;
                                 tabContents[0].querySelector('table').style = ``;
                             } else {
                                 const textTableWidth = tabContents[0].querySelector('table').getBoundingClientRect().width;
