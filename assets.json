@@ -88,18 +88,18 @@
         {
             "name": "miscCustom","id": "banner-other-custom"
         },
-        {"colour":"ffffff","file":"./assets/custom/banners/deepsea.png"},
-        {"colour":"222222","file":"./assets/custom/banners/swapdoodle.png"},
-        {"colour":"ffffff","file":"./assets/custom/banners/octo_tutorial.png"},
-        {"colour":"ffffff","file":"./assets/custom/banners/splatoon2.png"},
-        {"colour":"ffffff","file":"./assets/custom/banners/squidjump.png"},
-        {"colour":"ffffff","file":"./assets/custom/banners/camo-black.png"},
-        {"colour":"222222","file":"./assets/custom/banners/site1.png"},
-        {"colour":"ffffff","file":"./assets/custom/banners/site6.png"},
-        {"colour":"ffffff","file":"./assets/custom/banners/ooze.png"},
-        {"colour":"ffffff","file":"./assets/custom/banners/endsky.png"},
-        {"colour":"ffffff","file":"./assets/custom/banners/catalogue2.png"},
-        {"colour":"ffffff","file":"./assets/custom/banners/catalogue3.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/deepsea.png"},
+        {"colour":"222222","file":"./assets/custom/banners/other/swapdoodle.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/octo_tutorial.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/splatoon2.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/squidjump.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/camo-black.png"},
+        {"colour":"222222","file":"./assets/custom/banners/other/site1.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/site6.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/ooze.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/endsky.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/catalogue2.png"},
+        {"colour":"ffffff","file":"./assets/custom/banners/other/catalogue3.png"},
 
         {
             "name": "userCustom","id": "banner-uploaded-custom"
