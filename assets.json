@@ -86,6 +86,20 @@
         {"colour":"ffffff","file":"./assets/custom/banners/stages/coop-spawninggrounds.png"},
 
         {
+            "name": "lgbtCustom","id": "banner-pride-custom"
+        },
+        {"colour": "ffffff","file":"./assets/custom/banners/pride/progress.png"},
+        {"colour": "ffffff","file":"./assets/custom/banners/pride/ace.png"},
+        {"colour": "ffffff","file":"./assets/custom/banners/pride/aro.png"},
+        {"colour": "ffffff","file":"./assets/custom/banners/pride/bi.png"},
+        {"colour": "000000","file":"./assets/custom/banners/pride/genderfluid.png"},
+        {"colour": "000000","file":"./assets/custom/banners/pride/lesbian.png"},
+        {"colour": "000000","file":"./assets/custom/banners/pride/mlm.png"},
+        {"colour": "000000","file":"./assets/custom/banners/pride/nb.png"},
+        {"colour": "ffffff","file":"./assets/custom/banners/pride/pan.png"},
+        {"colour": "363636","file":"./assets/custom/banners/pride/trans.png"},
+
+        {
             "name": "miscCustom","id": "banner-other-custom"
         },
         {"colour":"ffffff","file":"./assets/custom/banners/other/deepsea.png"},
