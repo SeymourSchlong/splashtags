@@ -22,6 +22,7 @@ const load = () => {
         
         const images = {
             banners: [],
+            colourBanners: {},
             badges: [],
             watermarks: [],
         }
@@ -94,7 +95,8 @@ const load = () => {
             custom: {
                 isCustom: false,
                 title: lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : ''),
-                colour: '#ffffff'
+                colour: '#ffffff',
+                bgColours: ['#000000', '#ff0000', '#00ff00', '#0000ff']
             }
         }
         
@@ -109,6 +111,14 @@ const load = () => {
         const ctx = canvas.getContext('2d');
         const downloadlink = document.querySelector('#downloadlink');
         const downloadbutton = document.querySelector('#downloadbutton');
+
+        const canvasLayers = [];
+        for (let i = 0; i < 4; i++) {
+            const layer = document.createElement('canvas');
+            layer.width = 700;
+            layer.height = 200;
+            canvasLayers.push(layer);
+        }
 
         const textScale = 2;
         const textCanvas = document.createElement('canvas');
@@ -148,10 +158,25 @@ const load = () => {
             textCtx.clearRect(0, 0, 700, 200);
             ctx.clearRect(0, 0, 700, 200);
 
-            ctx.drawImage(images.banners[tag.banner], 0, 0, 700, 200);
+            if (!images.banners[tag.banner].src.includes('/coloured')) {
+                ctx.drawImage(images.banners[tag.banner], 0, 0, 700, 200);
+            } else {
+                // for each layer add it and then apply the colour
+                const imageLayers = images.colourBanners[images.banners[tag.banner].src];
+                for (let i = 0; i < imageLayers.length; i++) {
+                    const layer = canvasLayers[i].getContext('2d');
+                    layer.drawImage(imageLayers[i], 0, 0, 700, 200);
+                    layer.fillStyle = tag.custom.bgColours[!i ? i : imageLayers.length - i];
+                    layer.globalCompositeOperation = 'source-in';
+                    layer.fillRect(0, 0, 700, 200);
+                    layer.globalCompositeOperation = 'source-over';
+                    ctx.drawImage(canvasLayers[i], 0, 0);
+                    layer.clearRect(0, 0, 700, 200);
+                }
+            }
 
             // Set canvas colour
-            textCtx.fillStyle = (tag.custom.isCustom ? tag.custom.colour : '#' + banners[tag.banner].colour);
+            textCtx.fillStyle = (tag.custom.colour);
 
             // Write titles
             textCtx.textAlign = 'left';
@@ -404,6 +429,9 @@ const load = () => {
         const custombadges = document.querySelector('#custombadge');
         const customcolour = document.querySelector('#customcolour');
 
+        const bannercolour = document.querySelector('#bannercolours');
+        const bannercolourpickers = [...bannercolour.querySelectorAll('input')];
+
         // section select menus
         const bannersection = document.querySelector('#bannersection');
         const badgesection = document.querySelector('#badgesection');
@@ -462,7 +490,11 @@ const load = () => {
             }
             customcolour.value = '#' + banners[tag.banner].colour;
             tag.custom.colour = customcolour.value;
-            tag.custom.banner = null;
+            if (item.layers) {
+                bannercolour.dataset.layers = item.layers;
+            } else {
+                bannercolour.dataset.layers = 0;
+            }
             renderSplashtag();
         }
 
@@ -472,7 +504,7 @@ const load = () => {
                 for (let i = 0; i < bannerContainer.childNodes.length % 4; i++) {
                     bannerContainer.appendChild(document.createElement('div'));
                 }
-                const isCustom = item.name.endsWith('Custom');
+                const isCustom = item.id.endsWith('custom');
                 const sectionTitle = document.createElement('div');
                 sectionTitle.textContent = lang[language].sections[item.name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
                 sectionTitle.id = item.id;
@@ -492,6 +524,15 @@ const load = () => {
             img.src = item.file;
             images.banners.push(img);
             img.onload = loadQueue.pop();
+
+            if (item.layers) {
+                images.colourBanners[img.src] = [];
+                for (let i = 0; i < item.layers; i++) {
+                    const layer = document.createElement('img');
+                    layer.src = item.file.replace('preview', i+1);
+                    images.colourBanners[img.src].push(layer);
+                }
+            }
 
             img.setAttribute('draggable', 'false');
             img.addEventListener('click', () => {
@@ -563,7 +604,7 @@ const load = () => {
                 const sectionTitle = document.createElement('div');
                 const name = item.split('#')[0].replace('NAME:', '');
                 const id = item.split('#')[1];
-                const isCustom = name.endsWith('Custom')
+                const isCustom = id.endsWith('custom');
                 sectionTitle.textContent = lang[language].sections[name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
                 sectionTitle.id = id;
                 sectionTitle.className = 'imagelistsection';
@@ -902,7 +943,31 @@ const load = () => {
                         run: () => {
                             badgeContainer.querySelector('#' + badgesection.value).scrollIntoView();
                         }
-                    }
+                    },
+                    {
+                        elm: bannercolourpickers[0],
+                        run: () => {
+                            tag.custom.bgColours[0] = bannercolourpickers[0].value;
+                        }
+                    },
+                    {
+                        elm: bannercolourpickers[1],
+                        run: () => {
+                            tag.custom.bgColours[1] = bannercolourpickers[1].value;
+                        }
+                    },
+                    {
+                        elm: bannercolourpickers[2],
+                        run: () => {
+                            tag.custom.bgColours[2] = bannercolourpickers[2].value;
+                        }
+                    },
+                    {
+                        elm: bannercolourpickers[3],
+                        run: () => {
+                            tag.custom.bgColours[3] = bannercolourpickers[3].value;
+                        }
+                    },
                 ];
 
                 changeEvents.forEach(event => {
@@ -944,7 +1009,31 @@ const load = () => {
                         run: () => {
                             changeEvents[6].run();
                         }
-                    }
+                    },
+                    {
+                        elm: bannercolourpickers[0],
+                        run: () => {
+                            tag.custom.bgColours[0] = bannercolourpickers[0].value;
+                        }
+                    },
+                    {
+                        elm: bannercolourpickers[1],
+                        run: () => {
+                            tag.custom.bgColours[1] = bannercolourpickers[1].value;
+                        }
+                    },
+                    {
+                        elm: bannercolourpickers[2],
+                        run: () => {
+                            tag.custom.bgColours[2] = bannercolourpickers[2].value;
+                        }
+                    },
+                    {
+                        elm: bannercolourpickers[3],
+                        run: () => {
+                            tag.custom.bgColours[3] = bannercolourpickers[3].value;
+                        }
+                    },
                 ]
             
                 inputEvents.forEach(event => {

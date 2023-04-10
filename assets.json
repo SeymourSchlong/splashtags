@@ -102,6 +102,22 @@
         {"colour": "363636","file":"./assets/custom/banners/pride/trans.png"},
 
         {
+            "name": "vanilla","id": "banner-vanilla-custom"
+        },
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/blobfish/preview.png","layers":3},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/emberz/preview.png","layers":4},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/fire/preview.png","layers":2},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/fish/preview.png","layers":4},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/generic/preview.png","layers":2},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/octopus/preview.png","layers":4},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/splats/preview.png","layers":3},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/squidback/preview.png","layers":2},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/stars/preview.png","layers":4},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/symbols/preview.png","layers":4},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/takoroka/preview.png","layers":3},
+        {"colour":"ffffff","file":"./assets/custom/banners/coloured/zink/preview.png","layers":4},
+
+        {
             "name": "miscCustom","id": "banner-other-custom"
         },
         {"colour":"ffffff","file":"./assets/custom/banners/other/deepsea.png"},

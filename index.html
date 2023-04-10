@@ -29,7 +29,7 @@
                                     <tr>
                                         <td><span name="textName">Name</span>: </td>
                                         <td>
-                                            <input id="nameinput" type="text" maxlength="10000" value="Player" placeholder="Player"> <input id="taginput" type="text" value="#0001" placeholder="#0001" maxlength="10000" style="width: 10ch;"><!--#<input id="taginput" type="number" min="-1" max="99999" value="1" maxlength="5" placeholder="0001">-->
+                                            <input id="nameinput" type="text" maxlength="10000" value="Player" placeholder="Player"> <input id="taginput" type="text" value="#0001" placeholder="#0001" maxlength="10000" style="width: 10ch;"> <label><span name="textColour">Colour</span> <input id="customcolour" type="color" value="#ffffff"></label>
                                         </td>
                                     </tr>
                                     <tr>
@@ -37,7 +37,7 @@
                                         <td>
                                             <select id="titleinput1" class="notcustom"></select>
                                             <select id="titleinput2" class="notcustom"></select> 
-                                            <input id="customtitle" placeholder="Splatlandian Youth" value="Splatlandian Youth" maxlength="10000" class="custom"> <label class="custom"><span name="textColour">Colour</span> <input id="customcolour" type="color" value="#ffffff"></label>
+                                            <input id="customtitle" placeholder="Splatlandian Youth" value="Splatlandian Youth" maxlength="10000" class="custom">
                                         </td>
                                     </tr>
                                     <tr>
@@ -49,7 +49,7 @@
                                     <tr>
                                         <td><span name="textCustom">Custom</span>: </td>
                                         <td>
-                                            <label>(<span name="textToggle">toggle</span> <input id="customcheck" type="checkbox" name="customcheck">)</label><label><span> </span> <input onclick="toggleWatermark();" type="checkbox" style="visibility: hidden;"> </label>
+                                            <label>(<span name="textToggle">toggle</span> <input id="customcheck" type="checkbox" name="customcheck">)</label><label><span> </span> <input onclick="toggleWatermark();" type="checkbox" style="visibility: hidden;"> </label> <div id="bannercolours" style="display: inline;"><span name="textColour">Colour</span> <input type="color" value="#000000"> <input type="color" value="#ff0000"> <input type="color" value="#00ff00"> <input type="color" value="#0000ff"></div>
                                         </td>
                                     </tr>
                                 </tbody>
