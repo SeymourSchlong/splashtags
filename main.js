@@ -9,10 +9,12 @@ const load = () => {
     const lang = {}
 
     const loadedLanguage = () => {
+        // Languages here include a space between the titles
         const isSpaceLang = () => {
             return ['USen','EUnl','USfr','EUfr','EUde','EUit','EUru','USes','EUes', 'KRko'].indexOf(language) !== -1;
         }
 
+        // The fonts used on the tag
         const langFonts = {
             JPja: ["Kurokane", "Rowdy"],
             CNzh: ["HanyiZongyi", "HuakangZongyi"],
@@ -27,6 +29,7 @@ const load = () => {
             watermarks: [],
         }
 
+        // Used to get the selected language from the URL
         let rawParams;
         if (location.href.indexOf("#") != -1) {
             rawParams = location.href.slice(0, location.href.indexOf("#"));
@@ -53,6 +56,7 @@ const load = () => {
         const language = params.lang;
         document.body.setAttribute('lang', language);
 
+        // Replaces all of the UI element text with their appropriate language
         Object.keys(lang[language].ui).forEach(element => {
             document.querySelectorAll(`[name="${element}"]`).forEach(e => {
                 if (element.startsWith('tab') || element.startsWith('button')) {
@@ -96,7 +100,7 @@ const load = () => {
                 isCustom: false,
                 title: lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : ''),
                 colour: '#ffffff',
-                bgColours: ['#000000', '#ff0000', '#00ff00', '#0000ff']
+                bgColours: ['#ffffff', '#ff0000', '#00ff00', '#0000ff']
             }
         }
         
@@ -112,13 +116,15 @@ const load = () => {
         const downloadlink = document.querySelector('#downloadlink');
         const downloadbutton = document.querySelector('#downloadbutton');
 
-        const canvasLayers = [];
-        for (let i = 0; i < 4; i++) {
-            const layer = document.createElement('canvas');
-            layer.width = 700;
-            layer.height = 200;
-            canvasLayers.push(layer);
-        }
+        const canvasLayer = document.createElement('canvas');
+        canvasLayer.width = 700;
+        canvasLayer.height = 200;
+        const layerCtx = canvasLayer.getContext('2d');
+
+        const compositeCanvas = document.createElement('canvas');
+        compositeCanvas.width = 700;
+        compositeCanvas.height = 200;
+        const compositeCtx = compositeCanvas.getContext('2d');
 
         const textScale = 2;
         const textCanvas = document.createElement('canvas');
@@ -144,6 +150,7 @@ const load = () => {
             return fonts.join(', ');
         }
 
+        // please dont use this unless you've receive permission :(
         let forceDisableWatermark = false;
 
         let cooldown = 0;
@@ -159,28 +166,35 @@ const load = () => {
             ctx.clearRect(0, 0, 700, 200);
 
             if (!images.banners[tag.banner].src.includes('/coloured')) {
+                // If not one of the special "pick your own colour" banners, just draw it
                 ctx.drawImage(images.banners[tag.banner], 0, 0, 700, 200);
             } else {
-                // for each layer add it and then apply the colour
+                // Special custom colour banners draw each layer then are added
                 const imageLayers = images.colourBanners[images.banners[tag.banner].src];
                 for (let i = 0; i < imageLayers.length; i++) {
-                    const layer = canvasLayers[i].getContext('2d');
-                    layer.drawImage(imageLayers[i], 0, 0, 700, 200);
-                    layer.fillStyle = tag.custom.bgColours[!i ? i : imageLayers.length - i];
-                    layer.globalCompositeOperation = 'source-in';
-                    layer.fillRect(0, 0, 700, 200);
-                    layer.globalCompositeOperation = 'source-over';
-                    ctx.drawImage(canvasLayers[i], 0, 0);
-                    layer.clearRect(0, 0, 700, 200);
+                    compositeCtx.clearRect(0, 0, 700, 200);
+                    compositeCtx.save();
+                    compositeCtx.fillStyle = tag.custom.bgColours[!i ? i : imageLayers.length - i];
+                    compositeCtx.drawImage(imageLayers[i], 0, 0, 700, 200);
+                    compositeCtx.globalCompositeOperation = 'difference';
+                    compositeCtx.fillRect(0, 0, 700, 200);
+                    compositeCtx.restore();
+
+                    layerCtx.save();
+                    layerCtx.drawImage(imageLayers[i], 0, 0, 700, 200);
+                    layerCtx.globalCompositeOperation = 'source-in';
+                    layerCtx.drawImage(compositeCanvas, 0, 0, 700, 200);
+                    layerCtx.restore();
+                    ctx.drawImage(canvasLayer, 0, 0);
+                    layerCtx.clearRect(0, 0, 700, 200);
                 }
             }
 
-            // Set canvas colour
+            // Set text colour
             textCtx.fillStyle = (tag.custom.colour);
 
             // Write titles
             textCtx.textAlign = 'left';
-            
             const chosentitles = [];
             if (tag.custom.isCustom) {
                 chosentitles.push(tag.custom.title);
@@ -255,6 +269,7 @@ const load = () => {
                 if (b !== -1) customBadge = customBadge || badges[b].includes('data') || badges[b].includes('custom');
             });
 
+            // If the banner name or badge has either "custom" or "data" it is definitely a custom resource
             ['custom', 'data'].forEach(word => {
                 customBanner = customBanner || banners[tag.banner].file.includes(word);
             });
@@ -262,11 +277,11 @@ const load = () => {
             ctx.drawImage(textCanvas, 0, 0, 700, 200);
             textCtx.clearRect(0, 0, 700, 200);
 
-            // Badges should be drawn OVER the text, in case of the tag text extending far
             // Draw each badge on the banner
             for (let i = 0; i < 3; i++) {
                 if (tag.badges[i] !== -1) {
                     const x = 480 + 74*i;
+                    // Below used to resize custom badges to retain their scale.
                     if (badges[tag.badges[i]].includes('custom') || badges[tag.badges[i]].includes('data')) {
                         const cw = images.badges[tag.badges[i]].naturalWidth;
                         const ch = images.badges[tag.badges[i]].naturalHeight;
@@ -274,7 +289,6 @@ const load = () => {
                         const ratio = !landscape ? (cw / ch) : (ch / cw);
                         const width = landscape ? 70 : 70*ratio;
                         const height = !landscape ? 70 : 70*ratio;
-                        // calculate the size ratio
                         ctx.drawImage(images.badges[tag.badges[i]], x + (70 / 2 - width / 2), 128 + (70 / 2 - height / 2), width, height);
                     } else {
                         ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
@@ -354,11 +368,10 @@ const load = () => {
                 });
 
                 featured.sort();
-                customArtist = featured[0];
 
                 if (featured.length === 1) {
                     const a = artists[featured[0]];
-                    textCtx.drawImage(images.watermarks[customArtist+1], wmX - a.offset, wm.offset.y, wm.width, wm.height);
+                    textCtx.drawImage(images.watermarks[featured[0]+1], wmX - a.offset, wm.offset.y, wm.width, wm.height);
                     textCtx.fillText(a.name, textPos.x - a.offset, textPos.y);
                 } else if (featured.length > 1) {
                     textCtx.drawImage(images.watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
@@ -401,10 +414,8 @@ const load = () => {
         // Loading queue for each item (so they do not need to load when selecting banners or badges)
         const watermarkSrcs = ['watermark', 'deadline', 'electrodev', 'zeeto', 'sharkinodraws'];
         watermarkSrcs.forEach(wm => {
-            loadQueue.push(1);
             const img = new Image();
             img.src = `./assets/images/${wm}.png`;
-            img.onload = loadQueue.pop();
             images.watermarks.push(img);
         });
 
@@ -455,13 +466,14 @@ const load = () => {
             });
         }
 
+        // Sort the titles, and insert the "No Title" option at the start
         const notitle = lang[language].titles.first.shift();
         lang[language].titles.last.shift();
         lang[language].titles.first.sort();
         lang[language].titles.last.sort();
 
         lang[language].titles.first.unshift(notitle);
-        lang[language].titles.last.unshift(notitle);/**/
+        lang[language].titles.last.unshift(notitle);
 
         // Set defaults for inputs
         const defaultBannerIndex = banners.findIndex(a => !a.name && a.file.includes('Tutorial'));
