@@ -410,6 +410,9 @@ label {
     vertical-align: text-bottom;
 }
 
+#bannercolours[data-layers="1"] input:nth-child(n+3) {
+    display: none;
+}
 #bannercolours[data-layers="2"] input:nth-child(n+4) {
     display: none;
 }
