@@ -29,31 +29,11 @@ const load = () => {
             watermarks: [],
         }
 
-        // Used to get the selected language from the URL
-        let rawParams;
-        if (location.href.indexOf("#") != -1) {
-            rawParams = location.href.slice(0, location.href.indexOf("#"));
-        } else {
-            rawParams = location.href;
+        const langRegex = /\?lang=(\w{4})/;
+        const language = location.search && langRegex.test(location.search) ? langRegex.exec(location.search)[1] : 'USen';
+        if (Object.keys(lang).indexOf(language) === -1) {
+            language = 'USen';
         }
-        if (rawParams.indexOf("?") != -1) {
-            rawParams = rawParams.slice(rawParams.indexOf("?") + 1).split("&");
-        } else {
-            rawParams = [];
-        }
-        const params = {};
-        for (let i = 0; i < rawParams.length; i++) {
-            try {
-                const p = rawParams[i].split("=");
-                params[p[0]] = decodeURIComponent(p[1]);
-            } catch (err) {}
-        }
-
-        params.lang = params.lang || 'USen';
-        if (Object.keys(lang).indexOf(params.lang) === -1) {
-            params.lang = 'USen';
-        }
-        const language = params.lang;
         document.body.setAttribute('lang', language);
 
         // Replaces all of the UI element text with their appropriate language
@@ -91,17 +71,15 @@ const load = () => {
             name: 'Player',
             title: {
                 first: 0,
-                last: 0
+                last: 0,
+                string: 'Splatlandian Youth'
             },
             banner: 0,
             id: '#0001',
             badges: [ -1, -1, -1 ],
-            custom: {
-                isCustom: false,
-                title: lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : ''),
-                colour: '#ffffff',
-                bgColours: ['#ffffff', '#ff0000', '#00ff00', '#0000ff']
-            }
+            colour: '#ffffff',
+            bgColours: ['#ffffff', '#ff0000', '#00ff00', '#0000ff'],
+            isCustom: false,
         }
         
         const waitUntil = (fn, length) => {
@@ -135,7 +113,7 @@ const load = () => {
 
         const getFont = (textType) => {
             const fonts = [];
-            if (textType === 0) {
+            if (!textType) {
                 fonts.push('Splat-text');
                 if (langFonts[language]) {
                     fonts.push(langFonts[language][0]);
@@ -150,15 +128,13 @@ const load = () => {
             return fonts.join(', ');
         }
 
-        // please dont use this unless you've receive permission :(
+        // please dont use this unless you receive permission :(
         let forceDisableWatermark = false;
 
         let cooldown = 0;
         // prevent the canvas from redrawing too quickly
         setInterval(() => {
-            if (cooldown) {
-                cooldown--;
-            }
+            if (cooldown) cooldown--;
         });
         
         const renderSplashtag = () => {
@@ -174,7 +150,7 @@ const load = () => {
                 for (let i = 0; i < imageLayers.length; i++) {
                     compositeCtx.clearRect(0, 0, 700, 200);
                     compositeCtx.save();
-                    compositeCtx.fillStyle = tag.custom.bgColours[!i ? i : imageLayers.length - i];
+                    compositeCtx.fillStyle = tag.bgColours[!i ? i : imageLayers.length - i];
                     compositeCtx.drawImage(imageLayers[i], 0, 0, 700, 200);
                     compositeCtx.globalCompositeOperation = 'difference';
                     compositeCtx.fillRect(0, 0, 700, 200);
@@ -191,13 +167,13 @@ const load = () => {
             }
 
             // Set text colour
-            textCtx.fillStyle = (tag.custom.colour);
+            textCtx.fillStyle = (tag.colour);
 
             // Write titles
             textCtx.textAlign = 'left';
             const chosentitles = [];
-            if (tag.custom.isCustom) {
-                chosentitles.push(tag.custom.title);
+            if (tag.isCustom) {
+                chosentitles.push(tag.title.string);
             } else {
                 if (tag.title.first) {
                     chosentitles.push(lang[language].titles.first[tag.title.first]);
@@ -207,47 +183,48 @@ const load = () => {
                 }
             }
             if (chosentitles.length) {
+                textCtx.save();
+                
                 const size = 36;
-                textCtx.font = size + 'px ' + getFont(0);
+                textCtx.font = `${size}px ${getFont()}`;
                 const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
+                const fullTitle = chosentitles.join(spaceOrBlank);
 
-                // Squash the text instead of scaling down like below. imo much better :D
                 textCtx.letterSpacing = "-0.3px";
-                const textWidth = textCtx.measureText(chosentitles.join(spaceOrBlank)).width;
+                const textWidth = textCtx.measureText(fullTitle).width;
                 const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
 
                 // in game italic value is 0.12
-                textCtx.save();
                 textCtx.transform(1, 0, -7.5/100, 1, 0, 0);
                 textCtx.scale(xScale, 1);
-                textCtx.fillText(chosentitles.join(spaceOrBlank), 18 / xScale, 42);
+                textCtx.fillText(fullTitle, 18 / xScale, 42);
                 textCtx.restore();
                 textCtx.letterSpacing = "0px";
             }
 
             // Write tag text (if not empty)
             if (tag.id.length) {
-                textCtx.font = '24px ' + getFont(0);
+                textCtx.save();
 
+                const size = 24;
+                textCtx.font = `${size}px ${getFont()}`;
                 textCtx.letterSpacing = "0.2px";
                 const textWidth = textCtx.measureText(tag.id).width;
 
                 // tag text should adjust to the leftmost badge position.
                 const leftBadge = tag.badges.indexOf(tag.badges.find(b => b !== -1));
                 const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge) - 48;
-                // shorter spacing version
-                //const maxX = (leftBadge === -1 ? 700 - 48 : 480 + 74*leftBadge - 24 - 2);
                 const xScale = textWidth > maxX ? (maxX) / textWidth : 1;
 
-                textCtx.save();
                 textCtx.scale(xScale, 1);
                 textCtx.fillText('' + tag.id, 24 / xScale, 185);
                 textCtx.restore();
-                textCtx.letterSpacing = "0px";
             }
 
             // Write player name
             if (tag.name.length) {
+                textCtx.save();
+
                 const size = 66;
                 textCtx.font = `${size}px ${getFont(1)}`;
 
@@ -256,22 +233,19 @@ const load = () => {
                 const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
                 
                 textCtx.textAlign = 'center';
-                textCtx.save();
                 textCtx.scale(xScale, 1);
                 textCtx.fillText(tag.name, (700/2-1.5) / xScale, 119);
+
                 textCtx.restore();
-                textCtx.letterSpacing = "0px";
             }
 
-            let customBadge = false;
-            let customBanner = false;
-            tag.badges.forEach(b => {
-                if (b !== -1) customBadge = customBadge || badges[b].includes('data') || badges[b].includes('custom');
-            });
-
             // If the banner name or badge has either "custom" or "data" it is definitely a custom resource
+            let customed = false;
+            tag.badges.forEach(b => {
+                if (b !== -1) customed = customed || badges[b].includes('data') || badges[b].includes('custom');
+            });
             ['custom', 'data'].forEach(word => {
-                customBanner = customBanner || banners[tag.banner].file.includes(word);
+                customed = customed || banners[tag.banner].file.includes(word);
             });
             
             ctx.drawImage(textCanvas, 0, 0, 700, 200);
@@ -297,7 +271,7 @@ const load = () => {
             }
 
             // draw small watermark if using custom assets
-            if (!forceDisableWatermark && (customBanner || customBadge || tag.custom.isCustom)) {
+            if (!forceDisableWatermark && customed) {
 
                 const wm = {
                     offset: {
@@ -382,15 +356,16 @@ const load = () => {
                     });
                 }
 
-                textCtx.fillStyle = (tag.custom.isCustom ? tag.custom.colour : '#' + banners[tag.banner].colour);
+                textCtx.fillStyle = tag.colour;
                 textCtx.globalCompositeOperation = 'source-in';
-                textCtx.fillRect(625, 0, 100, 100);
+                textCtx.fillRect(0, 0, 700, 200);
                 textCtx.globalCompositeOperation = 'source-over';
             }
 
+            ctx.save();
             ctx.globalAlpha = 0.2;
             ctx.drawImage(textCanvas, 0, 0, 700, 200);
-            ctx.globalAlpha = 1;
+            ctx.restore();
 
             // Disables download button if testing locally
             if (!location.href.startsWith('file')) {
@@ -449,6 +424,7 @@ const load = () => {
 
         customtitle.value = lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : '');
         customtitle.placeholder = customtitle.value;
+        tag.title.string = customtitle.value;
 
         const tabContainer = document.querySelector('.tabcontainer');
         const tabs = document.querySelectorAll('.tab');
@@ -501,7 +477,7 @@ const load = () => {
                 bannerContainer.childNodes[defaultBannerIndex].classList.add('selected');
             }
             customcolour.value = '#' + banners[tag.banner].colour;
-            tag.custom.colour = customcolour.value;
+            tag.colour = customcolour.value;
             if (item.layers) {
                 bannercolour.dataset.layers = item.layers;
             } else {
@@ -687,14 +663,28 @@ const load = () => {
                     return Math.floor(Math.random() * array.length);
                 }
 
-                const clickEvents = [
+                const generateTitle = () => {
+                    const chosentitles = [];
+                    if (tag.title.first) {
+                        chosentitles.push(lang[language].titles.first[tag.title.first]);
+                    }
+                    if (tag.title.last) {
+                        chosentitles.push(lang[language].titles.last[tag.title.last]);
+                    }
+                    const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
+                    return chosentitles.join(spaceOrBlank)
+                }
+
+                const events = [
+                    // Random title button (both)
                     {
                         elm: randomtitles,
                         run: () => {
-                            clickEvents[1].run();
-                            clickEvents[2].run();
+                            getEvent(randomtitle1).run();
+                            getEvent(randomtitle2).run();
                         }
                     },
+                    // Random title button (1)
                     {
                         elm: randomtitle1,
                         run: () => {
@@ -702,22 +692,11 @@ const load = () => {
                             titleinput1.selectedIndex = title1;
                             tag.title.first = title1;
 
-                            const chosentitles = [];
-                            if (tag.title.first) {
-                                chosentitles.push(lang[language].titles.first[tag.title.first]);
-                            }
-                            if (tag.title.last) {
-                                chosentitles.push(lang[language].titles.last[tag.title.last]);
-                            }
-                            const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
-
-                            tag.custom.title = chosentitles.join(spaceOrBlank);
-                            customtitle.value = tag.custom.title;
-                            setTimeout(() => {
-                                renderSplashtag();
-                            },1)
+                            tag.title.string = generateTitle();
+                            customtitle.value = tag.title.string;
                         }
                     },
+                    // Random title button (2)
                     {
                         elm: randomtitle2,
                         run: () => {
@@ -725,25 +704,16 @@ const load = () => {
                             titleinput2.selectedIndex = title2;
                             tag.title.last = title2;
 
-                            const chosentitles = [];
-                            if (tag.title.first) {
-                                chosentitles.push(lang[language].titles.first[tag.title.first]);
-                            }
-                            if (tag.title.last) {
-                                chosentitles.push(lang[language].titles.last[tag.title.last]);
-                            }
-                            const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
-
-                            tag.custom.title = chosentitles.join(spaceOrBlank);
-                            customtitle.value = tag.custom.title;
-                            renderSplashtag();
+                            tag.title.string = generateTitle();
+                            customtitle.value = tag.title.string;
                         }
                     },
+                    // Random banner
                     {
                         elm: randombanner,
                         run: () => {
                             let banner = 0;
-                            if (tag.custom.isCustom) {
+                            if (tag.isCustom) {
                                 banner = randIndex(banners.filter(b => b.file));
                             } else {
                                 banner = randIndex(banners.filter(b => b.file && b.file.startsWith('./assets/banners/')));
@@ -751,6 +721,7 @@ const load = () => {
                             bannerContainer.querySelectorAll('img')[banner].click();
                         }
                     },
+                    // Random badges
                     {
                         elm: randombadge,
                         run: () => {
@@ -758,7 +729,7 @@ const load = () => {
 
                             let badgeList = [];
 
-                            if (tag.custom.isCustom) {
+                            if (tag.isCustom) {
                                 badgeList = badges.filter(b => !b.startsWith('NAME'));
                             } else {
                                 badgeList = badges.filter(b => !b.startsWith('NAME') && b.startsWith('./assets/badges/'));
@@ -777,14 +748,16 @@ const load = () => {
                             badgeRadios[0].click()
                         }
                     },
+                    // All random
                     {
                         elm: randomall,
                         run: () => {
-                            clickEvents[0].run();
-                            clickEvents[3].run();
-                            clickEvents[4].run();
+                            getEvent(randomtitles).run();
+                            getEvent(randombanner).run();
+                            getEvent(randombadge).run();
                         }
                     },
+                    // Credits button
                     {
                         elm: credits,
                         run: () => {
@@ -797,90 +770,75 @@ const load = () => {
                             main2.className = temp.includes('Show') ? '' : 'flipped';
                         }
                     },
+                    // Credits close button
                     {
                         elm: creditsX,
                         run: () => {
-                            clickEvents[6].run();
+                            getEvent(credits).run();
                         }
-                    }
-                ];
-
-                document.querySelectorAll('.scale').forEach(e => {
-                    clickEvents.push({
-                        elm: e,
-                        run: () => {
-                            let container = e.parentNode.parentNode;
-                            let scale = Number(container.dataset.scale);
-                            scale += Number(e.dataset.do);
-                            if (scale < Number(container.dataset.min)) scale = container.dataset.min;
-                            if (scale > Number(container.dataset.max)) scale = container.dataset.max;
-                            container.dataset.scale = scale;
-                            container.style = `--items: ${scale}`;
-                        }
-                    })
-                });
-
-                clickEvents.forEach(event => {
-                    event.elm.addEventListener('click', () => {
-                        event.run();
-                        renderSplashtag();
-                    });
-                });
-
-                const changeEvents = [
+                    },
+                    
+                    // Title input (1)
                     {
                         elm: titleinput1,
                         run: () => {
                             tag.title.first = titleinput1.selectedIndex;
                         }
                     },
+                    // Title input (2)
                     {
                         elm: titleinput2,
                         run: () => {
                             tag.title.last = titleinput2.selectedIndex;
                         }
                     },
+                    // Custom title input
+                    {
+                        elm: customtitle,
+                        run: () => {
+                            tag.title.string = customtitle.value;
+                        }
+                    },
+                    // Name input
                     {
                         elm: nameinput,
                         run: () => {
                             tag.name = nameinput.value;
                         }
                     },
+                    // Tag input
                     {
                         elm: taginput,
                         run: () => {
                             tag.id = taginput.value;
                         }
                     },
+                    // Custom checkbox
                     {
                         elm: customcheck,
                         run: () => {
-                            tag.custom.isCustom = customcheck.checked;
+                            tag.isCustom = customcheck.checked;
 
-                            if (!tag.custom.isCustom) {
+                            if (!tag.isCustom) {
                                 tabContents[0].querySelector('table').style = ``;
                             } else {
                                 const textTableWidth = tabContents[0].querySelector('table').getBoundingClientRect().width;
                                 tabContents[0].querySelector('table').style.width = `${textTableWidth}px`;
                             }
                             
-                            tabContainer.classList.remove(`${tag.custom.isCustom ? 'hide' : 'show'}custom`);
-                            tabContainer.classList.add(`${tag.custom.isCustom ? 'show' : 'hide'}custom`);
+                            tabContainer.classList.remove(`${tag.isCustom ? 'hide' : 'show'}custom`);
+                            tabContainer.classList.add(`${tag.isCustom ? 'show' : 'hide'}custom`);
 
                         }
                     },
-                    {
-                        elm: customtitle,
-                        run: () => {
-                            tag.custom.title = customtitle.value;
-                        }
-                    },
+                    // Custom colour input
                     {
                         elm: customcolour,
                         run: () => {
-                            tag.custom.colour = customcolour.value;
+                            tag.colour = customcolour.value;
                         }
                     },
+                    // Custom banner upload button
                     {
                         elm: custombanner,
                         run: () => {
@@ -913,6 +871,7 @@ const load = () => {
                             });
                         }
                     },
+                    // Custom badge upload button
                     {
                         elm: custombadges,
                         run: () => {
@@ -944,114 +903,135 @@ const load = () => {
                             });
                         }
                     },
+                    // Banner section dropdown
                     {
                         elm: bannersection,
                         run: () => {
                             bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
                         }
                     },
+                    // Badge section dropdown
                     {
                         elm: badgesection,
                         run: () => {
                             badgeContainer.querySelector('#' + badgesection.value).scrollIntoView();
                         }
                     },
+                    // Banner colour picker (1)
                     {
                         elm: bannercolourpickers[0],
                         run: () => {
-                            tag.custom.bgColours[0] = bannercolourpickers[0].value;
+                            tag.bgColours[0] = bannercolourpickers[0].value;
                         }
                     },
+                    // Banner colour picker (2)
                     {
                         elm: bannercolourpickers[1],
                         run: () => {
-                            tag.custom.bgColours[1] = bannercolourpickers[1].value;
+                            tag.bgColours[1] = bannercolourpickers[1].value;
                         }
                     },
+                    // Banner colour picker (3)
                     {
                         elm: bannercolourpickers[2],
                         run: () => {
-                            tag.custom.bgColours[2] = bannercolourpickers[2].value;
+                            tag.bgColours[2] = bannercolourpickers[2].value;
                         }
                     },
+                    // Banner colour picker (4)
                     {
                         elm: bannercolourpickers[3],
                         run: () => {
-                            tag.custom.bgColours[3] = bannercolourpickers[3].value;
+                            tag.bgColours[3] = bannercolourpickers[3].value;
                         }
                     },
                 ];
 
-                changeEvents.forEach(event => {
-                    event.elm.addEventListener('change', () => {
-                        event.run();
-                        renderSplashtag();
-                    });
-                });
+                const getEvent = (elm) => {
+                    return events.find(e => e.elm === elm);
+                }
+
+                const clickEvents = [
+                    randomtitles,
+                    randomtitle1,
+                    randomtitle2,
+                    randombanner,
+                    randombadge,
+                    randomall,
+                    credits,
+                    creditsX,
+                ];
+
+                const changeEvents = [
+                    titleinput1,
+                    titleinput2,
+                    nameinput,
+                    taginput,
+                    customcheck,
+                    customtitle,
+                    customcolour,
+                    custombanner,
+                    custombadges,
+                    bannersection,
+                    badgesection,
+                    bannercolourpickers[0],
+                    bannercolourpickers[1],
+                    bannercolourpickers[2],
+                    bannercolourpickers[3],
+                ];
 
                 const keyEvents = [
-                    {
-                        elm: nameinput,
-                        run: changeEvents[2].run
-                    },
-                    {
-                        elm: taginput,
-                        run: changeEvents[3].run
-                    },
-                    {
-                        elm: customtitle,
-                        run: changeEvents[5].run
-                    }
-                ]
+                    nameinput,
+                    taginput,
+                    customtitle,
+                ];
 
-                keyEvents.forEach(event => {
-                    event.elm.addEventListener('keydown', () => {
-                        setTimeout(() => {
-                            event.run();
-                            renderSplashtag();
-                        }, 1);
-                        event.run();
+                const inputEvents = [
+                    customcolour,
+                    bannercolourpickers[0],
+                    bannercolourpickers[1],
+                    bannercolourpickers[2],
+                    bannercolourpickers[3],
+                ];
+
+                document.querySelectorAll('.scale').forEach(e => {
+                    e.addEventListener('click', () => {
+                        let container = e.parentNode.parentNode;
+                        let scale = Number(container.dataset.scale);
+                        scale += Number(e.dataset.do);
+                        if (scale < Number(container.dataset.min)) scale = container.dataset.min;
+                        if (scale > Number(container.dataset.max)) scale = container.dataset.max;
+                        container.dataset.scale = scale;
+                        container.style = `--items: ${scale}`;
+                    });
+                });
+
+                clickEvents.forEach(elm => {
+                    elm.addEventListener('click', () => {
+                        getEvent(elm).run();
                         renderSplashtag();
                     });
                 });
 
-                const inputEvents = [
-                    {
-                        elm: customcolour,
-                        run: () => {
-                            changeEvents[6].run();
-                        }
-                    },
-                    {
-                        elm: bannercolourpickers[0],
-                        run: () => {
-                            tag.custom.bgColours[0] = bannercolourpickers[0].value;
-                        }
-                    },
-                    {
-                        elm: bannercolourpickers[1],
-                        run: () => {
-                            tag.custom.bgColours[1] = bannercolourpickers[1].value;
-                        }
-                    },
-                    {
-                        elm: bannercolourpickers[2],
-                        run: () => {
-                            tag.custom.bgColours[2] = bannercolourpickers[2].value;
-                        }
-                    },
-                    {
-                        elm: bannercolourpickers[3],
-                        run: () => {
-                            tag.custom.bgColours[3] = bannercolourpickers[3].value;
-                        }
-                    },
-                ]
+                changeEvents.forEach(elm => {
+                    elm.addEventListener('change', () => {
+                        getEvent(elm).run();
+                        renderSplashtag();
+                    });
+                });
+
+                keyEvents.forEach(elm => {
+                    elm.addEventListener('keydown', () => {
+                        setTimeout(() => {
+                            getEvent(elm).run();
+                            renderSplashtag();
+                        }, 1);
+                    });
+                });
             
-                inputEvents.forEach(event => {
-                    event.elm.addEventListener('input', () => {
-                        if (!event.elm) return;
-                        event.run();
+                inputEvents.forEach(elm => {
+                    elm.addEventListener('input', () => {
+                        getEvent(elm).run();
 
                         // this was lagging wayyyy too much without this.
                         if (!cooldown) {
