@@ -511,7 +511,10 @@ const load = () => {
             const img = document.createElement('img');
             img.src = item.file;
             images.banners.push(img);
-            img.onload = loadQueue.pop();
+            img.onload = () => {
+                if (item.file.includes('Tutorial')) renderSplashtag();
+                loadQueue.pop();
+            }
 
             if (item.layers) {
                 images.colourBanners[img.src] = [];
@@ -654,393 +657,393 @@ const load = () => {
         const credits = document.querySelector('#showcredits > a');
         const creditsX = document.querySelector('#creditsX');
         
+
+        const randIndex = (array) => {
+            return Math.floor(Math.random() * array.length);
+        }
+
+        const generateTitle = () => {
+            const chosentitles = [];
+            if (tag.title.first) {
+                chosentitles.push(lang[language].titles.first[tag.title.first]);
+            }
+            if (tag.title.last) {
+                chosentitles.push(lang[language].titles.last[tag.title.last]);
+            }
+            const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
+            return chosentitles.join(spaceOrBlank)
+        }
+
+        const events = [
+            // Random title button (both)
+            {
+                elm: randomtitles,
+                run: () => {
+                    getEvent(randomtitle1).run();
+                    getEvent(randomtitle2).run();
+                }
+            },
+            // Random title button (1)
+            {
+                elm: randomtitle1,
+                run: () => {
+                    const title1 = randIndex(lang[language].titles.first);
+                    titleinput1.selectedIndex = title1;
+                    tag.title.first = title1;
+
+                    tag.title.string = generateTitle();
+                    customtitle.value = tag.title.string;
+                }
+            },
+            // Random title button (2)
+            {
+                elm: randomtitle2,
+                run: () => {
+                    const title2 = randIndex(lang[language].titles.last);
+                    titleinput2.selectedIndex = title2;
+                    tag.title.last = title2;
+
+                    tag.title.string = generateTitle();
+                    customtitle.value = tag.title.string;
+                }
+            },
+            // Random banner
+            {
+                elm: randombanner,
+                run: () => {
+                    let banner = 0;
+                    if (tag.isCustom) {
+                        banner = randIndex(banners.filter(b => b.file));
+                    } else {
+                        banner = randIndex(banners.filter(b => b.file && b.file.startsWith('./assets/banners/')));
+                    }
+                    bannerContainer.querySelectorAll('img')[banner].click();
+                }
+            },
+            // Random badges
+            {
+                elm: randombadge,
+                run: () => {
+                    const badgeImgs = badgeContainer.querySelectorAll('img');
+
+                    let badgeList = [];
+
+                    if (tag.isCustom) {
+                        badgeList = badges.filter(b => !b.startsWith('NAME'));
+                    } else {
+                        badgeList = badges.filter(b => !b.startsWith('NAME') && b.startsWith('./assets/badges/'));
+                    }
+
+                    for (let i = 0; i < 3; i++) {
+                        badgeRadios[i].click();
+
+                        const selectedBadge = randIndex([0, ...badgeList]);
+                        if (selectedBadge) {
+                            badgeImgs[selectedBadge - 1].click();
+                        } else {
+                            tag.badges[i] = -1;
+                        }
+                    }
+                    badgeRadios[0].click()
+                }
+            },
+            // All random
+            {
+                elm: randomall,
+                run: () => {
+                    getEvent(randomtitles).run();
+                    getEvent(randombanner).run();
+                    getEvent(randombadge).run();
+                }
+            },
+            // Credits button
+            {
+                elm: credits,
+                run: () => {
+                    const temp = credits.textContent;
+                    credits.textContent = credits.dataset.alt;
+                    credits.dataset.alt = temp;
+
+                    //toggle visibility
+                    main.className = !temp.includes('Show') ? '' : 'flipped';
+                    main2.className = temp.includes('Show') ? '' : 'flipped';
+                }
+            },
+            // Credits close button
+            {
+                elm: creditsX,
+                run: () => {
+                    getEvent(credits).run();
+                }
+            },
+            
+            // Title input (1)
+            {
+                elm: titleinput1,
+                run: () => {
+                    tag.title.first = titleinput1.selectedIndex;
+                }
+            },
+            // Title input (2)
+            {
+                elm: titleinput2,
+                run: () => {
+                    tag.title.last = titleinput2.selectedIndex;
+                }
+            },
+            // Custom title input
+            {
+                elm: customtitle,
+                run: () => {
+                    tag.title.string = customtitle.value;
+                }
+            },
+            // Name input
+            {
+                elm: nameinput,
+                run: () => {
+                    tag.name = nameinput.value;
+                }
+            },
+            // Tag input
+            {
+                elm: taginput,
+                run: () => {
+                    tag.id = taginput.value;
+                }
+            },
+            // Custom checkbox
+            {
+                elm: customcheck,
+                run: () => {
+                    tag.isCustom = customcheck.checked;
+
+                    if (!tag.isCustom) {
+                        tabContents[0].querySelector('table').style = ``;
+                    } else {
+                        const textTableWidth = tabContents[0].querySelector('table').getBoundingClientRect().width;
+                        tabContents[0].querySelector('table').style.width = `${textTableWidth}px`;
+                    }
+                    
+                    tabContainer.classList.remove(`${tag.isCustom ? 'hide' : 'show'}custom`);
+                    tabContainer.classList.add(`${tag.isCustom ? 'show' : 'hide'}custom`);
+
+                }
+            },
+            // Custom colour input
+            {
+                elm: customcolour,
+                run: () => {
+                    tag.colour = customcolour.value;
+                }
+            },
+            // Custom banner upload button
+            {
+                elm: custombanner,
+                run: () => {
+                    Array.from(custombanner.files).forEach(file => {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            const image = document.createElement("img");
+                            image.src = e.target.result;
+                            const index = banners.findIndex(b => b.file === image.src);
+                            if (index === -1) {
+                                image.draggable = false;
+                                const item = { file: image.src, colour: 'ffffff' };
+                                banners.push(item);
+                                images.banners.push(image);
+                                bannerContainer.insertBefore(image, bannerContainer.querySelector('.bannerFiller'));
+                                image.addEventListener('click', () => {
+                                    bannerClickEvent(item, image);
+                                });
+                                //custombanner.value = '';
+                                setTimeout(() => {
+                                    image.click();
+                                    image.scrollIntoView();
+                                    renderSplashtag();
+                                }, 1);
+                            } else {
+                                bannerContainer.childNodes[index].click();
+                            }
+                        }
+                        reader.readAsDataURL(file);
+                    });
+                }
+            },
+            // Custom badge upload button
+            {
+                elm: custombadges,
+                run: () => {
+                    Array.from(custombadges.files).forEach(file => {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            const image = document.createElement("img");
+                            image.src = e.target.result;
+                            const index = badges.findIndex(b => b === image.src);
+                            if (index === -1) {
+                                image.draggable = false;
+                                const item = image.src;
+                                badges.push(item);
+                                images.badges.push(image);
+                                badgeContainer.insertBefore(image, badgeContainer.querySelector('.badgeFiller'));
+                                image.addEventListener('click', () => {
+                                    badgeClickEvent(item, image);
+                                });
+                                setTimeout(() => {
+                                    image.click();
+                                    image.scrollIntoView();
+                                    renderSplashtag();
+                                }, 1);
+                            } else {
+                                badgeContainer.childNodes[index].click();
+                            }
+                        }
+                        reader.readAsDataURL(file);
+                    });
+                }
+            },
+            // Banner section dropdown
+            {
+                elm: bannersection,
+                run: () => {
+                    bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
+                }
+            },
+            // Badge section dropdown
+            {
+                elm: badgesection,
+                run: () => {
+                    badgeContainer.querySelector('#' + badgesection.value).scrollIntoView();
+                }
+            },
+            // Banner colour picker (1)
+            {
+                elm: bannercolourpickers[0],
+                run: () => {
+                    tag.bgColours[0] = bannercolourpickers[0].value;
+                }
+            },
+            // Banner colour picker (2)
+            {
+                elm: bannercolourpickers[1],
+                run: () => {
+                    tag.bgColours[1] = bannercolourpickers[1].value;
+                }
+            },
+            // Banner colour picker (3)
+            {
+                elm: bannercolourpickers[2],
+                run: () => {
+                    tag.bgColours[2] = bannercolourpickers[2].value;
+                }
+            },
+            // Banner colour picker (4)
+            {
+                elm: bannercolourpickers[3],
+                run: () => {
+                    tag.bgColours[3] = bannercolourpickers[3].value;
+                }
+            },
+        ];
+
+        const getEvent = (elm) => {
+            return events.find(e => e.elm === elm);
+        }
+
+        const clickEvents = [
+            randomtitles,
+            randomtitle1,
+            randomtitle2,
+            randombanner,
+            randombadge,
+            randomall,
+            credits,
+            creditsX,
+        ];
+
+        const changeEvents = [
+            titleinput1,
+            titleinput2,
+            nameinput,
+            taginput,
+            customcheck,
+            customtitle,
+            customcolour,
+            custombanner,
+            custombadges,
+            bannersection,
+            badgesection,
+            bannercolourpickers[0],
+            bannercolourpickers[1],
+            bannercolourpickers[2],
+            bannercolourpickers[3],
+        ];
+
+        const keyEvents = [
+            nameinput,
+            taginput,
+            customtitle,
+        ];
+
+        const inputEvents = [
+            customcolour,
+            bannercolourpickers[0],
+            bannercolourpickers[1],
+            bannercolourpickers[2],
+            bannercolourpickers[3],
+        ];
+
+        document.querySelectorAll('.scale').forEach(e => {
+            e.addEventListener('click', () => {
+                let container = e.parentNode.parentNode;
+                let scale = Number(container.dataset.scale);
+                scale += Number(e.dataset.do);
+                if (scale < Number(container.dataset.min)) scale = container.dataset.min;
+                if (scale > Number(container.dataset.max)) scale = container.dataset.max;
+                container.dataset.scale = scale;
+                container.style = `--items: ${scale}`;
+            });
+        });
+
+        clickEvents.forEach(elm => {
+            elm.addEventListener('click', () => {
+                getEvent(elm).run();
+                renderSplashtag();
+            });
+        });
+
+        changeEvents.forEach(elm => {
+            elm.addEventListener('change', () => {
+                getEvent(elm).run();
+                renderSplashtag();
+            });
+        });
+
+        keyEvents.forEach(elm => {
+            elm.addEventListener('keydown', () => {
+                setTimeout(() => {
+                    getEvent(elm).run();
+                    renderSplashtag();
+                }, 1);
+            });
+        });
+    
+        inputEvents.forEach(elm => {
+            elm.addEventListener('input', () => {
+                getEvent(elm).run();
+
+                // this was lagging wayyyy too much without this.
+                if (!cooldown) {
+                    renderSplashtag();
+                    cooldown = 1;
+                }
+            });
+        });
+
         // Once all of the images are loaded...
         waitUntil(() => {
             if (!loadQueue.length) {
                 renderSplashtag();
-
-                const randIndex = (array) => {
-                    return Math.floor(Math.random() * array.length);
-                }
-
-                const generateTitle = () => {
-                    const chosentitles = [];
-                    if (tag.title.first) {
-                        chosentitles.push(lang[language].titles.first[tag.title.first]);
-                    }
-                    if (tag.title.last) {
-                        chosentitles.push(lang[language].titles.last[tag.title.last]);
-                    }
-                    const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
-                    return chosentitles.join(spaceOrBlank)
-                }
-
-                const events = [
-                    // Random title button (both)
-                    {
-                        elm: randomtitles,
-                        run: () => {
-                            getEvent(randomtitle1).run();
-                            getEvent(randomtitle2).run();
-                        }
-                    },
-                    // Random title button (1)
-                    {
-                        elm: randomtitle1,
-                        run: () => {
-                            const title1 = randIndex(lang[language].titles.first);
-                            titleinput1.selectedIndex = title1;
-                            tag.title.first = title1;
-
-                            tag.title.string = generateTitle();
-                            customtitle.value = tag.title.string;
-                        }
-                    },
-                    // Random title button (2)
-                    {
-                        elm: randomtitle2,
-                        run: () => {
-                            const title2 = randIndex(lang[language].titles.last);
-                            titleinput2.selectedIndex = title2;
-                            tag.title.last = title2;
-
-                            tag.title.string = generateTitle();
-                            customtitle.value = tag.title.string;
-                        }
-                    },
-                    // Random banner
-                    {
-                        elm: randombanner,
-                        run: () => {
-                            let banner = 0;
-                            if (tag.isCustom) {
-                                banner = randIndex(banners.filter(b => b.file));
-                            } else {
-                                banner = randIndex(banners.filter(b => b.file && b.file.startsWith('./assets/banners/')));
-                            }
-                            bannerContainer.querySelectorAll('img')[banner].click();
-                        }
-                    },
-                    // Random badges
-                    {
-                        elm: randombadge,
-                        run: () => {
-                            const badgeImgs = badgeContainer.querySelectorAll('img');
-
-                            let badgeList = [];
-
-                            if (tag.isCustom) {
-                                badgeList = badges.filter(b => !b.startsWith('NAME'));
-                            } else {
-                                badgeList = badges.filter(b => !b.startsWith('NAME') && b.startsWith('./assets/badges/'));
-                            }
-
-                            for (let i = 0; i < 3; i++) {
-                                badgeRadios[i].click();
-
-                                const selectedBadge = randIndex([0, ...badgeList]);
-                                if (selectedBadge) {
-                                    badgeImgs[selectedBadge - 1].click();
-                                } else {
-                                    tag.badges[i] = -1;
-                                }
-                            }
-                            badgeRadios[0].click()
-                        }
-                    },
-                    // All random
-                    {
-                        elm: randomall,
-                        run: () => {
-                            getEvent(randomtitles).run();
-                            getEvent(randombanner).run();
-                            getEvent(randombadge).run();
-                        }
-                    },
-                    // Credits button
-                    {
-                        elm: credits,
-                        run: () => {
-                            const temp = credits.textContent;
-                            credits.textContent = credits.dataset.alt;
-                            credits.dataset.alt = temp;
-
-                            //toggle visibility
-                            main.className = !temp.includes('Show') ? '' : 'flipped';
-                            main2.className = temp.includes('Show') ? '' : 'flipped';
-                        }
-                    },
-                    // Credits close button
-                    {
-                        elm: creditsX,
-                        run: () => {
-                            getEvent(credits).run();
-                        }
-                    },
-                    
-                    // Title input (1)
-                    {
-                        elm: titleinput1,
-                        run: () => {
-                            tag.title.first = titleinput1.selectedIndex;
-                        }
-                    },
-                    // Title input (2)
-                    {
-                        elm: titleinput2,
-                        run: () => {
-                            tag.title.last = titleinput2.selectedIndex;
-                        }
-                    },
-                    // Custom title input
-                    {
-                        elm: customtitle,
-                        run: () => {
-                            tag.title.string = customtitle.value;
-                        }
-                    },
-                    // Name input
-                    {
-                        elm: nameinput,
-                        run: () => {
-                            tag.name = nameinput.value;
-                        }
-                    },
-                    // Tag input
-                    {
-                        elm: taginput,
-                        run: () => {
-                            tag.id = taginput.value;
-                        }
-                    },
-                    // Custom checkbox
-                    {
-                        elm: customcheck,
-                        run: () => {
-                            tag.isCustom = customcheck.checked;
-
-                            if (!tag.isCustom) {
-                                tabContents[0].querySelector('table').style = ``;
-                            } else {
-                                const textTableWidth = tabContents[0].querySelector('table').getBoundingClientRect().width;
-                                tabContents[0].querySelector('table').style.width = `${textTableWidth}px`;
-                            }
-                            
-                            tabContainer.classList.remove(`${tag.isCustom ? 'hide' : 'show'}custom`);
-                            tabContainer.classList.add(`${tag.isCustom ? 'show' : 'hide'}custom`);
-
-                        }
-                    },
-                    // Custom colour input
-                    {
-                        elm: customcolour,
-                        run: () => {
-                            tag.colour = customcolour.value;
-                        }
-                    },
-                    // Custom banner upload button
-                    {
-                        elm: custombanner,
-                        run: () => {
-                            Array.from(custombanner.files).forEach(file => {
-                                const reader = new FileReader();
-                                reader.onload = (e) => {
-                                    const image = document.createElement("img");
-                                    image.src = e.target.result;
-                                    const index = banners.findIndex(b => b.file === image.src);
-                                    if (index === -1) {
-                                        image.draggable = false;
-                                        const item = { file: image.src, colour: 'ffffff' };
-                                        banners.push(item);
-                                        images.banners.push(image);
-                                        bannerContainer.insertBefore(image, bannerContainer.querySelector('.bannerFiller'));
-                                        image.addEventListener('click', () => {
-                                            bannerClickEvent(item, image);
-                                        });
-                                        //custombanner.value = '';
-                                        setTimeout(() => {
-                                            image.click();
-                                            image.scrollIntoView();
-                                            renderSplashtag();
-                                        }, 1);
-                                    } else {
-                                        bannerContainer.childNodes[index].click();
-                                    }
-                                }
-                                reader.readAsDataURL(file);
-                            });
-                        }
-                    },
-                    // Custom badge upload button
-                    {
-                        elm: custombadges,
-                        run: () => {
-                            Array.from(custombadges.files).forEach(file => {
-                                const reader = new FileReader();
-                                reader.onload = (e) => {
-                                    const image = document.createElement("img");
-                                    image.src = e.target.result;
-                                    const index = badges.findIndex(b => b === image.src);
-                                    if (index === -1) {
-                                        image.draggable = false;
-                                        const item = image.src;
-                                        badges.push(item);
-                                        images.badges.push(image);
-                                        badgeContainer.insertBefore(image, badgeContainer.querySelector('.badgeFiller'));
-                                        image.addEventListener('click', () => {
-                                            badgeClickEvent(item, image);
-                                        });
-                                        setTimeout(() => {
-                                            image.click();
-                                            image.scrollIntoView();
-                                            renderSplashtag();
-                                        }, 1);
-                                    } else {
-                                        badgeContainer.childNodes[index].click();
-                                    }
-                                }
-                                reader.readAsDataURL(file);
-                            });
-                        }
-                    },
-                    // Banner section dropdown
-                    {
-                        elm: bannersection,
-                        run: () => {
-                            bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
-                        }
-                    },
-                    // Badge section dropdown
-                    {
-                        elm: badgesection,
-                        run: () => {
-                            badgeContainer.querySelector('#' + badgesection.value).scrollIntoView();
-                        }
-                    },
-                    // Banner colour picker (1)
-                    {
-                        elm: bannercolourpickers[0],
-                        run: () => {
-                            tag.bgColours[0] = bannercolourpickers[0].value;
-                        }
-                    },
-                    // Banner colour picker (2)
-                    {
-                        elm: bannercolourpickers[1],
-                        run: () => {
-                            tag.bgColours[1] = bannercolourpickers[1].value;
-                        }
-                    },
-                    // Banner colour picker (3)
-                    {
-                        elm: bannercolourpickers[2],
-                        run: () => {
-                            tag.bgColours[2] = bannercolourpickers[2].value;
-                        }
-                    },
-                    // Banner colour picker (4)
-                    {
-                        elm: bannercolourpickers[3],
-                        run: () => {
-                            tag.bgColours[3] = bannercolourpickers[3].value;
-                        }
-                    },
-                ];
-
-                const getEvent = (elm) => {
-                    return events.find(e => e.elm === elm);
-                }
-
-                const clickEvents = [
-                    randomtitles,
-                    randomtitle1,
-                    randomtitle2,
-                    randombanner,
-                    randombadge,
-                    randomall,
-                    credits,
-                    creditsX,
-                ];
-
-                const changeEvents = [
-                    titleinput1,
-                    titleinput2,
-                    nameinput,
-                    taginput,
-                    customcheck,
-                    customtitle,
-                    customcolour,
-                    custombanner,
-                    custombadges,
-                    bannersection,
-                    badgesection,
-                    bannercolourpickers[0],
-                    bannercolourpickers[1],
-                    bannercolourpickers[2],
-                    bannercolourpickers[3],
-                ];
-
-                const keyEvents = [
-                    nameinput,
-                    taginput,
-                    customtitle,
-                ];
-
-                const inputEvents = [
-                    customcolour,
-                    bannercolourpickers[0],
-                    bannercolourpickers[1],
-                    bannercolourpickers[2],
-                    bannercolourpickers[3],
-                ];
-
-                document.querySelectorAll('.scale').forEach(e => {
-                    e.addEventListener('click', () => {
-                        let container = e.parentNode.parentNode;
-                        let scale = Number(container.dataset.scale);
-                        scale += Number(e.dataset.do);
-                        if (scale < Number(container.dataset.min)) scale = container.dataset.min;
-                        if (scale > Number(container.dataset.max)) scale = container.dataset.max;
-                        container.dataset.scale = scale;
-                        container.style = `--items: ${scale}`;
-                    });
-                });
-
-                clickEvents.forEach(elm => {
-                    elm.addEventListener('click', () => {
-                        getEvent(elm).run();
-                        renderSplashtag();
-                    });
-                });
-
-                changeEvents.forEach(elm => {
-                    elm.addEventListener('change', () => {
-                        getEvent(elm).run();
-                        renderSplashtag();
-                    });
-                });
-
-                keyEvents.forEach(elm => {
-                    elm.addEventListener('keydown', () => {
-                        setTimeout(() => {
-                            getEvent(elm).run();
-                            renderSplashtag();
-                        }, 1);
-                    });
-                });
-            
-                inputEvents.forEach(elm => {
-                    elm.addEventListener('input', () => {
-                        getEvent(elm).run();
-
-                        // this was lagging wayyyy too much without this.
-                        if (!cooldown) {
-                            renderSplashtag();
-                            cooldown = 1;
-                        }
-                    });
-                });
-
                 const customBannerLength = customBanners.filter(b => b.file).length;
                 const customBadgesLength = customBadges.filter(b => b.startsWith('./')).length;
                 const bannerLength = banners.filter(b => b.file).length - customBannerLength;
