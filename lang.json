@@ -61,7 +61,8 @@
             "cakeCustom": "Mem Cakes",
             "userCustom": "Uploaded"
         },
-        "default": ["Splatlandian", "Youth"]
+        "default": ["Splatlandian", "Youth"],
+        "sign": "#"
     },
     
     "USes": {
@@ -125,7 +126,8 @@
             "cakeCustom": "Pastirrecuerdo",
             "userCustom": "Subido"
         },
-        "default": ["Jovenzuelo", "tintelian"]
+        "default": ["Jovenzuelo", "tintelian"],
+        "sign": "n.º "
     },
     
     "EUes": {
@@ -189,7 +191,8 @@
             "cakeCustom": "Pastirrecuerdo",
             "userCustom": "Subido"
         },
-        "default": ["Jovencito", "tintelian"]
+        "default": ["Jovencito", "tintelian"],
+        "sign": "n.º "
     },
     
     "EUfr": {
@@ -253,7 +256,8 @@
             "cakeCustom": "Souvenir Patapoulpe",
             "userCustom": "Téléchargé"
         },
-        "default": ["Jeune", "de la Contrée Clabousse"]
+        "default": ["Jeune", "de la Contrée Clabousse"],
+        "sign": "Nº "
     },
     
     "USfr": {
@@ -317,7 +321,8 @@
             "cakeCustom": "Souvenir Patapoulpe",
             "userCustom": "Téléchargé"
         },
-        "default": ["Jeune", "de la Contrée Clabousse"]
+        "default": ["Jeune", "de la Contrée Clabousse"],
+        "sign": "Nº "
     },
     
     "EUnl": {
@@ -382,7 +387,8 @@
             "cakeCustom": "Komco-souvenir",
             "userCustom": "Geüpload"
         },
-        "default": ["Splatlandisch", "jongere"]
+        "default": ["Splatlandisch", "jongere"],
+        "sign": "Nr. "
     },
     
     "EUde": {
@@ -447,7 +453,8 @@
             "cakeCustom": "Kamabo-Souvenir",
             "userCustom": "Hochgeladen"
         },
-        "default": ["Splatsville-", "Jungspund"]
+        "default": ["Splatsville-", "Jungspund"],
+        "sign": "#"
     },
     
     "EUit": {
@@ -464,8 +471,8 @@
         },
         "ui": {
             "tabText": "Testo",
-            "tabBanners": "Bandiera",
-            "tabBadges": "Distintivi",
+            "tabBanners": "Sfondi",
+            "tabBadges": "Spille",
             "textLanguage": "Lingua",
             "textName": "Nome",
             "textTitles": "Titoli",
@@ -512,7 +519,8 @@
             "cakeCustom": "Souvenir Impastec",
             "userCustom": "Caricato"
         },
-        "default": ["Fanciullo", "splattonian"]
+        "default": ["Fanciullo", "splattonian"],
+        "sign": "Nº "
     },
     
     "EUru": {
@@ -577,7 +585,8 @@
             "cakeCustom": "Памятка от Паштетико",
             "userCustom": "Загружено"
         },
-        "default": ["плюхтонск", "парень"]
+        "default": ["плюхтонск", "парень"],
+        "sign": "#"
     },
     
     "JPja": {
@@ -642,7 +651,8 @@
             "cakeCustom": "ネリメモリー",
             "userCustom": "アップロード済み"
         },
-        "default": ["バンカラな", "若者"]
+        "default": ["バンカラな", "若者"],
+        "sign": "#"
     },
     
     "CNzh": {
@@ -707,7 +717,8 @@
             "cakeCustom": "记忆蛋糕",
             "userCustom": "已上传"
         },
-        "default": ["蛮颓的", "年轻人"]
+        "default": ["蛮颓的", "年轻人"],
+        "sign": "#"
     },
     
     "KRko": {
@@ -772,7 +783,8 @@
             "cakeCustom": "메모리 케이크",
             "userCustom": "업로드"
         },
-        "default": ["카오폴리스의", "젊은이"]
+        "default": ["카오폴리스의", "젊은이"],
+        "sign": "#"
     },
     
     "TWzh": {
@@ -837,6 +849,7 @@
             "spf3Custom": "祭典 3",
             "cakeCustom": "記憶蛋糕"
         },
-        "default": ["蠻頹的", "年輕人"]
+        "default": ["蠻頹的", "年輕人"],
+        "sign": "#"
     }
 }

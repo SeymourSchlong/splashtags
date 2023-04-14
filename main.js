@@ -88,7 +88,6 @@ const load = () => {
             }, length ? length*1000 : 500);
         }
 
-
         const canvas = document.querySelector('#splashtag');
         const ctx = canvas.getContext('2d');
         const downloadlink = document.querySelector('#downloadlink');
@@ -425,6 +424,10 @@ const load = () => {
         customtitle.value = lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : '');
         customtitle.placeholder = customtitle.value;
         tag.title.string = customtitle.value;
+
+        tag.id = lang[language].sign + '0001';
+        taginput.value = tag.id;
+        
 
         const tabContainer = document.querySelector('.tabcontainer');
         const tabs = document.querySelectorAll('.tab');
