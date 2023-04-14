@@ -325,10 +325,7 @@ div[data-name="text"] table {
     margin: 8px;
 }
 
-.hidecustom .custom {
-    display: none;
-}
-.showcustom .notcustom {
+.hidecustom .custom, .showcustom .notcustom {
     display: none;
 }
 
