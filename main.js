@@ -218,7 +218,7 @@ const load = () => {
                 const leftBadge = tag.badges.indexOf(tag.badges.find(b => b !== -1));
                 const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge) - 48;
                 const xScale = textWidth > maxX ? (maxX) / textWidth : 1;
-                clickRegions[2].style = `--x1: 25px; --y1: 165px; --x2: ${Math.round(textWidth > 455 ? 430 : textWidth) + 25}px; --y2: 185px;`;
+                clickRegions[2].style = `--x1: 25px; --y1: 165px; --x2: ${(xScale < 1 ? maxX : Math.round(textWidth)) + 25}px; --y2: 185px;`;
 
                 textCtx.scale(xScale, 1);
                 textCtx.fillText('' + tag.id, 24 / xScale, 185);
@@ -263,6 +263,9 @@ const load = () => {
             for (let i = 0; i < 3; i++) {
                 if (tag.badges[i] !== -1) {
                     const x = 480 + 74*i;
+
+                    clickRegions[3 + i].style = `--x1: ${x}px; --y1: 128px; --x2: ${x+70}px; --y2: ${128+70}px;`;
+
                     // Below used to resize custom badges to retain their scale.
                     if (badges[tag.badges[i]].includes('custom') || badges[tag.badges[i]].includes('data')) {
                         const cw = images.badges[tag.badges[i]].naturalWidth;
@@ -275,6 +278,8 @@ const load = () => {
                     } else {
                         ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
                     }
+                } else {
+                    clickRegions[3 + i].style = `display: none;`;
                 }
             }
 
