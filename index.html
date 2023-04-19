@@ -12,12 +12,54 @@
         <link rel="icon" href="assets/images/ico.png">
         <script type="text/javascript" src="main.js"></script>
         <link rel="stylesheet" href="style.css">
+        <script>
+            function selectTab (i) {
+                document.querySelectorAll('.tab')[i].click();
+            }
+            function selectTitle () {
+                selectTab(0);
+                const isCustom = !!document.querySelector('.showcustom');
+                const titleDropdown = document.querySelector('#titleinput1');
+                const titleInput = document.querySelector('#customtitle');
+                (isCustom ? titleInput : titleDropdown).focus();
+                if (isCustom) titleInput.select();
+            }
+            function selectName () {
+                selectTab(0);
+                const nameInput = document.querySelector('#nameinput');
+                nameInput.focus();
+                nameInput.select();
+            }
+            function selectTag () {
+                selectTab(0);
+                const tagInput = document.querySelector('#taginput');
+                tagInput.focus();
+                tagInput.select();
+                ['#', 'Nr. ', 'Nº ', 'n.º '].forEach(t => {
+                    if (tagInput.value.startsWith(t)) {
+                        tagInput.selectionStart = t.length;
+                    }
+                })
+            }
+            function selectBadge (index) {
+                selectTab(2);
+                document.querySelectorAll('input[name="badgenum"]')[index].click();
+            }
+        </script>
     </head>
     <body onload="load();">
         <div class="sitecontent">
             <div id="container">
                 <br>
                 <div id="main" class="">
+                    <div id="clickRegions">
+                        <div onclick="selectTitle()"></div>
+                        <div onclick="selectName()"></div>
+                        <div onclick="selectTag()"></div>
+                        <div onclick="selectBadge(0)"></div>
+                        <div onclick="selectBadge(1)"></div>
+                        <div onclick="selectBadge(2)"></div>
+                    </div>
                     <canvas id="splashtag" width="700" height="200"></canvas><img src="./assets/banners/Npl_Tutorial00.png" style="display: none;">
                     <br>
                     <input class="tab selected" type="button" value="Text" name="tabText"><input class="tab" type="button" value="Banners" name="tabBanners"><input class="tab" type="button" value="Badges" name="tabBadges">

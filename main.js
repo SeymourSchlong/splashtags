@@ -88,6 +88,8 @@ const load = () => {
             }, length ? length*1000 : 500);
         }
 
+        const clickRegions = document.querySelector('#clickRegions').querySelectorAll('div');
+
         const canvas = document.querySelector('#splashtag');
         const ctx = canvas.getContext('2d');
         const downloadlink = document.querySelector('#downloadlink');
@@ -186,12 +188,14 @@ const load = () => {
                 
                 const size = 36;
                 textCtx.font = `${size}px ${getFont()}`;
-                const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
+                const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0].endsWith('-') || chosentitles[1].startsWith('-')) ? ' ' : '') : '';
                 const fullTitle = chosentitles.join(spaceOrBlank);
 
                 textCtx.letterSpacing = "-0.3px";
                 const textWidth = textCtx.measureText(fullTitle).width;
                 const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
+
+                clickRegions[0].style = `--x1: 15px; --y1: 5px; --x2: ${xScale < 1 ? 685 : Math.round(textWidth + 15)}px; --y2: 50px;`;
 
                 // in game italic value is 0.12
                 textCtx.transform(1, 0, -7.5/100, 1, 0, 0);
@@ -214,6 +218,7 @@ const load = () => {
                 const leftBadge = tag.badges.indexOf(tag.badges.find(b => b !== -1));
                 const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge) - 48;
                 const xScale = textWidth > maxX ? (maxX) / textWidth : 1;
+                clickRegions[2].style = `--x1: 25px; --y1: 165px; --x2: ${Math.round(textWidth > 455 ? 430 : textWidth) + 25}px; --y2: 185px;`;
 
                 textCtx.scale(xScale, 1);
                 textCtx.fillText('' + tag.id, 24 / xScale, 185);
@@ -230,6 +235,10 @@ const load = () => {
                 textCtx.letterSpacing = "-0.4px";
                 const textWidth = textCtx.measureText(tag.name).width;
                 const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
+
+                const x1 = 700/2-1.5 - Math.round(textWidth / 2);
+
+                clickRegions[1].style = `--x1: ${xScale < 1 ? 15 : Math.round(700/2-1.5 - textWidth/2)}px; --y1: 70px; --x2: ${xScale < 1 ? 685 : Math.round(x1 + textWidth)}px; --y2: 120px;`;
                 
                 textCtx.textAlign = 'center';
                 textCtx.scale(xScale, 1);
@@ -673,8 +682,8 @@ const load = () => {
             if (tag.title.last) {
                 chosentitles.push(lang[language].titles.last[tag.title.last]);
             }
-            const spaceOrBlank = isSpaceLang(language) ? ((!chosentitles[0].endsWith('-')) ? ' ' : '') : '';
-            return chosentitles.join(spaceOrBlank)
+            const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0].endsWith('-') || chosentitles[1].startsWith('-')) ? ' ' : '') : '';
+            return chosentitles.join(spaceOrBlank);
         }
 
         const events = [
