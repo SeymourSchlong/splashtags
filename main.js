@@ -187,8 +187,8 @@ const load = () => {
                 textCtx.save();
                 
                 const size = 36;
-                textCtx.font = `${size}px ${getFont()}`;
-                const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0].endsWith('-') || chosentitles[1].startsWith('-')) ? ' ' : '') : '';
+                textCtx.font = `${size}px ${getFont()}`
+                const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0].endsWith('-') || chosentitles[1]?.startsWith('-')) ? ' ' : '') : '';
                 const fullTitle = chosentitles.join(spaceOrBlank);
 
                 textCtx.letterSpacing = "-0.3px";
@@ -687,7 +687,7 @@ const load = () => {
             if (tag.title.last) {
                 chosentitles.push(lang[language].titles.last[tag.title.last]);
             }
-            const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0].endsWith('-') || chosentitles[1].startsWith('-')) ? ' ' : '') : '';
+            const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0].endsWith('-') || chosentitles[1]?.startsWith('-')) ? ' ' : '') : '';
             return chosentitles.join(spaceOrBlank);
         }
 
