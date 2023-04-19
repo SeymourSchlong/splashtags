@@ -367,11 +367,11 @@ label {
 }
 
 .scale.up {
-    background-image: url("./assets/images/plus.png");
+    background-image: url("./assets/images/plus.svg");
 }
 
 .scale.down {
-    background-image: url("./assets/images/minus.png");
+    background-image: url("./assets/images/minus.svg");
 }
 
 #showcredits {
@@ -418,4 +418,23 @@ label {
 }
 #bannercolours[data-layers="0"], #bannercolours:not([data-layers]) {
     display: none !important;
+}
+
+
+#clickRegions {
+    --offsetX: 78px;
+    --offsetY: 60px;
+    position: absolute;
+    transform: translate(var(--offsetX), var(--offsetY));
+}
+#clickRegions > div {
+    position: absolute;
+    transform: translate(var(--x1), var(--y1));
+    width: calc(var(--x2) - var(--x1));
+    height: calc(var(--y2) - var(--y1));
+    cursor: text;
+    border-radius: 5px;
+}
+#clickRegions > div[style*="198"] {
+    cursor: pointer;
 }
