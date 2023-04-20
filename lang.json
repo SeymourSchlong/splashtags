@@ -126,7 +126,7 @@
             "cakeCustom": "Pastirrecuerdo",
             "userCustom": "Subido"
         },
-        "default": ["Jovenzuelo", "tintelian"],
+        "default": ["Jovencito", "tinteliano"],
         "sign": "n.º "
     },
     
@@ -191,7 +191,7 @@
             "cakeCustom": "Pastirrecuerdo",
             "userCustom": "Subido"
         },
-        "default": ["Jovencito", "tintelian"],
+        "default": ["Jovenzuelo", "tinteliano"],
         "sign": "n.º "
     },
     
@@ -518,7 +518,7 @@
             "cakeCustom": "Souvenir Impastec",
             "userCustom": "Caricato"
         },
-        "default": ["Fanciullo", "splattonian"],
+        "default": ["Fanciullo", "splattoniano"],
         "sign": "Nº "
     },
     
@@ -584,7 +584,7 @@
             "cakeCustom": "Памятка от Паштетико",
             "userCustom": "Загружено"
         },
-        "default": ["плюхтонск", "парень"],
+        "default": ["плюхтонский", "парень"],
         "sign": "#"
     },
     
