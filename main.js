@@ -195,7 +195,24 @@ const load = () => {
                 const textWidth = textCtx.measureText(fullTitle).width;
                 const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
 
-                clickRegions[0].style = `--x1: 15px; --y1: 5px; --x2: ${xScale < 1 ? 685 : Math.round(textWidth + 15)}px; --y2: 50px;`;
+                // region 1 goes from 15px -> width1
+                // region 2 goes from width1 + space/hyphen/empty length -> fullwidth
+
+                if (tag.isCustom) {
+                    clickRegions[0].style = `--x1: 15px; --y1: 5px; --x2: ${xScale < 1 ? 685 : Math.round(textWidth + 15)}px; --y2: 50px;`;
+                    clickRegions[1].style = `display: none;`;
+                } else {
+                    const firstwidth = (textCtx.measureText(chosentitles[0]).width + 15) * xScale;
+                    const gapSize = textCtx.measureText(spaceOrBlank).width * xScale;
+
+                    if (tag.title.first) {
+                        clickRegions[0].style = `--x1: 15px; --y1: 5px; --x2: ${firstwidth}px; --y2: 50px;`;
+                        clickRegions[1].style = tag.title.last ? `--x1: ${firstwidth + gapSize}px; --y1: 5px; --x2: ${xScale < 1 ? 685 : Math.round(textWidth + 15)}px; --y2: 50px;` : 'display: none;';
+                    } else {
+                        clickRegions[0].style = `display: none;`;
+                        clickRegions[1].style = `--x1: 15px; --y1: 5px; --x2: ${firstwidth}px; --y2: 50px;`;
+                    }
+                }
 
                 // in game italic value is 0.12
                 textCtx.transform(1, 0, -7.5/100, 1, 0, 0);
@@ -203,6 +220,9 @@ const load = () => {
                 textCtx.fillText(fullTitle, 18 / xScale, 42);
                 textCtx.restore();
                 textCtx.letterSpacing = "0px";
+            } else {
+                clickRegions[0].style = `display: none;`;
+                clickRegions[1].style = `display: none;`;
             }
 
             // Write tag text (if not empty)
@@ -218,7 +238,7 @@ const load = () => {
                 const leftBadge = tag.badges.indexOf(tag.badges.find(b => b !== -1));
                 const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge) - 48;
                 const xScale = textWidth > maxX ? (maxX) / textWidth : 1;
-                clickRegions[2].style = `--x1: 25px; --y1: 165px; --x2: ${(xScale < 1 ? maxX : Math.round(textWidth)) + 25}px; --y2: 185px;`;
+                clickRegions[3].style = `--x1: 25px; --y1: 165px; --x2: ${(xScale < 1 ? maxX : Math.round(textWidth)) + 25}px; --y2: 185px;`;
 
                 textCtx.scale(xScale, 1);
                 textCtx.fillText('' + tag.id, 24 / xScale, 185);
@@ -238,7 +258,7 @@ const load = () => {
 
                 const x1 = 700/2-1.5 - Math.round(textWidth / 2);
 
-                clickRegions[1].style = `--x1: ${xScale < 1 ? 15 : Math.round(700/2-1.5 - textWidth/2)}px; --y1: 70px; --x2: ${xScale < 1 ? 685 : Math.round(x1 + textWidth)}px; --y2: 120px;`;
+                clickRegions[2].style = `--x1: ${xScale < 1 ? 15 : Math.round(700/2-1.5 - textWidth/2)}px; --y1: 70px; --x2: ${xScale < 1 ? 685 : Math.round(x1 + textWidth)}px; --y2: 120px;`;
                 
                 textCtx.textAlign = 'center';
                 textCtx.scale(xScale, 1);
@@ -264,7 +284,7 @@ const load = () => {
                 if (tag.badges[i] !== -1) {
                     const x = 480 + 74*i;
 
-                    clickRegions[3 + i].style = `--x1: ${x}px; --y1: 128px; --x2: ${x+70}px; --y2: ${128+70}px;`;
+                    clickRegions[4 + i].style = `--x1: ${x}px; --y1: 128px; --x2: ${x+70}px; --y2: ${128+70}px;`;
 
                     // Below used to resize custom badges to retain their scale.
                     if (badges[tag.badges[i]].includes('custom') || badges[tag.badges[i]].includes('data')) {
@@ -279,7 +299,7 @@ const load = () => {
                         ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
                     }
                 } else {
-                    clickRegions[3 + i].style = `display: none;`;
+                    clickRegions[4 + i].style = `display: none;`;
                 }
             }
 

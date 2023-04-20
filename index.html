@@ -16,10 +16,10 @@
             function selectTab (i) {
                 document.querySelectorAll('.tab')[i].click();
             }
-            function selectTitle () {
+            function selectTitle (index) {
                 selectTab(0);
                 const isCustom = !!document.querySelector('.showcustom');
-                const titleDropdown = document.querySelector('#titleinput1');
+                const titleDropdown = document.querySelector(`#titleinput${index+1}`);
                 const titleInput = document.querySelector('#customtitle');
                 (isCustom ? titleInput : titleDropdown).focus();
                 if (isCustom) titleInput.select();
@@ -54,7 +54,8 @@
                 <br>
                 <div id="main" class="">
                     <div id="clickRegions">
-                        <div onclick="selectTitle()"></div>
+                        <div onclick="selectTitle(0)"></div>
+                        <div onclick="selectTitle(1)"></div>
                         <div onclick="selectName()"></div>
                         <div onclick="selectTag()"></div>
                         <div onclick="selectBadge(0)"></div>
