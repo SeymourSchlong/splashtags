@@ -195,7 +195,11 @@ a {
 }
 
 .tab {
-    background-image: url("./assets/images/tabsmall.png");
+    background-image: url("./assets/images/tab-left.png"), url("./assets/images/tab-middle.png"), url("./assets/images/tab-right.png");
+    background-repeat: no-repeat;
+    background-position: left, center, right;
+    background-size: 20px 100%, calc(100% - 40px) 100%, 20px 100%;
+
     background-color: transparent;
     border: none;
     width: 232px;
@@ -209,7 +213,7 @@ a {
 }
 .tab.selected {
     transform: translateY(-2px);
-    background-image: url("./assets/images/tabsmallselected.png");
+    background-image: url("./assets/images/tab-left-selected.png"), url("./assets/images/tab-middle-selected.png"), url("./assets/images/tab-right-selected.png");
 }
 .hidden {
     display: none;
