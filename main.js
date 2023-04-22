@@ -326,7 +326,7 @@ const load = () => {
                 }
 
                 /** Artist watermark system is as follows:
-                 * If a tag features regular custom assets (made by me), the mark will be default with the text "custom"
+                 * If a tag features regular custom assets (made by me), the mark will be default with the text "custom" <-- not true anymore
                  * If a tag features art from only ONE artist, that artist's mark will be shown with their name
                  * If a tag features art from MULTIPLE artists, then the default mark will be shown, with all of the names below
                 */ 
@@ -420,10 +420,10 @@ const load = () => {
         });
 
         // Loading queue for each item (so they do not need to load when selecting banners or badges)
-        const watermarkSrcs = ['watermark', 'deadline', 'electrodev', 'zeeto', 'sharkinodraws'];
+        const watermarkSrcs = ['custom', 'deadline', 'electrodev', 'zeeto', 'sharkinodraws'];
         watermarkSrcs.forEach(wm => {
             const img = new Image();
-            img.src = `./assets/images/${wm}.png`;
+            img.src = `./assets/images/watermarks/${wm}.png`;
             images.watermarks.push(img);
         });
 

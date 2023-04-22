@@ -147,9 +147,13 @@ canvas {
     }
 }
 
-#container, #main, #main2 {
+#container, #main {
     text-align: center;
     user-select: none;
+}
+#main2 {
+    text-align: center;
+    user-select: text;
 }
 
 #main, #main2 {
