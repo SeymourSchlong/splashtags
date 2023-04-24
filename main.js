@@ -183,7 +183,7 @@ const load = () => {
                     chosentitles.push(lang[language].titles.last[tag.title.last]);
                 }
             }
-            if (chosentitles.length) {
+            if (chosentitles.length && chosentitles[0]) {
                 textCtx.save();
                 
                 const size = 36;
@@ -194,9 +194,6 @@ const load = () => {
                 textCtx.letterSpacing = "-0.3px";
                 const textWidth = textCtx.measureText(fullTitle).width;
                 const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
-
-                // region 1 goes from 15px -> width1
-                // region 2 goes from width1 + space/hyphen/empty length -> fullwidth
 
                 if (tag.isCustom) {
                     clickRegions[0].style = `--x1: 15px; --y1: 5px; --x2: ${xScale < 1 ? 685 : Math.round(textWidth + 15)}px; --y2: 50px;`;
@@ -243,6 +240,8 @@ const load = () => {
                 textCtx.scale(xScale, 1);
                 textCtx.fillText('' + tag.id, 24 / xScale, 185);
                 textCtx.restore();
+            } else {
+                clickRegions[3].style = 'display: none;';
             }
 
             // Write player name
@@ -265,6 +264,8 @@ const load = () => {
                 textCtx.fillText(tag.name, (700/2-1.5) / xScale, 119);
 
                 textCtx.restore();
+            } else {
+                clickRegions[2].style = 'display: none;';
             }
 
             // If the banner name or badge has either "custom" or "data" it is definitely a custom resource
@@ -592,7 +593,6 @@ const load = () => {
                 for (let i = 0; i < 3; i++) {
                     if (tag.badges[i] < 0) continue;
                     badgeContainer.querySelectorAll('img, .imagelistsection')[tag.badges[i]].className = i === slot ? 'selected' : 'other';
-                    // badgeContainer.childNodes[tag.badges[i]].className = i === slot ? 'selected' : 'other';
                 }
             });
         });
@@ -1001,10 +1001,7 @@ const load = () => {
         const changeEvents = [
             titleinput1,
             titleinput2,
-            nameinput,
-            taginput,
             customcheck,
-            customtitle,
             customcolour,
             custombanner,
             custombadges,
@@ -1016,13 +1013,12 @@ const load = () => {
             bannercolourpickers[3],
         ];
 
-        const keyEvents = [
+        const keyEvents = [];
+
+        const inputEvents = [
             nameinput,
             taginput,
             customtitle,
-        ];
-
-        const inputEvents = [
             customcolour,
             bannercolourpickers[0],
             bannercolourpickers[1],
