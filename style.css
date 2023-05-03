@@ -309,13 +309,12 @@ img.selected {
     transform: rotate(-5deg);
 }
 
-/* bottom padding :( */
-#bannercontainer > div {
+#bannercontainer > .pad {
     width: 170px;
     height: 1px;
 }
 
-#badgecontainer > div {
+#badgecontainer > .pad {
     width: 64px;
     height: 1px;
 }

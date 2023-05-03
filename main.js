@@ -530,7 +530,9 @@ const load = () => {
         banners.forEach(item => {
             if (item.name) {
                 for (let i = 0; i < bannerContainer.childNodes.length % 4; i++) {
-                    bannerContainer.appendChild(document.createElement('div'));
+                    const pad = document.createElement('div');
+                    pad.class = 'pad';
+                    bannerContainer.appendChild(pad);
                 }
                 const isCustom = item.id.endsWith('custom');
                 const sectionTitle = document.createElement('div');
@@ -629,7 +631,9 @@ const load = () => {
         badges.forEach(item => {
             if (item.startsWith('NAME')) {
                 for (let i = 0; i < badgeContainer.childNodes.length % 10; i++) {
-                    badgeContainer.appendChild(document.createElement('div'));
+                    const pad = document.createElement('div');
+                    pad.className = 'pad';
+                    badgeContainer.appendChild(pad);
                 }
                 const sectionTitle = document.createElement('div');
                 const name = item.split('#')[0].replace('NAME:', '');
