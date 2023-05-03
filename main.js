@@ -408,8 +408,9 @@ const load = () => {
             }
         }
 
-        window.toggleWatermark = () => {
+        window.toggleWatermark = (self) => {
             forceDisableWatermark = !forceDisableWatermark;
+            self.style = '';
             renderSplashtag();
         }
 
@@ -860,13 +861,6 @@ const load = () => {
                 elm: customcheck,
                 run: () => {
                     tag.isCustom = customcheck.checked;
-
-                    if (!tag.isCustom) {
-                        tabContents[0].querySelector('table').style = ``;
-                    } else {
-                        const textTableWidth = tabContents[0].querySelector('table').getBoundingClientRect().width;
-                        tabContents[0].querySelector('table').style.width = `${textTableWidth}px`;
-                    }
                     
                     tabContainer.classList.remove(`${tag.isCustom ? 'hide' : 'show'}custom`);
                     tabContainer.classList.add(`${tag.isCustom ? 'show' : 'hide'}custom`);

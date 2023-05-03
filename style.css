@@ -72,35 +72,55 @@ body, select, input {
     font-family: 'Splat-title';
 }
 
-body[lang="JPja"], body[lang="JPja"] select, body[lang="JPja"] input, option[value="JPja"] {
+body[lang="JPja"],
+body[lang="JPja"] select,
+body[lang="JPja"] input,
+option[value="JPja"] {
     font-family: 'Splat-text', 'Kurokane';
 }
 
-body[lang="JPja"] .tab, body[lang="JPja"] .imagelistsection {
+body[lang="JPja"] .tab,
+body[lang="JPja"] .imagelistsection,
+body[lang="JPja"] .title-font {
     font-family: 'Splat-title', 'Rowdy';
 }
 
-body[lang="KRko"], body[lang="KRko"] select, body[lang="KRko"] input, option[value="KRko"] {
+body[lang="KRko"],
+body[lang="KRko"] select,
+body[lang="KRko"] input,
+option[value="KRko"] {
     font-family: 'Splat-text', 'KERINm';
 }
 
-body[lang="KRko"] .tab, body[lang="KRko"] .imagelistsection {
+body[lang="KRko"] .tab,
+body[lang="KRko"] .imagelistsection,
+body[lang="KRko"] .title-font {
     font-family: 'Splat-title', 'KCUBEr';
 }
 
-body[lang="CNzh"], body[lang="CNzh"] select, body[lang="CNzh"] input, option[value="CNzh"] {
+body[lang="CNzh"],
+body[lang="CNzh"] select,
+body[lang="CNzh"] input,
+option[value="CNzh"] {
     font-family: 'Splat-text', "HanyiZongyi";
 }
 
-body[lang="CNzh"] .tab, body[lang="CNzh"] .imagelistsection {
+body[lang="CNzh"] .tab,
+body[lang="CNzh"] .imagelistsection,
+body[lang="CNzh"] .title-font {
     font-family: 'Splat-title', "HuakangZongyi";
 }
 
-body[lang="TWzh"], body[lang="TWzh"] select, body[lang="TWzh"] input, option[value="TWzh"] {
+body[lang="TWzh"],
+body[lang="TWzh"] select,
+body[lang="TWzh"] input,
+option[value="TWzh"] {
     font-family: 'Splat-text', "DFPT_AZ5";
 }
 
-body[lang="TWzh"] .tab, body[lang="TWzh"] .imagelistsection {
+body[lang="TWzh"] .tab,
+body[lang="TWzh"] .imagelistsection,
+body[lang="TWzh"] .title-font {
     font-family: 'Splat-title', "DFPT_ZY9";
 }
 
@@ -181,7 +201,8 @@ table tr > td:first-child {
 }
 
 select, input {
-    font-size: 20px;
+    font-size: 1.1em;
+    /*font-size: 20px;*/
 }
 
 a {
@@ -333,7 +354,12 @@ div[data-name="text"] table {
 }
 
 .hidecustom .custom, .showcustom .notcustom {
-    display: none;
+    visibility: hidden;
+}
+
+#customtitle {
+    position: absolute;
+    left: 0;
 }
 
 label {
@@ -448,4 +474,34 @@ label {
 }
 #clickRegions > div[style*="198"] {
     cursor: pointer;
+}
+
+.midsection {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    padding-top: 2%;
+    flex-direction: row;
+    height: 100%;
+
+    text-align: left;
+}
+
+.inputcomponents {
+    display: flex;
+    gap: 4px;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+small {
+    font-size: 0.7em;
+}
+
+.sectiontitle {
+    font-size: 1em;
+}
+
+#customcolour {
+    height: auto;
 }

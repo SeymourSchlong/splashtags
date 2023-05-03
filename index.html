@@ -64,41 +64,51 @@
                     </div>
                     <canvas id="splashtag" width="700" height="200"></canvas><img src="./assets/banners/Npl_Tutorial00.png" style="display: none;">
                     <br>
-                    <input class="tab selected" type="button" value="Text" name="tabText"><input class="tab" type="button" value="Banners" name="tabBanners"><input class="tab" type="button" value="Badges" name="tabBadges">
+                    <div id="tab-buttons">
+                        <input class="tab selected" type="button" value="Text" name="tabText">
+                        <input class="tab" type="button" value="Banners" name="tabBanners">
+                        <input class="tab" type="button" value="Badges" name="tabBadges">
+                    </div>
                     <div class="tabcontainer hidecustom">
+
                         <!-- Text --- Name, Tag, Titles -->
                         <div class="tabcontent" data-name="text">
-                            <br>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td><span name="textName">Name</span>: </td>
-                                        <td>
-                                            <input id="nameinput" type="text" maxlength="10000" value="Player" placeholder="Player"> <input id="taginput" type="text" value="#0001" placeholder="#0001" maxlength="10000" style="width: 10ch;"> <label><span name="textColour">Colour</span> <input id="customcolour" type="color" value="#ffffff"></label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span name="textTitles">Title</span>: </td>
-                                        <td>
-                                            <select id="titleinput1" class="notcustom"></select>
-                                            <select id="titleinput2" class="notcustom"></select> 
-                                            <input id="customtitle" placeholder="Splatlandian Youth" value="Splatlandian Youth" maxlength="10000" class="custom">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span name="textRandomize">Randomize</span>: </td>
-                                        <td>
-                                            <input id="randomtitle" value="Both Titles" type="button" name="buttonBoth"> <input id="randomtitle1" value="First" type="button" name="buttonFirst"> <input id="randomtitle2" value="Last" type="button" name="buttonLast"> <input id="randombanner" value="Banner" type="button" name="buttonBanner"> <input id="randombadge" value="Badges" type="button" name="buttonBadges"> <input id="randomall" value="All!" type="button" name="buttonAll">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span name="textCustom">Custom</span>: </td>
-                                        <td>
-                                            <label>(<span name="textToggle">toggle</span> <input id="customcheck" type="checkbox" name="customcheck">)</label><label><span> </span> <input onclick="toggleWatermark();" type="checkbox" style="visibility: hidden;"> </label>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="midsection">
+                                <div>
+                                    <div class="sectiontitle">
+                                        <span name="textName">Name</span>:
+                                    </div>
+                                    <div class="inputcomponents">
+                                        <input id="nameinput" type="text" maxlength="10000" value="Player" placeholder="Player" style="width: 10em;">
+                                        <input id="taginput" type="text" value="#0001" placeholder="#0001" maxlength="10000" style="width: 5em;">
+                                        <input id="customcolour" type="color" value="#ffffff">
+                                        <label><span> </span> <input onclick="toggleWatermark(this);" type="checkbox" style="visibility: hidden;" checked> </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="sectiontitle">
+                                        <span name="textTitles">Title</span>: <label><small>(<span name="textCustom">Custom</span> <input id="customcheck" type="checkbox" name="customcheck">)</small></label>
+                                    </div>
+                                    <div class="inputcomponents" style="position:relative;">
+                                        <select id="titleinput1" class="notcustom"></select>
+                                        <select id="titleinput2" class="notcustom"></select> 
+                                        <input id="customtitle" placeholder="Splatlandian Youth" value="Splatlandian Youth" maxlength="10000" class="custom" style="width: 20em;">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="sectiontitle">
+                                        <span name="textRandomize">Randomize</span>:
+                                    </div>
+                                    <div class="inputcomponents">
+                                        <input id="randomtitle" value="Both Titles" type="button" name="buttonBoth">
+                                        <input id="randomtitle1" value="First" type="button" name="buttonFirst">
+                                        <input id="randomtitle2" value="Last" type="button" name="buttonLast">
+                                        <input id="randombanner" value="Banner" type="button" name="buttonBanner">
+                                        <input id="randombadge" value="Badges" type="button" name="buttonBadges">
+                                        <input id="randomall" value="All!" type="button" name="buttonAll">
+                                    </div>
+                                </div>
+                            </div>
                             
                             <a id="downloadlink" download="splashtag.png"><input id="downloadbutton" type="button" value="Download!" disabled></a>
                         </div>
