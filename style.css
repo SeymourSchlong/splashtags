@@ -355,17 +355,17 @@ label {
     width: 20px;
 }
 
-.scalecontainer {
+.bottomcontainer {
     display: block;
     margin: auto;
     width: 700px;
-    height: 15px;
+    height: 30px;
     text-align: right;
 }
 
 .scale {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     padding: 0px;
     background-size: 100%, 100%;
     background-position: center;
@@ -413,6 +413,10 @@ label {
     height: var(--size);
     border-radius: 50%;
     vertical-align: text-bottom;
+}
+
+#bannercolours {
+    float: left;
 }
 
 #bannercolours[data-layers="1"] input:nth-child(n+3) {

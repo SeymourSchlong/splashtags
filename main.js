@@ -510,16 +510,18 @@ const load = () => {
             if (tag.banner !== newBanner) {
                 tag.banner = newBanner;
                 img.classList.add('selected');
+
+                customcolour.value = '#' + banners[tag.banner].colour;
+                tag.colour = customcolour.value;
+                if (item.layers) {
+                    bannercolour.dataset.layers = item.layers;
+                } else {
+                    bannercolour.dataset.layers = 0;
+                }
             } else {
                 tag.banner = defaultBannerIndex;
-                bannerContainer.childNodes[defaultBannerIndex].classList.add('selected');
-            }
-            customcolour.value = '#' + banners[tag.banner].colour;
-            tag.colour = customcolour.value;
-            if (item.layers) {
-                bannercolour.dataset.layers = item.layers;
-            } else {
                 bannercolour.dataset.layers = 0;
+                bannerContainer.childNodes[defaultBannerIndex].classList.add('selected');
             }
             renderSplashtag();
         }
