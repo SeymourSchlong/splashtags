@@ -320,10 +320,6 @@ img.selected {
     height: 1px;
 }
 
-div[data-name="text"] {
-    padding-top: 40px;
-}
-
 div[data-name="text"] table {
     height: 208px;
 }
@@ -331,6 +327,10 @@ div[data-name="text"] table {
 
 #downloadbutton {
     margin: 8px;
+}
+
+#customtitle {
+    width: 100%;
 }
 
 .hidecustom .custom, .showcustom .notcustom {
