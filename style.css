@@ -68,7 +68,7 @@ body, select, input {
     font-family: 'Splat-text';
 }
 
-.tab, .imagelistsection, .title-font {
+.tab, .category-title, .title-font {
     font-family: 'Splat-title';
 }
 
@@ -80,7 +80,7 @@ option[value="JPja"] {
 }
 
 body[lang="JPja"] .tab,
-body[lang="JPja"] .imagelistsection,
+body[lang="JPja"] .category-title,
 body[lang="JPja"] .title-font {
     font-family: 'Splat-title', 'Rowdy';
 }
@@ -93,7 +93,7 @@ option[value="KRko"] {
 }
 
 body[lang="KRko"] .tab,
-body[lang="KRko"] .imagelistsection,
+body[lang="KRko"] .category-title,
 body[lang="KRko"] .title-font {
     font-family: 'Splat-title', 'KCUBEr';
 }
@@ -106,7 +106,7 @@ option[value="CNzh"] {
 }
 
 body[lang="CNzh"] .tab,
-body[lang="CNzh"] .imagelistsection,
+body[lang="CNzh"] .category-title,
 body[lang="CNzh"] .title-font {
     font-family: 'Splat-title', "HuakangZongyi";
 }
@@ -119,7 +119,7 @@ option[value="TWzh"] {
 }
 
 body[lang="TWzh"] .tab,
-body[lang="TWzh"] .imagelistsection,
+body[lang="TWzh"] .category-title,
 body[lang="TWzh"] .title-font {
     font-family: 'Splat-title', "DFPT_ZY9";
 }
@@ -271,18 +271,28 @@ a {
 }
 
 .imglistcontainer > div {
-    padding: 4px;
     width: 700px;
     margin: auto;
     
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     gap: 6px;
     
     box-sizing: border-box;
     padding: 0;
     height: 300px;
+}
+
+.category {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 6px;
+    box-sizing: border-box;
+    padding: 0;
+    width: 100%;
 }
 
 .imglistcontainer img {
@@ -331,13 +341,8 @@ img.selected {
     transform: rotate(-5deg);
 }
 
-#bannercontainer > .pad {
-    width: 170px;
-    height: 1px;
-}
-
-#badgecontainer > .pad {
-    width: 64px;
+.pad {
+    width: 1px;
     height: 1px;
 }
 
@@ -367,13 +372,22 @@ label {
     cursor: pointer;
 }
 
-.imagelistsection {
+.category-title {
     font-size: 24px;
     text-align: left;
     width: calc(170px * 4 + 6px * 3) !important;
     height: 34px !important;
     line-height: 34px;
     border-bottom: 2px solid gray;
+
+    cursor: pointer;
+}
+
+.category-title::before {
+    content: "▼ ";
+}
+.category-title.collapsed::before {
+    content: "▶ ";
 }
 
 .spacer {
@@ -508,8 +522,11 @@ small {
     height: auto;
 }
 
-/*
 #badgecontainer img[src*="Lv"]:not([src*="Lv00"]):not(.selected):not(.other):not([data-exclude]) {
+    /*display: none;*/
+    --ignore: 0;
+}
+
+.collapsed + .category.collapsible {
     display: none;
 }
-*/

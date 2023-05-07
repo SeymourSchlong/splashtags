@@ -502,6 +502,13 @@ const load = () => {
             bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
         });
 
+        const newCategory = () => {
+            const cat = document.createElement('div');
+            cat.className = 'category collapsible';
+            return cat;
+        }
+        let currentCategory;
+
         const bannerClickEvent = (item, img) => {
             const newBanner = banners.findIndex(b => b.file === item.file);
             // clear and move selected
@@ -530,18 +537,26 @@ const load = () => {
         // Add options for select menus
         banners.forEach(item => {
             if (item.name) {
-                for (let i = 0; i < bannerContainer.childNodes.length % 4; i++) {
-                    const pad = document.createElement('div');
-                    pad.class = 'pad';
-                    bannerContainer.appendChild(pad);
-                }
+                currentCategory = newCategory();
+
                 const isCustom = item.id.endsWith('custom');
                 const sectionTitle = document.createElement('div');
-                sectionTitle.textContent = lang[language].sections[item.name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
+                sectionTitle.textContent = lang[language].sections[item.name] + (isCustom ? '*' : '');
+                //sectionTitle.textContent = lang[language].sections[item.name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
                 sectionTitle.id = item.id;
-                sectionTitle.className = 'imagelistsection';
+                sectionTitle.className = 'category-title' + (isCustom ? ' collapsed' : '');
                 bannerContainer.appendChild(sectionTitle);
                 images.banners.push(null);
+
+                sectionTitle.addEventListener('click', () => {
+                    if (sectionTitle.classList.contains('collapsed')) {
+                        sectionTitle.classList.remove('collapsed');
+                    } else {
+                        sectionTitle.classList.add('collapsed');
+                    }
+                });
+
+                bannerContainer.appendChild(currentCategory);
 
                 // add to banner select dropdown
                 const option = document.createElement('option');
@@ -577,12 +592,12 @@ const load = () => {
                 img.classList.add('selected');
             }
 
-            bannerContainer.appendChild(img);
+            currentCategory.appendChild(img);
         });
 
-        for (let i = 0; i < 4; i++) {
-            let filler = document.createElement('div');
-            filler.className = 'bannerFiller';
+        {
+            let filler = document.createElement('div')
+            filler.className = 'pad';
             bannerContainer.appendChild(filler);
         }
 
@@ -597,7 +612,7 @@ const load = () => {
                 });
                 for (let i = 0; i < 3; i++) {
                     if (tag.badges[i] < 0) continue;
-                    badgeContainer.querySelectorAll('img, .imagelistsection')[tag.badges[i]].className = i === slot ? 'selected' : 'other';
+                    badgeContainer.querySelectorAll('img, .category-title')[tag.badges[i]].className = i === slot ? 'selected' : 'other';
                 }
             });
         });
@@ -610,7 +625,7 @@ const load = () => {
             // if badge is in other slot, remove the old one
             if (tag.badges.indexOf(newBadge) !== -1) {
                 tag.badges[tag.badges.indexOf(newBadge)] = -1;
-                badgeContainer.querySelectorAll('img, .imagelistsection')[newBadge].className = '';
+                badgeContainer.querySelectorAll('img, .category-title')[newBadge].className = '';
             }
 
             if (newBadge == currentBadge) {
@@ -631,26 +646,35 @@ const load = () => {
 
         badges.forEach(item => {
             if (item.startsWith('NAME')) {
-                for (let i = 0; i < badgeContainer.childNodes.length % 10; i++) {
-                    const pad = document.createElement('div');
-                    pad.className = 'pad';
-                    badgeContainer.appendChild(pad);
-                }
+                currentCategory = newCategory();
+
                 const sectionTitle = document.createElement('div');
                 const name = item.split('#')[0].replace('NAME:', '');
                 const id = item.split('#')[1];
                 const isCustom = id.endsWith('custom');
-                sectionTitle.textContent = lang[language].sections[name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
+                sectionTitle.textContent = lang[language].sections[name] + (isCustom ? '*' : '');
+                // sectionTitle.textContent = lang[language].sections[name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
                 sectionTitle.id = id;
-                sectionTitle.className = 'imagelistsection';
+                sectionTitle.className = 'category-title' + (isCustom ? ' collapsed' : '');
                 badgeContainer.appendChild(sectionTitle);
                 images.badges.push(null);
+
+                sectionTitle.addEventListener('click', () => {
+                    if (sectionTitle.classList.contains('collapsed')) {
+                        sectionTitle.classList.remove('collapsed');
+                    } else {
+                        sectionTitle.classList.add('collapsed');
+                    }
+                });
+
+                badgeContainer.appendChild(currentCategory);
 
                 // add to badge select dropdown
                 const option = document.createElement('option');
                 option.textContent = lang[language].sections[name] + (isCustom ? '*' : '');
                 option.value = id;
                 badgesection.appendChild(option);
+                
                 return;
             }
             loadQueue.push(1);
@@ -664,12 +688,13 @@ const load = () => {
                 badgeClickEvent(item, img);
             });
 
-            badgeContainer.appendChild(img);
+            currentCategory.appendChild(img);
+            //badgeContainer.appendChild(img);
         });
         
-        for (let i = 0; i < 10; i++) {
+        {
             let filler = document.createElement('div');
-            filler.className = 'badgeFiller';
+            filler.className = 'pad';
             badgeContainer.appendChild(filler);
         }
 
@@ -700,6 +725,10 @@ const load = () => {
         const main2 = document.querySelector('#main2');
         const credits = document.querySelector('#showcredits > a');
         const creditsX = document.querySelector('#creditsX');
+
+        // custom uploaded
+        const customBannerCategory = document.querySelector('#banner-uploaded-custom');
+        const customBadgeCategory = document.querySelector('#badge-upload-custom');
         
 
         const randIndex = (array) => {
@@ -889,18 +918,20 @@ const load = () => {
                                 const item = { file: image.src, colour: 'ffffff' };
                                 banners.push(item);
                                 images.banners.push(image);
-                                bannerContainer.insertBefore(image, bannerContainer.querySelector('.bannerFiller'));
+                                customBannerCategory.nextElementSibling.appendChild(image);
+                                // bannerContainer.insertBefore(image, bannerContainer.querySelector('.bannerFiller'));
                                 image.addEventListener('click', () => {
                                     bannerClickEvent(item, image);
                                 });
                                 //custombanner.value = '';
                                 setTimeout(() => {
+                                    customBannerCategory.classList.remove('collapsed');
                                     image.click();
                                     image.scrollIntoView();
                                     renderSplashtag();
                                 }, 1);
                             } else {
-                                bannerContainer.childNodes[index].click();
+                                //bannerContainer.childNodes[index].click();
                             }
                         }
                         reader.readAsDataURL(file);
@@ -922,17 +953,19 @@ const load = () => {
                                 const item = image.src;
                                 badges.push(item);
                                 images.badges.push(image);
-                                badgeContainer.insertBefore(image, badgeContainer.querySelector('.badgeFiller'));
+                                customBadgeCategory.nextElementSibling.appendChild(image);
+                                // badgeContainer.insertBefore(image, badgeContainer.querySelector('.badgeFiller'));
                                 image.addEventListener('click', () => {
                                     badgeClickEvent(item, image);
                                 });
                                 setTimeout(() => {
+                                    customBadgeCategory.classList.remove('collapsed');
                                     image.click();
                                     image.scrollIntoView();
                                     renderSplashtag();
                                 }, 1);
                             } else {
-                                badgeContainer.childNodes[index].click();
+                                //badgeContainer.childNodes[index].click();
                             }
                         }
                         reader.readAsDataURL(file);
@@ -943,14 +976,18 @@ const load = () => {
             {
                 elm: bannersection,
                 run: () => {
-                    bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
+                    const selection = bannerContainer.querySelector('#' + bannersection.value)
+                    selection.classList.remove('collapsed');
+                    selection.scrollIntoView();
                 }
             },
             // Badge section dropdown
             {
                 elm: badgesection,
                 run: () => {
-                    badgeContainer.querySelector('#' + badgesection.value).scrollIntoView();
+                    const selection = badgeContainer.querySelector('#' + badgesection.value);
+                    selection.classList.remove('collapsed');
+                    selection.scrollIntoView();
                 }
             },
             // Banner colour picker (1)
