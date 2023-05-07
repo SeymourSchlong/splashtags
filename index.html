@@ -44,6 +44,7 @@
             function selectBadge (index) {
                 selectTab(2);
                 document.querySelectorAll('input[name="badgenum"]')[index].click();
+                document.querySelector('#badgecontainer .selected').parentElement.previousElementSibling.classList.remove('collapsed');
                 document.querySelector('#badgecontainer .selected').scrollIntoView();
             }
         </script>
