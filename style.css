@@ -216,6 +216,7 @@ a {
 }
 
 #container {
+    position: relative;
     flex: 1;
 }
 
@@ -295,7 +296,7 @@ a {
     height: calc(200px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
 }
 
-#badgecontainer img {
+#badgecontainer img, .collapsed-badges {
     width: calc(700px / var(--items) - 6px);
     height: calc(700px / var(--items) - 6px);
 }
@@ -420,8 +421,9 @@ label {
 }
 
 #main2 {
-    position: relative;
-    margin-top: -645px;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 856px/2);
 }
 
 #main2 div:first-child {
@@ -505,3 +507,9 @@ small {
 #customcolour {
     height: auto;
 }
+
+/*
+#badgecontainer img[src*="Lv"]:not([src*="Lv00"]):not(.selected):not(.other):not([data-exclude]) {
+    display: none;
+}
+*/

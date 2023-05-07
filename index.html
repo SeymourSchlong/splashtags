@@ -50,8 +50,8 @@
     </head>
     <body onload="load();">
         <div class="sitecontent">
+            <br>
             <div id="container">
-                <br>
                 <div id="main" class="">
                     <div id="clickRegions">
                         <div onclick="selectTitle(0)"></div>
@@ -87,7 +87,12 @@
                                 </div>
                                 <div>
                                     <div class="sectiontitle">
-                                        <span name="textTitles">Title</span>: <label><small>(<span name="textCustom">Custom</span> <input id="customcheck" type="checkbox" name="customcheck">)</small></label>
+                                        <span name="textTitles">Title</span>: 
+                                        <label>
+                                            <small>
+                                                (<span name="textCustom">Custom</span> <input id="customcheck" type="checkbox" name="customcheck" style="vertical-align: text-bottom;">)
+                                            </small>
+                                        </label>
                                     </div>
                                     <div class="inputcomponents" style="position:relative;">
                                         <select id="titleinput1" class="notcustom"></select>
