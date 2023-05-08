@@ -534,6 +534,13 @@ const load = () => {
             renderSplashtag();
         }
 
+        const customAsterisk = () => {
+            const txt = document.createElement('span');
+            txt.textContent = '*';
+            txt.title = lang[language].ui.textCustom;
+            return txt;
+        }
+
         // Add options for select menus
         banners.forEach(item => {
             if (item.name) {
@@ -541,9 +548,10 @@ const load = () => {
 
                 const isCustom = item.id.endsWith('custom');
                 const sectionTitle = document.createElement('div');
-                sectionTitle.textContent = lang[language].sections[item.name] + (isCustom ? '*' : '');
+                sectionTitle.textContent = lang[language].sections[item.name]
                 sectionTitle.id = item.id;
                 sectionTitle.className = 'category-title' + (isCustom && !item.name.includes("band") ? ' collapsed' : '');
+                if (isCustom) sectionTitle.appendChild(customAsterisk());
                 bannerContainer.appendChild(sectionTitle);
                 images.banners.push(null);
 
@@ -651,9 +659,10 @@ const load = () => {
                 const name = item.split('#')[0].replace('NAME:', '');
                 const id = item.split('#')[1];
                 const isCustom = id.endsWith('custom');
-                sectionTitle.textContent = lang[language].sections[name] + (isCustom ? '*' : '');
+                sectionTitle.textContent = lang[language].sections[name];
                 sectionTitle.id = id;
                 sectionTitle.className = 'category-title' + (isCustom ? ' collapsed' : '');
+                if (isCustom) sectionTitle.appendChild(customAsterisk());
                 badgeContainer.appendChild(sectionTitle);
                 images.badges.push(null);
 

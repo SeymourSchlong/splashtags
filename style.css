@@ -383,6 +383,10 @@ label {
     cursor: pointer;
 }
 
+.category-title:hover {
+    text-decoration: underline;
+}
+
 .category-title::before {
     content: "▼ ";
 }
