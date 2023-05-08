@@ -5,6 +5,7 @@ const load = () => {
     const customBanners = [];
     const badges = [];
     const customBadges = [];
+    const watermarks = [];
 
     const _assets = './assets/';
 
@@ -22,13 +23,6 @@ const load = () => {
             CNzh: ["HanyiZongyi", "HuakangZongyi"],
             KRko: ["KERINm", "KCUBEr"],
             TWzh: ["DFPT_AZ5", "DFPT_ZY9"]
-        }
-        
-        const images = {
-            banners: [],
-            colourBanners: {},
-            badges: [],
-            watermarks: [],
         }
 
         const langRegex = /\?lang=(\w{4})/;
@@ -144,12 +138,12 @@ const load = () => {
             textCtx.clearRect(0, 0, 700, 200);
             ctx.clearRect(0, 0, 700, 200);
 
-            if (!banners[tag.banner].image.src.includes('/coloured')) {
+            if (!banners[tag.banner].layers) {
                 // If not one of the special "pick your own colour" banners, just draw it
                 ctx.drawImage(banners[tag.banner].image, 0, 0, 700, 200);
             } else {
                 // Special custom colour banners draw each layer then are added
-                const imageLayers = images.colourBanners[banners[tag.banner].image.src];
+                const imageLayers = banners[tag.banner].layerImages;
                 for (let i = 0; i < imageLayers.length; i++) {
                     compositeCtx.clearRect(0, 0, 700, 200);
                     compositeCtx.save();
@@ -376,10 +370,10 @@ const load = () => {
 
                 if (featured.length === 1) {
                     const a = artists[featured[0]];
-                    textCtx.drawImage(images.watermarks[featured[0]+1], wmX - a.offset, wm.offset.y, wm.width, wm.height);
+                    textCtx.drawImage(watermarks[featured[0]+1], wmX - a.offset, wm.offset.y, wm.width, wm.height);
                     textCtx.fillText(a.name, textPos.x - a.offset, textPos.y);
                 } else if (featured.length > 1) {
-                    textCtx.drawImage(images.watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
+                    textCtx.drawImage(watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
                     let i = 0;
                     featured.forEach(f => {
                         const a = artists[f];
@@ -423,7 +417,7 @@ const load = () => {
         watermarkSrcs.forEach(wm => {
             const img = new Image();
             img.src = `./assets/images/watermarks/${wm}.png`;
-            images.watermarks.push(img);
+            watermarks.push(img);
         });
 
         // Inputs =)
@@ -530,6 +524,12 @@ const load = () => {
             return txt;
         }
 
+        const padding = (parent) => {
+            const filler = document.createElement('div');
+            filler.className = 'pad';
+            return filler;
+        }
+
         const addImageElement = (item, type) => {
             const isBanner = type === 'banners';
             const container = isBanner ? bannerContainer : badgeContainer;
@@ -545,7 +545,6 @@ const load = () => {
                 sectionTitle.className = 'category-title' + (isCustom && (isBanner && !item.name.includes("band") || !isBanner) ? ' collapsed' : '');
                 if (isCustom) sectionTitle.appendChild(customAsterisk());
                 container.appendChild(sectionTitle);
-                images[type].push(null);
 
                 sectionTitle.addEventListener('click', () => {
                     if (sectionTitle.classList.contains('collapsed')) {
@@ -564,24 +563,21 @@ const load = () => {
                 section.appendChild(option);
                 return;
             }
-            loadQueue.push(1);
-            const img = document.createElement('img');
+            loadQueue.push(undefined);
+            const img = new Image();
             img.src = _assets + item.file;
-            images[type].push(img);
             item.image = img;
-            if (isBanner) {
-                img.onload = () => {
-                    if (item.file.includes('Tutorial')) renderSplashtag();
-                    loadQueue.pop();
-                }
+            img.onload = () => {
+                if (isBanner && item.file.includes('Tutorial')) renderSplashtag();
+                loadQueue.pop();
             }
 
             if (item.layers) {
-                images.colourBanners[img.src] = [];
+                item.layerImages = [];
                 for (let i = 0; i < item.layers; i++) {
-                    const layer = document.createElement('img');
+                    const layer = new Image();
                     layer.src = _assets + item.file.replace('preview', i+1);
-                    images.colourBanners[img.src].push(layer);
+                    item.layerImages.push(layer);
                 }
             }
 
@@ -602,11 +598,7 @@ const load = () => {
             addImageElement(item, 'banners');
         });
 
-        {
-            let filler = document.createElement('div')
-            filler.className = 'pad';
-            bannerContainer.appendChild(filler);
-        }
+        bannerContainer.appendChild(padding());
 
         const badgeContainer = document.querySelector('#badgecontainer');
         const badgeRadios = document.querySelectorAll('input[name="badgenum"]');
@@ -654,12 +646,8 @@ const load = () => {
         badges.forEach(item => {
             addImageElement(item, 'badges');
         });
-        
-        {
-            let filler = document.createElement('div');
-            filler.className = 'pad';
-            badgeContainer.appendChild(filler);
-        }
+
+        badgeContainer.appendChild(padding());
 
         lang[language].titles.first.forEach(item => {
             const option = document.createElement('option');
@@ -708,6 +696,40 @@ const load = () => {
             }
             const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0]?.endsWith('-') || chosentitles[1]?.startsWith('-')) ? ' ' : '') : '';
             return chosentitles.join(spaceOrBlank);
+        }
+
+        const uploadFile = (type) => {
+            const isBanner = type === 'banners';
+            const uploadElement = isBanner ? custombanner : custombadges;
+            const customCategory = isBanner ? customBannerCategory : customBadgeCategory;
+            const clickEvent = isBanner ? bannerClickEvent : badgeClickEvent;
+            const group = isBanner ? banners : badges;
+
+            Array.from(uploadElement.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const image = new Image();
+                    image.src = e.target.result;
+                    const index = group.findIndex(b => b.file === image.src);
+                    if (index === -1) {
+                        image.draggable = false;
+                        const item = { file: image.src, image: image, custom: true };
+                        if (isBanner) item.colour = 'ffffff';
+                        group.push(item);
+                        customCategory.nextElementSibling.appendChild(image);
+                        image.addEventListener('click', () => {
+                            clickEvent(item);
+                        });
+                        setTimeout(() => {
+                            customCategory.classList.remove('collapsed');
+                            image.click();
+                            image.scrollIntoView();
+                            renderSplashtag();
+                        }, 1);
+                    }
+                }
+                reader.readAsDataURL(file);
+            });
         }
 
         const events = [
@@ -860,70 +882,14 @@ const load = () => {
             {
                 elm: custombanner,
                 run: () => {
-                    Array.from(custombanner.files).forEach(file => {
-                        const reader = new FileReader();
-                        reader.onload = (e) => {
-                            const image = document.createElement("img");
-                            image.src = e.target.result;
-                            const index = banners.findIndex(b => b.file === image.src);
-                            if (index === -1) {
-                                image.draggable = false;
-                                const item = {
-                                    file: image.src,
-                                    colour: 'ffffff',
-                                    custom: true
-                                };
-                                banners.push(item);
-                                images.banners.push(image);
-                                customBannerCategory.nextElementSibling.appendChild(image);
-                                image.addEventListener('click', () => {
-                                    bannerClickEvent(item, image);
-                                });
-                                setTimeout(() => {
-                                    customBannerCategory.classList.remove('collapsed');
-                                    image.click();
-                                    image.scrollIntoView();
-                                    renderSplashtag();
-                                }, 1);
-                            }
-                        }
-                        reader.readAsDataURL(file);
-                    });
+                    uploadFile('banners');
                 }
             },
             // Custom badge upload button
             {
                 elm: custombadges,
                 run: () => {
-                    Array.from(custombadges.files).forEach(file => {
-                        const reader = new FileReader();
-                        reader.onload = (e) => {
-                            const image = document.createElement("img");
-                            image.src = e.target.result;
-                            const index = badges.findIndex(b => b === image.src);
-                            if (index === -1) {
-                                image.draggable = false;
-                                const item = {
-                                    file: image.src,
-                                    image: image,
-                                    custom: true
-                                };
-                                badges.push(item);
-                                images.badges.push(image);
-                                customBadgeCategory.nextElementSibling.appendChild(image);
-                                image.addEventListener('click', () => {
-                                    badgeClickEvent(item);
-                                });
-                                setTimeout(() => {
-                                    customBadgeCategory.classList.remove('collapsed');
-                                    image.click();
-                                    image.scrollIntoView();
-                                    renderSplashtag();
-                                }, 1);
-                            }
-                        }
-                        reader.readAsDataURL(file);
-                    });
+                    uploadFile('badges');
                 }
             },
             // Banner section dropdown
@@ -1004,8 +970,6 @@ const load = () => {
             bannercolourpickers[3],
         ];
 
-        const keyEvents = [];
-
         const inputEvents = [
             nameinput,
             taginput,
@@ -1042,15 +1006,6 @@ const load = () => {
                 renderSplashtag();
             });
         });
-
-        keyEvents.forEach(elm => {
-            elm.addEventListener('keydown', () => {
-                setTimeout(() => {
-                    getEvent(elm).run();
-                    renderSplashtag();
-                }, 1);
-            });
-        });
     
         inputEvents.forEach(elm => {
             elm.addEventListener('input', () => {
@@ -1069,9 +1024,9 @@ const load = () => {
             if (!loadQueue.length) {
                 renderSplashtag();
                 const customBannerLength = customBanners.filter(b => b.file).length;
-                const customBadgesLength = customBadges.filter(b => b.endsWith('.png')).length;
+                const customBadgesLength = customBadges.filter(b => b.file).length;
                 const bannerLength = banners.filter(b => b.file).length - customBannerLength;
-                const badgesLength = badges.filter(b => b.endsWith('.png')).length - customBadgesLength;
+                const badgesLength = badges.filter(b => b.file).length - customBadgesLength;
 
                 console.log(`Loaded:\n${bannerLength + customBannerLength} banners (vanilla: ${bannerLength}, custom: ${customBannerLength})\n${badgesLength + customBadgesLength} badges  (vanilla: ${badgesLength}, custom: ${customBadgesLength})\n${lang[language].titles.first.length + lang[language].titles.last.length} titles.`);
                 
