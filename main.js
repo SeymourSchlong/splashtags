@@ -6,7 +6,7 @@ const load = () => {
     const badges = [];
     const customBadges = [];
 
-    const _assets = '/assets/';
+    const _assets = './assets/';
 
     const lang = {}
 
