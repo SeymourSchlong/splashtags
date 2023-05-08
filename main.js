@@ -6,6 +6,8 @@ const load = () => {
     const badges = [];
     const customBadges = [];
 
+    const _assets = '/assets/';
+
     const lang = {}
 
     const loadedLanguage = () => {
@@ -142,12 +144,12 @@ const load = () => {
             textCtx.clearRect(0, 0, 700, 200);
             ctx.clearRect(0, 0, 700, 200);
 
-            if (!images.banners[tag.banner].src.includes('/coloured')) {
+            if (!banners[tag.banner].image.src.includes('/coloured')) {
                 // If not one of the special "pick your own colour" banners, just draw it
-                ctx.drawImage(images.banners[tag.banner], 0, 0, 700, 200);
+                ctx.drawImage(banners[tag.banner].image, 0, 0, 700, 200);
             } else {
                 // Special custom colour banners draw each layer then are added
-                const imageLayers = images.colourBanners[images.banners[tag.banner].src];
+                const imageLayers = images.colourBanners[banners[tag.banner].image.src];
                 for (let i = 0; i < imageLayers.length; i++) {
                     compositeCtx.clearRect(0, 0, 700, 200);
                     compositeCtx.save();
@@ -521,15 +523,9 @@ const load = () => {
 
                 customcolour.value = '#' + banners[tag.banner].colour;
                 tag.colour = customcolour.value;
-                if (item.layers) {
-                    bannercolour.dataset.layers = item.layers;
-                } else {
-                    bannercolour.dataset.layers = 0;
-                }
+                bannercolour.dataset.layers = item.layers || 0;
             } else {
-                tag.banner = defaultBannerIndex;
-                bannercolour.dataset.layers = 0;
-                bannerContainer.childNodes[defaultBannerIndex].classList.add('selected');
+                banners[defaultBannerIndex].image.click();
             }
             renderSplashtag();
         }
@@ -574,8 +570,9 @@ const load = () => {
             }
             loadQueue.push(1);
             const img = document.createElement('img');
-            img.src = item.file;
+            img.src = _assets + item.file;
             images.banners.push(img);
+            item.image = img;
             img.onload = () => {
                 if (item.file.includes('Tutorial')) renderSplashtag();
                 loadQueue.pop();
@@ -585,7 +582,7 @@ const load = () => {
                 images.colourBanners[img.src] = [];
                 for (let i = 0; i < item.layers; i++) {
                     const layer = document.createElement('img');
-                    layer.src = item.file.replace('preview', i+1);
+                    layer.src = _assets + item.file.replace('preview', i+1);
                     images.colourBanners[img.src].push(layer);
                 }
             }
@@ -686,7 +683,7 @@ const load = () => {
             }
             loadQueue.push(1);
             const img = document.createElement('img');
-            img.src = item;
+            img.src = _assets + item;
             img.onload = loadQueue.pop();
             images.badges.push(img);
 
