@@ -271,13 +271,7 @@ const load = () => {
             }
 
             // If the banner name or badge has either "custom" or "data" it is definitely a custom resource
-            let customed = false;
-            tag.badges.forEach(b => {
-                if (b !== -1) customed = customed || badges[b].includes('data') || badges[b].includes('custom');
-            });
-            ['custom', 'data'].forEach(word => {
-                customed = customed || banners[tag.banner].file.includes(word);
-            });
+            let customed = banners[tag.banner].custom || false;
             
             ctx.drawImage(textCanvas, 0, 0, 700, 200);
             textCtx.clearRect(0, 0, 700, 200);
@@ -290,16 +284,17 @@ const load = () => {
                     clickRegions[4 + i].style = `--x1: ${x}px; --y1: 128px; --x2: ${x+70}px; --y2: ${128+70}px;`;
 
                     // Below used to resize custom badges to retain their scale.
-                    if (badges[tag.badges[i]].includes('custom') || badges[tag.badges[i]].includes('data')) {
-                        const cw = images.badges[tag.badges[i]].naturalWidth;
-                        const ch = images.badges[tag.badges[i]].naturalHeight;
+                    if (badges[tag.badges[i]].custom) {
+                        customed = true;
+                        const cw = badges[tag.badges[i]].image.naturalWidth;
+                        const ch = badges[tag.badges[i]].image.naturalHeight;
                         const landscape = cw > ch;
                         const ratio = !landscape ? (cw / ch) : (ch / cw);
                         const width = landscape ? 70 : 70*ratio;
                         const height = !landscape ? 70 : 70*ratio;
-                        ctx.drawImage(images.badges[tag.badges[i]], x + (70 / 2 - width / 2), 128 + (70 / 2 - height / 2), width, height);
+                        ctx.drawImage(badges[tag.badges[i]].image, x + (70 / 2 - width / 2), 128 + (70 / 2 - height / 2), width, height);
                     } else {
-                        ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
+                        ctx.drawImage(badges[tag.badges[i]].image, x, 128, 70, 70);
                     }
                 } else {
                     clickRegions[4 + i].style = `display: none;`;
@@ -368,7 +363,7 @@ const load = () => {
                 
                     tag.badges.forEach(b => {
                         if (b !== -1) {
-                            if (badges[b].includes(a.dir)) {
+                            if (badges[b].file.includes(a.dir)) {
                                 if (featured.indexOf(i) === -1) {
                                     featured.push(i);
                                 }
@@ -511,7 +506,7 @@ const load = () => {
         }
         let currentCategory;
 
-        const bannerClickEvent = (item, img) => {
+        const bannerClickEvent = (item) => {
             const newBanner = banners.findIndex(b => b.file === item.file);
             // clear and move selected
             document.querySelectorAll('#bannercontainer img.selected').forEach(s => {
@@ -519,10 +514,8 @@ const load = () => {
             });
             if (tag.banner !== newBanner) {
                 tag.banner = newBanner;
-                img.classList.add('selected');
-
-                customcolour.value = '#' + banners[tag.banner].colour;
-                tag.colour = customcolour.value;
+                item.image.classList.add('selected');
+                tag.colour = customcolour.value = '#' + banners[tag.banner].colour;
                 bannercolour.dataset.layers = item.layers || 0;
             } else {
                 banners[defaultBannerIndex].image.click();
@@ -537,8 +530,11 @@ const load = () => {
             return txt;
         }
 
-        // Add options for select menus
-        banners.forEach(item => {
+        const addImageElement = (item, type) => {
+            const isBanner = type === 'banners';
+            const container = isBanner ? bannerContainer : badgeContainer;
+            const section = isBanner ? bannersection : badgesection;
+            const clickEvent = isBanner ? bannerClickEvent : badgeClickEvent;
             if (item.name) {
                 currentCategory = newCategory();
 
@@ -546,10 +542,10 @@ const load = () => {
                 const sectionTitle = document.createElement('div');
                 sectionTitle.textContent = lang[language].sections[item.name]
                 sectionTitle.id = item.id;
-                sectionTitle.className = 'category-title' + (isCustom && !item.name.includes("band") ? ' collapsed' : '');
+                sectionTitle.className = 'category-title' + (isCustom && (isBanner && !item.name.includes("band") || !isBanner) ? ' collapsed' : '');
                 if (isCustom) sectionTitle.appendChild(customAsterisk());
-                bannerContainer.appendChild(sectionTitle);
-                images.banners.push(null);
+                container.appendChild(sectionTitle);
+                images[type].push(null);
 
                 sectionTitle.addEventListener('click', () => {
                     if (sectionTitle.classList.contains('collapsed')) {
@@ -559,23 +555,25 @@ const load = () => {
                     }
                 });
 
-                bannerContainer.appendChild(currentCategory);
+                container.appendChild(currentCategory);
 
-                // add to banner select dropdown
+                // add to select dropdown
                 const option = document.createElement('option');
                 option.textContent = lang[language].sections[item.name] + (isCustom ? '*' : '');
                 option.value = item.id;
-                bannersection.appendChild(option);
+                section.appendChild(option);
                 return;
             }
             loadQueue.push(1);
             const img = document.createElement('img');
             img.src = _assets + item.file;
-            images.banners.push(img);
+            images[type].push(img);
             item.image = img;
-            img.onload = () => {
-                if (item.file.includes('Tutorial')) renderSplashtag();
-                loadQueue.pop();
+            if (isBanner) {
+                img.onload = () => {
+                    if (item.file.includes('Tutorial')) renderSplashtag();
+                    loadQueue.pop();
+                }
             }
 
             if (item.layers) {
@@ -589,14 +587,19 @@ const load = () => {
 
             img.setAttribute('draggable', 'false');
             img.addEventListener('click', () => {
-                bannerClickEvent(item, img);
+                clickEvent(item);
             });
 
-            if (item.file.includes('Tutorial')) {
+            if (isBanner && item.file.includes('Tutorial')) {
                 img.classList.add('selected');
             }
 
             currentCategory.appendChild(img);
+        }
+
+        // Add options for select menus
+        banners.forEach(item => {
+            addImageElement(item, 'banners');
         });
 
         {
@@ -621,8 +624,8 @@ const load = () => {
             });
         });
 
-        const badgeClickEvent = (item, img) => {
-            let slot = [...badgeRadios].findIndex(r => r.checked);
+        const badgeClickEvent = (item) => {
+            const slot = [...badgeRadios].findIndex(r => r.checked);
             let currentBadge = tag.badges[slot];
             let newBadge = badges.findIndex(b => b === item);
             
@@ -642,58 +645,14 @@ const load = () => {
                 s.classList.remove('selected');
             });
             if (tag.badges[slot] !== -1) {
-                img.className = 'selected';
+                item.image.className = 'selected';
             }
 
             renderSplashtag();
         }
 
         badges.forEach(item => {
-            if (item.startsWith('NAME')) {
-                currentCategory = newCategory();
-
-                const sectionTitle = document.createElement('div');
-                const name = item.split('#')[0].replace('NAME:', '');
-                const id = item.split('#')[1];
-                const isCustom = id.endsWith('custom');
-                sectionTitle.textContent = lang[language].sections[name];
-                sectionTitle.id = id;
-                sectionTitle.className = 'category-title' + (isCustom ? ' collapsed' : '');
-                if (isCustom) sectionTitle.appendChild(customAsterisk());
-                badgeContainer.appendChild(sectionTitle);
-                images.badges.push(null);
-
-                sectionTitle.addEventListener('click', () => {
-                    if (sectionTitle.classList.contains('collapsed')) {
-                        sectionTitle.classList.remove('collapsed');
-                    } else {
-                        sectionTitle.classList.add('collapsed');
-                    }
-                });
-
-                badgeContainer.appendChild(currentCategory);
-
-                // add to badge select dropdown
-                const option = document.createElement('option');
-                option.textContent = lang[language].sections[name] + (isCustom ? '*' : '');
-                option.value = id;
-                badgesection.appendChild(option);
-                
-                return;
-            }
-            loadQueue.push(1);
-            const img = document.createElement('img');
-            img.src = _assets + item;
-            img.onload = loadQueue.pop();
-            images.badges.push(img);
-
-            img.setAttribute('draggable', 'false');
-            img.addEventListener('click', () => {
-                badgeClickEvent(item, img);
-            });
-
-            currentCategory.appendChild(img);
-            //badgeContainer.appendChild(img);
+            addImageElement(item, 'badges');
         });
         
         {
@@ -789,11 +748,7 @@ const load = () => {
                 elm: randombanner,
                 run: () => {
                     let banner = 0;
-                    if (tag.isCustom) {
-                        banner = randIndex(banners.filter(b => b.file));
-                    } else {
-                        banner = randIndex(banners.filter(b => b.file && b.file.startsWith('./assets/banners/')));
-                    }
+                    banner = randIndex(banners.filter(b => b.file && (tag.isCustom || !b.custom)));
                     bannerContainer.querySelectorAll('img')[banner].click();
                 }
             },
@@ -801,27 +756,21 @@ const load = () => {
             {
                 elm: randombadge,
                 run: () => {
-                    const badgeImgs = badgeContainer.querySelectorAll('img');
-
                     let badgeList = [];
 
-                    if (tag.isCustom) {
-                        badgeList = badges.filter(b => !b.startsWith('NAME'));
-                    } else {
-                        badgeList = badges.filter(b => !b.startsWith('NAME') && b.startsWith('./assets/badges/'));
-                    }
+                    badgeList = badges.filter(b => !b.name && (tag.isCustom || !b.custom));
 
                     for (let i = 0; i < 3; i++) {
                         badgeRadios[i].click();
 
                         const selectedBadge = randIndex([0, ...badgeList]);
                         if (selectedBadge) {
-                            badgeImgs[selectedBadge - 1].click();
+                            badgeList[selectedBadge - 1].image.click();
                         } else {
                             tag.badges[i] = -1;
                         }
                     }
-                    badgeRadios[0].click()
+                    badgeRadios[0].click();
                 }
             },
             // All random
@@ -919,7 +868,11 @@ const load = () => {
                             const index = banners.findIndex(b => b.file === image.src);
                             if (index === -1) {
                                 image.draggable = false;
-                                const item = { file: image.src, colour: 'ffffff' };
+                                const item = {
+                                    file: image.src,
+                                    colour: 'ffffff',
+                                    custom: true
+                                };
                                 banners.push(item);
                                 images.banners.push(image);
                                 customBannerCategory.nextElementSibling.appendChild(image);
@@ -950,12 +903,16 @@ const load = () => {
                             const index = badges.findIndex(b => b === image.src);
                             if (index === -1) {
                                 image.draggable = false;
-                                const item = image.src;
+                                const item = {
+                                    file: image.src,
+                                    image: image,
+                                    custom: true
+                                };
                                 badges.push(item);
                                 images.badges.push(image);
                                 customBadgeCategory.nextElementSibling.appendChild(image);
                                 image.addEventListener('click', () => {
-                                    badgeClickEvent(item, image);
+                                    badgeClickEvent(item);
                                 });
                                 setTimeout(() => {
                                     customBadgeCategory.classList.remove('collapsed');
@@ -1112,9 +1069,9 @@ const load = () => {
             if (!loadQueue.length) {
                 renderSplashtag();
                 const customBannerLength = customBanners.filter(b => b.file).length;
-                const customBadgesLength = customBadges.filter(b => b.startsWith('./')).length;
+                const customBadgesLength = customBadges.filter(b => b.endsWith('.png')).length;
                 const bannerLength = banners.filter(b => b.file).length - customBannerLength;
-                const badgesLength = badges.filter(b => b.startsWith('./')).length - customBadgesLength;
+                const badgesLength = badges.filter(b => b.endsWith('.png')).length - customBadgesLength;
 
                 console.log(`Loaded:\n${bannerLength + customBannerLength} banners (vanilla: ${bannerLength}, custom: ${customBannerLength})\n${badgesLength + customBadgesLength} badges  (vanilla: ${badgesLength}, custom: ${customBadgesLength})\n${lang[language].titles.first.length + lang[language].titles.last.length} titles.`);
                 
@@ -1127,10 +1084,31 @@ const load = () => {
     fetch('./assets.json').then(res => {
         return res.json();
     }).then(data => {
+        const toBadgeObject = (arr) => {
+            return arr.map(s => {
+                const r = {};
+                if (s.startsWith('NAME')) {
+                    const reg = /^NAME\:(.*?)#(.*?)$/;
+                    const results = reg.exec(s);
+                    r.name = results[1];
+                    r.id = results[2];
+                } else {
+                    r.file = s;
+                    if (r.file.includes('custom')) {
+                        r.custom = true;
+                    }
+                }
+                return r;
+            });
+        }
+
         Object.assign(banners, data.banners);
-        Object.assign(customBanners, data.customBanners);
-        Object.assign(badges, data.badges);
-        Object.assign(customBadges, data.customBadges);
+        Object.assign(customBanners, data.customBanners.map(o => {
+            o.custom = true;
+            return o;
+        }));
+        Object.assign(badges, toBadgeObject(data.badges));
+        Object.assign(customBadges, toBadgeObject(data.customBadges));
 
         fetch('./lang.json').then(res => {
             return res.json();
