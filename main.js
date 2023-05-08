@@ -542,9 +542,8 @@ const load = () => {
                 const isCustom = item.id.endsWith('custom');
                 const sectionTitle = document.createElement('div');
                 sectionTitle.textContent = lang[language].sections[item.name] + (isCustom ? '*' : '');
-                //sectionTitle.textContent = lang[language].sections[item.name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
                 sectionTitle.id = item.id;
-                sectionTitle.className = 'category-title' + (isCustom ? ' collapsed' : '');
+                sectionTitle.className = 'category-title' + (isCustom && !item.name.includes("band") ? ' collapsed' : '');
                 bannerContainer.appendChild(sectionTitle);
                 images.banners.push(null);
 
@@ -653,7 +652,6 @@ const load = () => {
                 const id = item.split('#')[1];
                 const isCustom = id.endsWith('custom');
                 sectionTitle.textContent = lang[language].sections[name] + (isCustom ? '*' : '');
-                // sectionTitle.textContent = lang[language].sections[name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
                 sectionTitle.id = id;
                 sectionTitle.className = 'category-title' + (isCustom ? ' collapsed' : '');
                 badgeContainer.appendChild(sectionTitle);
@@ -919,19 +917,15 @@ const load = () => {
                                 banners.push(item);
                                 images.banners.push(image);
                                 customBannerCategory.nextElementSibling.appendChild(image);
-                                // bannerContainer.insertBefore(image, bannerContainer.querySelector('.bannerFiller'));
                                 image.addEventListener('click', () => {
                                     bannerClickEvent(item, image);
                                 });
-                                //custombanner.value = '';
                                 setTimeout(() => {
                                     customBannerCategory.classList.remove('collapsed');
                                     image.click();
                                     image.scrollIntoView();
                                     renderSplashtag();
                                 }, 1);
-                            } else {
-                                //bannerContainer.childNodes[index].click();
                             }
                         }
                         reader.readAsDataURL(file);
@@ -954,7 +948,6 @@ const load = () => {
                                 badges.push(item);
                                 images.badges.push(image);
                                 customBadgeCategory.nextElementSibling.appendChild(image);
-                                // badgeContainer.insertBefore(image, badgeContainer.querySelector('.badgeFiller'));
                                 image.addEventListener('click', () => {
                                     badgeClickEvent(item, image);
                                 });
@@ -964,8 +957,6 @@ const load = () => {
                                     image.scrollIntoView();
                                     renderSplashtag();
                                 }, 1);
-                            } else {
-                                //badgeContainer.childNodes[index].click();
                             }
                         }
                         reader.readAsDataURL(file);

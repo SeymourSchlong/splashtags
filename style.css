@@ -440,7 +440,7 @@ label {
     left: calc(50% - 856px/2);
 }
 
-#main2 div:first-child {
+#main2 > div:first-child {
     padding-top: 40px;
 }
 
@@ -529,4 +529,27 @@ small {
 
 .collapsed + .category.collapsible {
     display: none;
+}
+
+.credits {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.credit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.credit > * {
+    width: 45%;
+}
+.credit > span {
+    text-align: right;
+}
+.credit > a {
+    text-align: left;
 }
