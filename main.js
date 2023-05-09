@@ -7,8 +7,6 @@ const load = () => {
     const customBadges = [];
     const watermarks = [];
 
-    const _assets = './assets/';
-
     const lang = {}
 
     const loadedLanguage = () => {
@@ -565,7 +563,7 @@ const load = () => {
             }
             loadQueue.push(undefined);
             const img = new Image();
-            img.src = _assets + item.file;
+            img.src = item.file;
             item.image = img;
             img.onload = () => {
                 if (isBanner && item.file.includes('Tutorial')) renderSplashtag();
@@ -576,7 +574,7 @@ const load = () => {
                 item.layerImages = [];
                 for (let i = 0; i < item.layers; i++) {
                     const layer = new Image();
-                    layer.src = _assets + item.file.replace('preview', i+1);
+                    layer.src = item.file.replace('preview', i+1);
                     item.layerImages.push(layer);
                 }
             }
@@ -1048,17 +1046,23 @@ const load = () => {
                     r.name = results[1];
                     r.id = results[2];
                 } else {
-                    r.file = s;
-                    if (r.file.includes('custom')) {
+                    r.file = 'badges/' + s;
+                    if (s.includes('/')) {
                         r.custom = true;
+                        r.file = 'custom/' + r.file;
                     }
+                    r.file = './assets/' + r.file;
                 }
                 return r;
             });
         }
 
-        Object.assign(banners, data.banners);
+        Object.assign(banners, data.banners.map(o => {
+            o.file = './assets/banners/' + o.file;
+            return o;
+        }));
         Object.assign(customBanners, data.customBanners.map(o => {
+            o.file = './assets/custom/banners/' + o.file;
             o.custom = true;
             return o;
         }));
