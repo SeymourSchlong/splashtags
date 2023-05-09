@@ -5,6 +5,9 @@ const load = () => {
     const customBanners = [];
     const badges = [];
     const customBadges = [];
+    const watermarks = [];
+
+    const _assets = './assets/';
 
     const lang = {}
 
@@ -20,13 +23,6 @@ const load = () => {
             CNzh: ["HanyiZongyi", "HuakangZongyi"],
             KRko: ["KERINm", "KCUBEr"],
             TWzh: ["DFPT_AZ5", "DFPT_ZY9"]
-        }
-        
-        const images = {
-            banners: [],
-            colourBanners: {},
-            badges: [],
-            watermarks: [],
         }
 
         const langRegex = /\?lang=(\w{4})/;
@@ -142,12 +138,12 @@ const load = () => {
             textCtx.clearRect(0, 0, 700, 200);
             ctx.clearRect(0, 0, 700, 200);
 
-            if (!images.banners[tag.banner].src.includes('/coloured')) {
+            if (!banners[tag.banner].layers) {
                 // If not one of the special "pick your own colour" banners, just draw it
-                ctx.drawImage(images.banners[tag.banner], 0, 0, 700, 200);
+                ctx.drawImage(banners[tag.banner].image, 0, 0, 700, 200);
             } else {
                 // Special custom colour banners draw each layer then are added
-                const imageLayers = images.colourBanners[images.banners[tag.banner].src];
+                const imageLayers = banners[tag.banner].layerImages;
                 for (let i = 0; i < imageLayers.length; i++) {
                     compositeCtx.clearRect(0, 0, 700, 200);
                     compositeCtx.save();
@@ -269,13 +265,7 @@ const load = () => {
             }
 
             // If the banner name or badge has either "custom" or "data" it is definitely a custom resource
-            let customed = false;
-            tag.badges.forEach(b => {
-                if (b !== -1) customed = customed || badges[b].includes('data') || badges[b].includes('custom');
-            });
-            ['custom', 'data'].forEach(word => {
-                customed = customed || banners[tag.banner].file.includes(word);
-            });
+            let customed = banners[tag.banner].custom || false;
             
             ctx.drawImage(textCanvas, 0, 0, 700, 200);
             textCtx.clearRect(0, 0, 700, 200);
@@ -288,16 +278,17 @@ const load = () => {
                     clickRegions[4 + i].style = `--x1: ${x}px; --y1: 128px; --x2: ${x+70}px; --y2: ${128+70}px;`;
 
                     // Below used to resize custom badges to retain their scale.
-                    if (badges[tag.badges[i]].includes('custom') || badges[tag.badges[i]].includes('data')) {
-                        const cw = images.badges[tag.badges[i]].naturalWidth;
-                        const ch = images.badges[tag.badges[i]].naturalHeight;
+                    if (badges[tag.badges[i]].custom) {
+                        customed = true;
+                        const cw = badges[tag.badges[i]].image.naturalWidth;
+                        const ch = badges[tag.badges[i]].image.naturalHeight;
                         const landscape = cw > ch;
                         const ratio = !landscape ? (cw / ch) : (ch / cw);
                         const width = landscape ? 70 : 70*ratio;
                         const height = !landscape ? 70 : 70*ratio;
-                        ctx.drawImage(images.badges[tag.badges[i]], x + (70 / 2 - width / 2), 128 + (70 / 2 - height / 2), width, height);
+                        ctx.drawImage(badges[tag.badges[i]].image, x + (70 / 2 - width / 2), 128 + (70 / 2 - height / 2), width, height);
                     } else {
-                        ctx.drawImage(images.badges[tag.badges[i]], x, 128, 70, 70);
+                        ctx.drawImage(badges[tag.badges[i]].image, x, 128, 70, 70);
                     }
                 } else {
                     clickRegions[4 + i].style = `display: none;`;
@@ -366,7 +357,7 @@ const load = () => {
                 
                     tag.badges.forEach(b => {
                         if (b !== -1) {
-                            if (badges[b].includes(a.dir)) {
+                            if (badges[b].file.includes(a.dir)) {
                                 if (featured.indexOf(i) === -1) {
                                     featured.push(i);
                                 }
@@ -379,10 +370,10 @@ const load = () => {
 
                 if (featured.length === 1) {
                     const a = artists[featured[0]];
-                    textCtx.drawImage(images.watermarks[featured[0]+1], wmX - a.offset, wm.offset.y, wm.width, wm.height);
+                    textCtx.drawImage(watermarks[featured[0]+1], wmX - a.offset, wm.offset.y, wm.width, wm.height);
                     textCtx.fillText(a.name, textPos.x - a.offset, textPos.y);
                 } else if (featured.length > 1) {
-                    textCtx.drawImage(images.watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
+                    textCtx.drawImage(watermarks[0], wmX, wm.offset.y, wm.width, wm.height);
                     let i = 0;
                     featured.forEach(f => {
                         const a = artists[f];
@@ -426,7 +417,7 @@ const load = () => {
         watermarkSrcs.forEach(wm => {
             const img = new Image();
             img.src = `./assets/images/watermarks/${wm}.png`;
-            images.watermarks.push(img);
+            watermarks.push(img);
         });
 
         // Inputs =)
@@ -502,7 +493,14 @@ const load = () => {
             bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
         });
 
-        const bannerClickEvent = (item, img) => {
+        const newCategory = () => {
+            const cat = document.createElement('div');
+            cat.className = 'category collapsible';
+            return cat;
+        }
+        let currentCategory;
+
+        const bannerClickEvent = (item) => {
             const newBanner = banners.findIndex(b => b.file === item.file);
             // clear and move selected
             document.querySelectorAll('#bannercontainer img.selected').forEach(s => {
@@ -510,81 +508,97 @@ const load = () => {
             });
             if (tag.banner !== newBanner) {
                 tag.banner = newBanner;
-                img.classList.add('selected');
-
-                customcolour.value = '#' + banners[tag.banner].colour;
-                tag.colour = customcolour.value;
-                if (item.layers) {
-                    bannercolour.dataset.layers = item.layers;
-                } else {
-                    bannercolour.dataset.layers = 0;
-                }
+                item.image.classList.add('selected');
+                tag.colour = customcolour.value = '#' + banners[tag.banner].colour;
+                bannercolour.dataset.layers = item.layers || 0;
             } else {
-                tag.banner = defaultBannerIndex;
-                bannercolour.dataset.layers = 0;
-                bannerContainer.childNodes[defaultBannerIndex].classList.add('selected');
+                banners[defaultBannerIndex].image.click();
             }
             renderSplashtag();
         }
 
-        // Add options for select menus
-        banners.forEach(item => {
+        const customAsterisk = () => {
+            const txt = document.createElement('span');
+            txt.textContent = '*';
+            txt.title = lang[language].ui.textCustom;
+            return txt;
+        }
+
+        const padding = (parent) => {
+            const filler = document.createElement('div');
+            filler.className = 'pad';
+            return filler;
+        }
+
+        const addImageElement = (item, type) => {
+            const isBanner = type === 'banners';
+            const container = isBanner ? bannerContainer : badgeContainer;
+            const section = isBanner ? bannersection : badgesection;
+            const clickEvent = isBanner ? bannerClickEvent : badgeClickEvent;
             if (item.name) {
-                for (let i = 0; i < bannerContainer.childNodes.length % 4; i++) {
-                    const pad = document.createElement('div');
-                    pad.class = 'pad';
-                    bannerContainer.appendChild(pad);
-                }
+                currentCategory = newCategory();
+
                 const isCustom = item.id.endsWith('custom');
                 const sectionTitle = document.createElement('div');
-                sectionTitle.textContent = lang[language].sections[item.name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
+                sectionTitle.textContent = lang[language].sections[item.name]
                 sectionTitle.id = item.id;
-                sectionTitle.className = 'imagelistsection';
-                bannerContainer.appendChild(sectionTitle);
-                images.banners.push(null);
+                sectionTitle.className = 'category-title' + (isCustom && (isBanner && !item.name.includes("band") || !isBanner) ? ' collapsed' : '');
+                if (isCustom) sectionTitle.appendChild(customAsterisk());
+                container.appendChild(sectionTitle);
 
-                // add to banner select dropdown
+                sectionTitle.addEventListener('click', () => {
+                    if (sectionTitle.classList.contains('collapsed')) {
+                        sectionTitle.classList.remove('collapsed');
+                    } else {
+                        sectionTitle.classList.add('collapsed');
+                    }
+                });
+
+                container.appendChild(currentCategory);
+
+                // add to select dropdown
                 const option = document.createElement('option');
                 option.textContent = lang[language].sections[item.name] + (isCustom ? '*' : '');
                 option.value = item.id;
-                bannersection.appendChild(option);
+                section.appendChild(option);
                 return;
             }
-            loadQueue.push(1);
-            const img = document.createElement('img');
-            img.src = item.file;
-            images.banners.push(img);
+            loadQueue.push(undefined);
+            const img = new Image();
+            img.src = _assets + item.file;
+            item.image = img;
             img.onload = () => {
-                if (item.file.includes('Tutorial')) renderSplashtag();
+                if (isBanner && item.file.includes('Tutorial')) renderSplashtag();
                 loadQueue.pop();
             }
 
             if (item.layers) {
-                images.colourBanners[img.src] = [];
+                item.layerImages = [];
                 for (let i = 0; i < item.layers; i++) {
-                    const layer = document.createElement('img');
-                    layer.src = item.file.replace('preview', i+1);
-                    images.colourBanners[img.src].push(layer);
+                    const layer = new Image();
+                    layer.src = _assets + item.file.replace('preview', i+1);
+                    item.layerImages.push(layer);
                 }
             }
 
             img.setAttribute('draggable', 'false');
             img.addEventListener('click', () => {
-                bannerClickEvent(item, img);
+                clickEvent(item);
             });
 
-            if (item.file.includes('Tutorial')) {
+            if (isBanner && item.file.includes('Tutorial')) {
                 img.classList.add('selected');
             }
 
-            bannerContainer.appendChild(img);
+            currentCategory.appendChild(img);
+        }
+
+        // Add options for select menus
+        banners.forEach(item => {
+            addImageElement(item, 'banners');
         });
 
-        for (let i = 0; i < 4; i++) {
-            let filler = document.createElement('div');
-            filler.className = 'bannerFiller';
-            bannerContainer.appendChild(filler);
-        }
+        bannerContainer.appendChild(padding());
 
         const badgeContainer = document.querySelector('#badgecontainer');
         const badgeRadios = document.querySelectorAll('input[name="badgenum"]');
@@ -597,20 +611,20 @@ const load = () => {
                 });
                 for (let i = 0; i < 3; i++) {
                     if (tag.badges[i] < 0) continue;
-                    badgeContainer.querySelectorAll('img, .imagelistsection')[tag.badges[i]].className = i === slot ? 'selected' : 'other';
+                    badgeContainer.querySelectorAll('img, .category-title')[tag.badges[i]].className = i === slot ? 'selected' : 'other';
                 }
             });
         });
 
-        const badgeClickEvent = (item, img) => {
-            let slot = [...badgeRadios].findIndex(r => r.checked);
+        const badgeClickEvent = (item) => {
+            const slot = [...badgeRadios].findIndex(r => r.checked);
             let currentBadge = tag.badges[slot];
             let newBadge = badges.findIndex(b => b === item);
             
             // if badge is in other slot, remove the old one
             if (tag.badges.indexOf(newBadge) !== -1) {
                 tag.badges[tag.badges.indexOf(newBadge)] = -1;
-                badgeContainer.querySelectorAll('img, .imagelistsection')[newBadge].className = '';
+                badgeContainer.querySelectorAll('img, .category-title')[newBadge].className = '';
             }
 
             if (newBadge == currentBadge) {
@@ -623,55 +637,17 @@ const load = () => {
                 s.classList.remove('selected');
             });
             if (tag.badges[slot] !== -1) {
-                img.className = 'selected';
+                item.image.className = 'selected';
             }
 
             renderSplashtag();
         }
 
         badges.forEach(item => {
-            if (item.startsWith('NAME')) {
-                for (let i = 0; i < badgeContainer.childNodes.length % 10; i++) {
-                    const pad = document.createElement('div');
-                    pad.className = 'pad';
-                    badgeContainer.appendChild(pad);
-                }
-                const sectionTitle = document.createElement('div');
-                const name = item.split('#')[0].replace('NAME:', '');
-                const id = item.split('#')[1];
-                const isCustom = id.endsWith('custom');
-                sectionTitle.textContent = lang[language].sections[name] + (isCustom ? ' (' + lang[language].ui.textCustom + ')' : '');
-                sectionTitle.id = id;
-                sectionTitle.className = 'imagelistsection';
-                badgeContainer.appendChild(sectionTitle);
-                images.badges.push(null);
-
-                // add to badge select dropdown
-                const option = document.createElement('option');
-                option.textContent = lang[language].sections[name] + (isCustom ? '*' : '');
-                option.value = id;
-                badgesection.appendChild(option);
-                return;
-            }
-            loadQueue.push(1);
-            const img = document.createElement('img');
-            img.src = item;
-            img.onload = loadQueue.pop();
-            images.badges.push(img);
-
-            img.setAttribute('draggable', 'false');
-            img.addEventListener('click', () => {
-                badgeClickEvent(item, img);
-            });
-
-            badgeContainer.appendChild(img);
+            addImageElement(item, 'badges');
         });
-        
-        for (let i = 0; i < 10; i++) {
-            let filler = document.createElement('div');
-            filler.className = 'badgeFiller';
-            badgeContainer.appendChild(filler);
-        }
+
+        badgeContainer.appendChild(padding());
 
         lang[language].titles.first.forEach(item => {
             const option = document.createElement('option');
@@ -700,6 +676,10 @@ const load = () => {
         const main2 = document.querySelector('#main2');
         const credits = document.querySelector('#showcredits > a');
         const creditsX = document.querySelector('#creditsX');
+
+        // custom uploaded
+        const customBannerCategory = document.querySelector('#banner-uploaded-custom');
+        const customBadgeCategory = document.querySelector('#badge-upload-custom');
         
 
         const randIndex = (array) => {
@@ -716,6 +696,40 @@ const load = () => {
             }
             const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0]?.endsWith('-') || chosentitles[1]?.startsWith('-')) ? ' ' : '') : '';
             return chosentitles.join(spaceOrBlank);
+        }
+
+        const uploadFile = (type) => {
+            const isBanner = type === 'banners';
+            const uploadElement = isBanner ? custombanner : custombadges;
+            const customCategory = isBanner ? customBannerCategory : customBadgeCategory;
+            const clickEvent = isBanner ? bannerClickEvent : badgeClickEvent;
+            const group = isBanner ? banners : badges;
+
+            Array.from(uploadElement.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const image = new Image();
+                    image.src = e.target.result;
+                    const index = group.findIndex(b => b.file === image.src);
+                    if (index === -1) {
+                        image.draggable = false;
+                        const item = { file: image.src, image: image, custom: true };
+                        if (isBanner) item.colour = 'ffffff';
+                        group.push(item);
+                        customCategory.nextElementSibling.appendChild(image);
+                        image.addEventListener('click', () => {
+                            clickEvent(item);
+                        });
+                        setTimeout(() => {
+                            customCategory.classList.remove('collapsed');
+                            image.click();
+                            image.scrollIntoView();
+                            renderSplashtag();
+                        }, 1);
+                    }
+                }
+                reader.readAsDataURL(file);
+            });
         }
 
         const events = [
@@ -756,11 +770,7 @@ const load = () => {
                 elm: randombanner,
                 run: () => {
                     let banner = 0;
-                    if (tag.isCustom) {
-                        banner = randIndex(banners.filter(b => b.file));
-                    } else {
-                        banner = randIndex(banners.filter(b => b.file && b.file.startsWith('./assets/banners/')));
-                    }
+                    banner = randIndex(banners.filter(b => b.file && (tag.isCustom || !b.custom)));
                     bannerContainer.querySelectorAll('img')[banner].click();
                 }
             },
@@ -768,27 +778,21 @@ const load = () => {
             {
                 elm: randombadge,
                 run: () => {
-                    const badgeImgs = badgeContainer.querySelectorAll('img');
-
                     let badgeList = [];
 
-                    if (tag.isCustom) {
-                        badgeList = badges.filter(b => !b.startsWith('NAME'));
-                    } else {
-                        badgeList = badges.filter(b => !b.startsWith('NAME') && b.startsWith('./assets/badges/'));
-                    }
+                    badgeList = badges.filter(b => !b.name && (tag.isCustom || !b.custom));
 
                     for (let i = 0; i < 3; i++) {
                         badgeRadios[i].click();
 
                         const selectedBadge = randIndex([0, ...badgeList]);
                         if (selectedBadge) {
-                            badgeImgs[selectedBadge - 1].click();
+                            badgeList[selectedBadge - 1].image.click();
                         } else {
                             tag.badges[i] = -1;
                         }
                     }
-                    badgeRadios[0].click()
+                    badgeRadios[0].click();
                 }
             },
             // All random
@@ -878,79 +882,32 @@ const load = () => {
             {
                 elm: custombanner,
                 run: () => {
-                    Array.from(custombanner.files).forEach(file => {
-                        const reader = new FileReader();
-                        reader.onload = (e) => {
-                            const image = document.createElement("img");
-                            image.src = e.target.result;
-                            const index = banners.findIndex(b => b.file === image.src);
-                            if (index === -1) {
-                                image.draggable = false;
-                                const item = { file: image.src, colour: 'ffffff' };
-                                banners.push(item);
-                                images.banners.push(image);
-                                bannerContainer.insertBefore(image, bannerContainer.querySelector('.bannerFiller'));
-                                image.addEventListener('click', () => {
-                                    bannerClickEvent(item, image);
-                                });
-                                //custombanner.value = '';
-                                setTimeout(() => {
-                                    image.click();
-                                    image.scrollIntoView();
-                                    renderSplashtag();
-                                }, 1);
-                            } else {
-                                bannerContainer.childNodes[index].click();
-                            }
-                        }
-                        reader.readAsDataURL(file);
-                    });
+                    uploadFile('banners');
                 }
             },
             // Custom badge upload button
             {
                 elm: custombadges,
                 run: () => {
-                    Array.from(custombadges.files).forEach(file => {
-                        const reader = new FileReader();
-                        reader.onload = (e) => {
-                            const image = document.createElement("img");
-                            image.src = e.target.result;
-                            const index = badges.findIndex(b => b === image.src);
-                            if (index === -1) {
-                                image.draggable = false;
-                                const item = image.src;
-                                badges.push(item);
-                                images.badges.push(image);
-                                badgeContainer.insertBefore(image, badgeContainer.querySelector('.badgeFiller'));
-                                image.addEventListener('click', () => {
-                                    badgeClickEvent(item, image);
-                                });
-                                setTimeout(() => {
-                                    image.click();
-                                    image.scrollIntoView();
-                                    renderSplashtag();
-                                }, 1);
-                            } else {
-                                badgeContainer.childNodes[index].click();
-                            }
-                        }
-                        reader.readAsDataURL(file);
-                    });
+                    uploadFile('badges');
                 }
             },
             // Banner section dropdown
             {
                 elm: bannersection,
                 run: () => {
-                    bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
+                    const selection = bannerContainer.querySelector('#' + bannersection.value)
+                    selection.classList.remove('collapsed');
+                    selection.scrollIntoView();
                 }
             },
             // Badge section dropdown
             {
                 elm: badgesection,
                 run: () => {
-                    badgeContainer.querySelector('#' + badgesection.value).scrollIntoView();
+                    const selection = badgeContainer.querySelector('#' + badgesection.value);
+                    selection.classList.remove('collapsed');
+                    selection.scrollIntoView();
                 }
             },
             // Banner colour picker (1)
@@ -1013,8 +970,6 @@ const load = () => {
             bannercolourpickers[3],
         ];
 
-        const keyEvents = [];
-
         const inputEvents = [
             nameinput,
             taginput,
@@ -1051,15 +1006,6 @@ const load = () => {
                 renderSplashtag();
             });
         });
-
-        keyEvents.forEach(elm => {
-            elm.addEventListener('keydown', () => {
-                setTimeout(() => {
-                    getEvent(elm).run();
-                    renderSplashtag();
-                }, 1);
-            });
-        });
     
         inputEvents.forEach(elm => {
             elm.addEventListener('input', () => {
@@ -1078,9 +1024,9 @@ const load = () => {
             if (!loadQueue.length) {
                 renderSplashtag();
                 const customBannerLength = customBanners.filter(b => b.file).length;
-                const customBadgesLength = customBadges.filter(b => b.startsWith('./')).length;
+                const customBadgesLength = customBadges.filter(b => b.file).length;
                 const bannerLength = banners.filter(b => b.file).length - customBannerLength;
-                const badgesLength = badges.filter(b => b.startsWith('./')).length - customBadgesLength;
+                const badgesLength = badges.filter(b => b.file).length - customBadgesLength;
 
                 console.log(`Loaded:\n${bannerLength + customBannerLength} banners (vanilla: ${bannerLength}, custom: ${customBannerLength})\n${badgesLength + customBadgesLength} badges  (vanilla: ${badgesLength}, custom: ${customBadgesLength})\n${lang[language].titles.first.length + lang[language].titles.last.length} titles.`);
                 
@@ -1093,10 +1039,31 @@ const load = () => {
     fetch('./assets.json').then(res => {
         return res.json();
     }).then(data => {
+        const toBadgeObject = (arr) => {
+            return arr.map(s => {
+                const r = {};
+                if (s.startsWith('NAME')) {
+                    const reg = /^NAME\:(.*?)#(.*?)$/;
+                    const results = reg.exec(s);
+                    r.name = results[1];
+                    r.id = results[2];
+                } else {
+                    r.file = s;
+                    if (r.file.includes('custom')) {
+                        r.custom = true;
+                    }
+                }
+                return r;
+            });
+        }
+
         Object.assign(banners, data.banners);
-        Object.assign(customBanners, data.customBanners);
-        Object.assign(badges, data.badges);
-        Object.assign(customBadges, data.customBadges);
+        Object.assign(customBanners, data.customBanners.map(o => {
+            o.custom = true;
+            return o;
+        }));
+        Object.assign(badges, toBadgeObject(data.badges));
+        Object.assign(customBadges, toBadgeObject(data.customBadges));
 
         fetch('./lang.json').then(res => {
             return res.json();
