@@ -66,13 +66,25 @@ const load = () => {
             title: {
                 first: 0,
                 last: 0,
-                string: 'Splatlandian Youth'
+                string: 'Splatlandian Youth',
+                toString: () => {
+                    const chosentitles = [];
+                    if (tag.isCustom) chosentitles.push(tag.title.string);
+                    else {
+                        if (tag.title.first) chosentitles.push(lang[language].titles.first[tag.title.first]);
+                        if (tag.title.last) chosentitles.push(lang[language].titles.last[tag.title.last]);
+                    }
+                    if (chosentitles[0])
+                        return chosentitles.join(isSpaceLang(language) ? (!(chosentitles[0]?.endsWith('-') || chosentitles[1]?.startsWith('-')) ? ' ' : '') : '');
+                    else
+                        return '';
+                }
             },
             banner: 0,
-            id: '#0001',
+            id: lang[language].sign + '0001',
             badges: [ -1, -1, -1 ],
             colour: '#ffffff',
-            bgColours: ['#ffffff', '#ff0000', '#00ff00', '#0000ff'],
+            bgColours: ['#fff', '#f00', '#0f0', '#00f'],
             isCustom: false,
         }
         
@@ -131,6 +143,10 @@ const load = () => {
         setInterval(() => {
             if (cooldown) cooldown--;
         });
+
+        const getXScale = (width, max) => {
+            return width > max ? (max) / width : 1;
+        }
         
         const renderSplashtag = () => {
             textCtx.clearRect(0, 0, 700, 200);
@@ -166,42 +182,27 @@ const load = () => {
 
             // Write titles
             textCtx.textAlign = 'left';
-            const chosentitles = [];
-            if (tag.isCustom) {
-                chosentitles.push(tag.title.string);
-            } else {
-                if (tag.title.first) {
-                    chosentitles.push(lang[language].titles.first[tag.title.first]);
-                }
-                if (tag.title.last) {
-                    chosentitles.push(lang[language].titles.last[tag.title.last]);
-                }
-            }
-            if (chosentitles.length && chosentitles[0]) {
+            if (tag.title.toString()) {
                 textCtx.save();
-                
-                const size = 36;
-                textCtx.font = `${size}px ${getFont()}`
-                const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0]?.endsWith('-') || chosentitles[1]?.startsWith('-')) ? ' ' : '') : '';
-                const fullTitle = chosentitles.join(spaceOrBlank);
-
+                textCtx.font = `36px ${getFont()}`;
                 textCtx.letterSpacing = "-0.3px";
-                const textWidth = textCtx.measureText(fullTitle).width;
-                const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
+                const xScale = getXScale(textCtx.measureText(tag.title.toString()).width, 700-32);
 
                 if (tag.isCustom) {
                     clickRegions[0].style = `--x1: 15px; --y1: 5px; --x2: ${xScale < 1 ? 685 : Math.round(textWidth + 15)}px; --y2: 50px;`;
                     clickRegions[1].style = `display: none;`;
                 } else {
-                    const firstwidth = (textCtx.measureText(chosentitles[0]).width + 15) * xScale;
-                    const gapSize = textCtx.measureText(spaceOrBlank).width * xScale;
+                    const firstTitle = lang[language].titles.first[tag.title.first];
+                    const lastTitle = lang[language].titles.last[tag.title.last];
+                    const firstwidth = (textCtx.measureText(firstTitle).width + 15) * xScale;
 
+                    const gapSize = textCtx.measureText(isSpaceLang(language) ? (!(firstTitle?.endsWith('-') || lastTitle?.startsWith('-')) ? ' ' : '') : '').width * xScale;
+
+                    clickRegions[tag.title.first ? 0 : 1].style = `--x1: 15px; --y1: 5px; --x2: ${firstwidth}px; --y2: 50px;`;
                     if (tag.title.first) {
-                        clickRegions[0].style = `--x1: 15px; --y1: 5px; --x2: ${firstwidth}px; --y2: 50px;`;
                         clickRegions[1].style = tag.title.last ? `--x1: ${firstwidth + gapSize}px; --y1: 5px; --x2: ${xScale < 1 ? 685 : Math.round(textWidth + 15)}px; --y2: 50px;` : 'display: none;';
                     } else {
                         clickRegions[0].style = `display: none;`;
-                        clickRegions[1].style = `--x1: 15px; --y1: 5px; --x2: ${firstwidth}px; --y2: 50px;`;
                     }
                 }
 
@@ -219,16 +220,13 @@ const load = () => {
             // Write tag text (if not empty)
             if (tag.id.length) {
                 textCtx.save();
-
-                const size = 24;
-                textCtx.font = `${size}px ${getFont()}`;
+                textCtx.font = `24px ${getFont()}`;
                 textCtx.letterSpacing = "0.2px";
-                const textWidth = textCtx.measureText(tag.id).width;
 
                 // tag text should adjust to the leftmost badge position.
                 const leftBadge = tag.badges.indexOf(tag.badges.find(b => b !== -1));
                 const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge) - 48;
-                const xScale = textWidth > maxX ? (maxX) / textWidth : 1;
+                const xScale = getXScale(textCtx.measureText(tag.id).width, maxX);
                 clickRegions[3].style = `--x1: 25px; --y1: 165px; --x2: ${(xScale < 1 ? maxX : Math.round(textWidth)) + 25}px; --y2: 185px;`;
 
                 textCtx.scale(xScale, 1);
@@ -241,16 +239,11 @@ const load = () => {
             // Write player name
             if (tag.name.length) {
                 textCtx.save();
-
-                const size = 66;
-                textCtx.font = `${size}px ${getFont(1)}`;
-
+                textCtx.font = `66px ${getFont(1)}`;
                 textCtx.letterSpacing = "-0.4px";
-                const textWidth = textCtx.measureText(tag.name).width;
-                const xScale = textWidth > 700-32 ? (700 - 32) / textWidth : 1;
+                const xScale = getXScale(textCtx.measureText(tag.name).width, 700-32);
 
                 const x1 = 700/2-1.5 - Math.round(textWidth / 2);
-
                 clickRegions[2].style = `--x1: ${xScale < 1 ? 15 : Math.round(700/2-1.5 - textWidth/2)}px; --y1: 70px; --x2: ${xScale < 1 ? 685 : Math.round(x1 + textWidth)}px; --y2: 120px;`;
                 
                 textCtx.textAlign = 'center';
@@ -261,12 +254,12 @@ const load = () => {
             } else {
                 clickRegions[2].style = 'display: none;';
             }
-
-            // If the banner name or badge has either "custom" or "data" it is definitely a custom resource
-            let customed = banners[tag.banner].custom || false;
             
             ctx.drawImage(textCanvas, 0, 0, 700, 200);
             textCtx.clearRect(0, 0, 700, 200);
+
+            // If the banner name or badge has either "custom" or "data" it is definitely a custom resource
+            let customed = banners[tag.banner].custom || false;
 
             // Draw each badge on the banner
             for (let i = 0; i < 3; i++) {
@@ -293,9 +286,8 @@ const load = () => {
                 }
             }
 
-            // draw small watermark if using custom assets
+            // draw small watermark if using custom artist assets
             if (!forceDisableWatermark && customed) {
-
                 const wm = {
                     offset: {
                         x: 10,
@@ -449,8 +441,6 @@ const load = () => {
         customtitle.value = lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : '');
         customtitle.placeholder = customtitle.value;
         tag.title.string = customtitle.value;
-
-        tag.id = lang[language].sign + '0001';
         taginput.value = tag.id;
         
 
@@ -676,22 +666,9 @@ const load = () => {
         // custom uploaded
         const customBannerCategory = document.querySelector('#banner-uploaded-custom');
         const customBadgeCategory = document.querySelector('#badge-upload-custom');
-        
 
         const randIndex = (array) => {
             return Math.floor(Math.random() * array.length);
-        }
-
-        const generateTitle = () => {
-            const chosentitles = [];
-            if (tag.title.first) {
-                chosentitles.push(lang[language].titles.first[tag.title.first]);
-            }
-            if (tag.title.last) {
-                chosentitles.push(lang[language].titles.last[tag.title.last]);
-            }
-            const spaceOrBlank = isSpaceLang(language) ? (!(chosentitles[0]?.endsWith('-') || chosentitles[1]?.startsWith('-')) ? ' ' : '') : '';
-            return chosentitles.join(spaceOrBlank);
         }
 
         const uploadFile = (type) => {
@@ -745,7 +722,7 @@ const load = () => {
                     titleinput1.selectedIndex = title1;
                     tag.title.first = title1;
 
-                    tag.title.string = generateTitle();
+                    tag.title.string = tag.title.toString();
                     customtitle.value = tag.title.string;
                 }
             },
@@ -757,7 +734,7 @@ const load = () => {
                     titleinput2.selectedIndex = title2;
                     tag.title.last = title2;
 
-                    tag.title.string = generateTitle();
+                    tag.title.string = tag.title.toString();
                     customtitle.value = tag.title.string;
                 }
             },
