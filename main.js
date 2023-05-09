@@ -471,13 +471,11 @@ const load = () => {
         }
 
         // Sort the titles, and insert the "No Title" option at the start
-        const notitle = lang[language].titles.first.shift();
-        lang[language].titles.last.shift();
         lang[language].titles.first.sort();
         lang[language].titles.last.sort();
 
-        lang[language].titles.first.unshift(notitle);
-        lang[language].titles.last.unshift(notitle);
+        lang[language].titles.first.unshift(lang[language].titles.empty);
+        lang[language].titles.last.unshift(lang[language].titles.empty);
 
         // Set defaults for inputs
         const defaultBannerIndex = banners.findIndex(a => !a.name && a.file.includes('Tutorial'));
@@ -522,7 +520,7 @@ const load = () => {
             return txt;
         }
 
-        const padding = (parent) => {
+        const padding = () => {
             const filler = document.createElement('div');
             filler.className = 'pad';
             return filler;
@@ -1041,17 +1039,12 @@ const load = () => {
             return arr.map(s => {
                 const r = {};
                 if (s.startsWith('NAME')) {
-                    const reg = /^NAME\:(.*?)#(.*?)$/;
-                    const results = reg.exec(s);
+                    const results = /^NAME\:(.*?)#(.*?)$/.exec(s);
                     r.name = results[1];
                     r.id = results[2];
                 } else {
-                    r.file = 'badges/' + s;
-                    if (s.includes('/')) {
-                        r.custom = true;
-                        r.file = 'custom/' + r.file;
-                    }
-                    r.file = './assets/' + r.file;
+                    if (s.includes('/')) r.custom = true;
+                    r.file = './assets/' + (r.custom ? 'custom/':'') + 'badges/' + s;
                 }
                 return r;
             });
