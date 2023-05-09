@@ -642,6 +642,7 @@
             "cakeCustom": "ネリメモリー",
             "userCustom": "アップロード済み"
         },
+        "font": ["Kurokane", "Rowdy"],
         "default": ["バンカラな", "若者"],
         "sign": "#"
     },
@@ -707,6 +708,7 @@
             "cakeCustom": "记忆蛋糕",
             "userCustom": "已上传"
         },
+        "font": ["HanyiZongyi", "HuakangZongyi"],
         "default": ["蛮颓的", "年轻人"],
         "sign": "#"
     },
@@ -771,6 +773,7 @@
             "cakeCustom": "메모리 케이크",
             "userCustom": "업로드"
         },
+        "font": ["KERINm", "KCUBEr"],
         "default": ["카오폴리스의", "젊은이"],
         "sign": "#"
     },
@@ -836,6 +839,7 @@
             "spf3Custom": "祭典 3",
             "cakeCustom": "記憶蛋糕"
         },
+        "font": ["DFPT_AZ5", "DFPT_ZY9"],
         "default": ["蠻頹的", "年輕人"],
         "sign": "#"
     }

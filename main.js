@@ -15,14 +15,6 @@ const load = () => {
             return ['USen','EUnl','USfr','EUfr','EUde','EUit','EUru','USes','EUes', 'KRko'].indexOf(language) !== -1;
         }
 
-        // The fonts used on the tag
-        const langFonts = {
-            JPja: ["Kurokane", "Rowdy"],
-            CNzh: ["HanyiZongyi", "HuakangZongyi"],
-            KRko: ["KERINm", "KCUBEr"],
-            TWzh: ["DFPT_AZ5", "DFPT_ZY9"]
-        }
-
         const langRegex = /\?lang=(\w{4})/;
         const language = location.search && langRegex.test(location.search) ? langRegex.exec(location.search)[1] : 'USen';
         if (Object.keys(lang).indexOf(language) === -1) {
@@ -118,22 +110,8 @@ const load = () => {
         const textCtx = textCanvas.getContext('2d');
         textCtx.scale(textScale, textScale);
 
-        const getFont = (textType) => {
-            const fonts = [];
-            if (!textType) {
-                fonts.push('Splat-text');
-                if (langFonts[language]) {
-                    fonts.push(langFonts[language][0]);
-                }
-            } else {
-                fonts.push('Splat-title');
-                if (langFonts[language]) {
-                    fonts.push(langFonts[language][1]);
-                }
-            }
-
-            return fonts.join(', ');
-        }
+        const textFont = `Splat-text${lang[language].font?','+lang[language].font[0]:''}`;
+        const titleFont = `Splat-title${lang[language].font?','+lang[language].font[1]:''}`;
 
         // please dont use this unless you receive permission :(
         let forceDisableWatermark = false;
@@ -184,9 +162,10 @@ const load = () => {
             textCtx.textAlign = 'left';
             if (tag.title.toString()) {
                 textCtx.save();
-                textCtx.font = `36px ${getFont()}`;
+                textCtx.font = `36px ${textFont}`;
                 textCtx.letterSpacing = "-0.3px";
-                const xScale = getXScale(textCtx.measureText(tag.title.toString()).width, 700-32);
+                const textWidth = textCtx.measureText(tag.title.toString()).width;
+                const xScale = getXScale(textWidth, 700-32);
 
                 if (tag.isCustom) {
                     clickRegions[0].style = `--x1: 15px; --y1: 5px; --x2: ${xScale < 1 ? 685 : Math.round(textWidth + 15)}px; --y2: 50px;`;
@@ -209,7 +188,7 @@ const load = () => {
                 // in game italic value is 0.12
                 textCtx.transform(1, 0, -7.5/100, 1, 0, 0);
                 textCtx.scale(xScale, 1);
-                textCtx.fillText(fullTitle, 18 / xScale, 42);
+                textCtx.fillText(tag.title.toString(), 18 / xScale, 42);
                 textCtx.restore();
                 textCtx.letterSpacing = "0px";
             } else {
@@ -220,13 +199,14 @@ const load = () => {
             // Write tag text (if not empty)
             if (tag.id.length) {
                 textCtx.save();
-                textCtx.font = `24px ${getFont()}`;
+                textCtx.font = `24px ${textFont}`;
                 textCtx.letterSpacing = "0.2px";
 
                 // tag text should adjust to the leftmost badge position.
                 const leftBadge = tag.badges.indexOf(tag.badges.find(b => b !== -1));
                 const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge) - 48;
-                const xScale = getXScale(textCtx.measureText(tag.id).width, maxX);
+                const textWidth = textCtx.measureText(tag.id).width;
+                const xScale = getXScale(textWidth, maxX);
                 clickRegions[3].style = `--x1: 25px; --y1: 165px; --x2: ${(xScale < 1 ? maxX : Math.round(textWidth)) + 25}px; --y2: 185px;`;
 
                 textCtx.scale(xScale, 1);
@@ -239,9 +219,10 @@ const load = () => {
             // Write player name
             if (tag.name.length) {
                 textCtx.save();
-                textCtx.font = `66px ${getFont(1)}`;
+                textCtx.font = `66px ${titleFont}`;
                 textCtx.letterSpacing = "-0.4px";
-                const xScale = getXScale(textCtx.measureText(tag.name).width, 700-32);
+                const textWidth = textCtx.measureText(tag.name).width;
+                const xScale = getXScale(textWidth, 700-32);
 
                 const x1 = 700/2-1.5 - Math.round(textWidth / 2);
                 clickRegions[2].style = `--x1: ${xScale < 1 ? 15 : Math.round(700/2-1.5 - textWidth/2)}px; --y1: 70px; --x2: ${xScale < 1 ? 685 : Math.round(x1 + textWidth)}px; --y2: 120px;`;
@@ -298,7 +279,7 @@ const load = () => {
                     height: 40,
                 }
 
-                textCtx.font = '14px Splat-text';
+                textCtx.font = `14px ${textFont}`;
                 textCtx.textAlign = 'center';
                 textCtx.fillStyle = '#ffffff';
                 const wmX = 700 - wm.width - wm.offset.x;
