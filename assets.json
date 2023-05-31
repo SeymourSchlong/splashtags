@@ -169,7 +169,7 @@
         "Badge_CoopBigRunTrophy_Lv00.png","Badge_CoopBigRunTrophy_Lv01.png","Badge_CoopBigRunTrophy_Lv02.png","Badge_CoopContestTrophy_Lv00.png","Badge_CoopContestTrophy_Lv01.png","Badge_CoopContestTrophy_Lv02.png",
         
         
-        "Badge_NawaBattlerRank_Lv00.png","Badge_NawaBattlerRank_Lv01.png","Badge_NawaBattlerRank_Lv02.png",
+        "Badge_NawaBattlerCardNum_Lv00.png","Badge_NawaBattlerCardNum_Lv01.png","Badge_NawaBattlerCardNum_Lv02.png",
 
         "Badge_CoopClearDangerRateMax.png",
         "Badge_NawaBattlerWinAllNpcLevel3.png",
@@ -194,7 +194,7 @@
         "NAME:misc#badge-other",
         
         "Badge_PlayerRank_Lv00.png","Badge_PlayerRank_Lv01.png","Badge_PlayerRank_Lv02.png","Badge_PlayerRank_Lv03.png","Badge_PlayerRank_Lv04.png","Badge_PlayerRank_Lv05.png","Badge_PlayerRank_Lv06.png","Badge_PlayerRank_Lv07.png","Badge_PlayerRank_Lv08.png","Badge_PlayerRank_Lv09.png","Badge_PlayerRank_Lv10.png","Badge_PlayerRank_Lv11.png",
-        "Badge_NawaBattlerCardNum_Lv00.png","Badge_NawaBattlerCardNum_Lv01.png","Badge_NawaBattlerCardNum_Lv02.png","Badge_NawaBattlerRank_Lv03.png","Badge_NawaBattlerRank_Lv04.png","Badge_NawaBattlerRank_Lv05.png","Badge_NawaBattlerRank_Lv06.png","Badge_NawaBattlerRank_Lv07.png","Badge_NawaBattlerRank_Lv08.png","Badge_NawaBattlerRank_Lv09.png","Badge_NawaBattlerRank_Lv10.png","Badge_NawaBattlerRank_Lv11.png","Badge_NawaBattlerRank_Lv12.png",
+        "Badge_NawaBattlerRank_Lv00.png","Badge_NawaBattlerRank_Lv01.png","Badge_NawaBattlerRank_Lv02.png","Badge_NawaBattlerRank_Lv03.png","Badge_NawaBattlerRank_Lv04.png","Badge_NawaBattlerRank_Lv05.png","Badge_NawaBattlerRank_Lv06.png","Badge_NawaBattlerRank_Lv07.png","Badge_NawaBattlerRank_Lv08.png","Badge_NawaBattlerRank_Lv09.png","Badge_NawaBattlerRank_Lv10.png","Badge_NawaBattlerRank_Lv11.png","Badge_NawaBattlerRank_Lv12.png",
         "Badge_SpendLottery_Lv00.png","Badge_SpendLottery_Lv01.png","Badge_SpendLottery_Lv02.png",
         "Badge_CatalogueLevel_Lv00.png","Badge_CatalogueLevel_Lv01.png",
         "Badge_FestRankMax.png",
