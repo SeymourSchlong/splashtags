@@ -65,6 +65,8 @@
         {
             "name": "mapsCustom","id": "banner-stages-custom"
         },
+        {"colour":"ffffff","file":"stages/barnacledime.png"},
+        {"colour":"ffffff","file":"stages/blackbelly.png"},
         {"colour":"ffffff","file":"stages/brinewater.png"},
         {"colour":"ffffff","file":"stages/eeltail.png"},
         {"colour":"ffffff","file":"stages/flounder.png"},
@@ -82,6 +84,7 @@
         {"colour":"ffffff","file":"stages/undertow.png"},
         {"colour":"ffffff","file":"stages/wahooworld.png"},
         {"colour":"ffffff","file":"stages/coop-gonefission.png"},
+        {"colour":"ffffff","file":"stages/coop-jammin.png"},
         {"colour":"ffffff","file":"stages/coop-maroonerbay.png"},
         {"colour":"ffffff","file":"stages/coop-sockeye.png"},
         {"colour":"ffffff","file":"stages/coop-spawninggrounds.png"},
@@ -144,6 +147,7 @@
         {"colour":"ffffff","file":"other/endsky.png"},
         {"colour":"ffffff","file":"other/catalogue2.png"},
         {"colour":"ffffff","file":"other/catalogue3.png"},
+        {"colour":"ffffff","file":"other/catalogue4.png"},
 
         {
             "name": "userCustom","id": "banner-uploaded-custom"

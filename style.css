@@ -419,11 +419,11 @@ label {
 }
 
 .scale.up {
-    background-image: url("./assets/images/plus.svg");
+    background-image: url("./assets/images/zoom_in.png");
 }
 
 .scale.down {
-    background-image: url("./assets/images/minus.svg");
+    background-image: url("./assets/images/zoom_out.png");
 }
 
 #showcredits {
