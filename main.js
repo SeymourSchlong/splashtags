@@ -22,6 +22,12 @@ const load = () => {
         }
         document.body.setAttribute('lang', language);
 
+        if (['USfr','EUfr','EUit','USes','EUes'].indexOf(language) !== -1) {
+            const tempTitles = lang[language].titles.first;
+            lang[language].titles.first = lang[language].titles.last;
+            lang[language].titles.last = tempTitles;
+        }
+
         // Replaces all of the UI element text with their appropriate language
         Object.keys(lang[language].ui).forEach(element => {
             document.querySelectorAll(`[name="${element}"]`).forEach(e => {
