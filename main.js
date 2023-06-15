@@ -515,7 +515,7 @@ const load = () => {
                 const sectionTitle = document.createElement('div');
                 sectionTitle.textContent = lang[language].sections[item.name]
                 sectionTitle.id = item.id;
-                sectionTitle.className = 'category-title' + (isCustom && (isBanner && !item.name.includes("band") || !isBanner) ? ' collapsed' : '');
+                sectionTitle.className = 'category-title' + (isCustom && (isBanner && (!item.name.includes("band") && !item.name.includes("pride")) || !isBanner) ? ' collapsed' : '');
                 if (isCustom) sectionTitle.appendChild(customAsterisk());
                 container.appendChild(sectionTitle);
 
