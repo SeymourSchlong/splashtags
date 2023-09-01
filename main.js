@@ -622,20 +622,30 @@ const load = () => {
 
         badgeContainer.appendChild(padding());
 
-        lang[language].titles.first.forEach(item => {
+        lang[language].titles.first.forEach((item, index) => {
             const option = document.createElement('option');
             option.textContent = item;
             if (item === lang[language].default[0]) {
                 option.defaultSelected = true;
             }
+            if (index !== 0) {
+                if (item === lang[language].titles.first[index - 1]) {
+                    option.style.display = 'none';
+                }
+            }
             titleinput1.appendChild(option);
         });
 
-        lang[language].titles.last.forEach(item => {
+        lang[language].titles.last.forEach((item, index) => {
             const option = document.createElement('option');
             option.textContent = item;
             if (item === lang[language].default[1]) {
                 option.defaultSelected = true;
+            }
+            if (index !== 0) {
+                if (item === lang[language].titles.last[index - 1]) {
+                    option.style.display = 'none';
+                }
             }
             titleinput2.appendChild(option);
         });
