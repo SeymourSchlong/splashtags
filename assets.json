@@ -28,10 +28,12 @@
 
         {"name": "coop","id": "banner-coop"},
 
-        {"colour":"ffffff","file":"Npl_Coop_Season01_Lv01.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv02.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv03.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv04.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv05.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv06.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv07.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv08.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv09.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv10.png"},{"colour":"ffffff","file":"Npl_Coop_Season03_Lv01.png"},
-        {"colour":"ffffff","file":"Npl_Coop_Season03_Lv02.png"},{"colour":"452a00","file":"Npl_Coop_Season03_Lv03.png"},{"colour":"ffffff","file":"Npl_Coop_Season03_Lv04.png"},
-        {"colour":"ffffff","file":"Npl_Coop_Season05_Lv01.png"},{"colour":"ffffff","file":"Npl_Coop_Season05_Lv02.png"},{"colour":"ffffff","file":"Npl_Coop_Season05_Lv03.png"},{"colour":"ffffff","file":"Npl_Coop_Season05_Lv04.png"},
-        
+        {"colour":"ffffff","file":"Npl_Coop_Season01_Lv01.png"},{"colour":"ffffff","file":"Npl_Coop_Season03_Lv01.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv02.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv03.png"},
+        {"colour":"ffffff","file":"Npl_Coop_Season03_Lv04.png"},{"colour":"ffffff","file":"Npl_Coop_Season05_Lv01.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv04.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv05.png"},
+        {"colour":"ffffff","file":"Npl_Coop_Season05_Lv04.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv06.png"},{"colour":"ffffff","file":"Npl_Coop_Season03_Lv02.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv07.png"},
+        {"colour":"ffffff","file":"Npl_Coop_Season01_Lv08.png"},{"colour":"ffffff","file":"Npl_Coop_Season05_Lv03.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv10.png"},{"colour":"ffffff","file":"Npl_Coop_Season01_Lv09.png"},
+        {"colour":"ffffff","file":"Npl_Coop_Season05_Lv02.png"},{"colour":"452a00","file":"Npl_Coop_Season03_Lv03.png"},
+
 
         {"name": "jackpot","id": "banner-jackpot"},
 
