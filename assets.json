@@ -38,7 +38,7 @@
         {"colour":"ffffff","file":"Npl_Trg_Season01_Lv01.png"},{"colour":"ffffff","file":"Npl_Trg_Season01_Lv02.png"},{"colour":"ffffff","file":"Npl_Trg_Season03_Lv01.png"},{"colour":"ffffff","file":"Npl_Trg_Season03_Lv02.png"},
         {"colour":"ffffff","file":"Npl_Trg_Season05_Lv01.png"},{"colour":"ffffff","file":"Npl_Trg_Season05_Lv02.png"},
 
-        {"colour":"ffffff","file":"Npl_Fsodr00.png"},
+        {"colour":"ffffff","file":"Npl_Fsodr00.png"},{"colour":"ffffff","file":"Npl_Sdodr00.png"},
 
         {"colour":"ffffff","file":"Npl_Tutorial00.png"}
     ],

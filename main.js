@@ -998,7 +998,7 @@ const load = () => {
                 const bannerLength = banners.filter(b => b.file).length - customBannerLength;
                 const badgesLength = badges.filter(b => b.file).length - customBadgesLength;
 
-                console.log(`Loaded:\n${bannerLength + customBannerLength} banners (vanilla: ${bannerLength}, custom: ${customBannerLength})\n${badgesLength + customBadgesLength} badges  (vanilla: ${badgesLength}, custom: ${customBadgesLength})\n${lang[language].titles.first.length + lang[language].titles.last.length} titles.`);
+                console.log(`Loaded:\n${bannerLength + customBannerLength} banners (vanilla: ${bannerLength}, custom: ${customBannerLength})\n${badgesLength + customBadgesLength} badges  (vanilla: ${badgesLength}, custom: ${customBadgesLength})\n${lang[language].titles.first.length + lang[language].titles.last.length} titles (first: ${lang[language].titles.first.length}, last: ${lang[language].titles.last.length})`);
                 
                 return true;
             }
