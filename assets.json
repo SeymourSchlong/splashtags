@@ -157,6 +157,8 @@
         {"colour":"000000","file":"coloured/graffiti/preview.png","layers":2},
         {"colour":"000000","file":"coloured/tableturf/preview.png","layers":2},
         {"colour":"000000","file":"coloured/generic/preview.png","layers":2},
+        {"colour":"000000","file":"coloured/smallfry/preview.png","layers":2},
+        {"colour":"000000","file":"coloured/barcode/preview.png","layers":1},
 
         {
             "name": "miscCustom","id": "banner-other-custom"
