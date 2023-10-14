@@ -7,7 +7,7 @@ const load = () => {
     const customBadges = [];
     const watermarks = [];
 
-    const lang = {}
+    window.lang = {}
 
     const loadedLanguage = () => {
         // Languages here include a space between the titles
@@ -1003,7 +1003,6 @@ const load = () => {
                 return true;
             }
         });
-            
     }
 
     fetch('./assets.json').then(res => {

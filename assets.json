@@ -61,6 +61,7 @@
         {"colour":"ffffff","file":"deadline/SashiMori.png"},
         {"colour":"ffffff","file":"deadline/Wet_Floor.png"},
         {"colour":"ffffff","file":"deadline/Yoko_and_the_Gold_Bazookas.png"},
+        {"colour":"ffffff","file":"deadline/H2Whoa.png"},
 
         {
             "name": "specCustom","id": "banner-specials-custom"
@@ -336,11 +337,16 @@
         "weaponbrands/custom_jr.png",
         "weaponbrands/d.png",
         "weaponbrands/deco.png",
+        "weaponbrands/enperry.png",
         "weaponbrands/express.png",
+        "weaponbrands/foil_squeezer.png",
+        "weaponbrands/foil_flingza.png",
         "weaponbrands/neo.png",
+        "weaponbrands/new.png",
         "weaponbrands/nouveau.png",
         "weaponbrands/rg.png",
-        "weaponbrands/sorella.png",
+        "weaponbrands/sorella_inkline.png",
+        "weaponbrands/sheldonspick.png",
         "brands/amiibo.png",
         "brands/cuttlegear.png",
         "brands/grizzco.png",
