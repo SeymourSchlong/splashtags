@@ -1,4 +1,6 @@
 const load = () => {
+    const cb = Math.floor(Math.random()*99999);
+
     const loadQueue = [];
 
     const banners = [];
@@ -1005,7 +1007,7 @@ const load = () => {
         });
     }
 
-    fetch('./assets.json').then(res => {
+    fetch(`./assets.json?cb=${cb}`).then(res => {
         return res.json();
     }).then(data => {
         const toBadgeObject = (arr) => {
@@ -1035,7 +1037,7 @@ const load = () => {
         Object.assign(badges, toBadgeObject(data.badges));
         Object.assign(customBadges, toBadgeObject(data.customBadges));
 
-        fetch('./lang.json').then(res => {
+        fetch(`./lang.json`).then(res => {
             return res.json();
         }).then(data => {
             Object.assign(lang, data);
