@@ -33,10 +33,10 @@
 
         {"colour":"ffffff","file":"Npl_Mng_Lv01.png"},{"colour":"ffffff","file":"Npl_Mng_Lv02.png"},{"colour":"ffffff","file":"Npl_Mng_Lv03.png"},
         
-        {"colour":"ffffff","file":"Npl_News_Season05_Lv01.png"},{"colour":"ffffff","file":"Npl_News_Season05_Lv02.png"},{"colour":"ffffff","file":"Npl_News_Season05_Lv03.png"},
+        {"colour":"ffffff","file":"Npl_News_Season05_Lv01.png"},{"colour":"ffffff","file":"Npl_News_Season05_Lv02.png"},{"colour":"ffffff","file":"Npl_News_Season05_Lv03.png"},{"colour":"f45326","file":"Npl_News_Season05_Lv04.png"},
 
         {"colour":"ffffff","file":"Npl_Trg_Season01_Lv01.png"},{"colour":"ffffff","file":"Npl_Trg_Season01_Lv02.png"},{"colour":"ffffff","file":"Npl_Trg_Season03_Lv01.png"},{"colour":"ffffff","file":"Npl_Trg_Season03_Lv02.png"},
-        {"colour":"ffffff","file":"Npl_Trg_Season05_Lv01.png"},{"colour":"ffffff","file":"Npl_Trg_Season05_Lv02.png"},
+        {"colour":"ffffff","file":"Npl_Trg_Season05_Lv01.png"},{"colour":"ffffff","file":"Npl_Trg_Season05_Lv02.png"},{"colour":"ffffff","file":"Npl_Trg_Season05_Lv03.png"},{"colour":"3d659a","file":"Npl_Trg_Season05_Lv04.png"},
 
         {"colour":"ffffff","file":"Npl_Fsodr00.png"},{"colour":"ffffff","file":"Npl_Sdodr00.png"},
 
@@ -157,9 +157,12 @@
         {"colour":"000000","file":"coloured/doodles/preview.png","layers":3},
         {"colour":"000000","file":"coloured/graffiti/preview.png","layers":2},
         {"colour":"000000","file":"coloured/tableturf/preview.png","layers":2},
-        {"colour":"000000","file":"coloured/generic/preview.png","layers":2},
         {"colour":"000000","file":"coloured/smallfry/preview.png","layers":2},
         {"colour":"000000","file":"coloured/barcode/preview.png","layers":1},
+        {"colour":"000000","file":"coloured/display/preview.png","layers":1},
+        {"colour":"000000","file":"coloured/propaganda/preview.png","layers":2},
+        {"colour":"000000","file":"coloured/squid_octo/preview.png","layers":2},
+        {"colour":"000000","file":"coloured/generic/preview.png","layers":2},
 
         {
             "name": "miscCustom","id": "banner-other-custom"
