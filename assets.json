@@ -84,8 +84,21 @@
         {"colour":"ffffff","file":"electrodev/chump.png"},
         {"colour":"ffffff","file":"electrodev/kraken.png"},
         
+        {
+            "name": "spf3Custom","id": "banner-fest3-custom"
+        },
+        {"colour":"ffffff","file":"splatfests/fest_0.png"},
+        {"colour":"ffffff","file":"splatfests/fest_1.png"},
+        {"colour":"ffffff","file":"splatfests/fest_2.png"},
+        {"colour":"ffffff","file":"splatfests/fest_3.png"},
+        {"colour":"ffffff","file":"splatfests/fest_4.png"},
+        {"colour":"ffffff","file":"splatfests/fest_5.png"},
+        {"colour":"ffffff","file":"splatfests/fest_6.png"},
+        {"colour":"ffffff","file":"splatfests/fest_7.png"},
+        {"colour":"ffffff","file":"splatfests/fest_8.png"},
+        {"colour":"ffffff","file":"splatfests/fest_9.png"},
+        {"colour":"ffffff","file":"splatfests/fest_10.png"},
 
-        
         {
             "name": "mapsCustom","id": "banner-stages-custom"
         },
