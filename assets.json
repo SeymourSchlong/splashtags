@@ -108,6 +108,7 @@
 		},
 		{"colour":"ffffff","file":"stages/barnacledime.png"},
 		{"colour":"ffffff","file":"stages/blackbelly.png"},
+		{"colour":"ffffff","file":"stages/bluefindepot.png"},
 		{"colour":"ffffff","file":"stages/brinewater.png"},
 		{"colour":"ffffff","file":"stages/crableg.png"},
 		{"colour":"ffffff","file":"stages/eeltail.png"},
@@ -120,6 +121,7 @@
 		{"colour":"ffffff","file":"stages/manta.png"},
 		{"colour":"ffffff","file":"stages/mincemeat.png"},
 		{"colour":"ffffff","file":"stages/museum.png"},
+		{"colour":"ffffff","file":"stages/roboromen.png"},
 		{"colour":"ffffff","file":"stages/scorchgorge.png"},
 		{"colour":"ffffff","file":"stages/shipshape.png"},
 		{"colour":"ffffff","file":"stages/sturgeon.png"},
@@ -198,6 +200,7 @@
 		{"colour":"ffffff","file":"other/catalogue3.png"},
 		{"colour":"ffffff","file":"other/catalogue4.png"},
 		{"colour":"ffffff","file":"other/catalogue5.png"},
+		{"colour":"ffffff","file":"other/catalogue6.png"},
 
 		{
 			"name": "userCustom","id": "banner-uploaded-custom"
