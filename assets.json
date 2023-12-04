@@ -86,6 +86,8 @@
 		{"colour":"ffffff","file":"electrodev/zooka.png"},
 		{"colour":"ffffff","file":"electrodev/chump.png"},
 		{"colour":"ffffff","file":"electrodev/kraken.png"},
+		{"colour":"ffffff","file":"electrodev/splash.png"},
+		{"colour":"ffffff","file":"electrodev/screen.png"},
 		
 		{
 			"name": "spf3Custom","id": "banner-fest3-custom"
