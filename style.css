@@ -228,7 +228,7 @@ a {
 
     background-color: transparent;
     border: none;
-    width: 232px;
+    width: 180px;
     height: 53px;
     padding-bottom: 10px;
 
@@ -295,18 +295,20 @@ a {
     width: 100%;
 }
 
-.imglistcontainer img {
-    transition: .05s linear;
+.imglistcontainer img, .imglistcontainer picture {
     background-color: #111;
     border-radius: 5px;
+    transition: .07s linear;
 }
 
-#bannercontainer img {
+#bannercontainer img, #savedcontainer img,
+#bannercontainer picture, #savedcontainer picture {
     width: calc(700px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
     height: calc(200px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
 }
 
-#badgecontainer img, .collapsed-badges {
+#badgecontainer img, .collapsed-badges,
+#badgecontainer picture {
     width: calc(700px / var(--items) - 6px);
     height: calc(700px / var(--items) - 6px);
 }

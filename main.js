@@ -539,9 +539,22 @@ const load = () => {
 				return;
 			}
 			loadQueue.push(undefined);
+
 			const img = new Image();
-			img.src = item.file;
+			img.src = item.file + '.png';
+
+			// Use Picture element to allow usage of WEBP and when not supported, use PNG.
+			const picture = document.createElement('picture');
+			const webpSource = document.createElement('source');
+			webpSource.srcset = item.file + '.webp';
+			const pngSource = document.createElement('source');
+			pngSource.srcset = item.file + '.png';
+			picture.appendChild(webpSource);
+			picture.appendChild(pngSource);
+			picture.appendChild(img);
+			
 			item.image = img;
+
 			img.onload = () => {
 				if (isBanner && item.file.includes('Tutorial')) renderSplashtag();
 				loadQueue.pop();
@@ -551,7 +564,7 @@ const load = () => {
 				item.layerImages = [];
 				for (let i = 0; i < item.layers; i++) {
 					const layer = new Image();
-					layer.src = item.file.replace('preview', i+1);
+					layer.src = item.file.replace('preview', i+1) + '.png';
 					item.layerImages.push(layer);
 				}
 			}
@@ -565,7 +578,7 @@ const load = () => {
 				img.classList.add('selected');
 			}
 
-			currentCategory.appendChild(img);
+			currentCategory.appendChild(picture);
 		}
 
 		// Add options for select menus
@@ -1007,7 +1020,7 @@ const load = () => {
 		});
 	}
 
-	fetch(`./assets.json?cb=${cb}`).then(res => {
+	fetch(`./assets.min.json?cb=${cb}`).then(res => {
 		return res.json();
 	}).then(data => {
 		const toBadgeObject = (arr) => {
@@ -1037,7 +1050,7 @@ const load = () => {
 		Object.assign(badges, toBadgeObject(data.badges));
 		Object.assign(customBadges, toBadgeObject(data.customBadges));
 
-		fetch(`./lang.json`).then(res => {
+		fetch(`./lang.min.json`).then(res => {
 			return res.json();
 		}).then(data => {
 			Object.assign(lang, data);
