@@ -44,7 +44,7 @@
             function selectBadge (index) {
                 selectTab(2);
                 document.querySelectorAll('input[name="badgenum"]')[index].click();
-                document.querySelector('#badgecontainer .selected').parentElement.previousElementSibling.classList.remove('collapsed');
+                document.querySelector('#badgecontainer .selected').parentElement.parentElement.previousElementSibling.classList.remove('collapsed');
                 document.querySelector('#badgecontainer .selected').scrollIntoView();
             }
         </script>
@@ -63,12 +63,13 @@
                         <div onclick="selectBadge(1)"></div>
                         <div onclick="selectBadge(2)"></div>
                     </div>
-                    <canvas id="splashtag" width="700" height="200"></canvas><img src="./assets/banners/Npl_Tutorial00.png" style="display: none;">
+                    <canvas id="splashtag" width="700" height="200"></canvas><picture><source srcset="./assets/banners/Npl_Tutorial00.webp"></source><source srcset="./assets/banners/Npl_Tutorial00.png"></source><img src="./assets/banners/Npl_Tutorial00.png" style="display: none;"></picture>
                     <br>
                     <div id="tab-buttons">
                         <input class="tab selected" type="button" value="Text" name="tabText">
                         <input class="tab" type="button" value="Banners" name="tabBanners">
                         <input class="tab" type="button" value="Badges" name="tabBadges">
+                        <input class="tab" type="button" value="Saved" name="tabSaved">
                     </div>
                     <div class="tabcontainer hidecustom">
 
@@ -134,6 +135,15 @@
                             <label><input type="radio" name="badgenum" value="1" checked><span name="textSlot1">Slot 1</span></label> - <label><input type="radio" name="badgenum" value="2"><span name="textSlot2">Slot 2</span></label> - <label><input type="radio" name="badgenum" value="3"><span name="textSlot3">Slot 3</span></label><div class="spacer"></div><label class=>(<span name="textUpload">Upload</span>)<div class="spacer"></div><input type="file" id="custombadge" style="display: none;" multiple accept="image/*"></label> <select id="badgesection"></select>
                             <div class="imglistcontainer"><div id="badgecontainer"></div></div>
                             <div class="bottomcontainer">
+                                <button class="scale down" data-do="1"></button><button class="scale up" data-do="-1"></button>
+                            </div>
+                        </div>
+
+                        <!-- Saved -->
+                        <div class="tabcontent hidden" data-name="saved" data-min="2" data-max="4" data-scale="2" style="--items: 2;">
+                            <div class="imglistcontainer"><div id="savedcontainer"></div></div>
+                            <div class="bottomcontainer">
+                                <input type="button" name="buttonSaveNew" id="savedsave" value="Save new">
                                 <button class="scale down" data-do="1"></button><button class="scale up" data-do="-1"></button>
                             </div>
                         </div>

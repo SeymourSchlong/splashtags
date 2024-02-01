@@ -9,6 +9,8 @@ const load = () => {
 	const customBadges = [];
 	const watermarks = [];
 
+	let saved = [];
+
 	window.lang = {}
 
 	const loadedLanguage = () => {
@@ -66,26 +68,27 @@ const load = () => {
 			title: {
 				first: 0,
 				last: 0,
-				string: 'Splatlandian Youth',
-				toString: () => {
-					const chosentitles = [];
-					if (tag.isCustom) chosentitles.push(tag.title.string);
-					else {
-						if (tag.title.first) chosentitles.push(lang[language].titles.first[tag.title.first]);
-						if (tag.title.last) chosentitles.push(lang[language].titles.last[tag.title.last]);
-					}
-					if (chosentitles[0])
-						return chosentitles.join(isSpaceLang(language) ? (!(chosentitles[0]?.endsWith('-') || chosentitles[1]?.startsWith('-')) ? ' ' : '') : '');
-					else
-						return '';
-				}
+				string: 'Splatlandian Youth'
 			},
 			banner: 0,
 			id: lang[language].sign + '0001',
 			badges: [ -1, -1, -1 ],
 			colour: '#ffffff',
-			bgColours: ['#fff', '#f00', '#0f0', '#00f'],
+			bgColours: ['#ffffff', '#ff0000', '#00ff00', '#0000ff'],
 			isCustom: false,
+		}
+
+		const titleToString = () => {
+			const chosentitles = [];
+			if (tag.isCustom) chosentitles.push(tag.title.string);
+			else {
+				if (tag.title.first) chosentitles.push(lang[language].titles.first[tag.title.first]);
+				if (tag.title.last) chosentitles.push(lang[language].titles.last[tag.title.last]);
+			}
+			if (chosentitles[0])
+				return chosentitles.join(isSpaceLang(language) ? (!(chosentitles[0]?.endsWith('-') || chosentitles[1]?.startsWith('-')) ? ' ' : '') : '');
+			else
+				return '';
 		}
 		
 		const waitUntil = (fn, length) => {
@@ -95,6 +98,12 @@ const load = () => {
 		}
 
 		const clickRegions = document.querySelector('#clickRegions').querySelectorAll('div');
+
+		clickRegions.forEach(region => {
+			region.addEventListener('contextmenu', (evt) => {
+				evt.preventDefault();
+			});
+		});
 
 		const canvas = document.querySelector('#splashtag');
 		const ctx = canvas.getContext('2d');
@@ -168,11 +177,11 @@ const load = () => {
 
 			// Write titles
 			textCtx.textAlign = 'left';
-			if (tag.title.toString()) {
+			if (titleToString()) {
 				textCtx.save();
 				textCtx.font = `36px ${textFont}`;
 				textCtx.letterSpacing = "-0.3px";
-				const textWidth = textCtx.measureText(tag.title.toString()).width;
+				const textWidth = textCtx.measureText(titleToString()).width;
 				const xScale = getXScale(textWidth, 700-32);
 
 				if (tag.isCustom) {
@@ -196,7 +205,7 @@ const load = () => {
 				// in game italic value is 0.12
 				textCtx.transform(1, 0, -7.5/100, 1, 0, 0);
 				textCtx.scale(xScale, 1);
-				textCtx.fillText(tag.title.toString(), 18 / xScale, 42);
+				textCtx.fillText(titleToString(), 18 / xScale, 42);
 				textCtx.restore();
 				textCtx.letterSpacing = "0px";
 			} else {
@@ -427,6 +436,14 @@ const load = () => {
 		const bannersection = document.querySelector('#bannersection');
 		const badgesection = document.querySelector('#badgesection');
 
+		// image containers
+		const badgeContainer = document.querySelector('#badgecontainer');
+		const bannerContainer = document.querySelector('#bannercontainer');
+		const savedContainer = document.querySelector('#savedcontainer');
+
+		// saving buttons
+		const savedsave = document.querySelector('#savedsave');
+
 		customtitle.value = lang[language].default.join(isSpaceLang(language) ? ((!lang[language].default[0].endsWith('-')) ? ' ' : '') : '');
 		customtitle.placeholder = customtitle.value;
 		tag.title.string = customtitle.value;
@@ -462,8 +479,6 @@ const load = () => {
 		tag.title.first = lang[language].titles.first.indexOf(lang[language].default[0]);
 		tag.title.last = lang[language].titles.last.indexOf(lang[language].default[1]);
 
-		const bannerContainer = document.querySelector('#bannercontainer');
-		
 		bannersection.addEventListener('change', () => {
 			bannerContainer.querySelector('#' + bannersection.value).scrollIntoView();
 		});
@@ -482,9 +497,11 @@ const load = () => {
 				s.classList.remove('selected');
 			});
 			if (tag.banner !== newBanner) {
+				// const usesCustomColour = tag.colour !== banners[tag.banner].colour;
 				tag.banner = newBanner;
 				item.image.classList.add('selected');
-				tag.colour = customcolour.value = '#' + banners[tag.banner].colour;
+				// if (!usesCustomColour)
+					tag.colour = customcolour.value = '#' + banners[tag.banner].colour;
 				bannercolour.dataset.layers = item.layers || 0;
 			} else {
 				banners[defaultBannerIndex].image.click();
@@ -588,7 +605,6 @@ const load = () => {
 
 		bannerContainer.appendChild(padding());
 
-		const badgeContainer = document.querySelector('#badgecontainer');
 		const badgeRadios = document.querySelectorAll('input[name="badgenum"]');
 
 		badgeRadios.forEach(r => {
@@ -717,6 +733,182 @@ const load = () => {
 			});
 		}
 
+		const loadTagData = () => {
+			if (!localStorage.splashtagCreator) saved = [];
+			else saved = JSON.parse(localStorage.splashtagCreator);
+		}
+
+		const saveTagData = () => {
+			localStorage.splashtagCreator = JSON.stringify(saved);
+		}
+
+		const saveNew = () => {
+			loadTagData();
+
+			const tagClone = {};
+			Object.assign(tagClone, structuredClone(tag));
+
+			tagClone.banner = banners[tagClone.banner].file;
+			if (tagClone.banner.startsWith('data:')) tagClone.banner = './assets/banners/Npl_Tutorial00';
+
+			tagClone.badges.forEach((badge, i) => {
+				if (badge !== -1) {
+					tagClone.badges[i] = badges[badge].file;
+					if (tagClone.badges[i].startsWith('data:')) tagClone.badges[i] = -1;
+				}
+			});
+
+			tagClone.title.first = lang[language].titles.first[tagClone.title.first];
+			tagClone.title.last = lang[language].titles.last[tagClone.title.last];
+
+			saved.unshift(tagClone);
+
+			saveTagData();
+			loadSaved();
+		}
+
+		// Hover option to save over current banner
+		const overwriteSelected = (i) => {
+			loadTagData();
+
+			const tagClone = {};
+			Object.assign(tagClone, structuredClone(tag));
+
+			tagClone.banner = banners[tagClone.banner].file;
+			if (tagClone.banner.startsWith('data:')) tagClone.banner = './assets/banners/Npl_Tutorial00';
+
+			tagClone.badges.forEach((badge, i) => {
+				if (badge !== -1) {
+					tagClone.badges[i] = badges[badge].file;
+					console.log(tagClone.badges[i]);
+					if (tagClone.badges[i].startsWith('data:')) tagClone.badges[i] = -1;
+				}
+			});
+
+			tagClone.title.first = lang[language].titles.first[tagClone.title.first];
+			tagClone.title.last = lang[language].titles.last[tagClone.title.last];
+
+			saved[i] = tagClone;
+
+			saveTagData();
+			loadSaved();
+		}
+
+		const deleteSelected = (i) => {
+			loadTagData();
+
+			saved.splice(i, 1);
+
+			saveTagData();
+			loadSaved();
+		}
+
+		const loadSelected = (i) => {
+			loadTagData();
+
+			Object.assign(tag, structuredClone(saved[i]));
+
+			const nameColour = tag.colour;
+
+			// assign values from the specified save
+			// name
+			nameinput.value = tag.name;
+			// id
+			taginput.value = tag.id;
+			// title a
+			tag.title.first = lang[language].titles.first.indexOf(tag.title.first);
+			if (tag.title.first < 0) tag.title.first = lang[language].titles.first.indexOf(lang[language].default[0]);
+			titleinput1.selectedIndex = tag.title.first;
+			// title b
+			tag.title.last = lang[language].titles.last.indexOf(tag.title.last);
+			if (tag.title.last < 0) tag.title.last = lang[language].titles.last.indexOf(lang[language].default[1]);
+			titleinput2.selectedIndex = tag.title.last;
+			// custom title
+			customtitle.value = tag.title.string;
+			// is custom
+			customcheck.checked = tag.isCustom;
+			// bg colours
+			tag.bgColours.forEach((colour, i) => {
+				bannercolourpickers[i].value = colour;
+			});
+
+			// badges
+			tag.badges.forEach((badge, i) => {
+				tag.badges[i] = badges.findIndex(b => b.file === badge);
+			});
+			badgeRadios[2].click();
+			badgeRadios[0].click();
+
+			// banner
+			//tag.banner = banners.findIndex(b => b.file === tag.banner);
+			//banners[tag.banner].image.click();
+			banners.find(b => b.file === tag.banner).image.click();
+			
+			// name colour
+			customcolour.value = nameColour;
+			tag.colour = nameColour;
+
+			renderSplashtag();
+
+			saveTagData();
+		}
+
+		const loadSaved = () => {
+			loadTagData();
+
+			// clear current saved container
+			savedContainer.innerHTML = '';
+
+			// Select
+			saved.forEach((savedTag, i) => {
+				// create element
+				const element = document.createElement('div');
+				//element.style.backgroundImage = `url("${banners.find(b => b.file === savedTag.banner).image.currentSrc}")`;
+				element.style.backgroundImage = `url("${savedTag.banner}.webp")`;
+				element.className = 'saved-tag';
+
+				// add click event
+				element.addEventListener('click', (evt) => {
+					if (evt.target.classList !== 'saved-button-container') loadSelected(i);
+				});
+
+				// add overwrite and delete events
+				const editButtons = document.createElement('div');
+				editButtons.className = 'saved-button-container';
+
+				const deleteIcon = document.createElement('div');
+				deleteIcon.className = 'delete';
+				deleteIcon.title = lang[language].ui.saveDelete;
+				deleteIcon.addEventListener('click', () => {
+					deleteSelected(i);
+				});
+
+				const overwriteIcon = document.createElement('div');
+				overwriteIcon.className = 'overwrite';
+				overwriteIcon.title = lang[language].ui.saveOver;
+				overwriteIcon.addEventListener('click', () => {
+					overwriteSelected(i);
+				});
+
+				editButtons.appendChild(overwriteIcon);
+				editButtons.appendChild(deleteIcon);
+
+				const savedName = document.createElement('div');
+				savedName.className = 'saved-name';
+				savedName.textContent = savedTag.name;
+				savedName.style.color = savedTag.colour;
+
+				element.appendChild(editButtons);
+				element.appendChild(savedName);
+
+				savedContainer.appendChild(element);
+			});
+
+			saveTagData();
+		}
+
+		loadSaved();
+
 		const events = [
 			// Random title button (both)
 			{
@@ -734,7 +926,7 @@ const load = () => {
 					titleinput1.selectedIndex = title1;
 					tag.title.first = title1;
 
-					tag.title.string = tag.title.toString();
+					tag.title.string = titleToString();
 					customtitle.value = tag.title.string;
 				}
 			},
@@ -746,7 +938,7 @@ const load = () => {
 					titleinput2.selectedIndex = title2;
 					tag.title.last = title2;
 
-					tag.title.string = tag.title.toString();
+					tag.title.string = titleToString();
 					customtitle.value = tag.title.string;
 				}
 			},
@@ -923,6 +1115,13 @@ const load = () => {
 					tag.bgColours[3] = bannercolourpickers[3].value;
 				}
 			},
+			// Save new banner
+			{
+				elm: savedsave,
+				run: () => {
+					saveNew();
+				}
+			}
 		];
 
 		const getEvent = (elm) => {
@@ -938,6 +1137,7 @@ const load = () => {
 			randomall,
 			credits,
 			creditsX,
+			savedsave
 		];
 
 		const changeEvents = [

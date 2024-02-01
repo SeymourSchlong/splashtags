@@ -68,7 +68,7 @@ body, select, input {
     font-family: 'Splat-text';
 }
 
-.tab, .category-title, .title-font {
+.tab, .category-title, .title-font, .saved-tag {
     font-family: 'Splat-title';
 }
 
@@ -81,7 +81,8 @@ option[value="JPja"] {
 
 body[lang="JPja"] .tab,
 body[lang="JPja"] .category-title,
-body[lang="JPja"] .title-font {
+body[lang="JPja"] .title-font,
+body[lang="JPja"] .saved-tag {
     font-family: 'Splat-title', 'Rowdy';
 }
 
@@ -94,7 +95,8 @@ option[value="KRko"] {
 
 body[lang="KRko"] .tab,
 body[lang="KRko"] .category-title,
-body[lang="KRko"] .title-font {
+body[lang="KRko"] .title-font,
+body[lang="KRko"] .saved-tag {
     font-family: 'Splat-title', 'KCUBEr';
 }
 
@@ -107,7 +109,8 @@ option[value="CNzh"] {
 
 body[lang="CNzh"] .tab,
 body[lang="CNzh"] .category-title,
-body[lang="CNzh"] .title-font {
+body[lang="CNzh"] .title-font,
+body[lang="CNzh"] .saved-tag {
     font-family: 'Splat-title', "HuakangZongyi";
 }
 
@@ -120,7 +123,8 @@ option[value="TWzh"] {
 
 body[lang="TWzh"] .tab,
 body[lang="TWzh"] .category-title,
-body[lang="TWzh"] .title-font {
+body[lang="TWzh"] .title-font,
+body[lang="TWzh"] .saved-tag {
     font-family: 'Splat-title', "DFPT_ZY9";
 }
 
@@ -264,6 +268,9 @@ a {
     width: 750px;
     margin: auto;
     padding-top: 8px;
+
+    resize: vertical;
+    min-height: 200px;
 }
 
 .chrome .imglistcontainer {
@@ -276,12 +283,14 @@ a {
     
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 6px;
     
     box-sizing: border-box;
     padding: 0;
-    height: 300px;
+    transition: 0.5s;
+    min-height: 50px;
+    max-height: 300px;
 }
 
 .category {
@@ -558,4 +567,54 @@ small {
 }
 .credit > a {
     text-align: left;
+}
+
+#savedsave {
+    font-size: 16px;
+    vertical-align: text-bottom;
+}
+
+.saved-tag {
+    --size: calc(20px + 6px * (4 - var(--items)));
+    background-color: #111;
+    border-radius: 5px;
+    transition: .07s linear;
+    width: calc(700px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
+    height: calc(200px / var(--items) - (6px / var(--items)) * (var(--items) - 1));
+
+    background-size: cover;
+
+    overflow: hidden;
+    font-size: calc(0.5em + 0.5em * (5 - var(--items)));
+}
+
+.saved-button-container {
+    height: calc(var(--size) * 2);
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+}
+.saved-name {
+    margin-top: calc(var(--size) * -2);
+}
+.overwrite, .delete {
+    width: var(--size);
+    height: var(--size);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.overwrite:hover, .delete:hover {
+    transform: scale(1.25);
+}
+.overwrite {
+    background-image: url("./assets/images/edit.svg");
+}
+.delete {
+    background-image: url("./assets/images/delete.svg");
 }

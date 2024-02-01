@@ -18,6 +18,7 @@
 			"tabText": "Text",
 			"tabBanners": "Banners",
 			"tabBadges": "Badges",
+			"tabSaved": "Saved",
 			"textLanguage": "Language",
 			"textName": "Name",
 			"textTitles": "Title",
@@ -35,7 +36,10 @@
 			"textCustom": "Custom",
 			"textUpload": "Upload",
 			"textToggle": "Toggle",
-			"textColour": "Colour"
+			"textColour": "Colour",
+			"buttonSaveNew": "Save new",
+			"saveOver": "Save over",
+			"saveDelete": "Delete"
 		},
 		"sections": {
 			"vanilla": "Default",
@@ -89,6 +93,7 @@
 			"tabText": "Texto",
 			"tabBanners": "Fondo",
 			"tabBadges": "Insignias",
+			"tabSaved": "Ahorra",
 			"textLanguage": "Idioma",
 			"textName": "Nombre",
 			"textTitles": "Alias",
@@ -106,7 +111,10 @@
 			"textCustom": "Personalizar",
 			"textUpload": "Subir",
 			"textToggle": "Activado",
-			"textColour": "Color"
+			"textColour": "Color",
+			"buttonSaveNew": "Ahorra nuevo",
+			"saveOver": "Ahorrar",
+			"saveDelete": "Remover"
 		},
 		"sections": {
 			"vanilla": "En el Juego",
@@ -160,6 +168,7 @@
 			"tabText": "Texto",
 			"tabBanners": "Fondo",
 			"tabBadges": "Insignias",
+			"tabSaved": "Ahorra",
 			"textLanguage": "Idioma",
 			"textName": "Nombre",
 			"textTitles": "Títulos",
@@ -177,7 +186,10 @@
 			"textCustom": "Personalizar",
 			"textUpload": "Subir",
 			"textToggle": "Activado",
-			"textColour": "Color"
+			"textColour": "Color",
+			"buttonSaveNew": "Ahorra nuevo",
+			"saveOver": "Ahorrar",
+			"saveDelete": "Remover"
 		},
 		"sections": {
 			"vanilla": "En el Juego",
@@ -231,6 +243,7 @@
 			"tabText": "Texte",
 			"tabBanners": "Bannières",
 			"tabBadges": "Insignes",
+			"tabSaved": "Enregistré",
 			"textLanguage": "Langue",
 			"textName": "Nom",
 			"textTitles": "Titres",
@@ -248,7 +261,10 @@
 			"textCustom": "Personnaliser",
 			"textUpload": "Insérez le vôtre",
 			"textToggle": "Activée",
-			"textColour": "Couleur"
+			"textColour": "Couleur",
+			"buttonSaveNew": "Enregistrer nouveau",
+			"saveOver": "Remplacer",
+			"saveDelete": "Retirer"
 		},
 		"sections": {
 			"vanilla": "En Jeu",
@@ -302,6 +318,7 @@
 			"tabText": "Texte",
 			"tabBanners": "Bannières",
 			"tabBadges": "Insignes",
+			"tabSaved": "Enregistré",
 			"textLanguage": "Langue",
 			"textName": "Nom",
 			"textTitles": "Titres",
@@ -319,7 +336,10 @@
 			"textCustom": "Personnaliser",
 			"textUpload": "Insérez le vôtre",
 			"textToggle": "Activée",
-			"textColour": "Couleur"
+			"textColour": "Couleur",
+			"buttonSaveNew": "Enregistrer nouveau",
+			"saveOver": "Remplacer",
+			"saveDelete": "Retirer"
 		},
 		"sections": {
 			"vanilla": "En Jeu",
@@ -375,6 +395,7 @@
 			"tabText": "Tekst",
 			"tabBanners": "Bor",
 			"tabBadges": "Insignes",
+			"tabSaved": "Opgeslagen",
 			"textLanguage": "Taal",
 			"textName": "Naam",
 			"textTitles": "Titels",
@@ -392,7 +413,10 @@
 			"textCustom": "Aanpassen",
 			"textUpload": "Uploaden",
 			"textToggle": "Ingeschakeld",
-			"textColour": "Kleur"
+			"textColour": "Kleur",
+			"buttonSaveNew": "Nieuw opslaan",
+			"saveOver": "Overschrijf",
+			"saveDelete": "Verwijder"
 		},
 		"sections": {
 			"vanilla": "In het spel",
@@ -446,6 +470,7 @@
 			"tabText": "Text",
 			"tabBanners": "Banner",
 			"tabBadges": "Abzeichen",
+			"tabSaved": "Gespeichert",
 			"textLanguage": "Sprache",
 			"textName": "Name",
 			"textTitles": "Titel",
@@ -463,7 +488,10 @@
 			"textCustom": "Anpassen",
 			"textUpload": "Ermöglicht",
 			"textToggle": "Aktiviert",
-			"textColour": "Farbe"
+			"textColour": "Farbe",
+			"buttonSaveNew": "Neu speichern",
+			"saveOver": "Überschreiben",
+			"saveDelete": "Löschen"
 		},
 		"sections": {
 			"vanilla": "Im Spiel",
@@ -517,6 +545,7 @@
 			"tabText": "Testo",
 			"tabBanners": "Sfondi",
 			"tabBadges": "Spille",
+			"tabSaved": "Salvato",
 			"textLanguage": "Lingua",
 			"textName": "Nome",
 			"textTitles": "Titoli",
@@ -534,7 +563,10 @@
 			"textCustom": "Personalizzare",
 			"textUpload": "Caricare",
 			"textToggle": "Attivato",
-			"textColour": "Colore"
+			"textColour": "Colore",
+			"buttonSaveNew": "Salva nuovo",
+			"saveOver": "Sovrascrivi",
+			"saveDelete": "Rimuovere"
 		},
 		"sections": {
 			"vanilla": "In gioco",
@@ -588,6 +620,7 @@
 			"tabText": "Текст",
 			"tabBanners": "Баннеры",
 			"tabBadges": "Значки",
+			"tabSaved": "Спасено",
 			"textLanguage": "Язык",
 			"textName": "Имя",
 			"textTitles": "Титулы",
@@ -605,7 +638,10 @@
 			"textCustom": "Настроить",
 			"textUpload": "Закачать",
 			"textToggle": "Активировано",
-			"textColour": "Цвет"
+			"textColour": "Цвет",
+			"buttonSaveNew": "Сохранить новое",
+			"saveOver": "Заменить",
+			"saveDelete": "Удалять"
 		},
 		"sections": {
 			"vanilla": "В игре",
@@ -659,6 +695,7 @@
 			"tabText": "文章",
 			"tabBanners": "プレート",
 			"tabBadges": "バッジ",
+			"tabSaved": "保存",
 			"textLanguage": "言語",
 			"textName": "名前",
 			"textTitles": "ニっ名",
@@ -676,7 +713,10 @@
 			"textCustom": "カスタマイズ",
 			"textUpload": "アップロード",
 			"textToggle": "有効化",
-			"textColour": "色"
+			"textColour": "色",
+			"buttonSaveNew": "新しく保存",
+			"saveOver": "上書き",
+			"saveDelete": "削除"
 		},
 		"sections": {
 			"vanilla": "ゲームで",
@@ -731,6 +771,7 @@
 			"tabText": "文本",
 			"tabBanners": "背景",
 			"tabBadges": "徽章",
+			"tabSaved": "已保存",
 			"textLanguage": "语言",
 			"textName": "名称",
 			"textTitles": "称号",
@@ -748,7 +789,10 @@
 			"textCustom": "自定义",
 			"textUpload": "上传",
 			"textToggle": "启用",
-			"textColour": "颜色"
+			"textColour": "颜色",
+			"buttonSaveNew": "保存新的",
+			"saveOver": "重写",
+			"saveDelete": "删除"
 		},
 		"sections": {
 			"vanilla": "在游戏中",
@@ -804,6 +848,7 @@
 			"tabText": "텍스트",
 			"tabBanners": "플레이트",
 			"tabBadges": "배지",
+			"tabSaved": "저장됨",
 			"textLanguage": "언어",
 			"textName": "이름",
 			"textTitles": "별명",
@@ -821,7 +866,10 @@
 			"textCustom": "사용자 지정",
 			"textUpload": "업로드",
 			"textToggle": "활성화됨",
-			"textColour": "색깔"
+			"textColour": "색깔",
+			"buttonSaveNew": "새로 저장",
+			"saveOver": "덮어쓰기",
+			"saveDelete": "없애다"
 		},
 		"sections": {
 			"vanilla": "인게임",
@@ -876,6 +924,7 @@
 			"tabText": "文本",
 			"tabBanners": "背景",
 			"tabBadges": "徽章",
+			"tabSaved": "已儲存",
 			"textLanguage": "語言",
 			"textName": "名稱",
 			"textTitles": "別名",
@@ -893,7 +942,10 @@
 			"textCustom": "自定義",
 			"textUpload": "上傳",
 			"textToggle": "啟用",
-			"textColour": "顏色"
+			"textColour": "顏色",
+			"buttonSaveNew": "儲存新的",
+			"saveOver": "覆蓋",
+			"saveDelete": "消除"
 		},
 		"sections": {
 			"vanilla": "在遊戲中",
