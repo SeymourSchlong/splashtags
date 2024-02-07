@@ -104,7 +104,10 @@
 		{"colour":"ffffff","file":"splatfests/fest_9"},
 		{"colour":"ffffff","file":"splatfests/fest_10"},
 		{"colour":"ffffff","file":"splatfests/fest_11"},
+		{"colour":"ffffff","file":"splatfests/fest_11jp"},
 		{"colour":"ffffff","file":"splatfests/fest_12"},
+		{"colour":"ffffff","file":"splatfests/fest_13"},
+		{"colour":"ffffff","file":"splatfests/fest_13jp"},
 
 		{
 			"name": "mapsCustom","id": "banner-stages-custom"
@@ -460,6 +463,7 @@
 		"splatfests3/fest9_1","splatfests3/fest9_2","splatfests3/fest9_3",
 		"splatfests3/fest10_1","splatfests3/fest10_2","splatfests3/fest10_3",
 		"splatfests3/fest11_1","splatfests3/fest11_2","splatfests3/fest11_3",
+		"splatfests3/fest11_1","splatfests3/fest11jp_2","splatfests3/fest11jp_3",
 		"splatfests3/fest12_1","splatfests3/fest12_2","splatfests3/fest12_3",
 
 		"NAME:cakeCustom#badge-memcake-custom",
