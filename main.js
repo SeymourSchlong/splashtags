@@ -534,7 +534,16 @@ const load = () => {
 				const sectionTitle = document.createElement('div');
 				sectionTitle.textContent = lang[language].sections[item.name]
 				sectionTitle.id = item.id;
-				sectionTitle.className = 'category-title' + (isCustom && (isBanner && (!item.name.includes("band") && !item.name.includes("pride")) || !isBanner) ? ' collapsed' : '');
+				let isOpenByDefault = !isCustom;
+				if (isBanner && (item.name.includes('band'))) {
+					isOpenByDefault = true;
+				}
+				// Hide Side Order badges and banners until roughly a month after release
+				if (item.name.includes('side') && new Date() < new Date("March 21 2024")) {
+					isOpenByDefault = false;
+				}
+				sectionTitle.classList.add('category-title');
+				if (!isOpenByDefault) sectionTitle.classList.add('collapsed');
 				if (isCustom) sectionTitle.appendChild(customAsterisk());
 				container.appendChild(sectionTitle);
 
