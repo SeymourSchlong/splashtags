@@ -29,8 +29,8 @@
 
 		{"name": "side","id":"banner-sdodr"},
 
-		{"colour":"554b4b","file":"Npl_Sdodr_Locker_Lv01"},{"colour":"ffffff","file":"Npl_Sdodr_Locker_Lv02"},{"colour":"1c221c","file":"Npl_Sdodr_Locker_Lv03"},
 		{"colour":"352a2a","file":"Npl_Sdodr_Shop_Lv01"},{"colour":"fffbfb","file":"Npl_Sdodr_Shop_Lv02"},{"colour":"554b4b","file":"Npl_Sdodr_Shop_Lv03"},{"colour":"554b4b","file":"Npl_Sdodr_Shop_Lv04"},
+		{"colour":"554b4b","file":"Npl_Sdodr_Locker_Lv01"},{"colour":"ffffff","file":"Npl_Sdodr_Locker_Lv02"},{"colour":"1c221c","file":"Npl_Sdodr_Locker_Lv03"},
 
 
 		{"name": "jackpot","id": "banner-jackpot"},
@@ -436,6 +436,29 @@
 		"salmonrun/mudmouth_Lv00","salmonrun/mudmouth_Lv01","salmonrun/mudmouth_Lv02",
 		"salmonrun/griller_Lv00","salmonrun/griller_Lv01","salmonrun/griller_Lv02",
 		"salmonrun/chinook_Lv00","salmonrun/chinook_Lv01","salmonrun/chinook_Lv02",
+
+		"NAME:side#badge-sdodr-custom",
+		"sdodr/Swarming_Languendo_Lv00","sdodr/Swarming_Languendo_Lv01","sdodr/Swarming_Languendo_Lv02",
+		"sdodr/Marching_Andante_Lv00","sdodr/Marching_Andante_Lv01","sdodr/Marching_Andante_Lv02",
+		"sdodr/Battering_Lento_Lv00","sdodr/Battering_Lento_Lv01","sdodr/Battering_Lento_Lv02",
+		"sdodr/Drizzling_Capriccioso_Lv00","sdodr/Drizzling_Capriccioso_Lv01","sdodr/Drizzling_Capriccioso_Lv02",
+		"sdodr/Whirling_Accelerando_Lv00","sdodr/Whirling_Accelerando_Lv01","sdodr/Whirling_Accelerando_Lv02",
+		"sdodr/Springing_Spiccato_Lv00","sdodr/Springing_Spiccato_Lv01","sdodr/Springing_Spiccato_Lv02",
+		"sdodr/Gushing_Trionfale_Lv00","sdodr/Gushing_Trionfale_Lv01","sdodr/Gushing_Trionfale_Lv02",
+		"sdodr/Spawning_Accordo_Lv00","sdodr/Spawning_Accordo_Lv01","sdodr/Spawning_Accordo_Lv02",
+		"sdodr/Homing_Arpeggio_Lv00","sdodr/Homing_Arpeggio_Lv01","sdodr/Homing_Arpeggio_Lv02",
+		"sdodr/Towering_Nobilmente_Lv00","sdodr/Towering_Nobilmente_Lv01","sdodr/Towering_Nobilmente_Lv02",
+
+		"sdodr/Asynchronous_Rondo_Lv00","sdodr/Asynchronous_Rondo_Lv01","sdodr/Asynchronous_Rondo_Lv02",
+		"sdodr/Pinging_Marciale_Lv00","sdodr/Pinging_Marciale_Lv01","sdodr/Pinging_Marciale_Lv02",
+		"sdodr/Parallel_Canon_Lv00","sdodr/Parallel_Canon_Lv01","sdodr/Parallel_Canon_Lv02",
+		"sdodr/Marina_Agitando_Lv00","sdodr/Marina_Agitando_Lv01","sdodr/Marina_Agitando_Lv02",
+		"sdodr/Overlorder_Lv00","sdodr/Overlorder_Lv01","sdodr/Overlorder_Lv02",
+		
+		"sdodr/Panicking_Alla_Mambo_Lv00","sdodr/Panicking_Alla_Mambo_Lv01","sdodr/Panicking_Alla_Mambo_Lv02",
+		"sdodr/Portal_Lv00","sdodr/Portal_Lv01","sdodr/Portal_Lv02",
+		"sdodr/Turbine_Tower_Lv00","sdodr/Turbine_Tower_Lv01","sdodr/Turbine_Tower_Lv02",
+		"sdodr/Infinity_Ball_Lv00","sdodr/Infinity_Ball_Lv01","sdodr/Infinity_Ball_Lv02",
 
 		"NAME:charCustom#badge-chars-custom",
 		"npcs/hirooooo",
