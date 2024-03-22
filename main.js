@@ -539,9 +539,9 @@ const load = () => {
 					isOpenByDefault = true;
 				}
 				// Hide Side Order badges and banners until roughly a month after release
-				if (item.name.includes('side') && new Date() < new Date("March 21 2024")) {
-					isOpenByDefault = false;
-				}
+				//if (item.name.includes('side') && new Date() < new Date("March 21 2024")) {
+				//	isOpenByDefault = false;
+				//}
 				sectionTitle.classList.add('category-title');
 				if (!isOpenByDefault) sectionTitle.classList.add('collapsed');
 				if (isCustom) sectionTitle.appendChild(customAsterisk());
