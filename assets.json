@@ -268,8 +268,6 @@
 
 		"NAME:shop#badge-shops",
 		
-		"Badge_LimitedRewardLottery_Lv00","Badge_LimitedRewardLottery_Lv01","Badge_LimitedRewardLottery_Lv02",
-		"Badge_OrderFood_Lv00","Badge_OrderFood_Lv01","Badge_OrderFood_Lv02",
 		"Badge_OrderVendor_Lv00","Badge_OrderVendor_Lv01",
 		
 		"Badge_SpendShop_Goods_Lv00","Badge_SpendShop_Goods_Lv01",
@@ -285,19 +283,24 @@
 		"Badge_SpendShop_Clothes_Sdodr_Lv00","Badge_SpendShop_Clothes_Sdodr_Lv01",
 		"Badge_SpendShop_Shoes_Sdodr_Lv00","Badge_SpendShop_Shoes_Sdodr_Lv01",
 		"Badge_SpendShop_Head_Sdodr_Lv00","Badge_SpendShop_Head_Sdodr_Lv01",
+
+		"Badge_OrderFood_Lv00","Badge_OrderFood_Lv01","Badge_OrderFood_Lv02",
+		"Badge_LimitedRewardLottery_Lv00","Badge_LimitedRewardLottery_Lv01","Badge_LimitedRewardLottery_Lv02",
+		"Badge_SpendLottery_Lv00","Badge_SpendLottery_Lv01","Badge_SpendLottery_Lv02",
 		
 		
 		"NAME:misc#badge-other",
 		
 		"Badge_PlayerRank_Lv00","Badge_PlayerRank_Lv01","Badge_PlayerRank_Lv02","Badge_PlayerRank_Lv03","Badge_PlayerRank_Lv04","Badge_PlayerRank_Lv05","Badge_PlayerRank_Lv06","Badge_PlayerRank_Lv07","Badge_PlayerRank_Lv08","Badge_PlayerRank_Lv09","Badge_PlayerRank_Lv10","Badge_PlayerRank_Lv11",
 		"Badge_NawaBattlerRank_Lv00","Badge_NawaBattlerRank_Lv01","Badge_NawaBattlerRank_Lv02","Badge_NawaBattlerRank_Lv03","Badge_NawaBattlerRank_Lv04","Badge_NawaBattlerRank_Lv05","Badge_NawaBattlerRank_Lv06","Badge_NawaBattlerRank_Lv07","Badge_NawaBattlerRank_Lv08","Badge_NawaBattlerRank_Lv09","Badge_NawaBattlerRank_Lv10","Badge_NawaBattlerRank_Lv11","Badge_NawaBattlerRank_Lv12",
-		"Badge_SpendLottery_Lv00","Badge_SpendLottery_Lv01","Badge_SpendLottery_Lv02",
 		"Badge_CatalogueLevel_Lv00","Badge_CatalogueLevel_Lv01",
-		"Badge_FestRankMax",
 		"Badge_Mission_Lv00","Badge_Mission_Lv01","Badge_Mission_Lv02","Badge_Mission_Lv03","Badge_Mission_Lv04",
+		"Badge_FestRankMax",
 
 		"Badge_Fest10xBattle_Join_Lv00","Badge_Fest10xBattle_Join_Lv01","Badge_Fest10xBattle_Join_Lv02",
 		"Badge_Fest10xBattle_Win_Lv00","Badge_Fest10xBattle_Win_Lv01","Badge_Fest10xBattle_Win_Lv02",
+
+		"Badge_HammerHostTournament_Lv00","Badge_HammerHostTournament_Lv01","Badge_HammerHostTournament_Lv02",
 
 		"NAME:side#badge-sdodr",
 		"Badge_Achievement_Sdodr_Lv00","Badge_Achievement_Sdodr_Lv01","Badge_Achievement_Sdodr_Lv02","Badge_Achievement_Sdodr_Lv03","Badge_Achievement_Sdodr_Lv04","Badge_Achievement_Sdodr_Lv05",
