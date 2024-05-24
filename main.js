@@ -9,9 +9,15 @@ const load = () => {
 	const customBadges = [];
 	const watermarks = [];
 
+	const assetIDs = {lang: {}, banners: [], badges: []};
+
+	const languageTags = ["USen","USes","EUes","EUfr","USfr","EUnl","EUde","EUit","EUru","JPja","CNzh","KRko","TWzh"];
+
 	let saved = [];
 
-	window.lang = {}
+	window.lang = {};
+
+	const params = new URLSearchParams(window.location.search);
 
 	const loadedLanguage = () => {
 		// Languages here include a space between the titles
@@ -19,8 +25,8 @@ const load = () => {
 			return ['USen','EUnl','USfr','EUfr','EUde','EUit','EUru','USes','EUes', 'KRko'].indexOf(language) !== -1;
 		}
 
-		const langRegex = /\?lang=(\w{4})/;
-		const language = location.search && langRegex.test(location.search) ? langRegex.exec(location.search)[1] : 'USen';
+		const language = params.get("lang") || 'USen';
+
 		if (Object.keys(lang).indexOf(language) === -1) {
 			language = 'USen';
 		}
@@ -54,9 +60,6 @@ const load = () => {
 				}
 				languageSelector.appendChild(option);
 			}
-		});
-		languageSelector.addEventListener('change', () => {
-			location = location.origin + location.pathname + `?lang=${languageSelector.value}`;
 		});
 
 		if (navigator.userAgent.toLowerCase().includes('chrome')) {
@@ -109,6 +112,8 @@ const load = () => {
 		const ctx = canvas.getContext('2d');
 		const downloadlink = document.querySelector('#downloadlink');
 		const downloadbutton = document.querySelector('#downloadbutton');
+
+		const shareButton = document.querySelector('#share');
 
 		const canvasLayer = document.createElement('canvas');
 		canvasLayer.width = 700;
@@ -918,6 +923,70 @@ const load = () => {
 
 		loadSaved();
 
+		const generateUrlParams = () => {
+			const originalBanner = banners[tag.banner]
+			const originalName = originalBanner.file.split('/banners/')[1];
+
+			const urlComponents = [];
+
+			// Language
+			if (language !== 'USen') {
+				urlComponents.push('lang=' + language);
+			}
+
+			// Name
+			urlComponents.push('n=' + encodeURIComponent(tag.name));
+
+			// Tag#
+			urlComponents.push('i=' + encodeURIComponent(tag.id));
+
+			// Plate
+			if (!originalBanner.file.startsWith("data:image")) {
+				urlComponents.push('p=' + assetIDs.banners.indexOf(originalName));
+			}
+
+			// This is only used if the banner is a custom one with layer colours.
+			if (banners[tag.banner].layers) {
+				// Plate colours
+				urlComponents.push('pc=' + encodeURIComponent(tag.bgColours.slice(0, banners[tag.banner].layers).join('').replace(/#/g, '')));
+			}
+
+			// This is only used if the name colour is different than the one set by the banner.
+			if (originalBanner.colour !== tag.colour.slice(1)) {
+				// Name colour
+				urlComponents.push('nc=' + encodeURIComponent(tag.colour.slice(1)));
+			}
+
+			// Badges
+			// note: -1 means no badge, as 0 is the first badge. store all 3 in a comma separated list.
+			const badgeIndexes = [-1,-1,-1];
+			tag.badges.forEach((badge, i) => {
+				if (badge >= 0) {
+					const originalName = badges[badge].file.split('/badges/')[1];
+					badgeIndexes[i] = assetIDs.badges.indexOf(originalName);
+				}
+			});
+			if (badgeIndexes.join(',') !== [-1,-1,-1].join(',')) {
+				urlComponents.push('b=' + encodeURIComponent(badgeIndexes.join(',')));
+			}
+
+			// Titles
+			if (!tag.isCustom) {
+				// note: make a copy of the lang file, as well as store the OG language code along with that ID.
+				urlComponents.push('l=' + languageTags.indexOf(language));
+				// first title
+				const first = assetIDs.lang[language].titles.first.indexOf(lang[language].titles.first[tag.title.first]);
+				// second title
+				const last = assetIDs.lang[language].titles.last.indexOf(lang[language].titles.last[tag.title.last]);
+				urlComponents.push('t=' + encodeURIComponent([first,last].join(',')));
+			} else {
+				// note: custom titles should be stored as a string and indicated.
+				urlComponents.push('t=' + encodeURIComponent(tag.title.string));
+			}
+
+			return urlComponents;
+		}
+
 		const events = [
 			// Random title button (both)
 			{
@@ -1130,6 +1199,21 @@ const load = () => {
 				run: () => {
 					saveNew();
 				}
+			},
+			// Share current banner
+			{
+				elm: shareButton,
+				run: () => {
+					//generateUrlParams();
+					navigator.clipboard.writeText(location.origin + location.pathname + '?' + generateUrlParams().join('&'));
+					//navigator.clipboard.writeText('localhost:8080/?' + generateUrlParams().join('&'));
+				}
+			},
+			{
+				elm: languageSelector,
+				run: () => {
+					location = location.origin + location.pathname + `?lang=${languageSelector.value}&${generateUrlParams().join('&')}`;
+				}
 			}
 		];
 
@@ -1146,7 +1230,8 @@ const load = () => {
 			randomall,
 			credits,
 			creditsX,
-			savedsave
+			savedsave,
+			shareButton
 		];
 
 		const changeEvents = [
@@ -1162,6 +1247,7 @@ const load = () => {
 			bannercolourpickers[1],
 			bannercolourpickers[2],
 			bannercolourpickers[3],
+			languageSelector
 		];
 
 		const inputEvents = [
@@ -1222,14 +1308,74 @@ const load = () => {
 				const bannerLength = banners.filter(b => b.file).length - customBannerLength;
 				const badgesLength = badges.filter(b => b.file).length - customBadgesLength;
 
-				console.log(`Loaded:\n${bannerLength + customBannerLength} banners (vanilla: ${bannerLength}, custom: ${customBannerLength})\n${badgesLength + customBadgesLength} badges  (vanilla: ${badgesLength}, custom: ${customBadgesLength})\n${lang[language].titles.first.length + lang[language].titles.last.length} titles (first: ${lang[language].titles.first.length}, last: ${lang[language].titles.last.length})`);
+				console.log(`Loaded:\n${bannerLength + customBannerLength} banners (vanilla: ${bannerLength}, custom: ${customBannerLength})\n${badgesLength + customBadgesLength} badges (vanilla: ${badgesLength}, custom: ${customBadgesLength})\n${lang[language].titles.first.length + lang[language].titles.last.length} titles (first: ${lang[language].titles.first.length}, last: ${lang[language].titles.last.length})`);
 				
 				return true;
 			}
 		});
+
+		// Loading in tags from param info.
+		// Name
+		if (params.get("n")) {
+			tag.name = decodeURIComponent(params.get("n"));
+			nameinput.value = tag.name;
+		}
+		// ID
+		if (params.get("i")) {
+			tag.id = decodeURIComponent(params.get("i"));
+			taginput.value = tag.id;
+		}
+		// Title
+		if (params.get("t")) {
+			if (params.get("l")) {
+				const indexes = decodeURIComponent(params.get("t")).split(',');
+				const langTag = languageTags[params.get("l")];
+				tag.title.first = lang[langTag].titles.first.indexOf(assetIDs.lang[langTag].titles.first[indexes[0]]);
+				tag.title.last  = lang[langTag].titles.last.indexOf(assetIDs.lang[langTag].titles.last[indexes[1]]);
+				titleinput1.selectedIndex = tag.title.first;
+				titleinput2.selectedIndex = tag.title.last;
+			} else {
+				tag.isCustom = true;
+				customcheck.click();
+				tag.title.string = decodeURIComponent(params.get("t"));
+				customtitle.value = tag.title.string;
+			}
+		}
+		// Banners
+		if (params.get("p")) {
+			//tag.banner = banners.findIndex(b => b.file.endsWith(assetIDs.banners[params.get("p")]));
+			banners.find(b => b.file.endsWith(assetIDs.banners[params.get("p")])).image.click();
+		}
+		// Plate colours
+		if (params.get("pc")) {
+			const bgColours = params.get("pc").match(/.{1,6}/g);
+			bgColours.forEach((c, i) => {
+				tag.bgColours[i] = '#'+c;
+				bannercolourpickers[i].value = tag.bgColours[i];
+			});
+			//urlComponents.push('pc=' + encodeURIComponent(tag.bgColours.slice(0, banners[tag.banner].layers).join('').replace(/#/g, '')));
+		}
+		// Name colour
+		if (params.get("nc")) {
+			tag.colour = '#' + params.get("nc");
+			customcolour.value = tag.colour;
+			//urlComponents.push('nc=' + encodeURIComponent(tag.colour.slice(1)));
+		}
+		// Badges
+		if (params.get("b")) {
+			const indexes = decodeURIComponent(params.get("b")).split(',');
+			indexes.forEach((badge, i) => {
+				badgeRadios[i].click();
+				if (badge >= 0) {
+					badges.find(b => b.file && b.file.endsWith(assetIDs.badges[badge])).image.click();
+					//tag.badges[i] = badges.findIndex(b => b.file && b.file.endsWith(assetIDs.badges[badge]));
+				}
+			});
+			badgeRadios[0].click();
+		}
 	}
 
-	fetch(`./assets.min.json?cb=${cb}`).then(res => {
+	fetch(`./assets.json?cb=${cb}`).then(res => {
 		return res.json();
 	}).then(data => {
 		const toBadgeObject = (arr) => {
@@ -1259,10 +1405,13 @@ const load = () => {
 		Object.assign(badges, toBadgeObject(data.badges));
 		Object.assign(customBadges, toBadgeObject(data.customBadges));
 
-		fetch(`./lang.min.json`).then(res => {
+		Object.assign(assetIDs, data.ids);
+
+		fetch(`./lang.json`).then(res => {
 			return res.json();
 		}).then(data => {
 			Object.assign(lang, data);
+			Object.assign(assetIDs.lang, structuredClone(data));
 			loadedLanguage();
 		}).catch(err => {
 			alert('Something went wrong when loading...\nMaybe try refreshing?\n\nIf this problem keeps occurring, contact @spaghettitron on Twitter!');
