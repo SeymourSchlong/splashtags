@@ -25,7 +25,7 @@ const load = () => {
 			return ['USen','EUnl','USfr','EUfr','EUde','EUit','EUru','USes','EUes', 'KRko'].indexOf(language) !== -1;
 		}
 
-		const language = params.get("lang") || 'USen';
+		let language = params.get("lang") || 'USen';
 
 		if (Object.keys(lang).indexOf(language) === -1) {
 			language = 'USen';
@@ -132,8 +132,12 @@ const load = () => {
 		const textCtx = textCanvas.getContext('2d');
 		textCtx.scale(textScale, textScale);
 
-		const textFont = `Splat-text${lang[language].font?','+lang[language].font[0]:''}`;
-		const titleFont = `Splat-title${lang[language].font?','+lang[language].font[1]:''}`;
+		const textFontList = ['Splat-text'];
+		if (lang[language].font) textFontList.push(lang[language].font[0]);
+		const titleFontList = ['Splat-title'];
+		if (lang[language].font) titleFontList.push(lang[language].font[1]);
+		const textFont = textFontList.join(',');
+		const titleFont = titleFontList.join(',');
 
 		// please dont use this unless you receive permission :(
 		let forceDisableWatermark = false;
@@ -929,11 +933,6 @@ const load = () => {
 
 			const urlComponents = [];
 
-			// Language
-			if (language !== 'USen') {
-				urlComponents.push('lang=' + language);
-			}
-
 			// Name
 			urlComponents.push('n=' + encodeURIComponent(tag.name));
 
@@ -1204,8 +1203,14 @@ const load = () => {
 			{
 				elm: shareButton,
 				run: () => {
-					//generateUrlParams();
+					const urlParams = generateUrlParams();
+
+					// Language
+					if (language !== 'USen') {
+						urlParams.unshift('lang=' + language);
+					}
 					navigator.clipboard.writeText(location.origin + location.pathname + '?' + generateUrlParams().join('&'));
+					alert("Link copied to clipboard!");
 					//navigator.clipboard.writeText('localhost:8080/?' + generateUrlParams().join('&'));
 				}
 			},
@@ -1414,7 +1419,7 @@ const load = () => {
 			Object.assign(assetIDs.lang, structuredClone(data));
 			loadedLanguage();
 		}).catch(err => {
-			alert('Something went wrong when loading...\nMaybe try refreshing?\n\nIf this problem keeps occurring, contact @spaghettitron on Twitter!');
+			alert(`Something went wrong when loading...\nMaybe try refreshing?\n\nIf this problem keeps occurring, contact @spaghettitron on Twitter!\n\n${err.stack}`);
 			console.log(err);
 		});
 	});
