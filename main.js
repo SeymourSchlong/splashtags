@@ -1209,7 +1209,7 @@ const load = () => {
 					if (language !== 'USen') {
 						urlParams.unshift('lang=' + language);
 					}
-					navigator.clipboard.writeText(location.origin + location.pathname + '?' + generateUrlParams().join('&'));
+					navigator.clipboard.writeText(location.origin + location.pathname + '?' + urlParams.join('&'));
 					alert("Link copied to clipboard!");
 					//navigator.clipboard.writeText('localhost:8080/?' + generateUrlParams().join('&'));
 				}
@@ -1348,8 +1348,7 @@ const load = () => {
 		}
 		// Banners
 		if (params.get("p")) {
-			//tag.banner = banners.findIndex(b => b.file.endsWith(assetIDs.banners[params.get("p")]));
-			banners.find(b => b.file.endsWith(assetIDs.banners[params.get("p")])).image.click();
+			banners.find(b => b.file.endsWith(assetIDs.banners[params.get("p")]))?.image.click();
 		}
 		// Plate colours
 		if (params.get("pc")) {
@@ -1358,24 +1357,23 @@ const load = () => {
 				tag.bgColours[i] = '#'+c;
 				bannercolourpickers[i].value = tag.bgColours[i];
 			});
-			//urlComponents.push('pc=' + encodeURIComponent(tag.bgColours.slice(0, banners[tag.banner].layers).join('').replace(/#/g, '')));
 		}
 		// Name colour
 		if (params.get("nc")) {
 			tag.colour = '#' + params.get("nc");
 			customcolour.value = tag.colour;
-			//urlComponents.push('nc=' + encodeURIComponent(tag.colour.slice(1)));
 		}
 		// Badges
 		if (params.get("b")) {
 			const indexes = decodeURIComponent(params.get("b")).split(',');
-			indexes.forEach((badge, i) => {
-				badgeRadios[i].click();
-				if (badge >= 0) {
-					badges.find(b => b.file && b.file.endsWith(assetIDs.badges[badge])).image.click();
-					//tag.badges[i] = badges.findIndex(b => b.file && b.file.endsWith(assetIDs.badges[badge]));
-				}
-			});
+			if (indexes.length === 3) {
+				indexes.forEach((badge, i) => {
+					badgeRadios[i].click();
+					if (badge >= 0) {
+						badges.find(b => b.file && b.file.endsWith(assetIDs.badges[badge]))?.image.click();
+					}
+				});
+			}
 			badgeRadios[0].click();
 		}
 	}
@@ -1419,7 +1417,7 @@ const load = () => {
 			Object.assign(assetIDs.lang, structuredClone(data));
 			loadedLanguage();
 		}).catch(err => {
-			alert(`Something went wrong when loading...\nMaybe try refreshing?\n\nIf this problem keeps occurring, contact @spaghettitron on Twitter!\n\n${err.stack}`);
+			alert(`Something went wrong when loading...\n\nIf this problem keeps occurring, contact @spaghettitron on Twitter!\n\n${err.stack}`);
 			console.log(err);
 		});
 	});
