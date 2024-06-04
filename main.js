@@ -108,6 +108,9 @@ const load = () => {
 			});
 		});
 
+		const tagWidth = 700;
+		const tagHeight = 200;
+
 		const canvas = document.querySelector('#splashtag');
 		const ctx = canvas.getContext('2d');
 		const downloadlink = document.querySelector('#downloadlink');
@@ -116,26 +119,30 @@ const load = () => {
 		const shareButton = document.querySelector('#share');
 
 		const canvasLayer = document.createElement('canvas');
-		canvasLayer.width = 700;
-		canvasLayer.height = 200;
+		canvasLayer.width = tagWidth;
+		canvasLayer.height = tagHeight;
 		const layerCtx = canvasLayer.getContext('2d');
 
 		const compositeCanvas = document.createElement('canvas');
-		compositeCanvas.width = 700;
-		compositeCanvas.height = 200;
+		compositeCanvas.width = tagWidth;
+		compositeCanvas.height = tagHeight;
 		const compositeCtx = compositeCanvas.getContext('2d');
 
 		const textScale = 2;
 		const textCanvas = document.createElement('canvas');
-		textCanvas.width = 700*textScale;
-		textCanvas.height = 200*textScale;
+		textCanvas.width = tagWidth*textScale;
+		textCanvas.height = tagHeight*textScale;
 		const textCtx = textCanvas.getContext('2d');
 		textCtx.scale(textScale, textScale);
 
 		const textFontList = ['Splat-text'];
 		if (lang[language].font) textFontList.push(lang[language].font[0]);
+		else textFontList.push("Kurokane");
+
 		const titleFontList = ['Splat-title'];
 		if (lang[language].font) titleFontList.push(lang[language].font[1]);
+		else titleFontList.push("Rowdy");
+
 		const textFont = textFontList.join(',');
 		const titleFont = titleFontList.join(',');
 
@@ -153,31 +160,31 @@ const load = () => {
 		}
 		
 		const renderSplashtag = () => {
-			textCtx.clearRect(0, 0, 700, 200);
-			ctx.clearRect(0, 0, 700, 200);
+			textCtx.clearRect(0, 0, tagWidth, tagHeight);
+			ctx.clearRect(0, 0, tagWidth, tagHeight);
 
 			if (!banners[tag.banner].layers) {
 				// If not one of the special "pick your own colour" banners, just draw it
-				ctx.drawImage(banners[tag.banner].image, 0, 0, 700, 200);
+				ctx.drawImage(banners[tag.banner].image, 0, 0, tagWidth, tagHeight);
 			} else {
 				// Special custom colour banners draw each layer then are added
 				const imageLayers = banners[tag.banner].layerImages;
 				for (let i = 0; i < imageLayers.length; i++) {
-					compositeCtx.clearRect(0, 0, 700, 200);
+					compositeCtx.clearRect(0, 0, tagWidth, tagHeight);
 					compositeCtx.save();
 					compositeCtx.fillStyle = tag.bgColours[!i ? i : imageLayers.length - i];
-					compositeCtx.drawImage(imageLayers[i], 0, 0, 700, 200);
+					compositeCtx.drawImage(imageLayers[i], 0, 0, tagWidth, tagHeight);
 					compositeCtx.globalCompositeOperation = 'difference';
-					compositeCtx.fillRect(0, 0, 700, 200);
+					compositeCtx.fillRect(0, 0, tagWidth, tagHeight);
 					compositeCtx.restore();
 
 					layerCtx.save();
-					layerCtx.drawImage(imageLayers[i], 0, 0, 700, 200);
+					layerCtx.drawImage(imageLayers[i], 0, 0, tagWidth, tagHeight);
 					layerCtx.globalCompositeOperation = 'source-in';
-					layerCtx.drawImage(compositeCanvas, 0, 0, 700, 200);
+					layerCtx.drawImage(compositeCanvas, 0, 0, tagWidth, tagHeight);
 					layerCtx.restore();
 					ctx.drawImage(canvasLayer, 0, 0);
-					layerCtx.clearRect(0, 0, 700, 200);
+					layerCtx.clearRect(0, 0, tagWidth, tagHeight);
 				}
 			}
 
@@ -191,7 +198,7 @@ const load = () => {
 				textCtx.font = `36px ${textFont}`;
 				textCtx.letterSpacing = "-0.3px";
 				const textWidth = textCtx.measureText(titleToString()).width;
-				const xScale = getXScale(textWidth, 700-32);
+				const xScale = getXScale(textWidth, tagWidth-32);
 
 				if (tag.isCustom) {
 					clickRegions[0].style = `--x1: 15px; --y1: 5px; --x2: ${xScale < 1 ? 685 : Math.round(textWidth + 15)}px; --y2: 50px;`;
@@ -230,7 +237,7 @@ const load = () => {
 
 				// tag text should adjust to the leftmost badge position.
 				const leftBadge = tag.badges.indexOf(tag.badges.find(b => b !== -1));
-				const maxX = (leftBadge === -1 ? 700 : 480 + 74*leftBadge) - 48;
+				const maxX = (leftBadge === -1 ? tagWidth : 480 + 74*leftBadge) - 48;
 				const textWidth = textCtx.measureText(tag.id).width;
 				const xScale = getXScale(textWidth, maxX);
 				clickRegions[3].style = `--x1: 25px; --y1: 165px; --x2: ${(xScale < 1 ? maxX : Math.round(textWidth)) + 25}px; --y2: 185px;`;
@@ -244,26 +251,52 @@ const load = () => {
 
 			// Write player name
 			if (tag.name.length) {
+				let pseudoName = tag.name.split('');
+				// This is used for names with invalid font-characters.
+				// Any character not in the language set should be replaced with a "?".
+				// KRko = only English and Korean
+				// CNzh = only English and Simplified Chinese
+				// TWzh = only English and Traditional Chinese
+				// Japanese characters should not render in these languages.
+				pseudoName.forEach((char, i) => {
+					let isInvalid = false;
+
+					let c = char.charCodeAt(0);
+
+					// Korean
+					//if (language !== 'KRko') isInvalid = isInvalid || (c >= 0xAC00 && c <= 0xD7A3);
+
+					// Simplified Chinese
+					//if (language !== 'CNzh') isInvalid = isInvalid || (c >= 0 && c <= 0);
+
+					// Traditional Chinese
+					//if (language !== 'TWzh') isInvalid = isInvalid || (c >= 0 && c <= 0);
+
+					if (isInvalid) pseudoName[i] = '?';
+				});
+
+				pseudoName = pseudoName.join('');
+
 				textCtx.save();
 				textCtx.font = `66px ${titleFont}`;
 				textCtx.letterSpacing = "-0.4px";
-				const textWidth = textCtx.measureText(tag.name).width;
-				const xScale = getXScale(textWidth, 700-32);
+				const textWidth = textCtx.measureText(pseudoName).width;
+				const xScale = getXScale(textWidth, tagWidth-32);
 
-				const x1 = 700/2-1.5 - Math.round(textWidth / 2);
-				clickRegions[2].style = `--x1: ${xScale < 1 ? 15 : Math.round(700/2-1.5 - textWidth/2)}px; --y1: 70px; --x2: ${xScale < 1 ? 685 : Math.round(x1 + textWidth)}px; --y2: 120px;`;
+				const x1 = tagWidth/2-1.5 - Math.round(textWidth / 2);
+				clickRegions[2].style = `--x1: ${xScale < 1 ? 15 : Math.round(tagWidth/2-1.5 - textWidth/2)}px; --y1: 70px; --x2: ${xScale < 1 ? 685 : Math.round(x1 + textWidth)}px; --y2: 120px;`;
 				
 				textCtx.textAlign = 'center';
 				textCtx.scale(xScale, 1);
-				textCtx.fillText(tag.name, (700/2-1.5) / xScale, 119);
+				textCtx.fillText(pseudoName, (tagWidth/2-1.5) / xScale, 119);
 
 				textCtx.restore();
 			} else {
 				clickRegions[2].style = 'display: none;';
 			}
 			
-			ctx.drawImage(textCanvas, 0, 0, 700, 200);
-			textCtx.clearRect(0, 0, 700, 200);
+			ctx.drawImage(textCanvas, 0, 0, tagWidth, tagHeight);
+			textCtx.clearRect(0, 0, tagWidth, tagHeight);
 
 			// If the banner name or badge has either "custom" or "data" it is definitely a custom resource
 			let customed = banners[tag.banner].custom || false;
@@ -271,9 +304,11 @@ const load = () => {
 			// Draw each badge on the banner
 			for (let i = 0; i < 3; i++) {
 				if (tag.badges[i] !== -1) {
-					const x = 480 + 74*i;
+					const badgeWidth = 70;
+					const x = 480 + (badgeWidth + 4)*i;
+					const y = 128;
 
-					clickRegions[4 + i].style = `--x1: ${x}px; --y1: 128px; --x2: ${x+70}px; --y2: ${128+70}px;`;
+					clickRegions[4 + i].style = `--x1: ${x}px; --y1: ${y}px; --x2: ${x+badgeWidth}px; --y2: ${y+badgeWidth}px;`;
 
 					// Below used to resize custom badges to retain their scale.
 					if (badges[tag.badges[i]].custom) {
@@ -282,11 +317,11 @@ const load = () => {
 						const ch = badges[tag.badges[i]].image.naturalHeight;
 						const landscape = cw > ch;
 						const ratio = !landscape ? (cw / ch) : (ch / cw);
-						const width = landscape ? 70 : 70*ratio;
-						const height = !landscape ? 70 : 70*ratio;
-						ctx.drawImage(badges[tag.badges[i]].image, x + (70 / 2 - width / 2), 128 + (70 / 2 - height / 2), width, height);
+						const width = landscape ? badgeWidth : badgeWidth*ratio;
+						const height = !landscape ? badgeWidth : badgeWidth*ratio;
+						ctx.drawImage(badges[tag.badges[i]].image, x + (badgeWidth / 2 - width / 2), y + (badgeWidth / 2 - height / 2), width, height);
 					} else {
-						ctx.drawImage(badges[tag.badges[i]].image, x, 128, 70, 70);
+						ctx.drawImage(badges[tag.badges[i]].image, x, y, badgeWidth, badgeWidth);
 					}
 				} else {
 					clickRegions[4 + i].style = `display: none;`;
@@ -308,9 +343,9 @@ const load = () => {
 				textCtx.font = `14px ${textFont}`;
 				textCtx.textAlign = 'center';
 				textCtx.fillStyle = '#ffffff';
-				const wmX = 700 - wm.width - wm.offset.x;
+				const wmX = tagWidth - wm.width - wm.offset.x;
 				const textPos = {
-					x: 700 - wm.offset.x - wm.width/2,
+					x: tagWidth - wm.offset.x - wm.width/2,
 					y: wm.offset.y + wm.height + wm.textoffset
 				}
 
@@ -380,13 +415,13 @@ const load = () => {
 
 				textCtx.fillStyle = tag.colour;
 				textCtx.globalCompositeOperation = 'source-in';
-				textCtx.fillRect(0, 0, 700, 200);
+				textCtx.fillRect(0, 0, tagWidth, tagHeight);
 				textCtx.globalCompositeOperation = 'source-over';
 			}
 
 			ctx.save();
 			ctx.globalAlpha = 0.2;
-			ctx.drawImage(textCanvas, 0, 0, 700, 200);
+			ctx.drawImage(textCanvas, 0, 0, tagWidth, tagHeight);
 			ctx.restore();
 
 			// Disables download button if testing locally
@@ -1335,10 +1370,17 @@ const load = () => {
 			if (params.get("l")) {
 				const indexes = decodeURIComponent(params.get("t")).split(',');
 				const langTag = languageTags[params.get("l")];
-				tag.title.first = lang[langTag].titles.first.indexOf(assetIDs.lang[langTag].titles.first[indexes[0]]);
-				tag.title.last  = lang[langTag].titles.last.indexOf(assetIDs.lang[langTag].titles.last[indexes[1]]);
-				titleinput1.selectedIndex = tag.title.first;
-				titleinput2.selectedIndex = tag.title.last;
+
+				// If the OG language of the tag is the current site language
+				if (langTag === language) {
+					tag.title.first = lang[langTag].titles.first.indexOf(assetIDs.lang[langTag].titles.first[indexes[0]]);
+					tag.title.last  = lang[langTag].titles.last.indexOf(assetIDs.lang[langTag].titles.last[indexes[1]]);
+
+					titleinput1.selectedIndex = tag.title.first;
+					titleinput2.selectedIndex = tag.title.last;
+				}
+				// Currently there's no way to identify which title should match with each multilingually so the default tag must be used.
+				// In the future, if IDs are added to the titles for this website, it can be reimplemented.
 			} else {
 				tag.isCustom = true;
 				customcheck.click();
