@@ -304,11 +304,11 @@ const load = () => {
 			// Draw each badge on the banner
 			for (let i = 0; i < 3; i++) {
 				if (tag.badges[i] !== -1) {
-					const badgeWidth = 70;
-					const x = 480 + (badgeWidth + 4)*i;
+					const badgeSize = 70;
+					const x = 480 + (badgeSize + 4)*i;
 					const y = 128;
 
-					clickRegions[4 + i].style = `--x1: ${x}px; --y1: ${y}px; --x2: ${x+badgeWidth}px; --y2: ${y+badgeWidth}px;`;
+					clickRegions[4 + i].style = `--x1: ${x}px; --y1: ${y}px; --x2: ${x+badgeSize}px; --y2: ${y+badgeSize}px;`;
 
 					// Below used to resize custom badges to retain their scale.
 					if (badges[tag.badges[i]].custom) {
@@ -317,11 +317,11 @@ const load = () => {
 						const ch = badges[tag.badges[i]].image.naturalHeight;
 						const landscape = cw > ch;
 						const ratio = !landscape ? (cw / ch) : (ch / cw);
-						const width = landscape ? badgeWidth : badgeWidth*ratio;
-						const height = !landscape ? badgeWidth : badgeWidth*ratio;
-						ctx.drawImage(badges[tag.badges[i]].image, x + (badgeWidth / 2 - width / 2), y + (badgeWidth / 2 - height / 2), width, height);
+						const width = landscape ? badgeSize : badgeSize*ratio;
+						const height = !landscape ? badgeSize : badgeSize*ratio;
+						ctx.drawImage(badges[tag.badges[i]].image, x + (badgeSize / 2 - width / 2), y + (badgeSize / 2 - height / 2), width, height);
 					} else {
-						ctx.drawImage(badges[tag.badges[i]].image, x, y, badgeWidth, badgeWidth);
+						ctx.drawImage(badges[tag.badges[i]].image, x, y, badgeSize, badgeSize);
 					}
 				} else {
 					clickRegions[4 + i].style = `display: none;`;
