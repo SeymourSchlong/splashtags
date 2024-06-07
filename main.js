@@ -350,7 +350,6 @@ const load = () => {
 				}
 
 				/** Artist watermark system is as follows:
-				 * If a tag features regular custom assets (made by me), the mark will be default with the text "custom" <-- not true anymore
 				 * If a tag features art from only ONE artist, that artist's mark will be shown with their name
 				 * If a tag features art from MULTIPLE artists, then the default mark will be shown, with all of the names below
 				*/ 
@@ -579,7 +578,7 @@ const load = () => {
 				sectionTitle.textContent = lang[language].sections[item.name]
 				sectionTitle.id = item.id;
 				let isOpenByDefault = !isCustom;
-				if (isBanner && (item.name.includes('band'))) {
+				if (isBanner && (item.name.includes('band') || (new Date().getMonth() == 5 && item.name.includes('lgbt')))) {
 					isOpenByDefault = true;
 				}
 				// Hide Side Order badges and banners until roughly a month after release
