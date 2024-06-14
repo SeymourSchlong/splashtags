@@ -19,6 +19,10 @@ const load = () => {
 
 	const params = new URLSearchParams(window.location.search);
 
+	const makeClone = (data) => {
+		return JSON.parse(JSON.stringify(data));
+	}
+
 	const loadedLanguage = () => {
 		// Languages here include a space between the titles
 		const isSpaceLang = () => {
@@ -798,7 +802,7 @@ const load = () => {
 			loadTagData();
 
 			const tagClone = {};
-			Object.assign(tagClone, structuredClone(tag));
+			Object.assign(tagClone, makeClone(tag));
 
 			tagClone.banner = banners[tagClone.banner].file;
 			if (tagClone.banner.startsWith('data:')) tagClone.banner = './assets/banners/Npl_Tutorial00';
@@ -824,7 +828,7 @@ const load = () => {
 			loadTagData();
 
 			const tagClone = {};
-			Object.assign(tagClone, structuredClone(tag));
+			Object.assign(tagClone, makeClone(tag));
 
 			tagClone.banner = banners[tagClone.banner].file;
 			if (tagClone.banner.startsWith('data:')) tagClone.banner = './assets/banners/Npl_Tutorial00';
@@ -858,7 +862,7 @@ const load = () => {
 		const loadSelected = (i) => {
 			loadTagData();
 
-			Object.assign(tag, structuredClone(saved[i]));
+			Object.assign(tag, makeClone(saved[i]));
 
 			const nameColour = tag.colour;
 
@@ -1455,7 +1459,7 @@ const load = () => {
 			return res.json();
 		}).then(data => {
 			Object.assign(lang, data);
-			Object.assign(assetIDs.lang, structuredClone(data));
+			Object.assign(assetIDs.lang, makeClone(data));
 			loadedLanguage();
 		}).catch(err => {
 			alert(`Something went wrong when loading...\n\nIf this problem keeps occurring, contact @spaghettitron on Twitter!\n\n${err.stack}`);
