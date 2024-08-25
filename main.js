@@ -741,12 +741,6 @@ const load = () => {
 		titleinput1.style.height = `${inputheight}px`;
 		titleinput2.style.height = `${inputheight}px`;
 
-		// credits toggle
-		const main = document.querySelector('#main');
-		const main2 = document.querySelector('#main2');
-		const credits = document.querySelector('#showcredits > a');
-		const creditsX = document.querySelector('#creditsX');
-
 		// custom uploaded
 		const customBannerCategory = document.querySelector('#banner-uploaded-custom');
 		const customBadgeCategory = document.querySelector('#badge-upload-custom');
@@ -1096,26 +1090,6 @@ const load = () => {
 					getEvent(randombadge).run();
 				}
 			},
-			// Credits button
-			{
-				elm: credits,
-				run: () => {
-					const temp = credits.textContent;
-					credits.textContent = credits.dataset.alt;
-					credits.dataset.alt = temp;
-
-					//toggle visibility
-					main.className = !temp.includes('Show') ? '' : 'flipped';
-					main2.className = temp.includes('Show') ? '' : 'flipped';
-				}
-			},
-			// Credits close button
-			{
-				elm: creditsX,
-				run: () => {
-					getEvent(credits).run();
-				}
-			},
 			
 			// Title input (1)
 			{
@@ -1271,8 +1245,6 @@ const load = () => {
 			randombanner,
 			randombadge,
 			randomall,
-			credits,
-			creditsX,
 			savedsave,
 			shareButton
 		];
