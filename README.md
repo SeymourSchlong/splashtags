@@ -1,11 +1,9 @@
 # splashtags
 Custom Splatoon 3 Splashtag maker
 
-[https://seymourschlong.github.io/splashtags/](https://seymourschlong.github.io/splashtags/)
+[https://splashtagmaker.com/](https://splashtagmaker.com/)
 
+Website created by [@spaghettitron](https://twitter.com/spaghettitron/) 
+For the list of credits, please visit the [credits portion of the site](https://splashtagmaker.com/credits/).  
 
-Website created by [@spaghettitron](https://twitter.com/spaghettitron/)  
-With help from [@Raven_The_Cute](https://twitter.com/Raven_The_Cute/)  
-Splatoon, fonts, and its images are property of Nintendo  
-  
-For full credits, please visit the credits portion of the site.  
+Splatoon, fonts, and its images are property of Nintendo.  
