@@ -177,15 +177,16 @@ canvas {
 }
 
 #main {
-    background-image: url("/assets/images/main-bg-top.png"), url("/assets/images/main-bg-middle.png"), url("/assets/images/main-bg-bottom.png");
+    background-image: url("/assets/images/title_bg.png"), url("/assets/images/main-bg-top.png"), url("/assets/images/main-bg-middle.png"), url("/assets/images/main-bg-bottom.png");
     background-repeat: no-repeat;
-    background-position: top, center 45px, bottom;
-    background-size: 100% 45px, 100% calc(100% - 145px), 100% 100px;
+    background-position: center top, top, center 45px, bottom;
+    background-size: auto, 100% 45px, 100% calc(100% - 145px), 100% 100px;
     width: 856px;
     margin: auto;
     transition: .3s linear;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+    padding-top: 10px;
     padding-bottom: 40px;
 }
 
@@ -561,12 +562,6 @@ small {
 .credit > span:first-child {
     text-align: right;
 }
-.credit > span {
-    text-align: left;
-}
-.credit > a {
-    text-align: left;
-}
 
 #savedsave {
     font-size: 16px;
@@ -616,4 +611,40 @@ small {
 }
 .delete {
     background-image: url("/assets/images/delete.svg");
+}
+
+
+#credit-container {
+    width: 80%;
+}
+
+.link-icons {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+.name {
+    text-align: middle;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+.twitter {
+    background-image: url("./icons/twitter.png");
+}
+
+.bluesky {
+    background-image: url("./icons/bluesky.png");
+}
+
+.github {
+    background-image: url("./icons/github.png");
+}
+
+.linktree {
+    background-image: url("./icons/linktree.png");
 }
