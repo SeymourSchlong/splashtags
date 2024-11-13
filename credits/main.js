@@ -61,14 +61,16 @@ const credits = [
         name: "Zeeto",
         contribution: "Splatband badges",
         links: {
-            twitter: "zeeto_art"
+            twitter: "zeeto_art",
+            bluesky: "zeetoart.bsky.social"
         }
     },
     {
         name: "Sharkinodraws",
         contribution: "Salmon Run egg badges",
         links: {
-            twitter: "sharkinodraws"
+            twitter: "sharkinodraws",
+            bluesky: "mossydango.bsky.social"
         }
     },
 ]
