@@ -574,6 +574,8 @@ const load = () => {
 			const container = isBanner ? bannerContainer : badgeContainer;
 			const section = isBanner ? bannersection : badgesection;
 			const clickEvent = isBanner ? bannerClickEvent : badgeClickEvent;
+
+			// Create category
 			if (item.name) {
 				currentCategory = newCategory();
 
@@ -585,10 +587,7 @@ const load = () => {
 				if (isBanner && (item.name.includes('band') || (new Date().getMonth() == 5 && item.name.includes('lgbt')))) {
 					isOpenByDefault = true;
 				}
-				// Hide Side Order badges and banners until roughly a month after release
-				//if (item.name.includes('side') && new Date() < new Date("March 21 2024")) {
-				//	isOpenByDefault = false;
-				//}
+
 				sectionTitle.classList.add('category-title');
 				if (!isOpenByDefault) sectionTitle.classList.add('collapsed');
 				if (isCustom) sectionTitle.appendChild(customAsterisk());
@@ -614,25 +613,37 @@ const load = () => {
 			loadQueue.push(undefined);
 
 			const img = new Image();
-			img.src = item.file + '.png';
 
 			// Use Picture element to allow usage of WEBP and when not supported, use PNG.
 			const picture = document.createElement('picture');
 			const webpSource = document.createElement('source');
-			webpSource.srcset = item.file + '.webp';
 			const pngSource = document.createElement('source');
-			pngSource.srcset = item.file + '.png';
 			picture.appendChild(webpSource);
 			picture.appendChild(pngSource);
 			picture.appendChild(img);
+
+			if (isBanner) {
+				img.src = item.thumb + '.png';
+				webpSource.srcset = item.thumb + '.png';
+				pngSource.srcset = item.thumb + '.png';
+			} else {
+				img.src = item.file + '.png';
+				webpSource.srcset = item.file + '.webp';
+				pngSource.srcset = item.file + '.png';
+			}
 			
 			item.image = img;
 
+			// When the image is loaded, remove it from the waiting queue.
 			img.onload = () => {
+				// If the banner is the default banner, load the splashtag
 				if (isBanner && item.file.includes('Tutorial')) renderSplashtag();
 				loadQueue.pop();
+				
+				if (!loadQueue.length) renderSplashtag();
 			}
 
+			// Load the individual layers for custom colour images
 			if (item.layers) {
 				item.layerImages = [];
 				for (let i = 0; i < item.layers; i++) {
@@ -644,6 +655,11 @@ const load = () => {
 
 			img.setAttribute('draggable', 'false');
 			img.addEventListener('click', () => {
+				if (isBanner) {
+					webpSource.srcset = item.file + '.webp';
+					pngSource.srcset = item.file + '.png';
+				}
+
 				clickEvent(item);
 			});
 
@@ -1414,10 +1430,12 @@ const load = () => {
 		}
 
 		Object.assign(banners, data.banners.map(o => {
+			o.thumb = './assets/thumb_banner/' + o.file;
 			o.file = './assets/banners/' + o.file;
 			return o;
 		}));
 		Object.assign(customBanners, data.customBanners.map(o => {
+			o.thumb = './assets/thumb_banner/' + o.file;
 			o.file = './assets/custom/banners/' + o.file;
 			o.custom = true;
 			return o;
@@ -1434,7 +1452,7 @@ const load = () => {
 			Object.assign(assetIDs.lang, makeClone(data));
 			loadedLanguage();
 		}).catch(err => {
-			alert(`Something went wrong when loading...\n\nIf this problem keeps occurring, contact @spaghettitron on Twitter!\n\n${err.stack}`);
+			alert(`Something went wrong when loading...\nIf this problem keeps occurring, please contact me:\nTwitter --- @spaghettitron\nBlueSky -- @splashtagmaker.com\n\nPlease include a screenshot of the following:\n\n${err.stack}`);
 			console.log(err);
 		});
 	});
