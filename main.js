@@ -719,7 +719,33 @@ const load = () => {
 			renderSplashtag();
 		}
 
-		badges.forEach(item => {
+		// Add all level variants (5-10 star) for weapon badges
+		// this is so i dont need to make over 800 entries in `assets.json` bloating its file size.
+		for (let i = 0; i < badges.length; i++) {
+			let item = badges[i];
+
+			if (item.file) {
+				if (item.file.startsWith("./assets/badges/Badge_WeaponLevel_")) {
+					for (let L = 1; L <= 6; L++) {
+						let weaponLevel = {file: item.file, dontload: true};
+						item.file = item.file.replace(/.$/, L);
+						badges.splice(i, 0, weaponLevel);
+						i++;
+					}
+				}
+			}
+		}
+
+
+		/**
+		 * steps
+		 * 1) if the badge is a weapon badge AND its Lv00... make a div
+		 * 2) the div toggles the STYLE display for the sub-badges AND loads all of its children.
+		 * 
+		 * 
+		 *   */
+
+		badges.forEach((item, index) => {
 			addImageElement(item, 'badges');
 		});
 
