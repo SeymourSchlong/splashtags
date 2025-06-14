@@ -998,7 +998,7 @@ const load = () => {
 			tag.badges.forEach((badge, i) => {
 				// load hidden badges (custom and weapon+)
 				const badgeEntry = badges.find(b => b.file === badge);
-				if (badgeEntry.dontload) {
+				if (badgeEntry && badgeEntry.dontload) {
 					badgeEntry.image.parentNode.childNodes.forEach(node => {
 						node.src = node.dataset.src;
 						node.srcset = node.dataset.src;
