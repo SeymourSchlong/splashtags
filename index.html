@@ -44,8 +44,19 @@
             function selectBadge (index) {
                 selectTab(2);
                 document.querySelectorAll('input[name="badgenum"]')[index].click();
-                document.querySelector('#badgecontainer .selected').parentElement.parentElement.previousElementSibling.classList.remove('collapsed');
-                document.querySelector('#badgecontainer .selected').scrollIntoView();
+                let selectedBadge = document.querySelector('#badgecontainer .selected');
+                let category = selectedBadge.parentElement.parentElement.previousElementSibling;
+                //selectedBadge.parentElement.parentElement.previousElementSibling.classList.remove('collapsed');
+                if (selectedBadge.parentNode.classList.contains('hidden')) {
+                    if (selectedBadge.dataset.parent) {
+                        document.querySelector(`.weaponcollapse.${selectedBadge.dataset.parent}`).click();
+                    }
+                }
+
+                if (category.classList.contains('collapsed')) {
+                    selectedBadge.parentElement.parentElement.previousElementSibling.click();
+                }
+                selectedBadge.scrollIntoView();
             }
         </script>
         <link rel="preload" href="assets/fonts/SplatoonText.otf" as="font" type="font/otf" crossorigin>

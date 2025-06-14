@@ -618,3 +618,25 @@ small {
 .delete {
     background-image: url("./assets/images/delete.svg");
 }
+
+
+
+.weaponcollapse {
+    width: calc(700px / var(--items) - 6px);
+    height: calc(700px / var(--items) - 6px);
+    
+    border-radius: 30%;
+    background-color: #535353;
+    
+    background-size: 50%, 100%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.weaponcollapse.open {
+    border-radius: 30% 0% 0% 30%;
+    opacity: 0.25;
+    
+    filter: grayscale(1);
+    background-size: 0%, 100%;
+}

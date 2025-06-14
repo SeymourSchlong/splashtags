@@ -596,6 +596,16 @@ const load = () => {
 				sectionTitle.addEventListener('click', () => {
 					if (sectionTitle.classList.contains('collapsed')) {
 						sectionTitle.classList.remove('collapsed');
+
+						// When the category is opened (for a custom badge group) load all of the un-loaded badges.
+						if (!isOpenByDefault) {
+							sectionTitle.nextSibling.querySelectorAll('picture').forEach(badgePicture => {
+								badgePicture.childNodes.forEach(node => {
+									node.src = node.dataset.src;
+									node.srcset = node.dataset.src;
+								});
+							});
+						}
 					} else {
 						sectionTitle.classList.add('collapsed');
 					}
@@ -615,6 +625,7 @@ const load = () => {
 			const img = new Image();
 
 			// Use Picture element to allow usage of WEBP and when not supported, use PNG.
+			// (sorry webp haters 😜)
 			const picture = document.createElement('picture');
 			const webpSource = document.createElement('source');
 			const pngSource = document.createElement('source');
@@ -627,9 +638,25 @@ const load = () => {
 				webpSource.srcset = item.thumb + '.png';
 				pngSource.srcset = item.thumb + '.png';
 			} else {
-				img.src = item.file + '.png';
-				webpSource.srcset = item.file + '.webp';
-				pngSource.srcset = item.file + '.png';
+				img.dataset.src = item.file + '.png';
+				webpSource.dataset.src = item.file + '.webp';
+				pngSource.dataset.src = item.file + '.png';
+
+				if (item.dontload) {
+					// This is used mostly for custom badges (as there are a lot) to lessen load times on opening the page.
+					// It's also used for weapon badges for 5+ freshness (because there are like, over 1000 of them alone)
+					img.src = './assets/images/blank_badge.png';
+					webpSource.srcset = './assets/images/blank_badge.png';
+					pngSource.srcset = './assets/images/blank_badge.png';
+					
+					img.dataset.src = item.file + '.png';
+					webpSource.dataset.src = item.file + '.webp';
+					pngSource.dataset.src = item.file + '.png';
+				} else {
+					img.src = item.file + '.png';
+					webpSource.srcset = item.file + '.webp';
+					pngSource.srcset = item.file + '.png';
+				}
 			}
 			
 			item.image = img;
@@ -655,9 +682,10 @@ const load = () => {
 
 			img.setAttribute('draggable', 'false');
 			img.addEventListener('click', () => {
-				if (isBanner) {
+				if (isBanner || item.dontload) {
 					webpSource.srcset = item.file + '.webp';
 					pngSource.srcset = item.file + '.png';
+					item.dontload = false;
 				}
 
 				clickEvent(item);
@@ -665,6 +693,48 @@ const load = () => {
 
 			if (isBanner && item.file.includes('Tutorial')) {
 				img.classList.add('selected');
+			}
+
+			if (!isBanner) {
+				if (item.file.startsWith("./assets/badges/Badge_WeaponLevel_")) {
+					let badgeName = item.file.replace('./assets/badges/Badge_WeaponLevel_', '').slice(0, -5);
+
+					if (item.file.split('').pop() == 0) {
+						//const weaponCollapseParent = picture.cloneNode(true);
+						const weaponCollapseParent = document.createElement('div');
+						weaponCollapseParent.style.backgroundImage = `url(./assets/images/plus_weapon.png), url(${item.file + '.png'})`;
+						currentCategory.appendChild(weaponCollapseParent);
+
+						weaponCollapseParent.classList.add('weaponcollapse');
+						//weaponCollapseParent.querySelector('img').classList.add('weaponcollapse');
+						weaponCollapseParent.classList.add(badgeName);
+
+						weaponCollapseParent.addEventListener('click', () => {
+							if (weaponCollapseParent.classList.contains('open')) {
+								weaponCollapseParent.classList.remove('open');
+							} else {
+								weaponCollapseParent.classList.add('open');
+							}
+
+							weaponCollapseParent.parentNode.querySelectorAll(`.${badgeName}:not(.weaponcollapse)`).forEach(match => {
+								if (match.classList.contains('hidden')) {
+									match.childNodes.forEach(node => {
+										node.src = node.dataset.src;
+										node.srcset = node.dataset.src;
+									});
+
+									match.classList.remove('hidden');
+								} else {
+									match.classList.add('hidden');
+								}
+							});
+						});
+					}
+
+					picture.classList.add(badgeName);
+					img.dataset.parent = badgeName;
+					picture.classList.add('hidden');
+				}
 			}
 
 			currentCategory.appendChild(picture);
@@ -687,7 +757,7 @@ const load = () => {
 				});
 				for (let i = 0; i < 3; i++) {
 					if (tag.badges[i] < 0) continue;
-					badgeContainer.querySelectorAll('img, .category-title')[tag.badges[i]].className = i === slot ? 'selected' : 'other';
+					badgeContainer.querySelectorAll('img:not(.weaponcollapse), .category-title')[tag.badges[i]].className = i === slot ? 'selected' : 'other';
 				}
 			});
 		});
@@ -700,7 +770,7 @@ const load = () => {
 			// if badge is in other slot, remove the old one
 			if (tag.badges.indexOf(newBadge) !== -1) {
 				tag.badges[tag.badges.indexOf(newBadge)] = -1;
-				badgeContainer.querySelectorAll('img, .category-title')[newBadge].className = '';
+				badgeContainer.querySelectorAll('img:not(.weaponcollapse), .category-title')[newBadge].className = '';
 			}
 
 			if (newBadge == currentBadge) {
@@ -722,15 +792,15 @@ const load = () => {
 		// Add all level variants (5-10 star) for weapon badges
 		// this is so i dont need to make over 800 entries in `assets.json` bloating its file size.
 		for (let i = 0; i < badges.length; i++) {
-			let item = badges[i];
+			let item = badges[i].file;
 
-			if (item.file) {
-				if (item.file.startsWith("./assets/badges/Badge_WeaponLevel_")) {
+			if (item) {
+				if (item.startsWith("./assets/badges/Badge_WeaponLevel_")) {
 					for (let L = 1; L <= 6; L++) {
-						let weaponLevel = {file: item.file, dontload: true};
-						item.file = item.file.replace(/.$/, L);
-						badges.splice(i, 0, weaponLevel);
 						i++;
+						let weaponLevel = {file: item, dontload: true};
+						weaponLevel.file = item.replace(/.$/, L);
+						badges.splice(i, 0, weaponLevel);
 					}
 				}
 			}
@@ -926,6 +996,14 @@ const load = () => {
 
 			// badges
 			tag.badges.forEach((badge, i) => {
+				// load hidden badges (custom and weapon+)
+				const badgeEntry = badges.find(b => b.file === badge);
+				if (badgeEntry.dontload) {
+					badgeEntry.image.parentNode.childNodes.forEach(node => {
+						node.src = node.dataset.src;
+						node.srcset = node.dataset.src;
+					});
+				}
 				tag.badges[i] = badges.findIndex(b => b.file === badge);
 			});
 			badgeRadios[2].click();
@@ -1449,6 +1527,7 @@ const load = () => {
 					r.id = results[2];
 				} else {
 					if (s.includes('/')) r.custom = true;
+					if (r.custom) r.dontload = true;
 					r.file = './assets/' + (r.custom ? 'custom/':'') + 'badges/' + s;
 				}
 				return r;
