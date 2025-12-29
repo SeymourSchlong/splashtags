@@ -46,8 +46,7 @@ const credits = [
         name: "Lucyfer",
         contribution: "Pride banners",
         links: {
-            twitter: "lildevilhorns",
-            bluesky: "lildevilhorns.bsky.social"
+            bluesky: "lildevilhorns.ink"
         }
     },
     {
@@ -61,8 +60,7 @@ const credits = [
         name: "Zeeto",
         contribution: "Splatband badges",
         links: {
-            twitter: "zeeto_art",
-            bluesky: "zeetoart.bsky.social"
+            twitter: "zeeto_art"
         }
     },
     {
