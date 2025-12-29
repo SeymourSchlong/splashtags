@@ -601,8 +601,10 @@ const load = () => {
 						if (!isOpenByDefault) {
 							sectionTitle.nextSibling.querySelectorAll('picture').forEach(badgePicture => {
 								badgePicture.childNodes.forEach(node => {
-									node.src = node.dataset.src;
-									node.srcset = node.dataset.src;
+									if (node.dataset.src) {
+										node.src = node.dataset.src;
+										node.srcset = node.dataset.src;
+									}
 								});
 							});
 						}
@@ -625,7 +627,6 @@ const load = () => {
 			const img = new Image();
 
 			// Use Picture element to allow usage of WEBP and when not supported, use PNG.
-			// (sorry webp haters 😜)
 			const picture = document.createElement('picture');
 			const webpSource = document.createElement('source');
 			const pngSource = document.createElement('source');
