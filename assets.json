@@ -35,6 +35,11 @@
 		{"colour":"554b4b","file":"Npl_Sdodr_Locker_Lv01"},{"colour":"ffffff","file":"Npl_Sdodr_Locker_Lv02"},{"colour":"1c221c","file":"Npl_Sdodr_Locker_Lv03"},
 
 
+		{"name": "raid","id":"banner-raiders"},
+
+		{"colour":"ffffff","file":"Npl_News_Ability_Lv01"},{"colour":"ffffff","file":"Npl_News_Ability_Lv02"},{"colour":"ffffff","file":"Npl_News_Ability_Lv03"},{"colour":"ffffff","file":"Npl_News_Ability_Lv04"},{"colour":"ffffff","file":"Npl_News_Ability_Lv05"},{"colour":"ffffff","file":"Npl_News_Ability_Lv06"},{"colour":"ffffff","file":"Npl_News_Ability_Lv07"},{"colour":"ffffff","file":"Npl_News_Ability_Lv08"},{"colour":"ffffff","file":"Npl_News_Ability_Lv09"},
+
+
 		{"name": "jackpot","id": "banner-jackpot"},
 
 		{"colour":"452a00","file":"Npl_Lot_Season01_Lv01"},{"colour":"452a00","file":"Npl_Lot_Season02_Lv01"},{"colour":"452a00","file":"Npl_Lot_Season03_Lv01"},{"colour":"452a00","file":"Npl_Lot_Season04_Lv01"},{"colour":"452a00","file":"Npl_Lot_Season05_Lv01"},{"colour":"452a00","file":"Npl_Lot_Season06_Lv01"},{"colour":"452a00","file":"Npl_Lot_Season07_Lv01"},{"colour":"452a00","file":"Npl_Lot_Season08_Lv01"},
@@ -57,8 +62,6 @@
 		{"colour":"ffffff","file":"Npl_Trg_Season08_Lv01"},
 
 		{"colour":"ffffff","file":"Npl_Fsodr00"},{"colour":"ffffff","file":"Npl_Sdodr00"},
-
-		{"colour":"ffffff","file":"Npl_News_Ability_Lv01"},{"colour":"ffffff","file":"Npl_News_Ability_Lv02"},{"colour":"ffffff","file":"Npl_News_Ability_Lv03"},{"colour":"ffffff","file":"Npl_News_Ability_Lv04"},{"colour":"ffffff","file":"Npl_News_Ability_Lv05"},{"colour":"ffffff","file":"Npl_News_Ability_Lv06"},{"colour":"ffffff","file":"Npl_News_Ability_Lv07"},{"colour":"ffffff","file":"Npl_News_Ability_Lv08"},{"colour":"ffffff","file":"Npl_News_Ability_Lv09"},
 
 		{"colour":"ffffff","file":"Npl_Tutorial00"}
 	],
